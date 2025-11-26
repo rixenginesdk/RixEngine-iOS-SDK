@@ -1,0 +1,60 @@
+/*
+  Localizable.strings
+  AdsDemo
+
+  Created by liu weile on 2025/5/20.
+  
+*/
+"ad_list"="ad list";
+
+"Alx_ad"="Alx Ad";
+"admob_ad"="Admob Ad";
+"max_ad"="Max Ad";
+"ironSource_ad"="IronSource Ad";
+"topOn_ad"="TopOn Ad";
+
+"banner_ad"="banner Ad";
+"interstitial_ad"="interstitial Ad";
+"interstitial_video_ad"="interstitial Ad - video";
+"interstitial_banner_ad"="interstitial Ad - banner";
+"rewardVideo_ad"="reward video Ad";
+"native_ad"="native Ad";
+"native_ad_template"="native Ad - template";
+"native_ad_self_render"="native Ad - self render";
+"banner_ad_preload"="banner Ad preload";
+"banner_ad_xib"="Load banner ads in Xib";
+
+"load_ad"="load ad";
+"show_ad"="show ad";
+"load_and_show_ad"="Load and Show Ad";
+"tip_message"="Ad not loaded";
+"loading"="ad loading……";
+"load_success"="load success";
+"load_failed"="load failed: %@";
+
+"Alx_banner"="Alx Ad: Banner";
+"Alx_interstitial"="Alx Ad: Interstitial";
+"Alx_interstitial_banner"="Alx Ad: Interstitial-banner";
+"Alx_rewardVideo"="Alx Ad: RewardVideo";
+"Alx_native"="Alx Ad: native";
+
+"admob_banner"="Admob Ad: Banner";
+"admob_interstitial"="Admob Ad: Interstitial";
+"admob_rewardVideo"="Admob Ad: RewardVideo";
+"admob_native"="Admob Ad: native";
+
+"max_banner"="Max Ad: Banner";
+"max_interstitial"="Max Ad: Interstitial";
+"max_rewardVideo"="Max Ad: RewardVideo";
+"max_native"="Max Ad: native";
+
+"ironSource_banner"="IronSource Ad: Banner";
+"ironSource_interstitial"="IronSource Ad: Interstitial";
+"ironSource_rewardVideo"="IronSource Ad: RewardVideo";
+"ironSource_native"="IronSource Ad: native";
+
+"topOn_banner"="TopOn Ad: Banner";
+"topOn_interstitial"="TopOn Ad: Interstitial";
+"topOn_rewardVideo"="TopOn Ad: RewardVideo";
+"topOn_native"="TopOn Ad: native";
+"topOn_native_self_render"="TopOn Ad: native - self render";

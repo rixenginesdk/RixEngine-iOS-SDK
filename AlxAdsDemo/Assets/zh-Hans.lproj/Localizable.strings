@@ -1,0 +1,60 @@
+/*
+  Localizable.strings
+  AdsDemo
+
+  Created by liu weile on 2025/5/20.
+  
+*/
+"ad_list"="广告列表";
+
+"Alx_ad"="Alx广告";
+"admob_ad"="Admob广告";
+"max_ad"="Max广告";
+"ironSource_ad"="IronSource广告";
+"topOn_ad"="TopOn广告";
+
+"banner_ad"="banner广告";
+"interstitial_ad"="插屏广告";
+"interstitial_video_ad"="插屏-视频广告";
+"interstitial_banner_ad"="插屏-banner广告";
+"rewardVideo_ad"="激励视频广告";
+"native_ad"="原生广告";
+"native_ad_template"="原生广告-模版";
+"native_ad_self_render"="原生广告-自渲染";
+"banner_ad_preload"="banner广告预加载";
+"banner_ad_xib"="Xib中加载banner广告";
+
+"load_ad"="加载广告";
+"show_ad"="展示广告";
+"load_and_show_ad"="加载并展示广告";
+"tip_message"="广告未加载";
+"loading"="广告加载中……";
+"load_success"="加载成功";
+"load_failed"="加载失败:%@";
+
+"Alx_banner"="Alx广告: Banner";
+"Alx_interstitial"="Alx广告: 插屏广告";
+"Alx_interstitial_banner"="Alx广告: 插屏广告-banner";
+"Alx_rewardVideo"="Alx广告: 激励视频";
+"Alx_native"="Alx广告: 原生广告";
+
+"admob_banner"="Admob广告: Banner";
+"admob_interstitial"="Admob广告: 插屏广告";
+"admob_rewardVideo"="Admob广告: 激励视频";
+"admob_native"="Admob广告: 原生广告";
+
+"max_banner"="Max广告: Banner";
+"max_interstitial"="Max广告: 插屏广告";
+"max_rewardVideo"="Max广告: 激励视频";
+"max_native"="Max广告: 原生广告";
+
+"ironSource_banner"="IronSource广告: Banner";
+"ironSource_interstitial"="IronSource广告: 插屏广告";
+"ironSource_rewardVideo"="IronSource广告: 激励视频";
+"ironSource_native"="IronSource广告: 原生广告";
+
+"topOn_banner"="TopOn广告: Banner";
+"topOn_interstitial"="TopOn广告: 插屏广告";
+"topOn_rewardVideo"="TopOn广告: 激励视频";
+"topOn_native"="TopOn广告: 原生广告";
+"topOn_native_self_render"="TopOn广告: 原生广告-自渲染";

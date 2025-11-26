@@ -1,0 +1,828 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */; };
+		BA7D7FC32EC5C9E000B78B40 /* AlxTopOnRewardVideoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FC02EC5C9E000B78B40 /* AlxTopOnRewardVideoAdapter.swift */; };
+		BA7D7FC42EC5C9E000B78B40 /* AlxTopOnBiddingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FB82EC5C9E000B78B40 /* AlxTopOnBiddingRequest.swift */; };
+		BA7D7FC52EC5C9E000B78B40 /* AlxTopOnInterstitialEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FBB2EC5C9E000B78B40 /* AlxTopOnInterstitialEvent.swift */; };
+		BA7D7FC62EC5C9E000B78B40 /* AlxTopOnBannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FB52EC5C9E000B78B40 /* AlxTopOnBannerAdapter.swift */; };
+		BA7D7FC72EC5C9E000B78B40 /* AlxTopOnTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FC22EC5C9E000B78B40 /* AlxTopOnTool.swift */; };
+		BA7D7FC82EC5C9E000B78B40 /* AlxTopOnBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FB72EC5C9E000B78B40 /* AlxTopOnBaseManager.swift */; };
+		BA7D7FC92EC5C9E000B78B40 /* AlxTopOnInterstitialAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FBA2EC5C9E000B78B40 /* AlxTopOnInterstitialAdapter.swift */; };
+		BA7D7FCA2EC5C9E000B78B40 /* AlxTopOnRewardVideoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FC12EC5C9E000B78B40 /* AlxTopOnRewardVideoEvent.swift */; };
+		BA7D7FCB2EC5C9E000B78B40 /* AlxTopOnNativeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FBD2EC5C9E000B78B40 /* AlxTopOnNativeAdapter.swift */; };
+		BA7D7FCC2EC5C9E000B78B40 /* AlxTopOnNativeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FBE2EC5C9E000B78B40 /* AlxTopOnNativeEvent.swift */; };
+		BA7D7FCD2EC5C9E000B78B40 /* AlxTopOnBiddingRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FB92EC5C9E000B78B40 /* AlxTopOnBiddingRequestManager.swift */; };
+		BA7D7FCE2EC5C9E000B78B40 /* AlxTopOnNativeRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FBF2EC5C9E000B78B40 /* AlxTopOnNativeRender.swift */; };
+		BA7D7FCF2EC5C9E000B78B40 /* AlxTopOnMetaInf.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FBC2EC5C9E000B78B40 /* AlxTopOnMetaInf.swift */; };
+		BA7D7FD02EC5C9E000B78B40 /* AlxTopOnBannerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FB62EC5C9E000B78B40 /* AlxTopOnBannerEvent.swift */; };
+		BA7D7FD82EC5CA0300B78B40 /* AlxAdmobBannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FD12EC5CA0300B78B40 /* AlxAdmobBannerAdapter.swift */; };
+		BA7D7FD92EC5CA0300B78B40 /* AlxAdmobBaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FD22EC5CA0300B78B40 /* AlxAdmobBaseAdapter.swift */; };
+		BA7D7FDA2EC5CA0300B78B40 /* AlxAdmobInterstitialAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FD32EC5CA0300B78B40 /* AlxAdmobInterstitialAdapter.swift */; };
+		BA7D7FDB2EC5CA0300B78B40 /* AlxAdmobNetworkExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FD62EC5CA0300B78B40 /* AlxAdmobNetworkExtras.swift */; };
+		BA7D7FDC2EC5CA0300B78B40 /* AlxAdmobMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FD42EC5CA0300B78B40 /* AlxAdmobMetaInfo.swift */; };
+		BA7D7FDD2EC5CA0300B78B40 /* AlxAdmobNativeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FD52EC5CA0300B78B40 /* AlxAdmobNativeAdapter.swift */; };
+		BA7D7FDE2EC5CA0300B78B40 /* AlxAdmobRewardVideoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FD72EC5CA0300B78B40 /* AlxAdmobRewardVideoAdapter.swift */; };
+		BA7D7FE02EC5CA2200B78B40 /* AlxMaxMediationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FDF2EC5CA2200B78B40 /* AlxMaxMediationAdapter.swift */; };
+		BA7D801F2ED6A49000B78B40 /* AlxBannerXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */; };
+		BA7D80202ED6A49000B78B40 /* AlxInterstitialBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80192ED6A49000B78B40 /* AlxInterstitialBannerVC.swift */; };
+		BA7D80212ED6A49000B78B40 /* AlxRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */; };
+		BA7D80222ED6A49000B78B40 /* AlxMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801B2ED6A49000B78B40 /* AlxMainVC.swift */; };
+		BA7D80232ED6A49000B78B40 /* AlxBannerXibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80142ED6A49000B78B40 /* AlxBannerXibVC.swift */; };
+		BA7D80242ED6A49000B78B40 /* AlxInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801A2ED6A49000B78B40 /* AlxInterstitialVC.swift */; };
+		BA7D80252ED6A49000B78B40 /* AlxNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */; };
+		BA7D80262ED6A49000B78B40 /* AlxBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */; };
+		BA9E70DC2ED6AAD6008DC000 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */; };
+		BA9E70DD2ED6AAD6008DC000 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816892E3C7372002E3112 /* AdmobBannerVC.swift */; };
+		E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168B2E3C7372002E3112 /* AdmobMainVC.swift */; };
+		E30816902E3C7372002E3112 /* AdmobInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */; };
+		E30816912E3C7372002E3112 /* AdmobNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168C2E3C7372002E3112 /* AdmobNativeVC.swift */; };
+		E30816922E3C7372002E3112 /* AdmobRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168D2E3C7372002E3112 /* AdmobRewardVideoVC.swift */; };
+		E30816982E3C738B002E3112 /* MaxInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816942E3C738B002E3112 /* MaxInterstitialVC.swift */; };
+		E30816992E3C738B002E3112 /* MaxMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816952E3C738B002E3112 /* MaxMainVC.swift */; };
+		E308169A2E3C738B002E3112 /* MaxNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816962E3C738B002E3112 /* MaxNativeVC.swift */; };
+		E308169B2E3C738B002E3112 /* MaxRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816972E3C738B002E3112 /* MaxRewardVideoVC.swift */; };
+		E308169C2E3C738B002E3112 /* MaxBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816932E3C738B002E3112 /* MaxBannerVC.swift */; };
+		E319563F2DF7D9D60083BC3C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E319563D2DF7D9D60083BC3C /* Localizable.strings */; };
+		E31956542DF7DA940083BC3C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31956532DF7DA940083BC3C /* MainVC.swift */; };
+		E33E7AC92DD4A0CB00C724B9 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E7AC82DD4A0CB00C724B9 /* BaseUIViewController.swift */; };
+		E33E7ACB2DD4A0E900C724B9 /* AdConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E7ACA2DD4A0E900C724B9 /* AdConfig.swift */; };
+		E33E7AEC2DD4AACF00C724B9 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E7AEB2DD4AACF00C724B9 /* UIImageView+Extensions.swift */; };
+		E3D661E02E79573E00913616 /* TopOnNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D661DC2E79573E00913616 /* TopOnNativeVC.swift */; };
+		E3D661E12E79573E00913616 /* TopOnInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D661D92E79573E00913616 /* TopOnInterstitialVC.swift */; };
+		E3D661E22E79573E00913616 /* TopOnMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D661DA2E79573E00913616 /* TopOnMainVC.swift */; };
+		E3D661E32E79573E00913616 /* TopOnNativeSelfRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D661DB2E79573E00913616 /* TopOnNativeSelfRenderVC.swift */; };
+		E3D661E42E79573E00913616 /* TopOnRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D661DD2E79573E00913616 /* TopOnRewardVideoVC.swift */; };
+		E3D661E52E79573E00913616 /* TopOnBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D661D82E79573E00913616 /* TopOnBannerVC.swift */; };
+		E3D661E62E79573E00913616 /* TopOnSelfRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D661DE2E79573E00913616 /* TopOnSelfRenderView.swift */; };
+		E3EC00632DD4933B00485DAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC00622DD4933B00485DAF /* AppDelegate.swift */; };
+		E3EC00652DD4933B00485DAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC00642DD4933B00485DAF /* SceneDelegate.swift */; };
+		E3EC00672DD4933B00485DAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC00662DD4933B00485DAF /* ViewController.swift */; };
+		E3EC006A2DD4933B00485DAF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E3EC00692DD4933B00485DAF /* Base */; };
+		E3EC006C2DD4933C00485DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3EC006B2DD4933C00485DAF /* Assets.xcassets */; };
+		E3EC006F2DD4933C00485DAF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E3EC006E2DD4933C00485DAF /* Base */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA9E70DE2ED6AAD6008DC000 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA9E70DD2ED6AAD6008DC000 /* AlxAds.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BA7D7FB52EC5C9E000B78B40 /* AlxTopOnBannerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnBannerAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FB62EC5C9E000B78B40 /* AlxTopOnBannerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnBannerEvent.swift; sourceTree = "<group>"; };
+		BA7D7FB72EC5C9E000B78B40 /* AlxTopOnBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnBaseManager.swift; sourceTree = "<group>"; };
+		BA7D7FB82EC5C9E000B78B40 /* AlxTopOnBiddingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnBiddingRequest.swift; sourceTree = "<group>"; };
+		BA7D7FB92EC5C9E000B78B40 /* AlxTopOnBiddingRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnBiddingRequestManager.swift; sourceTree = "<group>"; };
+		BA7D7FBA2EC5C9E000B78B40 /* AlxTopOnInterstitialAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnInterstitialAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FBB2EC5C9E000B78B40 /* AlxTopOnInterstitialEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnInterstitialEvent.swift; sourceTree = "<group>"; };
+		BA7D7FBC2EC5C9E000B78B40 /* AlxTopOnMetaInf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnMetaInf.swift; sourceTree = "<group>"; };
+		BA7D7FBD2EC5C9E000B78B40 /* AlxTopOnNativeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnNativeAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FBE2EC5C9E000B78B40 /* AlxTopOnNativeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnNativeEvent.swift; sourceTree = "<group>"; };
+		BA7D7FBF2EC5C9E000B78B40 /* AlxTopOnNativeRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnNativeRender.swift; sourceTree = "<group>"; };
+		BA7D7FC02EC5C9E000B78B40 /* AlxTopOnRewardVideoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnRewardVideoAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FC12EC5C9E000B78B40 /* AlxTopOnRewardVideoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnRewardVideoEvent.swift; sourceTree = "<group>"; };
+		BA7D7FC22EC5C9E000B78B40 /* AlxTopOnTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnTool.swift; sourceTree = "<group>"; };
+		BA7D7FD12EC5CA0300B78B40 /* AlxAdmobBannerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobBannerAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FD22EC5CA0300B78B40 /* AlxAdmobBaseAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobBaseAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FD32EC5CA0300B78B40 /* AlxAdmobInterstitialAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobInterstitialAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FD42EC5CA0300B78B40 /* AlxAdmobMetaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobMetaInfo.swift; sourceTree = "<group>"; };
+		BA7D7FD52EC5CA0300B78B40 /* AlxAdmobNativeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobNativeAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FD62EC5CA0300B78B40 /* AlxAdmobNetworkExtras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobNetworkExtras.swift; sourceTree = "<group>"; };
+		BA7D7FD72EC5CA0300B78B40 /* AlxAdmobRewardVideoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobRewardVideoAdapter.swift; sourceTree = "<group>"; };
+		BA7D7FDF2EC5CA2200B78B40 /* AlxMaxMediationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMaxMediationAdapter.swift; sourceTree = "<group>"; };
+		BA7D80142ED6A49000B78B40 /* AlxBannerXibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerXibVC.swift; sourceTree = "<group>"; };
+		BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlxBannerXibVC.xib; sourceTree = "<group>"; };
+		BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerVC.swift; sourceTree = "<group>"; };
+		BA7D80192ED6A49000B78B40 /* AlxInterstitialBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxInterstitialBannerVC.swift; sourceTree = "<group>"; };
+		BA7D801A2ED6A49000B78B40 /* AlxInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxInterstitialVC.swift; sourceTree = "<group>"; };
+		BA7D801B2ED6A49000B78B40 /* AlxMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMainVC.swift; sourceTree = "<group>"; };
+		BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxNativeVC.swift; sourceTree = "<group>"; };
+		BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxRewardVideoVC.swift; sourceTree = "<group>"; };
+		BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
+		E30816892E3C7372002E3112 /* AdmobBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerVC.swift; sourceTree = "<group>"; };
+		E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialVC.swift; sourceTree = "<group>"; };
+		E308168B2E3C7372002E3112 /* AdmobMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMainVC.swift; sourceTree = "<group>"; };
+		E308168C2E3C7372002E3112 /* AdmobNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobNativeVC.swift; sourceTree = "<group>"; };
+		E308168D2E3C7372002E3112 /* AdmobRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobRewardVideoVC.swift; sourceTree = "<group>"; };
+		E30816932E3C738B002E3112 /* MaxBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxBannerVC.swift; sourceTree = "<group>"; };
+		E30816942E3C738B002E3112 /* MaxInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxInterstitialVC.swift; sourceTree = "<group>"; };
+		E30816952E3C738B002E3112 /* MaxMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxMainVC.swift; sourceTree = "<group>"; };
+		E30816962E3C738B002E3112 /* MaxNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxNativeVC.swift; sourceTree = "<group>"; };
+		E30816972E3C738B002E3112 /* MaxRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxRewardVideoVC.swift; sourceTree = "<group>"; };
+		E31956362DF7D9300083BC3C /* AlxAds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlxAds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E319563A2DF7D9350083BC3C /* AlxDevelop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlxDevelop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E319563E2DF7D9D60083BC3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E31956402DF7D9F30083BC3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E31956532DF7DA940083BC3C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		E33E7AC82DD4A0CB00C724B9 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		E33E7ACA2DD4A0E900C724B9 /* AdConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdConfig.swift; sourceTree = "<group>"; };
+		E33E7AEB2DD4AACF00C724B9 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		E3D661D82E79573E00913616 /* TopOnBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnBannerVC.swift; sourceTree = "<group>"; };
+		E3D661D92E79573E00913616 /* TopOnInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnInterstitialVC.swift; sourceTree = "<group>"; };
+		E3D661DA2E79573E00913616 /* TopOnMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnMainVC.swift; sourceTree = "<group>"; };
+		E3D661DB2E79573E00913616 /* TopOnNativeSelfRenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnNativeSelfRenderVC.swift; sourceTree = "<group>"; };
+		E3D661DC2E79573E00913616 /* TopOnNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnNativeVC.swift; sourceTree = "<group>"; };
+		E3D661DD2E79573E00913616 /* TopOnRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnRewardVideoVC.swift; sourceTree = "<group>"; };
+		E3D661DE2E79573E00913616 /* TopOnSelfRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnSelfRenderView.swift; sourceTree = "<group>"; };
+		E3EC005F2DD4933B00485DAF /* AlxAdsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlxAdsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3EC00622DD4933B00485DAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3EC00642DD4933B00485DAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E3EC00662DD4933B00485DAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3EC00692DD4933B00485DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3EC006B2DD4933C00485DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3EC006E2DD4933C00485DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3EC00702DD4933C00485DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3EC007A2DD4980E00485DAF /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlxAds.xcframework; path = Frameworks/AlxAds.xcframework; sourceTree = "<group>"; };
+		E88B9962E29132041C782D02 /* Pods-AlxAdsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlxAdsDemo.release.xcconfig"; path = "Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlxAdsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE396B92C5072417E6A32193 /* Pods-AlxAdsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlxAdsDemo.debug.xcconfig"; path = "Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3EC005C2DD4933B00485DAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA9E70DC2ED6AAD6008DC000 /* AlxAds.xcframework in Frameworks */,
+				6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63DAAC1CA2FA2120E260F575 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE396B92C5072417E6A32193 /* Pods-AlxAdsDemo.debug.xcconfig */,
+				E88B9962E29132041C782D02 /* Pods-AlxAdsDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA7D80162ED6A49000B78B40 /* BannerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D80142ED6A49000B78B40 /* AlxBannerXibVC.swift */,
+				BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */,
+			);
+			path = BannerViewController;
+			sourceTree = "<group>";
+		};
+		BA7D80172ED6A49000B78B40 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D80162ED6A49000B78B40 /* BannerViewController */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		BA7D801E2ED6A49000B78B40 /* Rixengine */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D80172ED6A49000B78B40 /* Xib */,
+				BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */,
+				BA7D80192ED6A49000B78B40 /* AlxInterstitialBannerVC.swift */,
+				BA7D801A2ED6A49000B78B40 /* AlxInterstitialVC.swift */,
+				BA7D801B2ED6A49000B78B40 /* AlxMainVC.swift */,
+				BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */,
+				BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */,
+			);
+			path = Rixengine;
+			sourceTree = "<group>";
+		};
+		E30816532E37197F002E3112 /* AdmobAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D7FD12EC5CA0300B78B40 /* AlxAdmobBannerAdapter.swift */,
+				BA7D7FD22EC5CA0300B78B40 /* AlxAdmobBaseAdapter.swift */,
+				BA7D7FD32EC5CA0300B78B40 /* AlxAdmobInterstitialAdapter.swift */,
+				BA7D7FD42EC5CA0300B78B40 /* AlxAdmobMetaInfo.swift */,
+				BA7D7FD52EC5CA0300B78B40 /* AlxAdmobNativeAdapter.swift */,
+				BA7D7FD62EC5CA0300B78B40 /* AlxAdmobNetworkExtras.swift */,
+				BA7D7FD72EC5CA0300B78B40 /* AlxAdmobRewardVideoAdapter.swift */,
+			);
+			path = AdmobAdapter;
+			sourceTree = "<group>";
+		};
+		E30816622E3719D1002E3112 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				E30816892E3C7372002E3112 /* AdmobBannerVC.swift */,
+				E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */,
+				E308168B2E3C7372002E3112 /* AdmobMainVC.swift */,
+				E308168C2E3C7372002E3112 /* AdmobNativeVC.swift */,
+				E308168D2E3C7372002E3112 /* AdmobRewardVideoVC.swift */,
+			);
+			path = Admob;
+			sourceTree = "<group>";
+		};
+		E336DFEC2E16625400B237C0 /* MaxAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D7FDF2EC5CA2200B78B40 /* AlxMaxMediationAdapter.swift */,
+			);
+			path = MaxAdapter;
+			sourceTree = "<group>";
+		};
+		E336DFEF2E16652000B237C0 /* Max */ = {
+			isa = PBXGroup;
+			children = (
+				E30816932E3C738B002E3112 /* MaxBannerVC.swift */,
+				E30816942E3C738B002E3112 /* MaxInterstitialVC.swift */,
+				E30816952E3C738B002E3112 /* MaxMainVC.swift */,
+				E30816962E3C738B002E3112 /* MaxNativeVC.swift */,
+				E30816972E3C738B002E3112 /* MaxRewardVideoVC.swift */,
+			);
+			path = Max;
+			sourceTree = "<group>";
+		};
+		E33E7AC22DD4A02A00C724B9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E33E7AC82DD4A0CB00C724B9 /* BaseUIViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E33E7AC42DD4A07900C724B9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E33E7ACA2DD4A0E900C724B9 /* AdConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E33E7AE22DD4AA4500C724B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D801E2ED6A49000B78B40 /* Rixengine */,
+				E3D661DF2E79573E00913616 /* TopOn */,
+				E30816622E3719D1002E3112 /* Admob */,
+				E336DFEF2E16652000B237C0 /* Max */,
+				E31956532DF7DA940083BC3C /* MainVC.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E33E7AE32DD4AA5C00C724B9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E319563D2DF7D9D60083BC3C /* Localizable.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E33E7AEA2DD4AAB600C724B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E33E7AEB2DD4AACF00C724B9 /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3D661C92E79572100913616 /* TopOnAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D7FB52EC5C9E000B78B40 /* AlxTopOnBannerAdapter.swift */,
+				BA7D7FB62EC5C9E000B78B40 /* AlxTopOnBannerEvent.swift */,
+				BA7D7FB72EC5C9E000B78B40 /* AlxTopOnBaseManager.swift */,
+				BA7D7FB82EC5C9E000B78B40 /* AlxTopOnBiddingRequest.swift */,
+				BA7D7FB92EC5C9E000B78B40 /* AlxTopOnBiddingRequestManager.swift */,
+				BA7D7FBA2EC5C9E000B78B40 /* AlxTopOnInterstitialAdapter.swift */,
+				BA7D7FBB2EC5C9E000B78B40 /* AlxTopOnInterstitialEvent.swift */,
+				BA7D7FBC2EC5C9E000B78B40 /* AlxTopOnMetaInf.swift */,
+				BA7D7FBD2EC5C9E000B78B40 /* AlxTopOnNativeAdapter.swift */,
+				BA7D7FBE2EC5C9E000B78B40 /* AlxTopOnNativeEvent.swift */,
+				BA7D7FBF2EC5C9E000B78B40 /* AlxTopOnNativeRender.swift */,
+				BA7D7FC02EC5C9E000B78B40 /* AlxTopOnRewardVideoAdapter.swift */,
+				BA7D7FC12EC5C9E000B78B40 /* AlxTopOnRewardVideoEvent.swift */,
+				BA7D7FC22EC5C9E000B78B40 /* AlxTopOnTool.swift */,
+			);
+			path = TopOnAdapter;
+			sourceTree = "<group>";
+		};
+		E3D661DF2E79573E00913616 /* TopOn */ = {
+			isa = PBXGroup;
+			children = (
+				E3D661D82E79573E00913616 /* TopOnBannerVC.swift */,
+				E3D661D92E79573E00913616 /* TopOnInterstitialVC.swift */,
+				E3D661DA2E79573E00913616 /* TopOnMainVC.swift */,
+				E3D661DB2E79573E00913616 /* TopOnNativeSelfRenderVC.swift */,
+				E3D661DC2E79573E00913616 /* TopOnNativeVC.swift */,
+				E3D661DD2E79573E00913616 /* TopOnRewardVideoVC.swift */,
+				E3D661DE2E79573E00913616 /* TopOnSelfRenderView.swift */,
+			);
+			path = TopOn;
+			sourceTree = "<group>";
+		};
+		E3EC00562DD4933B00485DAF = {
+			isa = PBXGroup;
+			children = (
+				E3EC00612DD4933B00485DAF /* AlxAdsDemo */,
+				E3EC00602DD4933B00485DAF /* Products */,
+				E3EC00792DD4980C00485DAF /* Frameworks */,
+				63DAAC1CA2FA2120E260F575 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E3EC00602DD4933B00485DAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3EC005F2DD4933B00485DAF /* AlxAdsDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3EC00612DD4933B00485DAF /* AlxAdsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E3D661C92E79572100913616 /* TopOnAdapter */,
+				E30816532E37197F002E3112 /* AdmobAdapter */,
+				E336DFEC2E16625400B237C0 /* MaxAdapter */,
+				E33E7AEA2DD4AAB600C724B9 /* Extensions */,
+				E33E7AE32DD4AA5C00C724B9 /* Assets */,
+				E33E7AE22DD4AA4500C724B9 /* UI */,
+				E33E7AC42DD4A07900C724B9 /* Config */,
+				E33E7AC22DD4A02A00C724B9 /* Base */,
+				E3EC00622DD4933B00485DAF /* AppDelegate.swift */,
+				E3EC00642DD4933B00485DAF /* SceneDelegate.swift */,
+				E3EC00662DD4933B00485DAF /* ViewController.swift */,
+				E3EC00682DD4933B00485DAF /* Main.storyboard */,
+				E3EC006B2DD4933C00485DAF /* Assets.xcassets */,
+				E3EC006D2DD4933C00485DAF /* LaunchScreen.storyboard */,
+				E3EC00702DD4933C00485DAF /* Info.plist */,
+			);
+			path = AlxAdsDemo;
+			sourceTree = "<group>";
+		};
+		E3EC00792DD4980C00485DAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */,
+				E319563A2DF7D9350083BC3C /* AlxDevelop.framework */,
+				E31956362DF7D9300083BC3C /* AlxAds.framework */,
+				E3EC007A2DD4980E00485DAF /* AlxAds.xcframework */,
+				EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3EC005E2DD4933B00485DAF /* AlxAdsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3EC00732DD4933C00485DAF /* Build configuration list for PBXNativeTarget "AlxAdsDemo" */;
+			buildPhases = (
+				04249235768320F3643F7CE8 /* [CP] Check Pods Manifest.lock */,
+				E3EC005B2DD4933B00485DAF /* Sources */,
+				E3EC005C2DD4933B00485DAF /* Frameworks */,
+				E3EC005D2DD4933B00485DAF /* Resources */,
+				ECBB5E4E1CDC36CDB657015F /* [CP] Embed Pods Frameworks */,
+				0DCF171BF5864C9E08BC4DA2 /* [CP] Copy Pods Resources */,
+				BA9E70DE2ED6AAD6008DC000 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlxAdsDemo;
+			productName = AlxAdsDemo;
+			productReference = E3EC005F2DD4933B00485DAF /* AlxAdsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3EC00572DD4933B00485DAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					E3EC005E2DD4933B00485DAF = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+					};
+				};
+			};
+			buildConfigurationList = E3EC005A2DD4933B00485DAF /* Build configuration list for PBXProject "AlxAdsDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = E3EC00562DD4933B00485DAF;
+			productRefGroup = E3EC00602DD4933B00485DAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3EC005E2DD4933B00485DAF /* AlxAdsDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3EC005D2DD4933B00485DAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3EC006C2DD4933C00485DAF /* Assets.xcassets in Resources */,
+				E319563F2DF7D9D60083BC3C /* Localizable.strings in Resources */,
+				BA7D801F2ED6A49000B78B40 /* AlxBannerXibVC.xib in Resources */,
+				E3EC006F2DD4933C00485DAF /* Base in Resources */,
+				E3EC006A2DD4933B00485DAF /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04249235768320F3643F7CE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlxAdsDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DCF171BF5864C9E08BC4DA2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECBB5E4E1CDC36CDB657015F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3EC005B2DD4933B00485DAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3EC00672DD4933B00485DAF /* ViewController.swift in Sources */,
+				E33E7AEC2DD4AACF00C724B9 /* UIImageView+Extensions.swift in Sources */,
+				BA7D80202ED6A49000B78B40 /* AlxInterstitialBannerVC.swift in Sources */,
+				BA7D80212ED6A49000B78B40 /* AlxRewardVideoVC.swift in Sources */,
+				BA7D80222ED6A49000B78B40 /* AlxMainVC.swift in Sources */,
+				BA7D80232ED6A49000B78B40 /* AlxBannerXibVC.swift in Sources */,
+				BA7D80242ED6A49000B78B40 /* AlxInterstitialVC.swift in Sources */,
+				BA7D80252ED6A49000B78B40 /* AlxNativeVC.swift in Sources */,
+				BA7D80262ED6A49000B78B40 /* AlxBannerVC.swift in Sources */,
+				E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */,
+				E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */,
+				E30816902E3C7372002E3112 /* AdmobInterstitialVC.swift in Sources */,
+				E30816912E3C7372002E3112 /* AdmobNativeVC.swift in Sources */,
+				E30816922E3C7372002E3112 /* AdmobRewardVideoVC.swift in Sources */,
+				E3D661E02E79573E00913616 /* TopOnNativeVC.swift in Sources */,
+				E3D661E12E79573E00913616 /* TopOnInterstitialVC.swift in Sources */,
+				E3D661E22E79573E00913616 /* TopOnMainVC.swift in Sources */,
+				E3D661E32E79573E00913616 /* TopOnNativeSelfRenderVC.swift in Sources */,
+				E3D661E42E79573E00913616 /* TopOnRewardVideoVC.swift in Sources */,
+				E3D661E52E79573E00913616 /* TopOnBannerVC.swift in Sources */,
+				E3D661E62E79573E00913616 /* TopOnSelfRenderView.swift in Sources */,
+				E33E7ACB2DD4A0E900C724B9 /* AdConfig.swift in Sources */,
+				E33E7AC92DD4A0CB00C724B9 /* BaseUIViewController.swift in Sources */,
+				E3EC00632DD4933B00485DAF /* AppDelegate.swift in Sources */,
+				E3EC00652DD4933B00485DAF /* SceneDelegate.swift in Sources */,
+				E30816982E3C738B002E3112 /* MaxInterstitialVC.swift in Sources */,
+				E30816992E3C738B002E3112 /* MaxMainVC.swift in Sources */,
+				E308169A2E3C738B002E3112 /* MaxNativeVC.swift in Sources */,
+				E308169B2E3C738B002E3112 /* MaxRewardVideoVC.swift in Sources */,
+				E308169C2E3C738B002E3112 /* MaxBannerVC.swift in Sources */,
+				BA7D7FE02EC5CA2200B78B40 /* AlxMaxMediationAdapter.swift in Sources */,
+				BA7D7FC32EC5C9E000B78B40 /* AlxTopOnRewardVideoAdapter.swift in Sources */,
+				BA7D7FC42EC5C9E000B78B40 /* AlxTopOnBiddingRequest.swift in Sources */,
+				BA7D7FC52EC5C9E000B78B40 /* AlxTopOnInterstitialEvent.swift in Sources */,
+				BA7D7FC62EC5C9E000B78B40 /* AlxTopOnBannerAdapter.swift in Sources */,
+				BA7D7FC72EC5C9E000B78B40 /* AlxTopOnTool.swift in Sources */,
+				BA7D7FC82EC5C9E000B78B40 /* AlxTopOnBaseManager.swift in Sources */,
+				BA7D7FC92EC5C9E000B78B40 /* AlxTopOnInterstitialAdapter.swift in Sources */,
+				BA7D7FCA2EC5C9E000B78B40 /* AlxTopOnRewardVideoEvent.swift in Sources */,
+				BA7D7FCB2EC5C9E000B78B40 /* AlxTopOnNativeAdapter.swift in Sources */,
+				BA7D7FCC2EC5C9E000B78B40 /* AlxTopOnNativeEvent.swift in Sources */,
+				BA7D7FCD2EC5C9E000B78B40 /* AlxTopOnBiddingRequestManager.swift in Sources */,
+				BA7D7FCE2EC5C9E000B78B40 /* AlxTopOnNativeRender.swift in Sources */,
+				BA7D7FD82EC5CA0300B78B40 /* AlxAdmobBannerAdapter.swift in Sources */,
+				BA7D7FD92EC5CA0300B78B40 /* AlxAdmobBaseAdapter.swift in Sources */,
+				BA7D7FDA2EC5CA0300B78B40 /* AlxAdmobInterstitialAdapter.swift in Sources */,
+				BA7D7FDB2EC5CA0300B78B40 /* AlxAdmobNetworkExtras.swift in Sources */,
+				BA7D7FDC2EC5CA0300B78B40 /* AlxAdmobMetaInfo.swift in Sources */,
+				BA7D7FDD2EC5CA0300B78B40 /* AlxAdmobNativeAdapter.swift in Sources */,
+				BA7D7FDE2EC5CA0300B78B40 /* AlxAdmobRewardVideoAdapter.swift in Sources */,
+				BA7D7FCF2EC5C9E000B78B40 /* AlxTopOnMetaInf.swift in Sources */,
+				BA7D7FD02EC5C9E000B78B40 /* AlxTopOnBannerEvent.swift in Sources */,
+				E31956542DF7DA940083BC3C /* MainVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E319563D2DF7D9D60083BC3C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E31956402DF7D9F30083BC3C /* en */,
+				E319563E2DF7D9D60083BC3C /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E3EC00682DD4933B00485DAF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3EC00692DD4933B00485DAF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3EC006D2DD4933C00485DAF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3EC006E2DD4933C00485DAF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3EC00712DD4933C00485DAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3EC00722DD4933C00485DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3EC00742DD4933C00485DAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE396B92C5072417E6A32193 /* Pods-AlxAdsDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 23Q35ZFNJZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlxAdsDemo/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Alxgorix advertising application case";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rixengine.sdk.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3EC00752DD4933C00485DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E88B9962E29132041C782D02 /* Pods-AlxAdsDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 23Q35ZFNJZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlxAdsDemo/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Alxgorix advertising application case";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rixengine.sdk.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3EC005A2DD4933B00485DAF /* Build configuration list for PBXProject "AlxAdsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3EC00712DD4933C00485DAF /* Debug */,
+				E3EC00722DD4933C00485DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3EC00732DD4933C00485DAF /* Build configuration list for PBXNativeTarget "AlxAdsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3EC00742DD4933C00485DAF /* Debug */,
+				E3EC00752DD4933C00485DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3EC00572DD4933B00485DAF /* Project object */;
+}

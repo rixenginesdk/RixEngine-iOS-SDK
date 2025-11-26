@@ -1,0 +1,11 @@
+framework module AlxAds {
+  umbrella header "AlxAds.h"
+  export *
+
+  module * { export * }
+}
+
+module AlxAds.Swift {
+  header "AlxAds-Swift.h"
+  requires objc
+}
