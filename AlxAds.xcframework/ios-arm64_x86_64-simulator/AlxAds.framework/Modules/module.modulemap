@@ -1,9 +1,19 @@
 framework module AlxAds {
-  umbrella header "AlxAds.h"
-  export *
-
-  module * { export * }
+    
+    umbrella header "AlxAds.h"
+   
+    export *
+    module * { export * }
+   
+    module Internal {
+        header "OmAdSafe.h"
+        header "OmSessionUtil.h"
+        header "OmAdType.h"
+        header "OmFriendlyType.h"
+    }
+   
 }
+
 
 module AlxAds.Swift {
   header "AlxAds-Swift.h"

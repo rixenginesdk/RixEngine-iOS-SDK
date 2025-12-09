@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AlxAds
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AlxAds
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import AVFoundation
 import AdSupport
 @_exported import AlxAds
@@ -30,6 +30,17 @@ import _SwiftConcurrencyShims
   @objc optional func rewardVideoAdPlayEnd(_ ad: AlxAds.AlxRewardVideoAd)
   @objc optional func rewardVideoAdReward(_ ad: AlxAds.AlxRewardVideoAd)
   @objc optional func rewardVideoAdPlayFail(_ ad: AlxAds.AlxRewardVideoAd, didFailWithError error: any Swift.Error)
+}
+@objc(AlxOmidBean) public class AlxOmidBean : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc final public let key: Swift.String
+  @objc final public let params: Swift.String
+  @objc final public let url: Swift.String
+  @objc public init(key: Swift.String, params: Swift.String, url: Swift.String)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc public class AlxNativeAd : ObjectiveC.NSObject, AlxAds.AlxAdDelegate {
   @objc public static let Create_Type_Unknown: Swift.Int
@@ -75,6 +86,18 @@ import _SwiftConcurrencyShims
   @objc public func reportChargingUrl()
   @objc deinit
 }
+@objc public enum AlxLogLevel : Swift.Int {
+  case data = 1
+  case report = 2
+  case error = 3
+  case mark = 4
+  case open = 5
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class AlxBannerAdView : AlxAds.AlxBaseBannerView, AlxAds.AlxAdDelegate {
   @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var delegate: (any AlxAds.AlxBannerViewAdDelegate)?
   @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var rootViewController: UIKit.UIViewController? {
@@ -98,6 +121,13 @@ import _SwiftConcurrencyShims
   @_Concurrency.MainActor @preconcurrency @objc public func getPrice() -> Swift.Double
   @_Concurrency.MainActor @preconcurrency @objc public func reportBiddingUrl()
   @_Concurrency.MainActor @preconcurrency @objc public func reportChargingUrl()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(OmConfig) public class OmConfig : ObjectiveC.NSObject {
+  @objc public static let Partner_Name: Swift.String
+  @objc public static let Version_Name: Swift.String
+  @objc public static let Vendor_Key: Swift.String
+  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class AlxNativeAdImage : ObjectiveC.NSObject {
@@ -138,6 +168,32 @@ import _SwiftConcurrencyShims
   @objc public func getPrice() -> Swift.Double
   @objc public func reportBiddingUrl()
   @objc public func reportChargingUrl()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(AlxUtil) public class AlxUtil : ObjectiveC.NSObject {
+  public static func getNowTime() -> Swift.String
+  public static func formatTime(date: Foundation.Date, format: Swift.String = "yyyy-MM-dd") -> Swift.String
+  public static func appendXmlChar(field: Swift.String?, str: Swift.String) -> Swift.String
+  @objc public static func isEmpty(_ str: Swift.String?) -> Swift.Bool
+  public static func getInt(_ number: Swift.String) -> Swift.Int?
+  public static func isInt(_ string: Swift.String) -> Swift.Bool
+  public static func getJsonStr(obj: Swift.AnyObject) -> Swift.String?
+  public static func getVideoFirstGen(path: Swift.String?) -> UIKit.UIImage?
+  public static func transformSecond(time: Swift.String?) -> Swift.Int?
+  public static func isAdJumpProtocol(_ str: Swift.String) -> Swift.Bool
+  public static func bundleForSdk(aClass: Swift.AnyClass) -> Foundation.Bundle
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(AlxLog) public class AlxLog : ObjectiveC.NSObject {
+  @objc public static func v(_ level: AlxAds.AlxLogLevel, msg: Any, filename: Swift.String = #file, line: Swift.Int = #line, function: Swift.String = #function)
+  @objc public static func i(_ level: AlxAds.AlxLogLevel, msg: Any, filename: Swift.String = #file, line: Swift.Int = #line, function: Swift.String = #function)
+  @objc public static func d(_ level: AlxAds.AlxLogLevel, msg: Any, filename: Swift.String = #file, line: Swift.Int = #line, function: Swift.String = #function)
+  @objc public static func w(_ level: AlxAds.AlxLogLevel, msg: Any, filename: Swift.String = #file, line: Swift.Int = #line, function: Swift.String = #function)
+  @objc public static func e(_ level: AlxAds.AlxLogLevel, msg: Any, filename: Swift.String = #file, line: Swift.Int = #line, function: Swift.String = #function)
+  public static func setDebugMode(_ debug: Swift.Bool)
+  public static func initConfig()
+  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @IBDesignable @objc @_Concurrency.MainActor @preconcurrency public class AlxMediaView : AlxAds.AlxMediaModelView {
@@ -263,3 +319,6 @@ import _SwiftConcurrencyShims
   @objc public func loadAd()
   @objc deinit
 }
+extension AlxAds.AlxLogLevel : Swift.Equatable {}
+extension AlxAds.AlxLogLevel : Swift.Hashable {}
+extension AlxAds.AlxLogLevel : Swift.RawRepresentable {}

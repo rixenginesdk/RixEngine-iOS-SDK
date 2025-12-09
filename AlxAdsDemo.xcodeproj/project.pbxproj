@@ -38,8 +38,8 @@
 		BA7D80242ED6A49000B78B40 /* AlxInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801A2ED6A49000B78B40 /* AlxInterstitialVC.swift */; };
 		BA7D80252ED6A49000B78B40 /* AlxNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */; };
 		BA7D80262ED6A49000B78B40 /* AlxBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */; };
-		BA9E70DC2ED6AAD6008DC000 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */; };
-		BA9E70DD2ED6AAD6008DC000 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAA08C052EDFD623006976D0 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */; };
+		BAA08C062EDFD623006976D0 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816892E3C7372002E3112 /* AdmobBannerVC.swift */; };
 		E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168B2E3C7372002E3112 /* AdmobMainVC.swift */; };
 		E30816902E3C7372002E3112 /* AdmobInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */; };
@@ -71,13 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BA9E70DE2ED6AAD6008DC000 /* Embed Frameworks */ = {
+		BAA08C072EDFD623006976D0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BA9E70DD2ED6AAD6008DC000 /* AlxAds.xcframework in Embed Frameworks */,
+				BAA08C062EDFD623006976D0 /* AlxAds.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA9E70DC2ED6AAD6008DC000 /* AlxAds.xcframework in Frameworks */,
+				BAA08C052EDFD623006976D0 /* AlxAds.xcframework in Frameworks */,
 				6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,7 +398,7 @@
 				E3EC005D2DD4933B00485DAF /* Resources */,
 				ECBB5E4E1CDC36CDB657015F /* [CP] Embed Pods Frameworks */,
 				0DCF171BF5864C9E08BC4DA2 /* [CP] Copy Pods Resources */,
-				BA9E70DE2ED6AAD6008DC000 /* Embed Frameworks */,
+				BAA08C072EDFD623006976D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
