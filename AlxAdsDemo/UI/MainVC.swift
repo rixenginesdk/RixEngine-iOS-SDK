@@ -16,7 +16,7 @@ class MainVC: BaseUIViewController{
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = NSLocalizedString("ad_list", comment: "")
-        
+        //lookAppCacheDir()
         let scrollView=UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints=false
         view.addSubview(scrollView)
@@ -129,7 +129,15 @@ class MainVC: BaseUIViewController{
     @objc func bnTopOn(){
         self.navigationController?.pushViewController(TopOnMainVC(), animated: false)
     }
-    
+    //查看项目app的缓存路径
+        private func lookAppCacheDir(){
+            // 通过代码获取缓存目录路径（在 ViewController.swift 中添加）
+            let cacheURL = FileManager.default.urls(
+                for: .cachesDirectory,
+                in: .userDomainMask
+            ).first!
+            print("缓存目录路径：\(cacheURL)")
+        }
     
 
 }

@@ -1,16 +1,18 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AlxAds
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AlxAds
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import AdSupport
 @_exported import AlxAds
+import AppTrackingTransparency
 import CommonCrypto
 import CoreLocation
 import CoreTelephony
 import DeveloperToolsSupport
 import Foundation
 import Network
+import Security
 import StoreKit
 import Swift
 import SwiftUI
@@ -20,6 +22,8 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import os.log
+import os
 @objc public protocol AlxRewardVideoAdDelegate : ObjectiveC.NSObjectProtocol {
   @objc func rewardVideoAdLoad(_ ad: AlxAds.AlxRewardVideoAd)
   @objc func rewardVideoAdFailToLoad(_ ad: AlxAds.AlxRewardVideoAd, didFailWithError error: any Swift.Error)
@@ -30,17 +34,6 @@ import _SwiftConcurrencyShims
   @objc optional func rewardVideoAdPlayEnd(_ ad: AlxAds.AlxRewardVideoAd)
   @objc optional func rewardVideoAdReward(_ ad: AlxAds.AlxRewardVideoAd)
   @objc optional func rewardVideoAdPlayFail(_ ad: AlxAds.AlxRewardVideoAd, didFailWithError error: any Swift.Error)
-}
-@objc(AlxOmidBean) public class AlxOmidBean : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
-  @objc final public let key: Swift.String
-  @objc final public let params: Swift.String
-  @objc final public let url: Swift.String
-  @objc public init(key: Swift.String, params: Swift.String, url: Swift.String)
-  @objc required public init?(coder: Foundation.NSCoder)
-  @objc public func encode(with coder: Foundation.NSCoder)
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc public class AlxNativeAd : ObjectiveC.NSObject, AlxAds.AlxAdDelegate {
   @objc public static let Create_Type_Unknown: Swift.Int
@@ -130,6 +123,17 @@ import _SwiftConcurrencyShims
   @objc override dynamic public init()
   @objc deinit
 }
+@objc(AlxOmidBean) public class AlxOmidBean : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding {
+  @objc final public let key: Swift.String
+  @objc final public let params: Swift.String
+  @objc final public let url: Swift.String
+  @objc public init(key: Swift.String, params: Swift.String, url: Swift.String)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @_inheritsConvenienceInitializers @objc public class AlxNativeAdImage : ObjectiveC.NSObject {
   @objc public var url: Swift.String? {
     get
@@ -168,6 +172,14 @@ import _SwiftConcurrencyShims
   @objc public func getPrice() -> Swift.Double
   @objc public func reportBiddingUrl()
   @objc public func reportChargingUrl()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AlxUserAgentService : ObjectiveC.NSObject {
+  public static let shared: AlxAds.AlxUserAgentService
+  public var userAgent: Swift.String {
+    get
+  }
+  public func fetchUserAgent(completion: ((Swift.String) -> Swift.Void)? = nil)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(AlxUtil) public class AlxUtil : ObjectiveC.NSObject {
@@ -263,6 +275,14 @@ import _SwiftConcurrencyShims
   @_Concurrency.MainActor @preconcurrency public func getNativeAdData() -> AlxAds.AlxNativeAd?
   @_Concurrency.MainActor @preconcurrency public func setNativeAdData(_ nativeAd: AlxAds.AlxNativeAd?)
   @_Concurrency.MainActor @preconcurrency public func destroy()
+  @objc deinit
+}
+@objc final public class AlxAtomicBoolean : ObjectiveC.NSObject {
+  @objc public init(initialValue: Swift.Bool)
+  @objc final public func getAndSet(_ newValue: Swift.Bool) -> Swift.Bool
+  @objc final public func compareAndSet(expected: Swift.Bool, new: Swift.Bool) -> Swift.Bool
+  @objc final public func getValue() -> Swift.Bool
+  @objc final public func setValue(_ newValue: Swift.Bool)
   @objc deinit
 }
 @objc public protocol AlxMediaVideoDelegate : ObjectiveC.NSObjectProtocol {
