@@ -49,8 +49,9 @@ public class AlxTopOnRewardVideoEvent: ATRewardedVideoCustomEvent,AlxRewardVideo
     
     public func rewardVideoAdClose(_ ad: AlxRewardVideoAd) {
         NSLog("%@: rewardVideoAdClose",AlxTopOnRewardVideoEvent.TAG)
-        let closeType:ATAdCloseType = .unknow
-        self.trackRewardedVideoAdCloseRewarded(isRewarded, extra: [kATADDelegateExtraDismissTypeKey:closeType])
+        let closeType:ATAdCloseType = .unknow 
+        //self.trackRewardedVideoAdCloseRewarded(isRewarded, extra: [kATADDelegateExtraDismissTypeKey:closeType])
+        self.trackRewardedVideoAdCloseRewarded(isRewarded)
     }
     
     public func rewardVideoAdPlayStart(_ ad:AlxRewardVideoAd) {
