@@ -11,6 +11,13 @@ framework module AlxAds {
         header "OmAdType.h"
         header "OmFriendlyType.h"
     }
+    
+    // 定义一个专门用于补丁的私有或子模块
+    export *
+    module AlxFix {
+        header "AlxUniversalFix.h" // 需要新建一个对应的头文件
+        export *
+    }
    
 }
 

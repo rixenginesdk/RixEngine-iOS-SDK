@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-@objc public protocol AlxBannerViewAdDelegate : NSObjectProtocol{
+@objc public protocol AlxBannerViewAdDelegate: NSObjectProtocol {
     
-    @objc func bannerViewAdLoad(_ bannerView:AlxBannerAdView)
+    @objc func bannerViewAdLoad(_ bannerView: AlxBannerAdView)
     
-    @objc func bannerViewAdFailToLoad(_ bannerView:AlxBannerAdView,didFailWithError error:Error)
+    @objc func bannerViewAdFailToLoad(_ bannerView: AlxBannerAdView, didFailWithError error: Error)
     
-    @objc optional func bannerViewAdImpression(_ bannerView:AlxBannerAdView)
+    @objc optional func bannerViewAdImpression(_ bannerView: AlxBannerAdView)
     
-    @objc optional func bannerViewAdClick(_ bannerView:AlxBannerAdView)
+    @objc optional func bannerViewAdClick(_ bannerView: AlxBannerAdView)
     
-    @objc optional func bannerViewAdClose(_ bannerView:AlxBannerAdView)
+    @objc optional func bannerViewAdClose(_ bannerView: AlxBannerAdView)
     
 }

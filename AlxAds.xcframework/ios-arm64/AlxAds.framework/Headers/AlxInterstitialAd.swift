@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-@objc public class AlxInterstitialAd:NSObject,AlxAdDelegate {
+@objc public class AlxInterstitialAd: NSObject, AlxAdDelegate {
     
-    private var model:AlxInterstitialModel!
+    private var model: AlxInterstitialModel?
     
-    @objc public weak var delegate:AlxInterstitialAdDelegate? {
-        get { model.delegate }
-        set { model.delegate = newValue }
+    @objc public weak var delegate: AlxInterstitialAdDelegate? {
+        get { model?.delegate }
+        set { model?.delegate = newValue }
     }
     
     @objc public override init(){
@@ -22,32 +22,34 @@ import UIKit
         model = AlxInterstitialModel(adApi: self)
     }
     
-    @objc public func loadAd(adUnitId:String){
-        model.loadAd(adUnitId: adUnitId)
+    @objc public func loadAd(adUnitId: String) {
+        model?.loadAd(adUnitId: adUnitId)
     }
     
-    @objc public func showAd(present:UIViewController){
-        model.showAd(present: present)
+    @objc public func showAd(present: UIViewController) {
+        model?.showAd(present: present)
     }
     
-    @objc public func isReady()->Bool {
-        return model.isReady()
+    @objc public func isReady() -> Bool {
+        guard let isReadyOK = model?.isReady() else { return false }
+        return isReadyOK
     }
     
-    @objc public func destroy(){
-        model.destroy()
+    @objc public func destroy() {
+        model?.destroy()
     }
     
     @objc public func getPrice() -> Double {
-        return model.getPrice()
+        guard let currentPrice = model?.getPrice() else { return 0 }
+        return currentPrice
     }
     
     @objc public func reportBiddingUrl() {
-        model.reportBiddingUrl()
+        model?.reportBiddingUrl()
     }
     
     @objc public func reportChargingUrl() {
-        model.reportChargingUrl()
+        model?.reportChargingUrl()
     }
     
 }

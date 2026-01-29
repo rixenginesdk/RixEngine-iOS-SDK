@@ -7,10 +7,10 @@
 
 import Foundation
 
-@objc public protocol AlxNativeAdLoaderDelegate: NSObjectProtocol{
+@objc public protocol AlxNativeAdLoaderDelegate: NSObjectProtocol {
     
-    @objc func nativeAdLoaded(didReceive ads:[AlxNativeAd])
+    @objc func nativeAdLoaded(didReceive ads: [AlxNativeAd])
     
-    @objc func nativeAdFailToLoad(didFailWithError error:Error)
+    @objc func nativeAdFailToLoad(didFailWithError error: Error)
     
 }

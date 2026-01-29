@@ -10,7 +10,7 @@ import Foundation
 /**
  后期可扩展请求参数类
  */
-@objc public class AlxAdRequest:NSObject{
+@objc public class AlxAdRequest: NSObject {
     
     
     

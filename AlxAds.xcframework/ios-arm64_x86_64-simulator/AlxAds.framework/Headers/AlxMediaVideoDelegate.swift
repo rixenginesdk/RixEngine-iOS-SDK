@@ -17,9 +17,9 @@ import Foundation
     
     @objc optional func videoPause()
     
-    @objc optional func videoPlayError(error:Error)
+    @objc optional func videoPlayError(error: Error)
     
-    @objc optional func videoMute(isMute:Bool)
+    @objc optional func videoMute(isMute: Bool)
    
 
 }

@@ -10,12 +10,12 @@ import UIKit
 
 @objc public class AlxMediaContent: NSObject {
 
-    @objc public var image:UIImage?
+    @objc public var image: UIImage?
     
     @objc public internal(set) var hasVideo = false
     
-    @objc public internal(set) var aspectRatio:CGFloat = 0
+    @objc public internal(set) var aspectRatio: CGFloat = 0
     
-    @objc public var videoDelegate:AlxMediaVideoDelegate?
+    @objc public var videoDelegate: AlxMediaVideoDelegate?
 
 }

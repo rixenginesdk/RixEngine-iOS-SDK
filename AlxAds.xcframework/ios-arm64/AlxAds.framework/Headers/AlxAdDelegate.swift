@@ -13,14 +13,14 @@
  */
 import Foundation
 
-@objc public protocol AlxAdDelegate : NSObjectProtocol{
+@objc public protocol AlxAdDelegate: NSObjectProtocol {
     
     /**
      * 广告竞价单价ecpm
      *
      * @return
      */
-    @objc func getPrice()->Double
+    @objc func getPrice() -> Double
     
     /**
      * 竞价成功通知url，需要将${AUCTION_PRICE}替换为实际的价格

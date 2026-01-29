@@ -14,5 +14,3 @@ FOUNDATION_EXPORT double AlxAdsVersionNumber;
 FOUNDATION_EXPORT const unsigned char AlxAdsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AlxAds/PublicHeader.h>
-
-

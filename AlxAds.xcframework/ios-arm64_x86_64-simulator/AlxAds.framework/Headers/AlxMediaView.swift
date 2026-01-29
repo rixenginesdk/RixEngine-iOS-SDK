@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 @objc public class AlxMediaView: AlxMediaModelView {
 
-    @objc public override init(frame:CGRect) {
+    @objc public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -19,11 +19,11 @@ import UIKit
         super.init(coder: coder)
     }
     
-    @objc public override func setMediaContent(_ mediaContent:AlxMediaContent?){
+    @objc public override func setMediaContent(_ mediaContent: AlxMediaContent?) {
         super.setMediaContent(mediaContent)
     }
     
-    @objc public func getAdMediaView()->UIView?{
+    @objc public func getAdMediaView() -> UIView? {
         return mMediaView
     }
 

@@ -8,12 +8,12 @@
 import Foundation
 
 
-@objc public protocol AlxNativeAdDelegate:NSObjectProtocol{
+@objc public protocol AlxNativeAdDelegate: NSObjectProtocol {
     
-    @objc optional func nativeAdImpression(_ nativeAd:AlxNativeAd)
+    @objc optional func nativeAdImpression(_ nativeAd: AlxNativeAd)
     
-    @objc optional func nativeAdClick(_ nativeAd:AlxNativeAd)
+    @objc optional func nativeAdClick(_ nativeAd: AlxNativeAd)
     
-    @objc optional func nativeAdClose(_ nativeAd:AlxNativeAd)
+    @objc optional func nativeAdClose(_ nativeAd: AlxNativeAd)
     
 }

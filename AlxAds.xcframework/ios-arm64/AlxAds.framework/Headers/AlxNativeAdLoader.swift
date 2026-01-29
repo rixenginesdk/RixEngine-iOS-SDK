@@ -7,13 +7,13 @@
 
 import Foundation
 
-@objc public class AlxNativeAdLoader:NSObject {
+@objc public class AlxNativeAdLoader: NSObject {
     
-    private var model:AlxNativeAdModel!
+    private var model: AlxNativeAdModel?
     
-    @objc public weak var delegate:AlxNativeAdLoaderDelegate? {
-        get { model.delegate }
-        set { model.delegate = newValue }
+    @objc public weak var delegate: AlxNativeAdLoaderDelegate? {
+        get { model?.delegate }
+        set { model?.delegate = newValue }
     }
     
     private override init() {
@@ -26,8 +26,8 @@ import Foundation
         model = AlxNativeAdModel(adUnitID: adUnitID)
     }
     
-    @objc public func loadAd(){
-        model.load()
+    @objc public func loadAd() {
+        model?.load()
     }
     
     //    @objc public func loadAd(_ request:AlxAdRequest){
