@@ -7,7 +7,7 @@
 
 import UIKit
 import AnyThinkSDK
-import AnyThinkInterstitial
+//import AnyThinkInterstitial
 
 class TopOnInterstitialVC: BaseUIViewController {
     

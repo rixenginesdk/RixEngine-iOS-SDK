@@ -7,7 +7,7 @@
 
 import UIKit
 import Foundation
-import AnyThinkNative
+import AnyThinkSDK
 
 
 public class TopOnSelfRenderView: UIView {

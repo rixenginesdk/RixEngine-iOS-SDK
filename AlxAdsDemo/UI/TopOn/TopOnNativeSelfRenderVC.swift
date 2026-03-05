@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import AnyThinkSDK
-import AnyThinkNative
+//import AnyThinkNative
 
 class TopOnNativeSelfRenderVC: BaseUIViewController {
     

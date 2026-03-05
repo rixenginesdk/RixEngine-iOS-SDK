@@ -7,7 +7,7 @@
 
 import UIKit
 import AnyThinkSDK
-import AnyThinkBanner
+//import AnyThinkBanner
 
 class TopOnBannerVC: BaseUIViewController {
     

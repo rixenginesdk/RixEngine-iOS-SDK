@@ -7,7 +7,7 @@
 
 import UIKit
 import AnyThinkSDK
-import AnyThinkRewardedVideo
+//import AnyThinkRewardedVideo
 
 class TopOnRewardVideoVC: BaseUIViewController {
     
