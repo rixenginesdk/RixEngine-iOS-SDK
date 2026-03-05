@@ -90,11 +90,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		l9pbJDNnQOO3Mnm565Lv3ANfqaQ=
+		JZE0/sR6GAV9rUTYr4kuI+c0Hls=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		U6jlykQN49O0W4fPZe358pN9kJY=
+		Jho9CJKKniROxrHiTA5bxUc/3Fg=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AfqlVzKv0CZ3URSI/oOrjekryRQ=
+		P1oqo78VczBcDy7MGiJ4BI+b7hQ=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		U6jlykQN49O0W4fPZe358pN9kJY=
+		Jho9CJKKniROxrHiTA5bxUc/3Fg=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ojrJRpN7Dyfmpl7XnYIdOiw6AEQ=
+		OBAx9xQuPHNQJ0Qu4aPOMxCHVi0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -336,7 +336,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gl0scqyKUToLz2OIg0Z1rMW9sU0J7i+kFUqiS6MUUOA=
+			PnIp5NqvE/BT27+zgdQN1gz9mJH3f2l25U+4GXXs7Gg=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -364,14 +364,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hNFarCfEuOkPQDHea2OR2krK/3TVsvj5bzYHYY5+Zhs=
+			c8lMiu21Gzh2LGv33+/B7PRlFJBEPGbDr2UCS9oUhhI=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gl0scqyKUToLz2OIg0Z1rMW9sU0J7i+kFUqiS6MUUOA=
+			PnIp5NqvE/BT27+zgdQN1gz9mJH3f2l25U+4GXXs7Gg=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -399,7 +399,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AmsNWNpmS1HNcmjaVnzs7M24/1+BZ1IVk4fG9E+Vn9U=
+			5lI2bZZ3g6KHSmxFUK/2C/vETX2yUaFXToAYnj2luGg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

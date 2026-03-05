@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */; };
-		BA7A8B962F2B09AE004624F2 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */; };
-		BA7A8B972F2B09AE004624F2 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA3238A12F596D71009DA008 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA32389F2F596D63009DA008 /* AlxAds.xcframework */; };
+		BA3238A22F596D71009DA008 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA32389F2F596D63009DA008 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA7D7FC32EC5C9E000B78B40 /* AlxTopOnRewardVideoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FC02EC5C9E000B78B40 /* AlxTopOnRewardVideoAdapter.swift */; };
 		BA7D7FC42EC5C9E000B78B40 /* AlxTopOnBiddingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FB82EC5C9E000B78B40 /* AlxTopOnBiddingRequest.swift */; };
 		BA7D7FC52EC5C9E000B78B40 /* AlxTopOnInterstitialEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D7FBB2EC5C9E000B78B40 /* AlxTopOnInterstitialEvent.swift */; };
@@ -77,7 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BA7A8B972F2B09AE004624F2 /* AlxAds.xcframework in Embed Frameworks */,
+				BA3238A22F596D71009DA008 /* AlxAds.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA32389F2F596D63009DA008 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
 		BA7D7FB52EC5C9E000B78B40 /* AlxTopOnBannerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnBannerAdapter.swift; sourceTree = "<group>"; };
 		BA7D7FB62EC5C9E000B78B40 /* AlxTopOnBannerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnBannerEvent.swift; sourceTree = "<group>"; };
 		BA7D7FB72EC5C9E000B78B40 /* AlxTopOnBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnBaseManager.swift; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		BA7D801B2ED6A49000B78B40 /* AlxMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMainVC.swift; sourceTree = "<group>"; };
 		BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxNativeVC.swift; sourceTree = "<group>"; };
 		BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxRewardVideoVC.swift; sourceTree = "<group>"; };
-		BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
 		E30816892E3C7372002E3112 /* AdmobBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerVC.swift; sourceTree = "<group>"; };
 		E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialVC.swift; sourceTree = "<group>"; };
 		E308168B2E3C7372002E3112 /* AdmobMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMainVC.swift; sourceTree = "<group>"; };
@@ -149,7 +149,6 @@
 		E3EC006B2DD4933C00485DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3EC006E2DD4933C00485DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3EC00702DD4933C00485DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3EC007A2DD4980E00485DAF /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlxAds.xcframework; path = Frameworks/AlxAds.xcframework; sourceTree = "<group>"; };
 		E88B9962E29132041C782D02 /* Pods-AlxAdsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlxAdsDemo.release.xcconfig"; path = "Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlxAdsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE396B92C5072417E6A32193 /* Pods-AlxAdsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlxAdsDemo.debug.xcconfig"; path = "Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,7 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA7A8B962F2B09AE004624F2 /* AlxAds.xcframework in Frameworks */,
+				BA3238A12F596D71009DA008 /* AlxAds.xcframework in Frameworks */,
 				6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,10 +375,9 @@
 		E3EC00792DD4980C00485DAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BA9E70DB2ED6AAD6008DC000 /* AlxAds.xcframework */,
 				E319563A2DF7D9350083BC3C /* AlxDevelop.framework */,
 				E31956362DF7D9300083BC3C /* AlxAds.framework */,
-				E3EC007A2DD4980E00485DAF /* AlxAds.xcframework */,
+				BA32389F2F596D63009DA008 /* AlxAds.xcframework */,
 				EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */,
 			);
 			name = Frameworks;
@@ -490,9 +488,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -507,9 +509,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
