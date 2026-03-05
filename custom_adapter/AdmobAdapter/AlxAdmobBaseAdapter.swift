@@ -2,7 +2,6 @@
 //  AlxAdmobBaseAdapter.swift
 //
 
-
 import Foundation
 import GoogleMobileAds
 import AlxAds
@@ -49,7 +48,7 @@ public class AlxAdmobBaseAdapter: NSObject,MediationAdapter {
         // Upon finishing the SDK initialization, call the completion handler with success.
         
         if AlxAdmobBaseAdapter.isInitialized {
-            let errorStr = "The Alx sdk has been initialized"
+            let errorStr = "The alx sdk has been initialized"
             NSLog("%@: %@",AlxAdmobBaseAdapter.TAG,errorStr)
             completionHandler(NSError(domain: errorStr, code: -100))
             return
@@ -100,16 +99,37 @@ public class AlxAdmobBaseAdapter: NSObject,MediationAdapter {
         NSLog("%@: admob-sdk-version:%@",AlxAdmobBaseAdapter.TAG,string(for: MobileAds.shared.versionNumber))
         NSLog("%@: admob-adapter-version:%@",AlxAdmobBaseAdapter.TAG,AlxAdmobMetaInfo.ADAPTER_VERSION)
         
-        guard let parameters = parameters else{
+        guard let parameters = parameters else {
             let errorStr="initialize alx params is empty"
             NSLog("%@: error: %@",AlxAdmobBaseAdapter.TAG,errorStr)
             return (success:false,error:errorStr)
         }
         
-        let appid = parameters["appid"] as? String
-        let sid = parameters["sid"] as? String
-        let token = parameters["token"] as? String
-        let debug:String? = parameters["isdebug"] as? String
+        // 从 parameters 中获取参数字符串
+        guard let paramsStr = parameters["parameter"] as? String else {
+            let errorStr = "parameter string is missing or not a string"
+            NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)
+            return (success: false, error: errorStr)
+        }
+        
+        // 将 JSON 字符串转换为Data类型
+        guard let admobJSONData = paramsStr.data(using: .utf8) else {
+            let errorStr = "failed to convert parameter string to data"
+            NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)
+            return (success: false, error: errorStr)
+        }
+        
+        // 将Data类型转为JSON字典
+        guard let paramsDict = (try? JSONSerialization.jsonObject(with: admobJSONData, options: [])) as? [String: Any] else {
+            let errorStr = "failed to parse parameter JSON"
+            NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)
+            return (success: false, error: errorStr)
+        }
+        
+        let appid = paramsDict["appid"] as? String
+        let sid = paramsDict["sid"] as? String
+        let token = paramsDict["token"] as? String
+        let debug:String? = paramsDict["isdebug"] as? String
         
         guard let appid=appid,let sid=sid,let token=token else{
             let errorStr="initialize alx params: appid or sid or token is empty"
@@ -157,7 +177,7 @@ public class AlxAdmobBaseAdapter: NSObject,MediationAdapter {
     }
     
     public func error(code:Int,msg:String) -> NSError{
-        return NSError(domain: "AlxAdmobAdapter", code: code, userInfo: [NSLocalizedDescriptionKey : msg])
+        return NSError(domain: "\(AlxAdmobBaseAdapter.TAG)", code: code, userInfo: [NSLocalizedDescriptionKey : msg])
     }
     
     
