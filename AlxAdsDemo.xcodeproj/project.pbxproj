@@ -146,6 +146,49 @@
 		BA85CB242F5989D6004C86CA /* AlxTopOnRewardVideoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnRewardVideoAdapter.swift; sourceTree = "<group>"; };
 		BA85CB252F5989D6004C86CA /* AlxTopOnRewardVideoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnRewardVideoDelegate.swift; sourceTree = "<group>"; };
 		BA85CB262F5989D6004C86CA /* AlxTopOnRewardVideoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxTopOnRewardVideoEvent.swift; sourceTree = "<group>"; };
+		BA85CD252F5FBDE4004C86CA /* AlxTopOnBaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnBaseManager.h; sourceTree = "<group>"; };
+		BA85CD262F5FBDE4004C86CA /* AlxTopOnBaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnBaseManager.m; sourceTree = "<group>"; };
+		BA85CD272F5FBDE4004C86CA /* AlxTopOnBiddingRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnBiddingRequest.h; sourceTree = "<group>"; };
+		BA85CD282F5FBDE4004C86CA /* AlxTopOnBiddingRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnBiddingRequest.m; sourceTree = "<group>"; };
+		BA85CD292F5FBDE4004C86CA /* AlxTopOnBiddingRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnBiddingRequestManager.h; sourceTree = "<group>"; };
+		BA85CD2A2F5FBDE4004C86CA /* AlxTopOnBiddingRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnBiddingRequestManager.m; sourceTree = "<group>"; };
+		BA85CD2B2F5FBDE4004C86CA /* AlxTopOnMetaInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnMetaInfo.h; sourceTree = "<group>"; };
+		BA85CD2C2F5FBDE4004C86CA /* AlxTopOnMetaInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnMetaInfo.m; sourceTree = "<group>"; };
+		BA85CD2D2F5FBDE4004C86CA /* AlxTopOnTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnTool.h; sourceTree = "<group>"; };
+		BA85CD2E2F5FBDE4004C86CA /* AlxTopOnTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnTool.m; sourceTree = "<group>"; };
+		BA85CD2F2F5FBDE4004C86CA /* AlxTopOnBannerAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnBannerAdapter.h; sourceTree = "<group>"; };
+		BA85CD302F5FBDE4004C86CA /* AlxTopOnBannerAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnBannerAdapter.m; sourceTree = "<group>"; };
+		BA85CD312F5FBDE4004C86CA /* AlxTopOnBannerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnBannerDelegate.h; sourceTree = "<group>"; };
+		BA85CD322F5FBDE4004C86CA /* AlxTopOnBannerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnBannerDelegate.m; sourceTree = "<group>"; };
+		BA85CD332F5FBDE4004C86CA /* AlxTopOnBannerEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnBannerEvent.h; sourceTree = "<group>"; };
+		BA85CD342F5FBDE4004C86CA /* AlxTopOnBannerEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnBannerEvent.m; sourceTree = "<group>"; };
+		BA85CD362F5FBDE4004C86CA /* AlxTopOnAdapterCommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnAdapterCommonHeader.h; sourceTree = "<group>"; };
+		BA85CD372F5FBDE4004C86CA /* AlxTopOnBaseAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnBaseAdapter.h; sourceTree = "<group>"; };
+		BA85CD382F5FBDE4004C86CA /* AlxTopOnBaseAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnBaseAdapter.m; sourceTree = "<group>"; };
+		BA85CD392F5FBDE4004C86CA /* AlxTopOnInitAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnInitAdapter.h; sourceTree = "<group>"; };
+		BA85CD3A2F5FBDE4004C86CA /* AlxTopOnInitAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnInitAdapter.m; sourceTree = "<group>"; };
+		BA85CD3C2F5FBDE4004C86CA /* AlxTopOnInterstitialAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnInterstitialAdapter.h; sourceTree = "<group>"; };
+		BA85CD3D2F5FBDE4004C86CA /* AlxTopOnInterstitialAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnInterstitialAdapter.m; sourceTree = "<group>"; };
+		BA85CD3E2F5FBDE4004C86CA /* AlxTopOnInterstitialDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnInterstitialDelegate.h; sourceTree = "<group>"; };
+		BA85CD3F2F5FBDE4004C86CA /* AlxTopOnInterstitialDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnInterstitialDelegate.m; sourceTree = "<group>"; };
+		BA85CD402F5FBDE4004C86CA /* AlxTopOnInterstitialEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnInterstitialEvent.h; sourceTree = "<group>"; };
+		BA85CD412F5FBDE4004C86CA /* AlxTopOnInterstitialEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnInterstitialEvent.m; sourceTree = "<group>"; };
+		BA85CD432F5FBDE4004C86CA /* AlxTopOnNativeAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnNativeAdapter.h; sourceTree = "<group>"; };
+		BA85CD442F5FBDE4004C86CA /* AlxTopOnNativeAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnNativeAdapter.m; sourceTree = "<group>"; };
+		BA85CD452F5FBDE4004C86CA /* AlxTopOnNativeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnNativeDelegate.h; sourceTree = "<group>"; };
+		BA85CD462F5FBDE4004C86CA /* AlxTopOnNativeDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnNativeDelegate.m; sourceTree = "<group>"; };
+		BA85CD472F5FBDE4004C86CA /* AlxTopOnNativeEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnNativeEvent.h; sourceTree = "<group>"; };
+		BA85CD482F5FBDE4004C86CA /* AlxTopOnNativeEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnNativeEvent.m; sourceTree = "<group>"; };
+		BA85CD492F5FBDE4004C86CA /* AlxTopOnNativeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnNativeObject.h; sourceTree = "<group>"; };
+		BA85CD4A2F5FBDE4004C86CA /* AlxTopOnNativeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnNativeObject.m; sourceTree = "<group>"; };
+		BA85CD4B2F5FBDE4004C86CA /* AlxTopOnNativeRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnNativeRender.h; sourceTree = "<group>"; };
+		BA85CD4C2F5FBDE4004C86CA /* AlxTopOnNativeRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnNativeRender.m; sourceTree = "<group>"; };
+		BA85CD4E2F5FBDE4004C86CA /* AlxTopOnRewardVideoAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnRewardVideoAdapter.h; sourceTree = "<group>"; };
+		BA85CD4F2F5FBDE4004C86CA /* AlxTopOnRewardVideoAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnRewardVideoAdapter.m; sourceTree = "<group>"; };
+		BA85CD502F5FBDE4004C86CA /* AlxTopOnRewardVideoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnRewardVideoDelegate.h; sourceTree = "<group>"; };
+		BA85CD512F5FBDE4004C86CA /* AlxTopOnRewardVideoDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnRewardVideoDelegate.m; sourceTree = "<group>"; };
+		BA85CD522F5FBDE4004C86CA /* AlxTopOnRewardVideoEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxTopOnRewardVideoEvent.h; sourceTree = "<group>"; };
+		BA85CD532F5FBDE4004C86CA /* AlxTopOnRewardVideoEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxTopOnRewardVideoEvent.m; sourceTree = "<group>"; };
 		E30816892E3C7372002E3112 /* AdmobBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerVC.swift; sourceTree = "<group>"; };
 		E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialVC.swift; sourceTree = "<group>"; };
 		E308168B2E3C7372002E3112 /* AdmobMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMainVC.swift; sourceTree = "<group>"; };
@@ -231,8 +274,8 @@
 		BA3239AD2F596F9A009DA008 /* TopOnAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				BA85CB0B2F5989BE004C86CA /* 6.4.x */,
-				BA85CB0A2F598981004C86CA /* 6.5.x */,
+				BA85CD232F5FBD9A004C86CA /* Objc */,
+				BA85CD222F5FBD8C004C86CA /* Swift */,
 			);
 			path = TopOnAdapter;
 			sourceTree = "<group>";
@@ -364,6 +407,113 @@
 				BA85CB242F5989D6004C86CA /* AlxTopOnRewardVideoAdapter.swift */,
 				BA85CB252F5989D6004C86CA /* AlxTopOnRewardVideoDelegate.swift */,
 				BA85CB262F5989D6004C86CA /* AlxTopOnRewardVideoEvent.swift */,
+			);
+			path = RewardVideo;
+			sourceTree = "<group>";
+		};
+		BA85CD222F5FBD8C004C86CA /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				BA85CB0B2F5989BE004C86CA /* 6.4.x */,
+				BA85CB0A2F598981004C86CA /* 6.5.x */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		BA85CD232F5FBD9A004C86CA /* Objc */ = {
+			isa = PBXGroup;
+			children = (
+				BA85CD242F5FBDC5004C86CA /* 6.5.x */,
+			);
+			path = Objc;
+			sourceTree = "<group>";
+		};
+		BA85CD242F5FBDC5004C86CA /* 6.5.x */ = {
+			isa = PBXGroup;
+			children = (
+				BA85CD252F5FBDE4004C86CA /* AlxTopOnBaseManager.h */,
+				BA85CD262F5FBDE4004C86CA /* AlxTopOnBaseManager.m */,
+				BA85CD272F5FBDE4004C86CA /* AlxTopOnBiddingRequest.h */,
+				BA85CD282F5FBDE4004C86CA /* AlxTopOnBiddingRequest.m */,
+				BA85CD292F5FBDE4004C86CA /* AlxTopOnBiddingRequestManager.h */,
+				BA85CD2A2F5FBDE4004C86CA /* AlxTopOnBiddingRequestManager.m */,
+				BA85CD2B2F5FBDE4004C86CA /* AlxTopOnMetaInfo.h */,
+				BA85CD2C2F5FBDE4004C86CA /* AlxTopOnMetaInfo.m */,
+				BA85CD2D2F5FBDE4004C86CA /* AlxTopOnTool.h */,
+				BA85CD2E2F5FBDE4004C86CA /* AlxTopOnTool.m */,
+				BA85CD352F5FBDE4004C86CA /* Banner */,
+				BA85CD3B2F5FBDE4004C86CA /* Base */,
+				BA85CD422F5FBDE4004C86CA /* Interstitial */,
+				BA85CD4D2F5FBDE4004C86CA /* Native */,
+				BA85CD542F5FBDE4004C86CA /* RewardVideo */,
+			);
+			path = 6.5.x;
+			sourceTree = "<group>";
+		};
+		BA85CD352F5FBDE4004C86CA /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				BA85CD2F2F5FBDE4004C86CA /* AlxTopOnBannerAdapter.h */,
+				BA85CD302F5FBDE4004C86CA /* AlxTopOnBannerAdapter.m */,
+				BA85CD312F5FBDE4004C86CA /* AlxTopOnBannerDelegate.h */,
+				BA85CD322F5FBDE4004C86CA /* AlxTopOnBannerDelegate.m */,
+				BA85CD332F5FBDE4004C86CA /* AlxTopOnBannerEvent.h */,
+				BA85CD342F5FBDE4004C86CA /* AlxTopOnBannerEvent.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		BA85CD3B2F5FBDE4004C86CA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BA85CD362F5FBDE4004C86CA /* AlxTopOnAdapterCommonHeader.h */,
+				BA85CD372F5FBDE4004C86CA /* AlxTopOnBaseAdapter.h */,
+				BA85CD382F5FBDE4004C86CA /* AlxTopOnBaseAdapter.m */,
+				BA85CD392F5FBDE4004C86CA /* AlxTopOnInitAdapter.h */,
+				BA85CD3A2F5FBDE4004C86CA /* AlxTopOnInitAdapter.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BA85CD422F5FBDE4004C86CA /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				BA85CD3C2F5FBDE4004C86CA /* AlxTopOnInterstitialAdapter.h */,
+				BA85CD3D2F5FBDE4004C86CA /* AlxTopOnInterstitialAdapter.m */,
+				BA85CD3E2F5FBDE4004C86CA /* AlxTopOnInterstitialDelegate.h */,
+				BA85CD3F2F5FBDE4004C86CA /* AlxTopOnInterstitialDelegate.m */,
+				BA85CD402F5FBDE4004C86CA /* AlxTopOnInterstitialEvent.h */,
+				BA85CD412F5FBDE4004C86CA /* AlxTopOnInterstitialEvent.m */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		BA85CD4D2F5FBDE4004C86CA /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				BA85CD432F5FBDE4004C86CA /* AlxTopOnNativeAdapter.h */,
+				BA85CD442F5FBDE4004C86CA /* AlxTopOnNativeAdapter.m */,
+				BA85CD452F5FBDE4004C86CA /* AlxTopOnNativeDelegate.h */,
+				BA85CD462F5FBDE4004C86CA /* AlxTopOnNativeDelegate.m */,
+				BA85CD472F5FBDE4004C86CA /* AlxTopOnNativeEvent.h */,
+				BA85CD482F5FBDE4004C86CA /* AlxTopOnNativeEvent.m */,
+				BA85CD492F5FBDE4004C86CA /* AlxTopOnNativeObject.h */,
+				BA85CD4A2F5FBDE4004C86CA /* AlxTopOnNativeObject.m */,
+				BA85CD4B2F5FBDE4004C86CA /* AlxTopOnNativeRender.h */,
+				BA85CD4C2F5FBDE4004C86CA /* AlxTopOnNativeRender.m */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		BA85CD542F5FBDE4004C86CA /* RewardVideo */ = {
+			isa = PBXGroup;
+			children = (
+				BA85CD4E2F5FBDE4004C86CA /* AlxTopOnRewardVideoAdapter.h */,
+				BA85CD4F2F5FBDE4004C86CA /* AlxTopOnRewardVideoAdapter.m */,
+				BA85CD502F5FBDE4004C86CA /* AlxTopOnRewardVideoDelegate.h */,
+				BA85CD512F5FBDE4004C86CA /* AlxTopOnRewardVideoDelegate.m */,
+				BA85CD522F5FBDE4004C86CA /* AlxTopOnRewardVideoEvent.h */,
+				BA85CD532F5FBDE4004C86CA /* AlxTopOnRewardVideoEvent.m */,
 			);
 			path = RewardVideo;
 			sourceTree = "<group>";
