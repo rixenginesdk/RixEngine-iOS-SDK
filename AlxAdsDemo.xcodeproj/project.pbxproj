@@ -58,6 +58,13 @@
 		BADDD1352F7A4CBB0076B5C3 /* AlxLevelPlayMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD11D2F7A4CBB0076B5C3 /* AlxLevelPlayMetaInfo.m */; };
 		BADDD1362F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1232F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.m */; };
 		BADDD1372F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDD12A2F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.swift */; };
+		BADDD1482F7A4F740076B5C3 /* AlxAdmobBaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD13D2F7A4F740076B5C3 /* AlxAdmobBaseAdapter.m */; };
+		BADDD1492F7A4F740076B5C3 /* AlxAdmobMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1412F7A4F740076B5C3 /* AlxAdmobMetaInfo.m */; };
+		BADDD14A2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD13B2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.m */; };
+		BADDD14B2F7A4F740076B5C3 /* AlxAdmobNativeAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1432F7A4F740076B5C3 /* AlxAdmobNativeAdapter.m */; };
+		BADDD14C2F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1452F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m */; };
+		BADDD14D2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD13F2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m */; };
+		BADDD14E2F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1472F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m */; };
 		E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816892E3C7372002E3112 /* AdmobBannerVC.swift */; };
 		E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168B2E3C7372002E3112 /* AdmobMainVC.swift */; };
 		E30816902E3C7372002E3112 /* AdmobInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */; };
@@ -214,6 +221,20 @@
 		BADDD1292F7A4CBB0076B5C3 /* ISAlxCustomBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISAlxCustomBanner.swift; sourceTree = "<group>"; };
 		BADDD12A2F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISAlxCustomInterstitial.swift; sourceTree = "<group>"; };
 		BADDD12B2F7A4CBB0076B5C3 /* ISAlxCustomRewardedVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISAlxCustomRewardedVideo.swift; sourceTree = "<group>"; };
+		BADDD13A2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxAdmobBannerAdapter.h; sourceTree = "<group>"; };
+		BADDD13B2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobBannerAdapter.m; sourceTree = "<group>"; };
+		BADDD13C2F7A4F740076B5C3 /* AlxAdmobBaseAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxAdmobBaseAdapter.h; sourceTree = "<group>"; };
+		BADDD13D2F7A4F740076B5C3 /* AlxAdmobBaseAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobBaseAdapter.m; sourceTree = "<group>"; };
+		BADDD13E2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxAdmobInterstitialAdapter.h; sourceTree = "<group>"; };
+		BADDD13F2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobInterstitialAdapter.m; sourceTree = "<group>"; };
+		BADDD1402F7A4F740076B5C3 /* AlxAdmobMetaInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxAdmobMetaInfo.h; sourceTree = "<group>"; };
+		BADDD1412F7A4F740076B5C3 /* AlxAdmobMetaInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobMetaInfo.m; sourceTree = "<group>"; };
+		BADDD1422F7A4F740076B5C3 /* AlxAdmobNativeAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxAdmobNativeAdapter.h; sourceTree = "<group>"; };
+		BADDD1432F7A4F740076B5C3 /* AlxAdmobNativeAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobNativeAdapter.m; sourceTree = "<group>"; };
+		BADDD1442F7A4F740076B5C3 /* AlxAdmobNetworkExtras.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxAdmobNetworkExtras.h; sourceTree = "<group>"; };
+		BADDD1452F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobNetworkExtras.m; sourceTree = "<group>"; };
+		BADDD1462F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxAdmobRewardVideoAdapter.h; sourceTree = "<group>"; };
+		BADDD1472F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobRewardVideoAdapter.m; sourceTree = "<group>"; };
 		E30816892E3C7372002E3112 /* AdmobBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerVC.swift; sourceTree = "<group>"; };
 		E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialVC.swift; sourceTree = "<group>"; };
 		E308168B2E3C7372002E3112 /* AdmobMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMainVC.swift; sourceTree = "<group>"; };
@@ -277,13 +298,8 @@
 		BA32399C2F596F9A009DA008 /* AdmobAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				BA3239952F596F9A009DA008 /* AlxAdmobBannerAdapter.swift */,
-				BA3239962F596F9A009DA008 /* AlxAdmobBaseAdapter.swift */,
-				BA3239972F596F9A009DA008 /* AlxAdmobInterstitialAdapter.swift */,
-				BA3239982F596F9A009DA008 /* AlxAdmobMetaInfo.swift */,
-				BA3239992F596F9A009DA008 /* AlxAdmobNativeAdapter.swift */,
-				BA32399A2F596F9A009DA008 /* AlxAdmobNetworkExtras.swift */,
-				BA32399B2F596F9A009DA008 /* AlxAdmobRewardVideoAdapter.swift */,
+				BADDD1392F7A4F620076B5C3 /* Objc */,
+				BADDD1382F7A4F510076B5C3 /* Swift */,
 			);
 			path = AdmobAdapter;
 			sourceTree = "<group>";
@@ -580,6 +596,41 @@
 				BADDD12C2F7A4CBB0076B5C3 /* Swift */,
 			);
 			path = UnityLevelPlayAdapter;
+			sourceTree = "<group>";
+		};
+		BADDD1382F7A4F510076B5C3 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				BA3239952F596F9A009DA008 /* AlxAdmobBannerAdapter.swift */,
+				BA3239962F596F9A009DA008 /* AlxAdmobBaseAdapter.swift */,
+				BA3239972F596F9A009DA008 /* AlxAdmobInterstitialAdapter.swift */,
+				BA3239982F596F9A009DA008 /* AlxAdmobMetaInfo.swift */,
+				BA3239992F596F9A009DA008 /* AlxAdmobNativeAdapter.swift */,
+				BA32399A2F596F9A009DA008 /* AlxAdmobNetworkExtras.swift */,
+				BA32399B2F596F9A009DA008 /* AlxAdmobRewardVideoAdapter.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		BADDD1392F7A4F620076B5C3 /* Objc */ = {
+			isa = PBXGroup;
+			children = (
+				BADDD13A2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.h */,
+				BADDD13B2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.m */,
+				BADDD13C2F7A4F740076B5C3 /* AlxAdmobBaseAdapter.h */,
+				BADDD13D2F7A4F740076B5C3 /* AlxAdmobBaseAdapter.m */,
+				BADDD13E2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.h */,
+				BADDD13F2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m */,
+				BADDD1402F7A4F740076B5C3 /* AlxAdmobMetaInfo.h */,
+				BADDD1412F7A4F740076B5C3 /* AlxAdmobMetaInfo.m */,
+				BADDD1422F7A4F740076B5C3 /* AlxAdmobNativeAdapter.h */,
+				BADDD1432F7A4F740076B5C3 /* AlxAdmobNativeAdapter.m */,
+				BADDD1442F7A4F740076B5C3 /* AlxAdmobNetworkExtras.h */,
+				BADDD1452F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m */,
+				BADDD1462F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.h */,
+				BADDD1472F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m */,
+			);
+			path = Objc;
 			sourceTree = "<group>";
 		};
 		E30816622E3719D1002E3112 /* Admob */ = {
@@ -894,6 +945,13 @@
 				BA85CB312F5989D6004C86CA /* AlxTopOnNativeEvent.swift in Sources */,
 				BA85CB322F5989D6004C86CA /* AlxTopOnBiddingRequestManager.swift in Sources */,
 				BA85CB332F5989D6004C86CA /* AlxTopOnBaseAdapter.swift in Sources */,
+				BADDD1482F7A4F740076B5C3 /* AlxAdmobBaseAdapter.m in Sources */,
+				BADDD1492F7A4F740076B5C3 /* AlxAdmobMetaInfo.m in Sources */,
+				BADDD14A2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.m in Sources */,
+				BADDD14B2F7A4F740076B5C3 /* AlxAdmobNativeAdapter.m in Sources */,
+				BADDD14C2F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m in Sources */,
+				BADDD14D2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m in Sources */,
+				BADDD14E2F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m in Sources */,
 				BA85CB342F5989D6004C86CA /* AlxTopOnNativeAdapter.swift in Sources */,
 				BA85CB352F5989D6004C86CA /* AlxTopOnDebugHelper.swift in Sources */,
 				BA85CB362F5989D6004C86CA /* AlxTopOnNativeDelegate.swift in Sources */,
