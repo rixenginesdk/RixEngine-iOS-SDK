@@ -3,7 +3,7 @@ With the RixEngine SDK, you can quickly integrate with multiple platforms and sa
 
 # Integrate access prerequisites
 - Use Xcode 15.4 or later
-- Minimum iOS deployment target is iOS 12.0 or later
+- Minimum iOS deployment target is iOS 13.0 or later
 - Swift language version 5.0 or higher
 
 # Import the RixEngine SDK
