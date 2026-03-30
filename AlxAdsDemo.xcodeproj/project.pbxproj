@@ -65,6 +65,7 @@
 		BADDD14C2F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1452F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m */; };
 		BADDD14D2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD13F2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m */; };
 		BADDD14E2F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1472F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m */; };
+		BADDD1532F7A50A10076B5C3 /* AlxMaxMediationAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1522F7A50A10076B5C3 /* AlxMaxMediationAdapter.m */; };
 		E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816892E3C7372002E3112 /* AdmobBannerVC.swift */; };
 		E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168B2E3C7372002E3112 /* AdmobMainVC.swift */; };
 		E30816902E3C7372002E3112 /* AdmobInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */; };
@@ -235,6 +236,8 @@
 		BADDD1452F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobNetworkExtras.m; sourceTree = "<group>"; };
 		BADDD1462F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxAdmobRewardVideoAdapter.h; sourceTree = "<group>"; };
 		BADDD1472F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxAdmobRewardVideoAdapter.m; sourceTree = "<group>"; };
+		BADDD1512F7A50A10076B5C3 /* AlxMaxMediationAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlxMaxMediationAdapter.h; sourceTree = "<group>"; };
+		BADDD1522F7A50A10076B5C3 /* AlxMaxMediationAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlxMaxMediationAdapter.m; sourceTree = "<group>"; };
 		E30816892E3C7372002E3112 /* AdmobBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerVC.swift; sourceTree = "<group>"; };
 		E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialVC.swift; sourceTree = "<group>"; };
 		E308168B2E3C7372002E3112 /* AdmobMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMainVC.swift; sourceTree = "<group>"; };
@@ -307,7 +310,8 @@
 		BA32399E2F596F9A009DA008 /* MaxAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */,
+				BADDD1502F7A50980076B5C3 /* Objc */,
+				BADDD14F2F7A50920076B5C3 /* Swift */,
 			);
 			path = MaxAdapter;
 			sourceTree = "<group>";
@@ -629,6 +633,23 @@
 				BADDD1452F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m */,
 				BADDD1462F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.h */,
 				BADDD1472F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m */,
+			);
+			path = Objc;
+			sourceTree = "<group>";
+		};
+		BADDD14F2F7A50920076B5C3 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		BADDD1502F7A50980076B5C3 /* Objc */ = {
+			isa = PBXGroup;
+			children = (
+				BADDD1512F7A50A10076B5C3 /* AlxMaxMediationAdapter.h */,
+				BADDD1522F7A50A10076B5C3 /* AlxMaxMediationAdapter.m */,
 			);
 			path = Objc;
 			sourceTree = "<group>";
@@ -987,6 +1008,7 @@
 				E308169A2E3C738B002E3112 /* MaxNativeVC.swift in Sources */,
 				E308169B2E3C738B002E3112 /* MaxRewardVideoVC.swift in Sources */,
 				E308169C2E3C738B002E3112 /* MaxBannerVC.swift in Sources */,
+				BADDD1532F7A50A10076B5C3 /* AlxMaxMediationAdapter.m in Sources */,
 				E31956542DF7DA940083BC3C /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
