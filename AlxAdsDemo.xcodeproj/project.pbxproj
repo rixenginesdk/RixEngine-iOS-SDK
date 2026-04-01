@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */; };
-		BA3238A12F596D71009DA008 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA32389F2F596D63009DA008 /* AlxAds.xcframework */; };
-		BA3238A22F596D71009DA008 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA32389F2F596D63009DA008 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA3239C52F5970DD009DA008 /* AlxAdmobNetworkExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA32399A2F596F9A009DA008 /* AlxAdmobNetworkExtras.swift */; };
 		BA3239C62F5970DD009DA008 /* AlxAdmobBaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3239962F596F9A009DA008 /* AlxAdmobBaseAdapter.swift */; };
 		BA3239C72F5970DD009DA008 /* AlxAdmobInterstitialAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3239972F596F9A009DA008 /* AlxAdmobInterstitialAdapter.swift */; };
@@ -18,6 +16,8 @@
 		BA3239CA2F5970DD009DA008 /* AlxAdmobNativeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3239992F596F9A009DA008 /* AlxAdmobNativeAdapter.swift */; };
 		BA3239CB2F5970DD009DA008 /* AlxAdmobBannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3239952F596F9A009DA008 /* AlxAdmobBannerAdapter.swift */; };
 		BA3239DA2F5970EB009DA008 /* AlxMaxMediationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */; };
+		BA4EEED42F7CC1AC00D20422 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */; };
+		BA4EEED52F7CC1AC00D20422 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA7D801F2ED6A49000B78B40 /* AlxBannerXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */; };
 		BA7D80202ED6A49000B78B40 /* AlxInterstitialBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80192ED6A49000B78B40 /* AlxInterstitialBannerVC.swift */; };
 		BA7D80212ED6A49000B78B40 /* AlxRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */; };
@@ -49,23 +49,10 @@
 		BA85CB3C2F5989D6004C86CA /* AlxTopOnBannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA85CB132F5989D6004C86CA /* AlxTopOnBannerAdapter.swift */; };
 		BA85CB3D2F5989D6004C86CA /* AlxTopOnInterstitialAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA85CB1A2F5989D6004C86CA /* AlxTopOnInterstitialAdapter.swift */; };
 		BADDD12E2F7A4CBB0076B5C3 /* ISAlxCustomRewardedVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDD12B2F7A4CBB0076B5C3 /* ISAlxCustomRewardedVideo.swift */; };
-		BADDD12F2F7A4CBB0076B5C3 /* ISAlxCustomBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1212F7A4CBB0076B5C3 /* ISAlxCustomBanner.m */; };
-		BADDD1302F7A4CBB0076B5C3 /* ISAlxCustomAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD11F2F7A4CBB0076B5C3 /* ISAlxCustomAdapter.m */; };
 		BADDD1312F7A4CBB0076B5C3 /* ISAlxCustomBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1292F7A4CBB0076B5C3 /* ISAlxCustomBanner.swift */; };
 		BADDD1322F7A4CBB0076B5C3 /* ISAlxCustomAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1282F7A4CBB0076B5C3 /* ISAlxCustomAdapter.swift */; };
-		BADDD1332F7A4CBB0076B5C3 /* ISAlxCustomRewardedVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1252F7A4CBB0076B5C3 /* ISAlxCustomRewardedVideo.m */; };
 		BADDD1342F7A4CBB0076B5C3 /* AlxLevelPlayMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1272F7A4CBB0076B5C3 /* AlxLevelPlayMetaInfo.swift */; };
-		BADDD1352F7A4CBB0076B5C3 /* AlxLevelPlayMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD11D2F7A4CBB0076B5C3 /* AlxLevelPlayMetaInfo.m */; };
-		BADDD1362F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1232F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.m */; };
 		BADDD1372F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDD12A2F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.swift */; };
-		BADDD1482F7A4F740076B5C3 /* AlxAdmobBaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD13D2F7A4F740076B5C3 /* AlxAdmobBaseAdapter.m */; };
-		BADDD1492F7A4F740076B5C3 /* AlxAdmobMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1412F7A4F740076B5C3 /* AlxAdmobMetaInfo.m */; };
-		BADDD14A2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD13B2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.m */; };
-		BADDD14B2F7A4F740076B5C3 /* AlxAdmobNativeAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1432F7A4F740076B5C3 /* AlxAdmobNativeAdapter.m */; };
-		BADDD14C2F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1452F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m */; };
-		BADDD14D2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD13F2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m */; };
-		BADDD14E2F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1472F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m */; };
-		BADDD1532F7A50A10076B5C3 /* AlxMaxMediationAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BADDD1522F7A50A10076B5C3 /* AlxMaxMediationAdapter.m */; };
 		E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816892E3C7372002E3112 /* AdmobBannerVC.swift */; };
 		E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168B2E3C7372002E3112 /* AdmobMainVC.swift */; };
 		E30816902E3C7372002E3112 /* AdmobInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */; };
@@ -103,7 +90,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BA3238A22F596D71009DA008 /* AlxAds.xcframework in Embed Frameworks */,
+				BA4EEED52F7CC1AC00D20422 /* AlxAds.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,7 +98,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BA32389F2F596D63009DA008 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
 		BA3239952F596F9A009DA008 /* AlxAdmobBannerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobBannerAdapter.swift; sourceTree = "<group>"; };
 		BA3239962F596F9A009DA008 /* AlxAdmobBaseAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobBaseAdapter.swift; sourceTree = "<group>"; };
 		BA3239972F596F9A009DA008 /* AlxAdmobInterstitialAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobInterstitialAdapter.swift; sourceTree = "<group>"; };
@@ -120,6 +106,7 @@
 		BA32399A2F596F9A009DA008 /* AlxAdmobNetworkExtras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobNetworkExtras.swift; sourceTree = "<group>"; };
 		BA32399B2F596F9A009DA008 /* AlxAdmobRewardVideoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobRewardVideoAdapter.swift; sourceTree = "<group>"; };
 		BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMaxMediationAdapter.swift; sourceTree = "<group>"; };
+		BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
 		BA7D80142ED6A49000B78B40 /* AlxBannerXibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerXibVC.swift; sourceTree = "<group>"; };
 		BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlxBannerXibVC.xib; sourceTree = "<group>"; };
 		BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerVC.swift; sourceTree = "<group>"; };
@@ -281,7 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3238A12F596D71009DA008 /* AlxAds.xcframework in Frameworks */,
+				BA4EEED42F7CC1AC00D20422 /* AlxAds.xcframework in Frameworks */,
 				6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,8 +765,8 @@
 			isa = PBXGroup;
 			children = (
 				E319563A2DF7D9350083BC3C /* AlxDevelop.framework */,
+				BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */,
 				E31956362DF7D9300083BC3C /* AlxAds.framework */,
-				BA32389F2F596D63009DA008 /* AlxAds.xcframework */,
 				EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */,
 			);
 			name = Frameworks;
@@ -966,13 +953,6 @@
 				BA85CB312F5989D6004C86CA /* AlxTopOnNativeEvent.swift in Sources */,
 				BA85CB322F5989D6004C86CA /* AlxTopOnBiddingRequestManager.swift in Sources */,
 				BA85CB332F5989D6004C86CA /* AlxTopOnBaseAdapter.swift in Sources */,
-				BADDD1482F7A4F740076B5C3 /* AlxAdmobBaseAdapter.m in Sources */,
-				BADDD1492F7A4F740076B5C3 /* AlxAdmobMetaInfo.m in Sources */,
-				BADDD14A2F7A4F740076B5C3 /* AlxAdmobBannerAdapter.m in Sources */,
-				BADDD14B2F7A4F740076B5C3 /* AlxAdmobNativeAdapter.m in Sources */,
-				BADDD14C2F7A4F740076B5C3 /* AlxAdmobNetworkExtras.m in Sources */,
-				BADDD14D2F7A4F740076B5C3 /* AlxAdmobInterstitialAdapter.m in Sources */,
-				BADDD14E2F7A4F740076B5C3 /* AlxAdmobRewardVideoAdapter.m in Sources */,
 				BA85CB342F5989D6004C86CA /* AlxTopOnNativeAdapter.swift in Sources */,
 				BA85CB352F5989D6004C86CA /* AlxTopOnDebugHelper.swift in Sources */,
 				BA85CB362F5989D6004C86CA /* AlxTopOnNativeDelegate.swift in Sources */,
@@ -987,14 +967,9 @@
 				E3D661E22E79573E00913616 /* TopOnMainVC.swift in Sources */,
 				E3D661E32E79573E00913616 /* TopOnNativeSelfRenderVC.swift in Sources */,
 				BADDD12E2F7A4CBB0076B5C3 /* ISAlxCustomRewardedVideo.swift in Sources */,
-				BADDD12F2F7A4CBB0076B5C3 /* ISAlxCustomBanner.m in Sources */,
-				BADDD1302F7A4CBB0076B5C3 /* ISAlxCustomAdapter.m in Sources */,
 				BADDD1312F7A4CBB0076B5C3 /* ISAlxCustomBanner.swift in Sources */,
 				BADDD1322F7A4CBB0076B5C3 /* ISAlxCustomAdapter.swift in Sources */,
-				BADDD1332F7A4CBB0076B5C3 /* ISAlxCustomRewardedVideo.m in Sources */,
 				BADDD1342F7A4CBB0076B5C3 /* AlxLevelPlayMetaInfo.swift in Sources */,
-				BADDD1352F7A4CBB0076B5C3 /* AlxLevelPlayMetaInfo.m in Sources */,
-				BADDD1362F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.m in Sources */,
 				BADDD1372F7A4CBB0076B5C3 /* ISAlxCustomInterstitial.swift in Sources */,
 				E3D661E42E79573E00913616 /* TopOnRewardVideoVC.swift in Sources */,
 				E3D661E52E79573E00913616 /* TopOnBannerVC.swift in Sources */,
@@ -1008,7 +983,6 @@
 				E308169A2E3C738B002E3112 /* MaxNativeVC.swift in Sources */,
 				E308169B2E3C738B002E3112 /* MaxRewardVideoVC.swift in Sources */,
 				E308169C2E3C738B002E3112 /* MaxBannerVC.swift in Sources */,
-				BADDD1532F7A50A10076B5C3 /* AlxMaxMediationAdapter.m in Sources */,
 				E31956542DF7DA940083BC3C /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

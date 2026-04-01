@@ -18,7 +18,7 @@ target 'AlxAdsDemo' do
   pod 'TPNDebugUISDK'     # 调试 UI 建议两个 Demo 都带上
   # 必须引入 ADX 适配器以解决组件缺失弹窗
   pod 'TPNMediationAdxSmartdigimktAdapter', '6.5.42.1'
-  
+  pod 'IronSourceSDK','9.2.0.0' # Unity Ads SDK
 end
 
 

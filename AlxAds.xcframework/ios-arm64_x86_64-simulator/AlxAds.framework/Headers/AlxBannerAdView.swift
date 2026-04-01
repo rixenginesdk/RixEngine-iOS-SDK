@@ -73,6 +73,7 @@ import UIKit
         model.reportChargingUrl()
     }
     
+    // MARK: - AlxBannerViewAdDelegate
     func bannerViewLoad() {
         delegate?.bannerViewAdLoad(self)
     }

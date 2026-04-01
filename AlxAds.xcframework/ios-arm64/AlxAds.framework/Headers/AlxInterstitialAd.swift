@@ -39,6 +39,7 @@ import UIKit
         model?.destroy()
     }
     
+    // MARK: - AlxAdDelegate
     @objc public func getPrice() -> Double {
         guard let currentPrice = model?.getPrice() else { return 0 }
         return currentPrice

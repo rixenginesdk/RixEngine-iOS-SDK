@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// MARK: - 原生广告事件回调
 @objc public protocol AlxNativeAdDelegate: NSObjectProtocol {
     
     @objc optional func nativeAdImpression(_ nativeAd: AlxNativeAd)

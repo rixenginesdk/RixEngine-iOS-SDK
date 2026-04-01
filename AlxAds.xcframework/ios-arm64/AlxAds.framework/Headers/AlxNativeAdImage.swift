@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - 原生广告图片模型
 @objc public class AlxNativeAdImage: NSObject {
     
     @objc public internal(set) var url: String?

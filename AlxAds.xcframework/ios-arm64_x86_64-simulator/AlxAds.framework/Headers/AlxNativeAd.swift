@@ -11,7 +11,7 @@ import UIKit
 /**
  原生广告
  */
-@objc public class AlxNativeAd:NSObject,AlxAdDelegate {
+@objc public class AlxNativeAd: NSObject, AlxAdDelegate {
     
     @objc public static let Create_Type_Unknown = 0 // 未知类型
     @objc public static let Create_Type_Large_Image = 1 // 大图
@@ -67,6 +67,7 @@ import UIKit
         return nativeAdAction?.getAdLogo()
     }
     
+    // MARK: - AlxAdDelegate
     @objc public func getPrice() -> Double {
         return nativeAdAction?.getPrice() ?? 0
     }
