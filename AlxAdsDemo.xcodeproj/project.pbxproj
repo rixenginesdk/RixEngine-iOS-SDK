@@ -18,6 +18,7 @@
 		BA3239DA2F5970EB009DA008 /* AlxMaxMediationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */; };
 		BA4EEED42F7CC1AC00D20422 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */; };
 		BA4EEED52F7CC1AC00D20422 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA4EEED72F7CFAA100D20422 /* BaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */; };
 		BA7D801F2ED6A49000B78B40 /* AlxBannerXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */; };
 		BA7D80202ED6A49000B78B40 /* AlxInterstitialBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80192ED6A49000B78B40 /* AlxInterstitialBannerVC.swift */; };
 		BA7D80212ED6A49000B78B40 /* AlxRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */; };
@@ -107,6 +108,7 @@
 		BA32399B2F596F9A009DA008 /* AlxAdmobRewardVideoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobRewardVideoAdapter.swift; sourceTree = "<group>"; };
 		BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMaxMediationAdapter.swift; sourceTree = "<group>"; };
 		BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
+		BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuVC.swift; sourceTree = "<group>"; };
 		BA7D80142ED6A49000B78B40 /* AlxBannerXibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerXibVC.swift; sourceTree = "<group>"; };
 		BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlxBannerXibVC.xib; sourceTree = "<group>"; };
 		BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerVC.swift; sourceTree = "<group>"; };
@@ -668,6 +670,7 @@
 		E33E7AC22DD4A02A00C724B9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */,
 				E33E7AC82DD4A0CB00C724B9 /* BaseUIViewController.swift */,
 			);
 			path = Base;
@@ -977,6 +980,7 @@
 				E33E7ACB2DD4A0E900C724B9 /* AdConfig.swift in Sources */,
 				E33E7AC92DD4A0CB00C724B9 /* BaseUIViewController.swift in Sources */,
 				E3EC00632DD4933B00485DAF /* AppDelegate.swift in Sources */,
+				BA4EEED72F7CFAA100D20422 /* BaseMenuVC.swift in Sources */,
 				E3EC00652DD4933B00485DAF /* SceneDelegate.swift in Sources */,
 				E30816982E3C738B002E3112 /* MaxInterstitialVC.swift in Sources */,
 				E30816992E3C738B002E3112 /* MaxMainVC.swift in Sources */,
