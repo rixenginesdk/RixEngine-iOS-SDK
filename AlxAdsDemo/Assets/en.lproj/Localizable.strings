@@ -58,3 +58,8 @@
 "topOn_rewardVideo"="TopOn Ad: RewardVideo";
 "topOn_native"="TopOn Ad: native";
 "topOn_native_self_render"="TopOn Ad: native - self render";
+
+"levelPlay_ad"="LevelPlay Ad";
+"levelPlay_banner"="LevelPlay Ad: Banner";
+"levelPlay_interstitial"="LevelPlay Ad: Interstitial";
+"levelPlay_rewardVideo"="LevelPlay Ad: RewardVideo";

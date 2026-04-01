@@ -62,5 +62,15 @@ class AdConfig {
     static let TopOn_Interstitial_Ad_Id="n1gtrgjtiq3i9r"
     static let TopOn_Native_Ad_Id="n1gtrgjtiq3m0r"
     
-    
+    // MARK: - LevelPlay (Unity IronSource) Ad key&id
+    // IronSource/LevelPlay App Key
+    static let LevelPlay_App_Key = "252802e15"
+    // LevelPlay 广告位 ID（LevelPlay 平台 Ad Unit ID）
+    static let LevelPlay_Banner_Ad_Id = "2za4ei5bgqb6ay6c"
+    static let LevelPlay_Reward_Ad_Id = "2wd8vglu3ux1g383"
+    static let LevelPlay_Interstitial_Ad_Id = "q7y7331oytmeozp1"
+    // AlxAds SDK 参数（配置在 LevelPlay 平台 custom adapter 参数中）
+    static let LevelPlay_Alx_App_Id = "102781"
+    static let LevelPlay_Alx_Sid = "36057"
+    static let LevelPlay_Alx_Token = "c976563eb2f1f134222d2730294e552d"
 }

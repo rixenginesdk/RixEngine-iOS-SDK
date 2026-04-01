@@ -19,6 +19,10 @@
 		BA4EEED42F7CC1AC00D20422 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */; };
 		BA4EEED52F7CC1AC00D20422 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA4EEED72F7CFAA100D20422 /* BaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */; };
+		BA4EEEDA2F7D0BCA00D20422 /* LevelPlayMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEED92F7D0BCA00D20422 /* LevelPlayMainVC.swift */; };
+		BA4EEEDC2F7D0CA700D20422 /* LevelPlayBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEEDB2F7D0CA700D20422 /* LevelPlayBannerVC.swift */; };
+		BA4EEEDE2F7D0CD500D20422 /* LevelPlayRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEEDD2F7D0CD500D20422 /* LevelPlayRewardVideoVC.swift */; };
+		BA4EEEE02F7D0CE900D20422 /* LevelPlayInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEEDF2F7D0CE900D20422 /* LevelPlayInterstitialVC.swift */; };
 		BA7D801F2ED6A49000B78B40 /* AlxBannerXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */; };
 		BA7D80202ED6A49000B78B40 /* AlxInterstitialBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80192ED6A49000B78B40 /* AlxInterstitialBannerVC.swift */; };
 		BA7D80212ED6A49000B78B40 /* AlxRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */; };
@@ -109,6 +113,10 @@
 		BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMaxMediationAdapter.swift; sourceTree = "<group>"; };
 		BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
 		BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuVC.swift; sourceTree = "<group>"; };
+		BA4EEED92F7D0BCA00D20422 /* LevelPlayMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayMainVC.swift; sourceTree = "<group>"; };
+		BA4EEEDB2F7D0CA700D20422 /* LevelPlayBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayBannerVC.swift; sourceTree = "<group>"; };
+		BA4EEEDD2F7D0CD500D20422 /* LevelPlayRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayRewardVideoVC.swift; sourceTree = "<group>"; };
+		BA4EEEDF2F7D0CE900D20422 /* LevelPlayInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayInterstitialVC.swift; sourceTree = "<group>"; };
 		BA7D80142ED6A49000B78B40 /* AlxBannerXibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerXibVC.swift; sourceTree = "<group>"; };
 		BA7D80152ED6A49000B78B40 /* AlxBannerXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlxBannerXibVC.xib; sourceTree = "<group>"; };
 		BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerVC.swift; sourceTree = "<group>"; };
@@ -323,6 +331,17 @@
 				BADDD12D2F7A4CBB0076B5C3 /* UnityLevelPlayAdapter */,
 			);
 			path = custom_adapter;
+			sourceTree = "<group>";
+		};
+		BA4EEED82F7D0B9100D20422 /* UnityLevelPlay */ = {
+			isa = PBXGroup;
+			children = (
+				BA4EEED92F7D0BCA00D20422 /* LevelPlayMainVC.swift */,
+				BA4EEEDB2F7D0CA700D20422 /* LevelPlayBannerVC.swift */,
+				BA4EEEDD2F7D0CD500D20422 /* LevelPlayRewardVideoVC.swift */,
+				BA4EEEDF2F7D0CE900D20422 /* LevelPlayInterstitialVC.swift */,
+			);
+			path = UnityLevelPlay;
 			sourceTree = "<group>";
 		};
 		BA7D80162ED6A49000B78B40 /* BannerViewController */ = {
@@ -687,6 +706,7 @@
 		E33E7AE22DD4AA4500C724B9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BA4EEED82F7D0B9100D20422 /* UnityLevelPlay */,
 				BA7D801E2ED6A49000B78B40 /* Rixengine */,
 				E3D661DF2E79573E00913616 /* TopOn */,
 				E30816622E3719D1002E3112 /* Admob */,
@@ -921,6 +941,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4EEEE02F7D0CE900D20422 /* LevelPlayInterstitialVC.swift in Sources */,
 				E3EC00672DD4933B00485DAF /* ViewController.swift in Sources */,
 				BA3239C52F5970DD009DA008 /* AlxAdmobNetworkExtras.swift in Sources */,
 				BA3239C62F5970DD009DA008 /* AlxAdmobBaseAdapter.swift in Sources */,
@@ -949,12 +970,15 @@
 				BA85CB2A2F5989D6004C86CA /* AlxTopOnBannerEvent.swift in Sources */,
 				BA85CB2B2F5989D6004C86CA /* AlxTopOnNativeRender.swift in Sources */,
 				BA85CB2C2F5989D6004C86CA /* AlxTopOnBannerDelegate.swift in Sources */,
+				BA4EEEDA2F7D0BCA00D20422 /* LevelPlayMainVC.swift in Sources */,
 				BA85CB2D2F5989D6004C86CA /* AlxTopOnRewardVideoAdapter.swift in Sources */,
 				BA85CB2E2F5989D6004C86CA /* AlxTopOnTool.swift in Sources */,
+				BA4EEEDC2F7D0CA700D20422 /* LevelPlayBannerVC.swift in Sources */,
 				BA85CB2F2F5989D6004C86CA /* AlxTopOnBiddingRequest.swift in Sources */,
 				BA85CB302F5989D6004C86CA /* AlxTopOnRewardVideoDelegate.swift in Sources */,
 				BA85CB312F5989D6004C86CA /* AlxTopOnNativeEvent.swift in Sources */,
 				BA85CB322F5989D6004C86CA /* AlxTopOnBiddingRequestManager.swift in Sources */,
+				BA4EEEDE2F7D0CD500D20422 /* LevelPlayRewardVideoVC.swift in Sources */,
 				BA85CB332F5989D6004C86CA /* AlxTopOnBaseAdapter.swift in Sources */,
 				BA85CB342F5989D6004C86CA /* AlxTopOnNativeAdapter.swift in Sources */,
 				BA85CB352F5989D6004C86CA /* AlxTopOnDebugHelper.swift in Sources */,

@@ -23,7 +23,7 @@ class BaseMenuVC: BaseUIViewController {
 
     // MARK: - Private
 
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    public let tableView = UITableView(frame: .zero, style: .plain)
 
     // MARK: - Lifecycle
 
