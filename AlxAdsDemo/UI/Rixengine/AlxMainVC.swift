@@ -22,4 +22,19 @@ class AlxMainVC: BaseMenuVC {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Alx_ad", comment: "")
     }
+
+    override var menuAppearance: MenuAppearance { .card }
+
+    override func menuSubtitle(at index: Int) -> String? {
+        let subtitles = [
+            "Flexible formats at the top, middle or bottom of your app.",
+            "Load banner ads using Interface Builder (Xib).",
+            "Users engage with a video ad in exchange for in-app rewards.",
+            "Full-screen video ads at natural breaks or transition points.",
+            "Full-screen banner ads at natural breaks or transition points.",
+            "Ads that match the look and feel of your app."
+        ]
+        guard index >= 0, index < subtitles.count else { return nil }
+        return subtitles[index]
+    }
 }

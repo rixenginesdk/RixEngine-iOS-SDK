@@ -23,6 +23,20 @@ class TopOnMainVC: BaseMenuVC {
         navigationItem.title = NSLocalizedString("topOn_ad", comment: "")
     }
 
+    override var menuAppearance: MenuAppearance { .card }
+
+    override func menuSubtitle(at index: Int) -> String? {
+        let subtitles = [
+            "Flexible formats at the top, middle or bottom of your app.",
+            "Users engage with a video ad in exchange for in-app rewards.",
+            "Full-screen ads at natural breaks or transition points.",
+            "Native template rendering with prebuilt layouts.",
+            "Custom native rendering with full UI control."
+        ]
+        guard index >= 0, index < subtitles.count else { return nil }
+        return subtitles[index]
+    }
+
     override func setupSDK() {
         ATAPI.setLogEnabled(true)
         ATAPI.integrationChecking()
