@@ -11,14 +11,14 @@ public class AlxTopOnBiddingRequestManager:NSObject {
     
     private static let TAG = "AlxTopOnBiddingRequestManager"
     
-    // MARK: - 单例
+    // MARK: - 单例 / Singleton
     static let shared = AlxTopOnBiddingRequestManager()
    
     private override init() {
        super.init()
     }
    
-    // MARK: - 启动竞价请求
+    // MARK: - 启动竞价请求 / Start Bidding Request
     func start(with request: AlxTopOnBiddingRequest) {
        DispatchQueue.main.async {
            switch request.adType {
@@ -55,7 +55,7 @@ public class AlxTopOnBiddingRequestManager:NSObject {
         let interstitialAd = AlxInterstitialAd()
         interstitialAd.delegate = customEvent
         
-        // 缓存
+        // 缓存 / Cache
         request.customObject = interstitialAd
         AlxTopOnTool.shared.saveRequestItem(request,withUnitId: unitID)
         
@@ -81,7 +81,7 @@ public class AlxTopOnBiddingRequestManager:NSObject {
         let rewardedAd = AlxRewardVideoAd()
         rewardedAd.delegate = customEvent
         
-        // 缓存
+        // 缓存 / Cache
         request.customObject = rewardedAd
         AlxTopOnTool.shared.saveRequestItem(request,withUnitId: unitID)
         
@@ -107,7 +107,7 @@ public class AlxTopOnBiddingRequestManager:NSObject {
         let nativeAd = AlxNativeAdLoader(adUnitID: unitID)
         nativeAd.delegate = customEvent
         
-        // 缓存
+        // 缓存 / Cache
         request.customObject = nativeAd
         AlxTopOnTool.shared.saveRequestItem(request,withUnitId: unitID)
         
@@ -129,7 +129,7 @@ public class AlxTopOnBiddingRequestManager:NSObject {
             return
         }
         
-        // 提取广告尺寸信息
+        // 提取广告尺寸信息 / Extract ad size information
         var adSize = CGSize(width: 320, height: 50)
         let unitGroupModel:ATUnitGroupModel? = request.extraInfo[kATAdapterCustomInfoUnitGroupModelKey] as? ATUnitGroupModel
         if let unitGroupModel = unitGroupModel {
@@ -143,14 +143,17 @@ public class AlxTopOnBiddingRequestManager:NSObject {
         bannerAd.refreshInterval = 0
         bannerAd.translatesAutoresizingMaskIntoConstraints = false
         
-        // 缓存
+        // 缓存 / Cache
         request.customObject = bannerAd
         AlxTopOnTool.shared.saveRequestItem(request,withUnitId: unitID)
         
         bannerAd.loadAd(adUnitId: unitID)
     }
     
-    /// 竞价成功回调
+    /**
+     * 竞价成功回调。
+     * Bidding success callback.
+     */
     public static func disposeLoadSuccess(price: Double, unitID: String?) {
         NSLog("%@: disposeLoadSuccess",AlxTopOnBiddingRequestManager.TAG)
         let priceStr = String(price)
@@ -199,7 +202,10 @@ public class AlxTopOnBiddingRequestManager:NSObject {
 //        bidRequest.bidCompletion?(bidInfo, nil)
     }
 
-    /// 竞价失败回调
+    /**
+     * 竞价失败回调。
+     * Bidding failure callback.
+     */
     public static func disposeLoadFail(error: Error, unitID: String?) {
         NSLog("%@: disposeLoadFail",AlxTopOnBiddingRequestManager.TAG)
         guard let unitID = unitID else {

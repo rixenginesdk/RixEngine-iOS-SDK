@@ -7,7 +7,7 @@ import GoogleMobileAds
 import AlxAds
 
 @objc(AlxAdmobRewardVideoAdapter)
-public class AlxAdmobRewardVideoAdapter:AlxAdmobBaseAdapter,MediationRewardedAd {
+public class AlxAdmobRewardVideoAdapter: AlxAdmobBaseAdapter, MediationRewardedAd {
     
     private static let TAG = "AlxAdmobRewardVideoAdapter"
     

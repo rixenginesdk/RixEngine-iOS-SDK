@@ -8,10 +8,16 @@ import AnyThinkSDK
 @objc(AlxTopOnBiddingRequest)
 public class AlxTopOnBiddingRequest:NSObject {
     
-    /// 广告单元组模型
+    /**
+     * 广告单元组模型。
+     * Ad unit group model.
+     */
     @objc public var unitGroup: ATUnitGroupModel
     
-    /// 自定义事件
+    /**
+     * 自定义事件。
+     * Custom event.
+     */
     @objc public var customEvent: ATAdCustomEvent
     
     /// Unit ID
@@ -20,16 +26,28 @@ public class AlxTopOnBiddingRequest:NSObject {
     /// Placement ID
     @objc public var placementID: String?
     
-    /// 额外信息
+    /**
+     * 额外信息。
+     * Extra information.
+     */
     @objc public var extraInfo: [AnyHashable: Any]
     
-    /// 广告类型（横幅、插屏、激励视频等）
+    /**
+     * 广告类型（横幅、插屏、激励视频等）。
+     * Ad type (banner, interstitial, rewarded video, etc.).
+     */
     @objc public var adType: ATAdFormat
     
-    /// 竞价完成回调
+    /**
+     * 竞价完成回调。
+     * Bidding completion callback.
+     */
     @objc public var bidCompletion: ((ATBidInfo?, Error?) -> Void)?
     
-    /// 自定义对象（如 AlxInterstitialAd）
+    /**
+     * 自定义对象（如 AlxInterstitialAd）。
+     * Custom object (e.g., AlxInterstitialAd).
+     */
     @objc public var customObject: Any?
     
 //    @objc public override init() {

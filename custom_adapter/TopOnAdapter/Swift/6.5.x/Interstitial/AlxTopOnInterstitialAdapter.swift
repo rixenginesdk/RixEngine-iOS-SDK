@@ -43,7 +43,7 @@ public class AlxTopOnInterstitialAdapter: AlxTopOnBaseAdapter, ATBaseInterstitia
             NSLog("%@: loadAD: unitid = %@", AlxTopOnInterstitialAdapter.TAG, unitId)
             
             if let bidId = bidId {
-                // Bidding 场景：从缓存中取出已加载的广告
+                // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve the pre-loaded ad from cache
                 if let biddingRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitId) as? AlxTopOnBiddingRequest {
                     self.interstitialAd = biddingRequest.customObject as? AlxInterstitialAd
                     
@@ -64,7 +64,7 @@ public class AlxTopOnInterstitialAdapter: AlxTopOnBaseAdapter, ATBaseInterstitia
                 }
                 AlxTopOnTool.shared.removeRequestItem(withUnitID: unitId)
             } else {
-                // 普通加载场景
+                // 普通加载场景 / Normal loading scenario
                 self.interstitialAd = AlxInterstitialAd()
                 self.interstitialAd?.delegate = self.getInterstitialDelegate()
                 self.interstitialDelegate.interstitialAd = self.interstitialAd
@@ -131,7 +131,7 @@ public class AlxTopOnInterstitialAdapter: AlxTopOnBaseAdapter, ATBaseInterstitia
         AlxTopOnBiddingRequestManager.shared.start(with: request)
     }
     
-    // MARK: - Ad Ready Check (实例方法)
+    // MARK: - Ad Ready Check (实例方法 / Instance Method)
     
     @objc public func adReadyInterstitial(withInfo info: [AnyHashable: Any]) -> Bool {
         NSLog("%@: adReadyInterstitialWithInfo", AlxTopOnInterstitialAdapter.TAG)
@@ -145,7 +145,7 @@ public class AlxTopOnInterstitialAdapter: AlxTopOnBaseAdapter, ATBaseInterstitia
         return false
     }
     
-    // MARK: - Show Ad (实例方法)
+    // MARK: - Show Ad (实例方法 / Instance Method)
     
     @objc(showInterstitialInViewController:)
     public func showInterstitial(in viewController: UIViewController) {

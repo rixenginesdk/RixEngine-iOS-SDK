@@ -20,10 +20,10 @@ public class AlxTopOnInterstitialDelegate: NSObject, AlxInterstitialAdDelegate {
     public func interstitialAdLoad(_ ad: AlxInterstitialAd) {
         NSLog("%@: interstitialAdLoad", AlxTopOnInterstitialDelegate.TAG)
         
-        // 保存广告对象引用
+        // 保存广告对象引用 / Save the ad object reference
         self.interstitialAd = ad
         
-        // 获取价格（用于 C2S Bidding）
+        // 获取价格（用于 C2S Bidding）/ Get price (for C2S Bidding)
         let price = ad.getPrice()
         var adExtra: [AnyHashable: Any] = [:]
         
@@ -34,10 +34,10 @@ public class AlxTopOnInterstitialDelegate: NSObject, AlxInterstitialAdDelegate {
             NSLog("%@: interstitialAdLoad: price = %@", AlxTopOnInterstitialDelegate.TAG, priceStr)
         }
         
-        // 关键：将广告对象传给 TopOn SDK
+        // 关键：将广告对象传给 TopOn SDK / Key: pass the ad object to TopOn SDK
         adExtra[kATAdAssetsCustomObjectKey] = ad
         
-        // 调用 adStatusBridge 通知加载成功
+        // 调用 adStatusBridge 通知加载成功 / Call adStatusBridge to notify load success
         self.notifyInterstitialLoaded(adExtra: adExtra)
     }
     

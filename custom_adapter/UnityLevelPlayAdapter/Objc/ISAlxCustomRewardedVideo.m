@@ -2,7 +2,7 @@
 //  ISAlxCustomRewardedVideo.m
 //  AlxAdsOCDemo
 //
-//  LevelPlay RewardedVideo 广告适配器
+//  LevelPlay RewardedVideo 广告适配器 / LevelPlay RewardedVideo ad adapter
 //
 
 #import "ISAlxCustomRewardedVideo.h"
@@ -19,7 +19,10 @@ static NSString *const TAG = @"ISAlxCustomRewardedVideo";
 
 #pragma mark - ISBaseRewardedVideo
 
-/// LevelPlay 请求加载激励视频广告
+/**
+ * LevelPlay 请求加载激励视频广告。
+ * LevelPlay requests to load rewarded video ad.
+ */
 - (void)loadAdWithAdData:(ISAdData *)adData delegate:(id<ISRewardedVideoAdDelegate>)delegate {
     NSLog(@"%@: loadAd", TAG);
     self.adDelegate = delegate;
@@ -43,14 +46,20 @@ static NSString *const TAG = @"ISAlxCustomRewardedVideo";
     [self.rewardedAd loadAdWithAdUnitId:unitId];
 }
 
-/// LevelPlay 检查广告是否就绪
+/**
+ * LevelPlay 检查广告是否就绪。
+ * LevelPlay checks if the ad is ready.
+ */
 - (BOOL)isAdAvailableWithAdData:(ISAdData *)adData {
     BOOL ready = self.rewardedAd != nil && [self.rewardedAd isReady];
     NSLog(@"%@: isAdAvailable = %@", TAG, ready ? @"YES" : @"NO");
     return ready;
 }
 
-/// LevelPlay 展示激励视频广告
+/**
+ * LevelPlay 展示激励视频广告。
+ * LevelPlay shows rewarded video ad.
+ */
 - (void)showAdWithViewController:(UIViewController *)viewController
                           adData:(ISAdData *)adData
                         delegate:(id<ISRewardedVideoAdDelegate>)delegate {

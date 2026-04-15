@@ -2,8 +2,8 @@
 //  ISAlxCustomAdapter.m
 //  AlxAdsOCDemo
 //
-//  LevelPlay (Unity IronSource) 自定义网络基础适配器
-//  文档参考: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
+//  LevelPlay (Unity IronSource) 自定义网络基础适配器 / LevelPlay (Unity IronSource) custom network base adapter
+//  文档参考 / Documentation reference: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
 //
 
 #import "ISAlxCustomAdapter.h"
@@ -26,9 +26,14 @@ static BOOL _isInitialized = NO;
 
 #pragma mark - ISBaseNetworkAdapter
 
-/// LevelPlay 会在初始化流程中调用此方法（可能被多次调用）
-/// adData.configuration 包含 LevelPlay 平台配置的 app 级参数:
-///   appid / sid / token
+/**
+ * LevelPlay 会在初始化流程中调用此方法（可能被多次调用）。
+ * LevelPlay calls this method during initialization flow (may be called multiple times).
+ *
+ * adData.configuration 包含 LevelPlay 平台配置的 app 级参数:
+ * adData.configuration contains app-level parameters configured on the LevelPlay platform:
+ *   appid / sid / token
+ */
 - (void)init:(ISAdData *)adData delegate:(id<ISNetworkInitializationDelegate>)delegate {
     NSLog(@"%@: init", TAG);
 
@@ -50,7 +55,7 @@ static BOOL _isInitialized = NO;
         return;
     }
 
-    // 主线程初始化 AlxAds SDK
+    // 主线程初始化 AlxAds SDK / Initialize AlxAds SDK on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"%@: initializeSDK token=%@ sid=%@ appid=%@", TAG, token, sid, appid);
         [AlxSdk initializeSDKWithToken:token sid:sid appId:appid];

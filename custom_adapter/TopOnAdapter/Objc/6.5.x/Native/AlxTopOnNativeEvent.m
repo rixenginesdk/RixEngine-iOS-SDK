@@ -31,7 +31,7 @@ static NSString *const TAG = @"AlxTopOnNativeEvent";
     assetDic[kATAdAssetsCustomEventKey] = self;
     assetDic[kATAdAssetsCustomObjectKey] = nativeAd;
     
-    // 原生广告自渲染：数据添加
+    // 原生广告自渲染：数据添加 / Native ad self-rendering: populate data
     assetDic[kATNativeADAssetsIsExpressAdKey] = @NO;
     assetDic[kATNativeADAssetsMainTitleKey] = nativeAd.title ?: @"";
     assetDic[kATNativeADAssetsMainTextKey] = nativeAd.desc ?: @"";

@@ -2,7 +2,7 @@
 //  AlxTopOnNativeObject.swift
 //  AlxAdsDemo
 //
-//  关键：父类属性是 readwrite，必须提供 setter
+//  关键：父类属性是 readwrite，必须提供 setter / Key: superclass properties are readwrite, so setters must be provided
 //
 
 import Foundation
@@ -15,18 +15,18 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public var nativeAd: AlxNativeAd?
     @objc public weak var nativeEvent: AlxTopOnNativeEvent?
     
-    // ⚠️ 缓存 mediaView 实例，避免重复创建
+    // ⚠️ 缓存 mediaView 实例，避免重复创建 / Cache the mediaView instance to avoid repeated creation
     private var _cachedMediaView: AlxMediaView?
     
     // MARK: - Override Readwrite Properties
-    // ⚠️ 关键：父类是 readwrite，必须提供 getter 和 setter
+    // ⚠️ 关键：父类是 readwrite，必须提供 getter 和 setter / Key: superclass is readwrite, must provide both getter and setter
     
     @objc public override var isExpressAd: Bool {
         get {
             return false
         }
         set {
-            // 不需要实现，父类属性我们不修改
+            // 不需要实现，父类属性我们不修改 / No implementation needed, we don't modify the superclass property
         }
     }
     
@@ -37,7 +37,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return result
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     
@@ -48,7 +48,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return result
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     
@@ -59,7 +59,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return result
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     
@@ -81,7 +81,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return result
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     
@@ -92,7 +92,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return result
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     
@@ -111,7 +111,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return result
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     
@@ -119,13 +119,13 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
         get {
             NSLog("AlxTopOnNativeObject: mediaView requested")
             
-            // 如果已经创建过，直接返回缓存的实例
+            // 如果已经创建过，直接返回缓存的实例 / If already created, return the cached instance directly
             if let cachedView = _cachedMediaView {
                 NSLog("AlxTopOnNativeObject: returning cached mediaView")
                 return cachedView
             }
             
-            // 否则创建新的 mediaView
+            // 否则创建新的 mediaView / Otherwise create a new mediaView
             if let mediaContent = nativeAd?.mediaContent {
                 NSLog("AlxTopOnNativeObject: creating new mediaView")
                 let mediaView = AlxMediaView()
@@ -138,7 +138,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return nil
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     
@@ -152,7 +152,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return result
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     
@@ -166,7 +166,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             return result
         }
         set {
-            // 不需要实现
+            // 不需要实现 / No implementation needed
         }
     }
     

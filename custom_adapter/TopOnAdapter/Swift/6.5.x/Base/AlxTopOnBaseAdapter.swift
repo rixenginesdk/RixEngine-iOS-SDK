@@ -2,7 +2,7 @@
 //  AlxTopOnBaseAdapter.swift
 //  AlxAdsDemo
 //
-//  直接翻译 OC 代码
+//  直接翻译 OC 代码 / Direct translation from OC code
 //
 
 import Foundation

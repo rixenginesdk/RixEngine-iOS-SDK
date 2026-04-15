@@ -28,15 +28,15 @@ public class AlxTopOnNativeDelegate: NSObject, AlxNativeAdLoaderDelegate, AlxNat
             return
         }
         
-        // ⚠️ 创建 AlxTopOnNativeObject 对象
+        // ⚠️ 创建 AlxTopOnNativeObject 对象 / Create AlxTopOnNativeObject instance
         let nativeObject = AlxTopOnNativeObject()
         nativeObject.nativeAd = nativeAd
         nativeObject.nativeEvent = self.nativeEvent
         
-        // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调
+        // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调 / Key: set nativeAd's delegate to receive impression, click, and close callbacks
         nativeAd.delegate = self
         
-        // 获取价格（用于 C2S Bidding）
+        // 获取价格（用于 C2S Bidding）/ Get price (for C2S Bidding)
         let price = nativeAd.getPrice()
         var adExtra: [AnyHashable: Any] = [:]
         
@@ -47,7 +47,7 @@ public class AlxTopOnNativeDelegate: NSObject, AlxNativeAdLoaderDelegate, AlxNat
             NSLog("%@: nativeAdLoaded: price = %@", AlxTopOnNativeDelegate.TAG, priceStr)
         }
         
-        // ⚠️ 传递对象数组（使用动态调用）
+        // ⚠️ 传递对象数组（使用动态调用）/ Pass the object array (using dynamic invocation)
         self.notifyNativeAdLoaded(objects: [nativeObject], adExtra: adExtra)
     }
     

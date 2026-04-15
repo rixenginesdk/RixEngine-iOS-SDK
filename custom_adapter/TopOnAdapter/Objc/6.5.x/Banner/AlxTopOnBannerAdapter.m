@@ -13,12 +13,18 @@
 
 static NSString *const TAG = @"AlxTopOnBannerAdapter";
 
-// 告诉编译器：这个类其实是会这个协议的
+/**
+ * 告诉编译器：这个类其实是会这个协议的。
+ * Tell the compiler that this class actually conforms to this protocol.
+ */
 @interface ATBannerAdStatusBridge (AlxDelegate) <AlxBannerViewAdDelegate>
 @end
 
 @interface AlxTopOnBannerAdapter ()
-// Alx SDK 的 banner 广告对象
+/**
+ * Alx SDK 的 banner 广告对象。
+ * Alx SDK banner ad object.
+ */
 @property (nonatomic, strong) AlxBannerAdView *bannerAd;
 // delegate
 @property (nonatomic, strong) AlxTopOnBannerDelegate *bannerDelegate;
@@ -27,7 +33,10 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
 @implementation AlxTopOnBannerAdapter
 
 #pragma mark - lazy load
-// 初始化bannerDelegate属性
+/**
+ * 初始化bannerDelegate属性。
+ * Initialize the bannerDelegate property.
+ */
 - (AlxTopOnBannerDelegate *)bannerDelegate {
     if (_bannerDelegate == nil) {
         _bannerDelegate = [[AlxTopOnBannerDelegate alloc] init];
@@ -37,7 +46,10 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
 }
 
 #pragma mark - Ad load
-// 实现广告加载方法
+/**
+ * 实现广告加载方法。
+ * Implement the ad loading method.
+ */
 - (void)loadADWithArgument:(ATAdMediationArgument *)argument {
     NSLog(@"%@: loadAD", TAG);
     NSLog(@"%@: loadAD: isMainThread=%@", TAG, [NSThread isMainThread] ? @"YES" : @"NO");
@@ -45,7 +57,8 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
     NSString *bidId = argument.serverContentDic[kATAdapterCustomInfoBuyeruIdKey];
     NSLog(@"%@: loadAD: bidId=%@", TAG, bidId ?: @"空");
     
-    dispatch_async(dispatch_get_main_queue(), ^{ // 文档要求，通常需要在主线程执行
+    // 文档要求，通常需要在主线程执行 / As required by the documentation, this usually needs to run on the main thread
+    dispatch_async(dispatch_get_main_queue(), ^{
         NSString *uuitKeyStr = [AlxTopOnBaseManager unitID];
         NSString *uuitId = argument.serverContentDic[uuitKeyStr];
         if (!uuitId || uuitId.length == 0) {
@@ -57,7 +70,7 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
         NSLog(@"%@: loadAD: uuitid = %@", TAG, uuitId);
         
         if (bidId) {
-            // Bidding 场景：从缓存中取出已加载的广告
+            // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve the pre-loaded ad from cache
             AlxTopOnBiddingRequest *biddingRequest = [[AlxTopOnTool shared] getRequestItemWithUnitID:uuitId];
             if (biddingRequest) {
                 self.bannerAd = (AlxBannerAdView *)biddingRequest.customObject;
@@ -75,11 +88,12 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
                 NSError *error = [NSError errorWithDomain:@"AlxTopOnAdapter" code:-100 userInfo:@{NSLocalizedDescriptionKey: @"Bid request not found"}];
                 [self.adStatusBridge atOnAdLoadFailed:error adExtra:nil];
             }
-            // ⚠️ 注意：移除缓存
+            // ⚠️ 注意：移除缓存 / ⚠️ Note: Remove from cache
             [[AlxTopOnTool shared] removeRequestItemWithUnitID:uuitId];
         } else {
             ATUnitGroupModel *unitGroupModel = argument.serverContentDic[kATAdapterCustomInfoUnitGroupModelKey];
-            //通过argument对象获取必要的加载信息，如尺寸等，创建好必要的参数，准备传入给第三方的横幅加载方法，开始加载广告
+            // 通过argument对象获取必要的加载信息，如尺寸等，创建好必要的参数，准备传入给第三方的横幅加载方法，开始加载广告
+            // Get necessary loading info (e.g. size) from the argument object, prepare parameters, and pass them to the third-party banner loading method to start loading the ad
             CGSize bannerSize = CGSizeMake(320, 50);
             if (!CGSizeEqualToSize(argument.bannerSize, CGSizeZero) && unitGroupModel) {
                 bannerSize = argument.bannerSize;
@@ -89,6 +103,7 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
             self.bannerAd = [[AlxBannerAdView alloc] initWithFrame:CGRectMake(0, 0, bannerSize.width, bannerSize.height)];
             
             // ⚠️ 注意：delegate 应该设置为 bannerDelegate，而不是 adStatusBridge
+            // ⚠️ Note: delegate should be set to bannerDelegate, not adStatusBridge
             self.bannerAd.delegate = self.bannerDelegate;
             self.bannerAd.refreshInterval = 0;
             self.bannerAd.translatesAutoresizingMaskIntoConstraints = NO;

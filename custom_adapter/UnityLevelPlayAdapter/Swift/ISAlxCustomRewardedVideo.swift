@@ -2,8 +2,8 @@
 //  ISAlxCustomRewardedVideo.swift
 //  AlxAdsDemo
 //
-//  LevelPlay RewardedVideo 广告适配器
-//  文档参考: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
+//  LevelPlay RewardedVideo 广告适配器 / LevelPlay RewardedVideo Ad Adapter
+//  文档参考 / Documentation: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
 //
 
 import Foundation

@@ -20,8 +20,12 @@ public class AlxTopOnNativeRender: ATNativeRenderer {
         super.init(configuraton: configuration, adView: adView)
     }
     
-    /// 将资源渲染到相关的广告视图上。
-    /// 您可以根据广告平台的要求，做渲染之后再做一些注册点击事件的功能
+    /**
+     * 将资源渲染到相关的广告视图上。
+     * Render resources onto the related ad view.
+     * 您可以根据广告平台的要求，做渲染之后再做一些注册点击事件的功能。
+     * You can register click events after rendering according to the ad platform's requirements.
+     */
     @objc public override func renderOffer(_ offer: ATNativeADCache) {
         super.renderOffer(offer)
         NSLog("%@: renderOffer",AlxTopOnNativeRender.TAG)

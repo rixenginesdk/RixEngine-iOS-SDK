@@ -11,7 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AlxTopOnInterstitialDelegate : NSObject <AlxInterstitialAdDelegate>
 
 @property (nonatomic, strong) ATInterstitialAdStatusBridge *adStatusBridge;
-@property (nonatomic, weak) AlxInterstitialAd *interstitialAd;  // 保存广告对象引用
+/**
+ * 保存广告对象引用。
+ * Save ad object reference.
+ */
+@property (nonatomic, weak) AlxInterstitialAd *interstitialAd;
 
 @end
 

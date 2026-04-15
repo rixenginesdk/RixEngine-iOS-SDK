@@ -19,7 +19,11 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
 @property (nonatomic, strong) AlxNativeAdLoader *nativeAdLoader;
 @property (nonatomic, strong) AlxNativeAd *nativeAd;
 @property (nonatomic, strong) AlxTopOnNativeDelegate *nativeDelegate;
-@property (nonatomic, strong) AlxTopOnNativeEvent *nativeEvent;  // 用于传递给 TopOn SDK
+/**
+ * 用于传递给 TopOn SDK。
+ * For passing to TopOn SDK.
+ */
+@property (nonatomic, strong) AlxTopOnNativeEvent *nativeEvent;
 @end
 
 @implementation AlxTopOnNativeAdapter
@@ -29,7 +33,7 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
     if (_nativeDelegate == nil) {
         _nativeDelegate = [[AlxTopOnNativeDelegate alloc] init];
         _nativeDelegate.adStatusBridge = self.adStatusBridge;
-        _nativeDelegate.nativeEvent = self.nativeEvent;  // 设置 Event 引用
+        _nativeDelegate.nativeEvent = self.nativeEvent;  // 设置 Event 引用 / Set Event reference
     }
     return _nativeDelegate;
 }
@@ -37,6 +41,7 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
 - (AlxTopOnNativeEvent *)nativeEvent {
     if (_nativeEvent == nil) {
         // 创建一个 Event 对象用于传递给 TopOn SDK
+        // Create an Event object for passing to TopOn SDK
         _nativeEvent = [[AlxTopOnNativeEvent alloc] initWithInfo:@{} localInfo:@{}];
     }
     return _nativeEvent;
@@ -65,6 +70,7 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
         
         if (bidId) {
             // Bidding 场景：从缓存中取出已加载的广告
+            // Bidding scenario: retrieve the pre-loaded ad from cache
             AlxTopOnBiddingRequest *biddingRequest = [[AlxTopOnTool shared] getRequestItemWithUnitID:unitId];
             if (biddingRequest) {
                 self.nativeAd = (AlxNativeAd *)biddingRequest.customObject;
@@ -73,14 +79,16 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
                     NSLog(@"%@: loadAD: bid ad loaded, creating native object", TAG);
                     
                     // ⚠️ 正确方式：创建 AlxTopOnNativeObject 对象
+                    // ⚠️ Correct approach: create an AlxTopOnNativeObject instance
                     AlxTopOnNativeObject *nativeObject = [[AlxTopOnNativeObject alloc] init];
                     nativeObject.nativeAd = self.nativeAd;
                     nativeObject.nativeEvent = self.nativeEvent;
                     
                     // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调
+                    // ✅ Key: set nativeAd's delegate to receive impression, click, and close callbacks
                     self.nativeAd.delegate = self.nativeDelegate;
                     
-                    // ⚠️ 传递对象数组
+                    // ⚠️ 传递对象数组 / ⚠️ Pass the object array
                     [self.adStatusBridge atOnNativeAdLoadedArray:@[nativeObject] adExtra:@{}];
                 } else {
                     NSLog(@"%@: loadAD: bid ad object is empty", TAG);
@@ -94,7 +102,7 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
             }
             [[AlxTopOnTool shared] removeRequestItemWithUnitID:unitId];
         } else {
-            // 普通加载场景
+            // 普通加载场景 / Normal loading scenario
             self.nativeAdLoader = [[AlxNativeAdLoader alloc] initWithAdUnitID:unitId];
             self.nativeAdLoader.delegate = self.nativeDelegate;
             
@@ -133,10 +141,13 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
     [[AlxTopOnBiddingRequestManager shared] startWithRequest:request];
 }
 
-// 实现协议中的类方法
+/**
+ * 实现协议中的类方法。
+ * Implement the class method defined in the protocol.
+ */
 + (Class)rendererClass {
     NSLog(@"%@: rendererClass", TAG);
-    // 返回对应的渲染类
+    // 返回对应的渲染类 / Return the corresponding renderer class
     return [AlxTopOnNativeRender class];
 }
 

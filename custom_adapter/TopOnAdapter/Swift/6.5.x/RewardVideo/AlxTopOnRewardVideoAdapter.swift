@@ -43,7 +43,7 @@ public class AlxTopOnRewardVideoAdapter: AlxTopOnBaseAdapter, ATBaseRewardedAdap
             NSLog("%@: loadAD: unitid = %@", AlxTopOnRewardVideoAdapter.TAG, unitId)
             
             if let bidId = bidId {
-                // Bidding 场景：从缓存中取出已加载的广告
+                // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve the pre-loaded ad from cache
                 if let biddingRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitId) as? AlxTopOnBiddingRequest {
                     self.rewardedAd = biddingRequest.customObject as? AlxRewardVideoAd
                     
@@ -64,7 +64,7 @@ public class AlxTopOnRewardVideoAdapter: AlxTopOnBaseAdapter, ATBaseRewardedAdap
                 }
                 AlxTopOnTool.shared.removeRequestItem(withUnitID: unitId)
             } else {
-                // 普通加载场景
+                // 普通加载场景 / Normal loading scenario
                 self.rewardedAd = AlxRewardVideoAd()
                 self.rewardedAd?.delegate = self.getRewardVideoDelegate()
                 self.rewardVideoDelegate.rewardedAd = self.rewardedAd
@@ -131,7 +131,7 @@ public class AlxTopOnRewardVideoAdapter: AlxTopOnBaseAdapter, ATBaseRewardedAdap
         AlxTopOnBiddingRequestManager.shared.start(with: request)
     }
     
-    // MARK: - Ad Ready Check (实例方法)
+    // MARK: - Ad Ready Check (实例方法 / Instance Method)
     
     @objc public func adReadyRewarded(withInfo info: [AnyHashable: Any]) -> Bool {
         NSLog("%@: adReadyRewardedWithInfo", AlxTopOnRewardVideoAdapter.TAG)
@@ -145,7 +145,7 @@ public class AlxTopOnRewardVideoAdapter: AlxTopOnBaseAdapter, ATBaseRewardedAdap
         return false
     }
     
-    // MARK: - Show Ad (实例方法)
+    // MARK: - Show Ad (实例方法 / Instance Method)
     
     @objc(showRewardedVideoInViewController:)
     public func showRewardedVideo(in viewController: UIViewController) {

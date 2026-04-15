@@ -10,13 +10,20 @@
 
 #pragma mark - ATCustomNetworkNativeAd Override Methods
 
-// ⚠️ 注意：TopOn SDK 会调用这个方法
+/**
+ * ⚠️ 注意：TopOn SDK 会调用这个方法。
+ * ⚠️ Note: TopOn SDK will call this method.
+ */
 - (BOOL)isExpressAd {
     // 自渲染广告返回 NO，模板广告返回 YES
+    // Return NO for self-rendering ads, YES for template ads
     return NO;
 }
 
-// TopOn SDK 会从这些方法获取数据，而不是直接访问属性
+/**
+ * TopOn SDK 会从这些方法获取数据，而不是直接访问属性。
+ * TopOn SDK retrieves data from these methods, not by directly accessing properties.
+ */
 - (NSString *)title {
     NSString *result = self.nativeAd.title ?: @"";
     NSLog(@"AlxTopOnNativeObject: title = %@", result);
@@ -72,12 +79,13 @@
     NSLog(@"AlxTopOnNativeObject: mediaView requested");
     
     // 如果已经创建过，直接返回缓存的实例，避免 TopOn 多次调用时返回不同对象
+    // If already created, return the cached instance to avoid returning different objects on repeated TopOn calls
     if (self.cachedMediaView) {
         NSLog(@"AlxTopOnNativeObject: returning cached mediaView");
         return self.cachedMediaView;
     }
     
-    // 否则创建新的 mediaView 并缓存
+    // 否则创建新的 mediaView 并缓存 / Otherwise create a new mediaView and cache it
     if (self.nativeAd.mediaContent) {
         NSLog(@"AlxTopOnNativeObject: creating mediaView");
         AlxMediaView *mediaView = [[AlxMediaView alloc] init];
@@ -122,6 +130,7 @@
     
     if (container) {
         // ⚠️ 从 registerArgument 获取 viewController
+        // ⚠️ Get viewController from registerArgument
         if (registerArgument.viewController) {
             self.nativeAd.rootViewController = registerArgument.viewController;
         }

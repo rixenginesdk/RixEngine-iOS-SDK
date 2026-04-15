@@ -105,21 +105,21 @@ public class AlxAdmobBaseAdapter: NSObject,MediationAdapter {
             return (success:false,error:errorStr)
         }
         
-        // 从 parameters 中获取参数字符串
+        // 从 parameters 中获取参数字符串 / Get the parameter string from parameters
         guard let paramsStr = parameters["parameter"] as? String else {
             let errorStr = "parameter string is missing or not a string"
             NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)
             return (success: false, error: errorStr)
         }
         
-        // 将 JSON 字符串转换为Data类型
+        // 将 JSON 字符串转换为Data类型 / Convert the JSON string to Data type
         guard let admobJSONData = paramsStr.data(using: .utf8) else {
             let errorStr = "failed to convert parameter string to data"
             NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)
             return (success: false, error: errorStr)
         }
         
-        // 将Data类型转为JSON字典
+        // 将Data类型转为JSON字典 / Convert Data type to JSON dictionary
         guard let paramsDict = (try? JSONSerialization.jsonObject(with: admobJSONData, options: [])) as? [String: Any] else {
             let errorStr = "failed to parse parameter JSON"
             NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)

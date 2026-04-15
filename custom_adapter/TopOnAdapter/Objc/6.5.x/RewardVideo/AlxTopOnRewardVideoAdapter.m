@@ -51,14 +51,14 @@ static NSString *const TAG = @"AlxTopOnRewardVideoAdapter";
         NSLog(@"%@: loadAD: unitid = %@", TAG, unitId);
         
         if (bidId) {
-            // Bidding 场景：从缓存中取出已加载的广告
+            // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve the pre-loaded ad from cache
             AlxTopOnBiddingRequest *biddingRequest = [[AlxTopOnTool shared] getRequestItemWithUnitID:unitId];
             if (biddingRequest) {
                 self.rewardedAd = (AlxRewardVideoAd *)biddingRequest.customObject;
                 
                 if (self.rewardedAd) {
                     NSLog(@"%@: loadAD: bid ad loaded, notify success", TAG);
-                    // ⚠️ 注意：将广告对象传给 TopOn SDK
+                    // ⚠️ 注意：将广告对象传给 TopOn SDK / Note: pass the ad object to TopOn SDK
                     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
                     adExtra[kATAdAssetsCustomObjectKey] = self.rewardedAd;
                     [self.adStatusBridge atOnRewardedAdLoadedExtra:adExtra];
@@ -74,10 +74,10 @@ static NSString *const TAG = @"AlxTopOnRewardVideoAdapter";
             }
             [[AlxTopOnTool shared] removeRequestItemWithUnitID:unitId];
         } else {
-            // 普通加载场景
+            // 普通加载场景 / Normal loading scenario
             self.rewardedAd = [[AlxRewardVideoAd alloc] init];
             self.rewardedAd.delegate = self.rewardVideoDelegate;
-            // 设置 Delegate 的广告对象引用
+            // 设置 Delegate 的广告对象引用 / Set the delegate's ad object reference
             self.rewardVideoDelegate.rewardedAd = self.rewardedAd;
             
             NSLog(@"%@: start loading ad with unitId: %@", TAG, unitId);
@@ -114,13 +114,13 @@ static NSString *const TAG = @"AlxTopOnRewardVideoAdapter";
     [[AlxTopOnBiddingRequestManager shared] startWithRequest:request];
 }
 
-#pragma mark - Ad Ready Check (实例方法)
+#pragma mark - Ad Ready Check (实例方法 / Instance Method)
 - (BOOL)adReadyRewardedWithInfo:(NSDictionary *)info {
     NSLog(@"%@: adReadyRewardedWithInfo", TAG);
     
-    // 检查广告对象是否准备好
+    // 检查广告对象是否准备好 / Check if the ad object is ready
     if (self.rewardedAd) {
-        // 可以调用 isReady 或其他检查方法
+        // 可以调用 isReady 或其他检查方法 / Can call isReady or other check methods
         NSLog(@"%@: adReady = YES", TAG);
         return YES;
     }
@@ -129,13 +129,13 @@ static NSString *const TAG = @"AlxTopOnRewardVideoAdapter";
     return NO;
 }
 
-#pragma mark - Show Ad (实例方法)
+#pragma mark - Show Ad (实例方法 / Instance Method)
 - (void)showRewardedVideoInViewController:(UIViewController *)viewController {
     NSLog(@"%@: showRewardedVideoInViewController", TAG);
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.rewardedAd) {
-            // 展示广告
+            // 展示广告 / Show the ad
             [self.rewardedAd showAdWithPresent:viewController];
             NSLog(@"%@: ad shown", TAG);
         } else {

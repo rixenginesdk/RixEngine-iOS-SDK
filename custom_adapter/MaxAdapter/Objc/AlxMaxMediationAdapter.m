@@ -404,7 +404,10 @@ static BOOL isInitialized = NO;
 
 #pragma mark - AlxNativeAdLoaderDelegate
 
-// Swift 协议 func nativeAdLoaded(didReceive:) 桥接到 OC 后 selector 为 nativeAdLoadedWithDidReceive:
+/**
+ * Swift 协议 func nativeAdLoaded(didReceive:) 桥接到 OC 后 selector 为 nativeAdLoadedWithDidReceive:。
+ * Swift protocol func nativeAdLoaded(didReceive:) is bridged to OC with selector nativeAdLoadedWithDidReceive:.
+ */
 - (void)nativeAdLoadedWithDidReceive:(NSArray<AlxNativeAd *> *)ads {
     NSLog(@"%@: nativeAdLoaded", TAG);
     
@@ -424,7 +427,10 @@ static BOOL isInitialized = NO;
     [self.nativeAdDelegate didLoadAdForNativeAd:maxNativeAd withExtraInfo:nil];
 }
 
-// Swift 协议 func nativeAdFailToLoad(didFailWithError:) 桥接到 OC 后 selector 为 nativeAdFailToLoadWithDidFailWithError:
+/**
+ * Swift 协议 func nativeAdFailToLoad(didFailWithError:) 桥接到 OC 后 selector 为 nativeAdFailToLoadWithDidFailWithError:。
+ * Swift protocol func nativeAdFailToLoad(didFailWithError:) is bridged to OC with selector nativeAdFailToLoadWithDidFailWithError:.
+ */
 - (void)nativeAdFailToLoadWithDidFailWithError:(NSError *)error {
     NSLog(@"%@: nativeAdFailToLoad", TAG);
     MAAdapterError *adapterError = [MAAdapterError errorWithCode:error.code errorString:error.localizedDescription];

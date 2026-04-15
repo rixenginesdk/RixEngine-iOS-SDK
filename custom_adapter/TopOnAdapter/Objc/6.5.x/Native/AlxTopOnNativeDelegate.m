@@ -13,7 +13,10 @@ static NSString *const TAG = @"AlxTopOnNativeDelegate";
 
 #pragma mark - AlxNativeAdLoaderDelegate
 
-// 正确的 Objective-C 函数（对应Swift 的 nativeAdLoaded(didReceive:)）
+/**
+ * 正确的 Objective-C 函数（对应Swift 的 nativeAdLoaded(didReceive:)）。
+ * Correct Objective-C method (corresponds to Swift's nativeAdLoaded(didReceive:)).
+ */
 - (void)nativeAdLoadedWithDidReceive:(NSArray<AlxNativeAd *> *)ads {
     NSLog(@"%@: nativeAdLoadedWithDidReceive", TAG);
     
@@ -27,15 +30,18 @@ static NSString *const TAG = @"AlxTopOnNativeDelegate";
     }
     
     // ⚠️ 正确的使用方式：创建 AlxTopOnNativeObject 对象
+    // ⚠️ Correct usage: create an AlxTopOnNativeObject instance
     // TopOn SDK 会通过 getter 方法获取数据，而不是直接访问属性
+    // TopOn SDK retrieves data via getter methods, not by directly accessing properties
     AlxTopOnNativeObject *nativeObject = [[AlxTopOnNativeObject alloc] init];
     nativeObject.nativeAd = nativeAd;
     nativeObject.nativeEvent = self.nativeEvent;
     
     // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调
+    // ✅ Key: set nativeAd's delegate to receive impression, click, and close callbacks
     nativeAd.delegate = self;
     
-    // 获取价格（用于 C2S Bidding）
+    // 获取价格（用于 C2S Bidding） / Get the price (for C2S Bidding)
     double price = [nativeAd getPrice];
     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
     
@@ -47,10 +53,14 @@ static NSString *const TAG = @"AlxTopOnNativeDelegate";
     }
     
     // ⚠️ 传递对象数组（TopOn SDK 会调用对象的方法获取数据）
+    // ⚠️ Pass the object array (TopOn SDK will call the object's methods to retrieve data)
     [self.adStatusBridge atOnNativeAdLoadedArray:@[nativeObject] adExtra:adExtra];
 }
 
-// 正确的 Objective-C 函数（Swift 的 nativeAdFailToLoad(didFailWithError:)）
+/**
+ * 正确的 Objective-C 函数（Swift 的 nativeAdFailToLoad(didFailWithError:)）。
+ * Correct Objective-C method (Swift's nativeAdFailToLoad(didFailWithError:)).
+ */
 - (void)nativeAdFailToLoadWithDidFailWithError:(NSError *)error {
     NSLog(@"%@: nativeAdFailToLoadWithDidFailWithError: %@", TAG, error.localizedDescription);
     [self.adStatusBridge atOnAdLoadFailed:error adExtra:@{}];

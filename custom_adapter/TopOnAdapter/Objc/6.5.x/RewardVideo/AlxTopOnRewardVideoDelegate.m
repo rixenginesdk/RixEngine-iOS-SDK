@@ -12,10 +12,10 @@ static NSString *const TAG = @"AlxTopOnRewardVideoDelegate";
 - (void)rewardVideoAdLoad:(AlxRewardVideoAd *)ad {
     NSLog(@"%@: rewardVideoAdLoad", TAG);
     
-    // 保存广告对象引用
+    // 保存广告对象引用 / Save ad object reference
     self.rewardedAd = ad;
     
-    // 获取价格（用于 C2S Bidding）
+    // 获取价格（用于 C2S Bidding）/ Get the price (for C2S Bidding)
     double price = [ad getPrice];
     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
     
@@ -26,10 +26,10 @@ static NSString *const TAG = @"AlxTopOnRewardVideoDelegate";
         NSLog(@"%@: rewardVideoAdLoad: price = %@", TAG, priceStr);
     }
     
-    // ⚠️ 注意：将广告对象传给 TopOn SDK
+    // ⚠️ 注意：将广告对象传给 TopOn SDK / Note: pass the ad object to TopOn SDK
     adExtra[kATAdAssetsCustomObjectKey] = ad;
     
-    // 使用正确的 RewardVideo 加载完成方法
+    // 使用正确的 RewardVideo 加载完成方法 / Use the correct RewardVideo load completion method
     [self.adStatusBridge atOnRewardedAdLoadedExtra:adExtra];
 }
 
@@ -65,7 +65,7 @@ static NSString *const TAG = @"AlxTopOnRewardVideoDelegate";
 
 - (void)rewardVideoAdReward:(AlxRewardVideoAd *)ad {
     NSLog(@"%@: rewardVideoAdReward", TAG);
-    // ✅ 修复：使用正确的奖励回调方法
+    // ✅ 修复：使用正确的奖励回调方法 / Fix: use the correct reward callback method
     [self.adStatusBridge atOnRewardedVideoAdRewarded];
 }
 

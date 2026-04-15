@@ -29,7 +29,10 @@ public class AlxTopOnInterstitialAdapter: ATAdAdapter {
         }
     }
     
-    /// 加载广告
+    /**
+     * 加载广告。
+     * Load ad.
+     */
     @objc public func loadAD(withInfo serverInfo: [AnyHashable: Any],
                              localInfo: [AnyHashable: Any],
                              completion: @escaping ([[AnyHashable: Any]]?, (any Error)?) -> Void) {
@@ -58,7 +61,7 @@ public class AlxTopOnInterstitialAdapter: ATAdAdapter {
                     self.customEvent = request.customEvent as? AlxTopOnInterstitialEvent
                     self.customEvent?.requestCompletionBlock = completion
                     self.interstitialAd = request.customObject as? AlxInterstitialAd
-                    //判断广告源是否已经loaded过
+                    // 判断广告源是否已经loaded过 / Check if the ad source has already been loaded
                     if let interstitialAd = self.interstitialAd {
                         self.customEvent?.trackInterstitialAdLoaded(interstitialAd, adExtra: nil)
                     }else{
@@ -78,7 +81,7 @@ public class AlxTopOnInterstitialAdapter: ATAdAdapter {
         }
     }
     
-    // MARK: - C2S header bidding 竞价
+    // MARK: - C2S Header Bidding 竞价 / C2S Header Bidding Auction
     @objc public static func bidRequestWithPlacementModel(_ placementModel: ATPlacementModel,unitGroupModel: ATUnitGroupModel, info: [AnyHashable: Any], completion: @escaping (ATBidInfo?, Error?) -> Void) {
         NSLog("%@: bidRequestWithPlacementModel",AlxTopOnInterstitialAdapter.TAG)
         NSLog("%@: bidRequestWithPlacementModel: isMainThread=%@",AlxTopOnInterstitialAdapter.TAG,Thread.current.isMainThread ? "YES" : "NO")
@@ -109,10 +112,10 @@ public class AlxTopOnInterstitialAdapter: ATAdAdapter {
     }
     
     
-    // MARK: - 广告就绪检查
+    // MARK: - 广告就绪检查 / Ad Readiness Check
     @objc public static func adReady(withCustomObject customObject: Any, info: [AnyHashable: Any]) -> Bool {
-        // 检查广告是否就绪
-        // 实际实现中应根据广告网络的具体方法进行检查
+        // 检查广告是否就绪 / Check if the ad is ready
+        // 实际实现中应根据广告网络的具体方法进行检查 / In actual implementation, should check according to the specific methods of the ad network
         NSLog("%@: adReady",AlxTopOnInterstitialAdapter.TAG)
         if customObject as? AlxInterstitialAd != nil {
             NSLog("%@: adReady true",AlxTopOnInterstitialAdapter.TAG)
@@ -123,7 +126,7 @@ public class AlxTopOnInterstitialAdapter: ATAdAdapter {
         }
     }
     
-    // MARK: - 广告展示
+    // MARK: - 广告展示 / Ad Display
     @objc(showInterstitial:inViewController:delegate:)
     public static func showInterstitial(_ interstitial: ATInterstitial,
                                        in viewController: UIViewController,

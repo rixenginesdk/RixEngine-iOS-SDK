@@ -25,6 +25,7 @@ static NSString *const TAG = @"AlxTopOnNativeRender";
     NSLog(@"%@: renderOffer", TAG);
     
     // ⚠️ 注意：TopOn SDK 传的 customObject 就是我们的 AlxTopOnNativeObject
+    // ⚠️ Note: the customObject passed by TopOn SDK is our AlxTopOnNativeObject
     if ([offer.customObject isKindOfClass:[AlxTopOnNativeObject class]]) {
         self.nativeObject = (AlxTopOnNativeObject *)offer.customObject;
         NSLog(@"%@: renderOffer: nativeObject found", TAG);
@@ -55,6 +56,7 @@ static NSString *const TAG = @"AlxTopOnNativeRender";
 - (void)dealloc {
     NSLog(@"%@: dealloc", TAG);
     // AlxTopOnNativeObject 的 dealloc 会自动清理
+    // AlxTopOnNativeObject's dealloc will handle cleanup automatically
 }
 
 @end

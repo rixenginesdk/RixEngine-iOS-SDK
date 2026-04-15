@@ -2,7 +2,7 @@
 //  AlxTopOnBannerDelegate.swift
 //  AlxAdsDemo
 //
-//  TopOn 6.5.x 新架构：专门的 Delegate 类
+//  TopOn 6.5.x 新架构：专门的 Delegate 类 / TopOn 6.5.x new architecture: Dedicated Delegate class
 //
 
 import Foundation
@@ -18,15 +18,18 @@ public class AlxTopOnBannerDelegate: NSObject, AlxBannerViewAdDelegate {
     
     // MARK: - AlxBannerViewAdDelegate
     
-    /// 平台广告准备就绪，可以进行展示
+    /**
+     * 平台广告准备就绪，可以进行展示。
+     * Platform ad is ready for display.
+     */
     @objc public func bannerViewAdLoad(_ bannerView: AlxBannerAdView) {
         NSLog("%@: bannerViewAdLoad", AlxTopOnBannerDelegate.TAG)
         
-        // 获取价格（用于 C2S Bidding）
+        // 获取价格（用于 C2S Bidding） / Get price (for C2S Bidding)
         let price = bannerView.getPrice()
         var adExtra: [AnyHashable: Any] = [:]
         
-        // 如果有价格，添加到 extra 中
+        // 如果有价格，添加到 extra 中 / If price is available, add it to extra
         if price > 0 {
             let priceStr = String(format: "%.2f", price)
             adExtra[ATAdSendC2SBidPriceKey] = priceStr
@@ -35,35 +38,47 @@ public class AlxTopOnBannerDelegate: NSObject, AlxBannerViewAdDelegate {
             NSLog("%@: bannerViewAdLoad: price = %@", AlxTopOnBannerDelegate.TAG, priceStr)
         }
         
-        // 使用动态调用
+        // 使用动态调用 / Use dynamic invocation
         self.notifyBannerLoaded(banner: bannerView, adExtra: adExtra)
     }
     
-    /// Banner 条点击回调
+    /**
+     * Banner 条点击回调。
+     * Banner ad click callback.
+     */
     @objc public func bannerViewAdClick(_ bannerView: AlxBannerAdView) {
         NSLog("%@: bannerViewAdClick", AlxTopOnBannerDelegate.TAG)
         self.notifyClick()
     }
     
-    /// Banner 广告关闭
+    /**
+     * Banner 广告关闭。
+     * Banner ad closed.
+     */
     @objc public func bannerViewAdClose(_ bannerView: AlxBannerAdView) {
         NSLog("%@: bannerViewAdClose", AlxTopOnBannerDelegate.TAG)
         self.notifyClosed()
     }
     
-    /// Banner 广告展示
+    /**
+     * Banner 广告展示。
+     * Banner ad impression.
+     */
     @objc public func bannerViewAdImpression(_ bannerView: AlxBannerAdView) {
         NSLog("%@: bannerViewAdImpression", AlxTopOnBannerDelegate.TAG)
         self.notifyShow()
     }
     
-    /// 请求广告失败后调用
+    /**
+     * 请求广告失败后调用。
+     * Called when ad request fails.
+     */
     @objc public func bannerViewAdFailToLoad(_ bannerView: AlxBannerAdView, didFailWithError error: Error) {
         NSLog("%@: bannerViewAdFailToLoad: %@", AlxTopOnBannerDelegate.TAG, error.localizedDescription)
         self.notifyLoadFailed(error: error)
     }
     
-    // MARK: - Helper Methods (使用动态调用避免 Swift 桥接问题)
+    // MARK: - Helper Methods (使用动态调用避免 Swift 桥接问题 / Using Dynamic Invocation to Avoid Swift Bridging Issues)
     
     private func notifyBannerLoaded(banner: AlxBannerAdView, adExtra: [AnyHashable: Any]) {
         if let bridge = self.adStatusBridge {

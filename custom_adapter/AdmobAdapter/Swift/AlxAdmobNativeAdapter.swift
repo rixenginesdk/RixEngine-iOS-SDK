@@ -7,27 +7,27 @@ import GoogleMobileAds
 import AlxAds
 
 @objc(AlxAdmobNativeAdapter)
-public class AlxAdmobNativeAdapter: AlxAdmobBaseAdapter,MediationNativeAd {
+public class AlxAdmobNativeAdapter: AlxAdmobBaseAdapter, MediationNativeAd {
     
     private static let TAG = "AlxAdmobNativeAdapter"
     
-    private var delegate:MediationNativeAdEventDelegate? = nil
-    private var nativeAd:AlxNativeAd? = nil
-    private var completionHandler: GADMediationNativeLoadCompletionHandler? = nil    
+    private var delegate: MediationNativeAdEventDelegate? = nil
+    private var nativeAd: AlxNativeAd? = nil
+    private var completionHandler: GADMediationNativeLoadCompletionHandler? = nil
     
-    public var headline: String?{
+    public var headline: String? {
         nativeAd?.title
     }
     
     public var images: [NativeAdImage]?
     
-    public var body: String?{
+    public var body: String? {
         nativeAd?.desc
     }
     
     public var icon: NativeAdImage?
     
-    public var callToAction: String?{
+    public var callToAction: String? {
         nativeAd?.callToAction
     }
     
@@ -35,17 +35,17 @@ public class AlxAdmobNativeAdapter: AlxAdmobBaseAdapter,MediationNativeAd {
     
     public var store: String?
     
-    public var price: String?{
-        get{
+    public var price: String? {
+        get {
             if let price = nativeAd?.getPrice() {
                 return String(price)
-            }else{
+            } else {
                 return nil
             }
         }
     }
     
-    public var advertiser: String?{
+    public var advertiser: String? {
         nativeAd?.adSource
     }
     
@@ -66,7 +66,7 @@ public class AlxAdmobNativeAdapter: AlxAdmobBaseAdapter,MediationNativeAd {
             AlxAdmobBaseAdapter.initSdk(for: params)
         }
         
-        guard let adId = params["unitid"] as? String,!adId.isEmpty else{
+        guard let adId = params["unitid"] as? String,!adId.isEmpty else {
             let errorStr="unitid is empty in the parameter configuration"
             NSLog("%@: error: %@",AlxAdmobNativeAdapter.TAG,errorStr)
             self.delegate=completionHandler(nil,self.error(code: -100,msg: errorStr))
@@ -130,7 +130,7 @@ public class AlxAdmobNativeAdapter: AlxAdmobBaseAdapter,MediationNativeAd {
                         completion(.failure(self.error(code: -102,msg: "Error while creating UIImage from received data")))
                     }
                 }
-            }catch{
+            } catch {
                 completion(.failure(self.error(code: -103,msg: error.localizedDescription)))
             }
         }
@@ -139,16 +139,16 @@ public class AlxAdmobNativeAdapter: AlxAdmobBaseAdapter,MediationNativeAd {
 }
 
 
-extension AlxAdmobNativeAdapter:AlxNativeAdLoaderDelegate{
+extension AlxAdmobNativeAdapter: AlxNativeAdLoaderDelegate {
     
     public func nativeAdLoaded(didReceive ads: [AlxNativeAd]) {
         NSLog("%@: nativeAdLoaded",AlxAdmobNativeAdapter.TAG)
         
-        guard let nativeAd = ads.first else{
-            if let handler=self.completionHandler{
-                let errorStr="native ad data is empty"
-                NSLog("%@: native ad data is empty",AlxAdmobNativeAdapter.TAG)
-                self.delegate=handler(nil,self.error(code: -100,msg: errorStr))
+        guard let nativeAd = ads.first else {
+            if let handler = self.completionHandler {
+                let errorStr = "native ad data is empty"
+                NSLog("%@: native ad data is empty", AlxAdmobNativeAdapter.TAG)
+                self.delegate = handler(nil,self.error(code: -100, msg: errorStr))
             }
             return
         }
@@ -156,38 +156,38 @@ extension AlxAdmobNativeAdapter:AlxNativeAdLoaderDelegate{
         self.nativeAd = nativeAd
         self.nativeAd?.delegate = self
         
-        self.downloadImages(nativeAd: nativeAd){ [weak self] in
+        self.downloadImages(nativeAd: nativeAd) { [weak self] in
             guard let self = self else { return }
-            if let handler = self.completionHandler{
-                self.delegate=handler(self,nil)
+            if let handler = self.completionHandler {
+                self.delegate=handler(self, nil)
             }
         }
         
     }
     
     public func nativeAdFailToLoad(didFailWithError error: Error) {
-        NSLog("%@: nativeAdFailToLoad",AlxAdmobNativeAdapter.TAG)
-        if let handler=self.completionHandler{
-            self.delegate=handler(nil,error)
+        NSLog("%@: nativeAdFailToLoad", AlxAdmobNativeAdapter.TAG)
+        if let handler = self.completionHandler {
+            self.delegate = handler(nil,error)
         }
     }
     
     
 }
 
-extension AlxAdmobNativeAdapter:AlxNativeAdDelegate{
-    public func nativeAdImpression(_ nativeAd:AlxNativeAd){
-        NSLog("%@: nativeAdImpression",AlxAdmobNativeAdapter.TAG)
+extension AlxAdmobNativeAdapter: AlxNativeAdDelegate {
+    public func nativeAdImpression(_ nativeAd:AlxNativeAd) {
+        NSLog("%@: nativeAdImpression", AlxAdmobNativeAdapter.TAG)
         self.delegate?.reportImpression()
     }
     
-    public func nativeAdClick(_ nativeAd:AlxNativeAd){
-        NSLog("%@: nativeAdClick",AlxAdmobNativeAdapter.TAG)
+    public func nativeAdClick(_ nativeAd: AlxNativeAd) {
+        NSLog("%@: nativeAdClick", AlxAdmobNativeAdapter.TAG)
         self.delegate?.reportClick()
     }
     
-    public func nativeAdClose(_ nativeAd:AlxNativeAd){
-        NSLog("%@: nativeAdClose",AlxAdmobNativeAdapter.TAG)
+    public func nativeAdClose(_ nativeAd: AlxNativeAd) {
+        NSLog("%@: nativeAdClose", AlxAdmobNativeAdapter.TAG)
         self.delegate?.didDismissFullScreenView()
     }
 }

@@ -114,7 +114,7 @@ static BOOL _isInitialized = NO;
         return @{@"success": @NO, @"error": errorStr};
     }
     
-    // 从 parameters 中获取参数字符串
+    // 从 parameters 中获取参数字符串 / Get the parameter string from parameters
     NSString *paramsStr = parameters[@"parameter"];
     if (![paramsStr isKindOfClass:[NSString class]] || paramsStr.length == 0) {
         NSString *errorStr = @"parameter string is missing or not a string";
@@ -122,7 +122,7 @@ static BOOL _isInitialized = NO;
         return @{@"success": @NO, @"error": errorStr};
     }
     
-    // 将 JSON 字符串转换为 Data
+    // 将 JSON 字符串转换为 Data / Convert the JSON string to Data
     NSData *admobJSONData = [paramsStr dataUsingEncoding:NSUTF8StringEncoding];
     if (!admobJSONData) {
         NSString *errorStr = @"failed to convert parameter string to data";
@@ -130,7 +130,7 @@ static BOOL _isInitialized = NO;
         return @{@"success": @NO, @"error": errorStr};
     }
     
-    // 将 Data 转为 JSON 字典
+    // 将 Data 转为 JSON 字典 / Convert Data to JSON dictionary
     NSError *jsonError = nil;
     NSDictionary<NSString *, id> *paramsDict = [NSJSONSerialization JSONObjectWithData:admobJSONData options:0 error:&jsonError];
     if (![paramsDict isKindOfClass:[NSDictionary class]]) {

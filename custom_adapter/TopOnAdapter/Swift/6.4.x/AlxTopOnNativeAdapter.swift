@@ -29,7 +29,10 @@ public class AlxTopOnNativeAdapter:ATAdAdapter {
         }
     }
     
-    /// 加载广告
+    /**
+     * 加载广告。
+     * Load ad.
+     */
     @objc public func loadAD(withInfo serverInfo: [AnyHashable: Any],
                              localInfo: [AnyHashable: Any],
                              completion: @escaping ([[AnyHashable: Any]]?, (any Error)?) -> Void) {
@@ -59,7 +62,7 @@ public class AlxTopOnNativeAdapter:ATAdAdapter {
                     self.customEvent = request.customEvent as? AlxTopOnNativeEvent
                     self.customEvent?.requestCompletionBlock = completion
                     self.nativeAd = request.customObject as? AlxNativeAdLoader
-                    //判断广告源是否已经loaded过
+                    // 判断广告源是否已经loaded过 / Check if the ad source has already been loaded
                     if let assets = self.customEvent?.assetDict {
                         NSLog("%@: loadAD: bid load success callback",AlxTopOnNativeAdapter.TAG)
                         self.customEvent?.trackNativeAdLoaded([assets])
@@ -84,7 +87,7 @@ public class AlxTopOnNativeAdapter:ATAdAdapter {
         
     }
     
-    // MARK: - C2S header bidding 竞价
+    // MARK: - C2S Header Bidding 竞价 / C2S Header Bidding Auction
     @objc public static func bidRequestWithPlacementModel(_ placementModel: ATPlacementModel,unitGroupModel: ATUnitGroupModel, info: [AnyHashable: Any], completion: @escaping (ATBidInfo?, Error?) -> Void) {
         NSLog("%@: bidRequestWithPlacementModel",AlxTopOnNativeAdapter.TAG)
         DispatchQueue.main.async {
@@ -107,7 +110,10 @@ public class AlxTopOnNativeAdapter:ATAdAdapter {
         AlxTopOnBiddingRequestManager.shared.start(with: request)
     }
         
-    // 实现 Objective-C 协议中的类方法: + (Class)rendererClass;
+    /**
+     * 实现 Objective-C 协议中的类方法：+ (Class)rendererClass。
+     * Implement the class method in Objective-C protocol: + (Class)rendererClass.
+     */
     @objc public static func rendererClass() -> AnyClass {
         NSLog("%@: rendererClass",AlxTopOnNativeAdapter.TAG)
         return AlxTopOnNativeRender.self

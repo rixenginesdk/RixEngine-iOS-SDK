@@ -45,22 +45,22 @@ public class AlxTopOnNativeAdapter: AlxTopOnBaseAdapter, ATBaseNativeAdapterProt
             NSLog("%@: loadAD: unitid = %@", AlxTopOnNativeAdapter.TAG, unitId)
             
             if let bidId = bidId {
-                // Bidding 场景：从缓存中取出已加载的广告
+                // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve the pre-loaded ad from cache
                 if let biddingRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitId) as? AlxTopOnBiddingRequest {
                     self.nativeAd = biddingRequest.customObject as? AlxNativeAd
                     
                     if let nativeAd = self.nativeAd {
                         NSLog("%@: loadAD: bid ad loaded, creating native object", AlxTopOnNativeAdapter.TAG)
                         
-                        // ⚠️ 创建 AlxTopOnNativeObject 对象
+                        // ⚠️ 创建 AlxTopOnNativeObject 对象 / Create AlxTopOnNativeObject instance
                         let nativeObject = AlxTopOnNativeObject()
                         nativeObject.nativeAd = nativeAd
                         nativeObject.nativeEvent = self.nativeEvent
                         
-                        // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调
+                        // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调 / Key: set nativeAd's delegate to receive impression, click, and close callbacks
                         nativeAd.delegate = self.nativeDelegate
                         
-                        // ⚠️ 传递对象数组
+                        // ⚠️ 传递对象数组 / Pass the object array
                         self.notifyNativeAdLoaded(objects: [nativeObject], adExtra: [:])
                     } else {
                         NSLog("%@: loadAD: bid ad object is empty", AlxTopOnNativeAdapter.TAG)
@@ -74,7 +74,7 @@ public class AlxTopOnNativeAdapter: AlxTopOnBaseAdapter, ATBaseNativeAdapterProt
                 }
                 AlxTopOnTool.shared.removeRequestItem(withUnitID: unitId)
             } else {
-                // 普通加载场景
+                // 普通加载场景 / Normal loading scenario
                 self.nativeAdLoader = AlxNativeAdLoader(adUnitID: unitId)
                 self.nativeAdLoader?.delegate = self.getNativeDelegate()
                 self.nativeDelegate.nativeEvent = self.nativeEvent

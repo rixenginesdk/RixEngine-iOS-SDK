@@ -18,13 +18,18 @@ public class AlxTopOnNativeRender: ATNativeRenderer {
         super.init(configuraton: configuration, adView: adView)
     }
     
-    /// 将资源渲染到相关的广告视图上。
-    /// 您可以根据广告平台的要求，做渲染之后再做一些注册点击事件的功能    
+    /**
+     * 将资源渲染到相关的广告视图上。
+     * Render assets onto the associated ad view.
+     *
+     * 您可以根据广告平台的要求，做渲染之后再做一些注册点击事件的功能。
+     * You can register click events after rendering based on the ad platform's requirements.
+     */
     @objc public override func renderOffer(_ offer: ATAdOfferCacheModel) {
         super.renderOffer(offer)
         NSLog("%@: renderOffer", AlxTopOnNativeRender.TAG)
         
-        // ⚠️ 注意：TopOn SDK 传的 customObject 就是我们的 AlxTopOnNativeObject
+        // ⚠️ 注意：TopOn SDK 传的 customObject 就是我们的 AlxTopOnNativeObject / Note: the customObject passed by TopOn SDK is our AlxTopOnNativeObject
         if let nativeObject = offer.customObject as? AlxTopOnNativeObject {
             self.nativeObject = nativeObject
             NSLog("%@: renderOffer: nativeObject found", AlxTopOnNativeRender.TAG)
@@ -36,11 +41,11 @@ public class AlxTopOnNativeRender: ATNativeRenderer {
     @objc public override func getNetWorkMediaView() -> UIView {
         NSLog("%@: getNetWorkMediaView", AlxTopOnNativeRender.TAG)
         
-        // ⚠️ 直接使用 nativeObject 的 mediaView 属性，避免重复创建
+        // ⚠️ 直接使用 nativeObject 的 mediaView 属性，避免重复创建 / Use nativeObject's mediaView property directly to avoid repeated creation
         if let nativeObject = self.nativeObject,
            let mediaView = nativeObject.mediaView {
             NSLog("%@: getNetWorkMediaView: using mediaView from nativeObject", AlxTopOnNativeRender.TAG)
-            // 设置 frame（如果需要的话）
+            // 设置 frame（如果需要的话）/ Set frame (if needed)
             mediaView.frame = self.configuration.mediaViewFrame
             return mediaView
         }
@@ -56,6 +61,6 @@ public class AlxTopOnNativeRender: ATNativeRenderer {
     
     deinit {
         NSLog("%@: deinit", AlxTopOnNativeRender.TAG)
-        // AlxTopOnNativeObject 的 deinit 会自动清理
+        // AlxTopOnNativeObject 的 deinit 会自动清理 / AlxTopOnNativeObject's deinit will clean up automatically
     }
 }
