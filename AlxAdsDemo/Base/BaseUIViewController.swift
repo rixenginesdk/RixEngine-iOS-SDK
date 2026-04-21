@@ -10,11 +10,15 @@ import UIKit
 public class BaseUIViewController: UIViewController {
 
    public func createButton(title:String,action: Selector) -> UIButton{
-       let button=UIButton()
+       let tintColor = UIColor(red: 76/255.0, green: 190/255.0, blue: 196/255.0, alpha: 1.000)
+       let button = UIButton()
        button.setTitle(title, for: .normal)
+       button.layer.cornerRadius = 8.0
+       button.layer.borderWidth = 1.5
+       button.layer.borderColor = tintColor.cgColor
        button.translatesAutoresizingMaskIntoConstraints=false
-       button.setTitleColor(.white, for: .normal)
-       button.backgroundColor = .darkGray
+       button.setTitleColor(tintColor, for: .normal)
+       button.backgroundColor = .white
        button.accessibilityNavigationStyle = .automatic
        button.addTarget(self, action: action, for: .touchUpInside)
        return button
