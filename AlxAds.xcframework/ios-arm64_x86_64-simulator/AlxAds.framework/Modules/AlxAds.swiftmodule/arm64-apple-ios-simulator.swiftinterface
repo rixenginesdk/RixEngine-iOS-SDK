@@ -175,6 +175,7 @@ import os
   }
   @objc override dynamic public init()
   @objc public func loadAd(adUnitId: Swift.String)
+  @objc public func loadAd(adUnitId: Swift.String, request: AlxAds.AlxAdRequest? = nil)
   @objc public func showAd(present: UIKit.UIViewController)
   @objc public func isReady() -> Swift.Bool
   @objc public func destroy()
@@ -248,6 +249,7 @@ import os
   }
   @objc override dynamic public init()
   @objc public func loadAd(adUnitId: Swift.String)
+  @objc public func loadAd(adUnitId: Swift.String, request: AlxAds.AlxAdRequest? = nil)
   @objc public func showAd(present: UIKit.UIViewController)
   @objc public func isReady() -> Swift.Bool
   @objc public func destroy()
@@ -267,6 +269,9 @@ import os
   @objc optional func interstitialAdVideoEnd(_ ad: AlxAds.AlxInterstitialAd)
 }
 @_inheritsConvenienceInitializers @objc public class AlxAdRequest : ObjectiveC.NSObject {
+  @objc public var userExt: [Swift.String : Swift.String]?
+  @discardableResult
+  @objc public func withUserExt(_ values: [Swift.String : Swift.String]?) -> AlxAds.AlxAdRequest
   @objc override dynamic public init()
   @objc deinit
 }
@@ -347,6 +352,7 @@ import os
   }
   @objc public init(adUnitID: Swift.String)
   @objc public func loadAd()
+  @objc public func loadAd(request: AlxAds.AlxAdRequest? = nil)
   @objc deinit
 }
 extension AlxAds.AlxLogLevel : Swift.Equatable {}

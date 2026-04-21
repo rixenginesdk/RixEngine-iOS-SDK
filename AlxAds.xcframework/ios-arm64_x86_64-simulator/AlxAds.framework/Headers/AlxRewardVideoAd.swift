@@ -23,7 +23,11 @@ import UIKit
     }
     
     @objc public func loadAd(adUnitId: String) {
-        model?.loadAd(adUnitId: adUnitId)
+        self.loadAd(adUnitId: adUnitId, request: nil)
+    }
+    
+    @objc public func loadAd(adUnitId: String, request: AlxAdRequest? = nil) {
+        model?.loadAd(adUnitId: adUnitId, request: request)
     }
     
     @objc public func showAd(present: UIViewController) {

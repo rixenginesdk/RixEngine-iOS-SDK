@@ -27,7 +27,11 @@ import Foundation
     }
     
     @objc public func loadAd() {
-        model?.load()
+        self.loadAd(request: nil)
+    }
+    
+    @objc public func loadAd(request: AlxAdRequest? = nil) {
+        model?.load(request: request)
     }
     
     //    @objc public func loadAd(_ request:AlxAdRequest){

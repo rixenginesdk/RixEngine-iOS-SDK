@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */; };
+		BA30D86A2F975F6F003EF926 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA30D8682F975F35003EF926 /* AlxAds.xcframework */; };
+		BA30D86B2F975F6F003EF926 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA30D8682F975F35003EF926 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA3239C52F5970DD009DA008 /* AlxAdmobNetworkExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA32399A2F596F9A009DA008 /* AlxAdmobNetworkExtras.swift */; };
 		BA3239C62F5970DD009DA008 /* AlxAdmobBaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3239962F596F9A009DA008 /* AlxAdmobBaseAdapter.swift */; };
 		BA3239C72F5970DD009DA008 /* AlxAdmobInterstitialAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3239972F596F9A009DA008 /* AlxAdmobInterstitialAdapter.swift */; };
@@ -16,8 +18,6 @@
 		BA3239CA2F5970DD009DA008 /* AlxAdmobNativeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3239992F596F9A009DA008 /* AlxAdmobNativeAdapter.swift */; };
 		BA3239CB2F5970DD009DA008 /* AlxAdmobBannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3239952F596F9A009DA008 /* AlxAdmobBannerAdapter.swift */; };
 		BA3239DA2F5970EB009DA008 /* AlxMaxMediationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */; };
-		BA4EEED42F7CC1AC00D20422 /* AlxAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */; };
-		BA4EEED52F7CC1AC00D20422 /* AlxAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA4EEED72F7CFAA100D20422 /* BaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */; };
 		BA4EEEDA2F7D0BCA00D20422 /* LevelPlayMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEED92F7D0BCA00D20422 /* LevelPlayMainVC.swift */; };
 		BA4EEEDC2F7D0CA700D20422 /* LevelPlayBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEEDB2F7D0CA700D20422 /* LevelPlayBannerVC.swift */; };
@@ -95,7 +95,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BA4EEED52F7CC1AC00D20422 /* AlxAds.xcframework in Embed Frameworks */,
+				BA30D86B2F975F6F003EF926 /* AlxAds.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA30D8682F975F35003EF926 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
 		BA3239952F596F9A009DA008 /* AlxAdmobBannerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobBannerAdapter.swift; sourceTree = "<group>"; };
 		BA3239962F596F9A009DA008 /* AlxAdmobBaseAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobBaseAdapter.swift; sourceTree = "<group>"; };
 		BA3239972F596F9A009DA008 /* AlxAdmobInterstitialAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobInterstitialAdapter.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		BA32399A2F596F9A009DA008 /* AlxAdmobNetworkExtras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobNetworkExtras.swift; sourceTree = "<group>"; };
 		BA32399B2F596F9A009DA008 /* AlxAdmobRewardVideoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxAdmobRewardVideoAdapter.swift; sourceTree = "<group>"; };
 		BA32399D2F596F9A009DA008 /* AlxMaxMediationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMaxMediationAdapter.swift; sourceTree = "<group>"; };
-		BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AlxAds.xcframework; sourceTree = "<group>"; };
 		BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuVC.swift; sourceTree = "<group>"; };
 		BA4EEED92F7D0BCA00D20422 /* LevelPlayMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayMainVC.swift; sourceTree = "<group>"; };
 		BA4EEEDB2F7D0CA700D20422 /* LevelPlayBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayBannerVC.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4EEED42F7CC1AC00D20422 /* AlxAds.xcframework in Frameworks */,
+				BA30D86A2F975F6F003EF926 /* AlxAds.xcframework in Frameworks */,
 				6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,7 +788,7 @@
 			isa = PBXGroup;
 			children = (
 				E319563A2DF7D9350083BC3C /* AlxDevelop.framework */,
-				BA4EEED22F7CC19200D20422 /* AlxAds.xcframework */,
+				BA30D8682F975F35003EF926 /* AlxAds.xcframework */,
 				E31956362DF7D9300083BC3C /* AlxAds.framework */,
 				EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */,
 			);

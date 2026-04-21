@@ -5637,6 +5637,49 @@
           },
           {
             "kind": "Function",
+            "name": "loadAd",
+            "printedName": "loadAd(adUnitId:request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AlxAds.AlxAdRequest?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlxAdRequest",
+                    "printedName": "AlxAds.AlxAdRequest",
+                    "usr": "c:@M@AlxAds@objc(cs)AlxAdRequest"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxInterstitialAd(im)loadAdWithAdUnitId:request:",
+            "mangledName": "$s6AlxAds0A14InterstitialAdC04loadD08adUnitId7requestySS_AA0aD7RequestCSgtF",
+            "moduleName": "AlxAds",
+            "objc_name": "loadAdWithAdUnitId:request:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "showAd",
             "printedName": "showAd(present:)",
             "children": [
@@ -8238,6 +8281,49 @@
           },
           {
             "kind": "Function",
+            "name": "loadAd",
+            "printedName": "loadAd(adUnitId:request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AlxAds.AlxAdRequest?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlxAdRequest",
+                    "printedName": "AlxAds.AlxAdRequest",
+                    "usr": "c:@M@AlxAds@objc(cs)AlxAdRequest"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxRewardVideoAd(im)loadAdWithAdUnitId:request:",
+            "mangledName": "$s6AlxAds0A13RewardVideoAdC04loadE08adUnitId7requestySS_AA0aE7RequestCSgtF",
+            "moduleName": "AlxAds",
+            "objc_name": "loadAdWithAdUnitId:request:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "showAd",
             "printedName": "showAd(present:)",
             "children": [
@@ -8799,6 +8885,218 @@
         "name": "AlxAdRequest",
         "printedName": "AlxAdRequest",
         "children": [
+          {
+            "kind": "Var",
+            "name": "userExt",
+            "printedName": "userExt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AlxAds@objc(cs)AlxAdRequest(py)userExt",
+            "mangledName": "$s6AlxAds0A9AdRequestC7userExtSDyS2SGSgvp",
+            "moduleName": "AlxAds",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Swift.String]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Swift.String]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AlxAds@objc(cs)AlxAdRequest(im)userExt",
+                "mangledName": "$s6AlxAds0A9AdRequestC7userExtSDyS2SGSgvg",
+                "moduleName": "AlxAds",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Swift.String]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Swift.String]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AlxAds@objc(cs)AlxAdRequest(im)setUserExt:",
+                "mangledName": "$s6AlxAds0A9AdRequestC7userExtSDyS2SGSgvs",
+                "moduleName": "AlxAds",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6AlxAds0A9AdRequestC7userExtSDyS2SGSgvM",
+                "mangledName": "$s6AlxAds0A9AdRequestC7userExtSDyS2SGSgvM",
+                "moduleName": "AlxAds",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "withUserExt",
+            "printedName": "withUserExt(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AlxAdRequest",
+                "printedName": "AlxAds.AlxAdRequest",
+                "usr": "c:@M@AlxAds@objc(cs)AlxAdRequest"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxAdRequest(im)withUserExt:",
+            "mangledName": "$s6AlxAds0A9AdRequestC11withUserExtyACSDyS2SGSgF",
+            "moduleName": "AlxAds",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "DiscardableResult",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
           {
             "kind": "Constructor",
             "name": "init",
@@ -11759,6 +12057,43 @@
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loadAd",
+            "printedName": "loadAd(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AlxAds.AlxAdRequest?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AlxAdRequest",
+                    "printedName": "AlxAds.AlxAdRequest",
+                    "usr": "c:@M@AlxAds@objc(cs)AlxAdRequest"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxNativeAdLoader(im)loadAdWithRequest:",
+            "mangledName": "$s6AlxAds0A14NativeAdLoaderC04loadD07requestyAA0aD7RequestCSg_tF",
+            "moduleName": "AlxAds",
+            "objc_name": "loadAdWithRequest:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -12247,14 +12582,14 @@
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Analytics\/Dau\/AlxDau.swift",
       "kind": "IntegerLiteral",
-      "offset": 456,
+      "offset": 457,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Analytics\/Dau\/AlxDau.swift",
       "kind": "IntegerLiteral",
-      "offset": 460,
+      "offset": 461,
       "length": 2,
       "value": "60"
     },
@@ -12515,7 +12850,7 @@
       "kind": "StringLiteral",
       "offset": 159,
       "length": 7,
-      "value": "\"1.8.6\""
+      "value": "\"1.8.7\""
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
@@ -13199,7 +13534,7 @@
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Util\/AlxUserAgentService.swift",
       "kind": "StringLiteral",
-      "offset": 321,
+      "offset": 322,
       "length": 2,
       "value": "\"\""
     },

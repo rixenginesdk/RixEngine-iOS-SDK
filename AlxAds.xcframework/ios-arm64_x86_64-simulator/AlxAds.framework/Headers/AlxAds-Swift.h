@@ -320,9 +320,14 @@ SWIFT_PROTOCOL("_TtP6AlxAds13AlxAdDelegate_")
 - (void)reportChargingUrl;
 @end
 
+@class NSString;
 /// 后期可扩展请求参数类
 SWIFT_CLASS("_TtC6AlxAds12AlxAdRequest")
 @interface AlxAdRequest : NSObject
+/// 用户自定义参数，对齐 Android 的 setUserExtras(Map<String, String>)
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable userExt;
+/// 链式设置用户自定义参数
+- (AlxAdRequest * _Nonnull)withUserExt:(NSDictionary<NSString *, NSString *> * _Nullable)values;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -350,7 +355,6 @@ SWIFT_CLASS("_TtC6AlxAds16AlxAtomicBoolean")
 @end
 
 @class NSCoder;
-@class NSString;
 @class UIWindow;
 /// 所有广告视图的基类【像banner、原生广告】
 SWIFT_CLASS("_TtC6AlxAds13AlxBaseAdView")
@@ -417,6 +421,7 @@ SWIFT_CLASS("_TtC6AlxAds17AlxInterstitialAd")
 @property (nonatomic, weak) id <AlxInterstitialAdDelegate> _Nullable delegate;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId;
+- (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId request:(AlxAdRequest * _Nullable)request;
 - (void)showAdWithPresent:(UIViewController * _Nonnull)present;
 - (BOOL)isReady SWIFT_WARN_UNUSED_RESULT;
 - (void)destroy;
@@ -564,6 +569,7 @@ SWIFT_CLASS("_TtC6AlxAds17AlxNativeAdLoader")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (nonnull instancetype)initWithAdUnitID:(NSString * _Nonnull)adUnitID OBJC_DESIGNATED_INITIALIZER;
 - (void)loadAd;
+- (void)loadAdWithRequest:(AlxAdRequest * _Nullable)request;
 @end
 
 SWIFT_PROTOCOL("_TtP6AlxAds25AlxNativeAdLoaderDelegate_")
@@ -590,6 +596,7 @@ SWIFT_CLASS("_TtC6AlxAds16AlxRewardVideoAd")
 @property (nonatomic, weak) id <AlxRewardVideoAdDelegate> _Nullable delegate;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId;
+- (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId request:(AlxAdRequest * _Nullable)request;
 - (void)showAdWithPresent:(UIViewController * _Nonnull)present;
 - (BOOL)isReady SWIFT_WARN_UNUSED_RESULT;
 - (void)destroy;
@@ -983,9 +990,14 @@ SWIFT_PROTOCOL("_TtP6AlxAds13AlxAdDelegate_")
 - (void)reportChargingUrl;
 @end
 
+@class NSString;
 /// 后期可扩展请求参数类
 SWIFT_CLASS("_TtC6AlxAds12AlxAdRequest")
 @interface AlxAdRequest : NSObject
+/// 用户自定义参数，对齐 Android 的 setUserExtras(Map<String, String>)
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable userExt;
+/// 链式设置用户自定义参数
+- (AlxAdRequest * _Nonnull)withUserExt:(NSDictionary<NSString *, NSString *> * _Nullable)values;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1013,7 +1025,6 @@ SWIFT_CLASS("_TtC6AlxAds16AlxAtomicBoolean")
 @end
 
 @class NSCoder;
-@class NSString;
 @class UIWindow;
 /// 所有广告视图的基类【像banner、原生广告】
 SWIFT_CLASS("_TtC6AlxAds13AlxBaseAdView")
@@ -1080,6 +1091,7 @@ SWIFT_CLASS("_TtC6AlxAds17AlxInterstitialAd")
 @property (nonatomic, weak) id <AlxInterstitialAdDelegate> _Nullable delegate;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId;
+- (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId request:(AlxAdRequest * _Nullable)request;
 - (void)showAdWithPresent:(UIViewController * _Nonnull)present;
 - (BOOL)isReady SWIFT_WARN_UNUSED_RESULT;
 - (void)destroy;
@@ -1227,6 +1239,7 @@ SWIFT_CLASS("_TtC6AlxAds17AlxNativeAdLoader")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (nonnull instancetype)initWithAdUnitID:(NSString * _Nonnull)adUnitID OBJC_DESIGNATED_INITIALIZER;
 - (void)loadAd;
+- (void)loadAdWithRequest:(AlxAdRequest * _Nullable)request;
 @end
 
 SWIFT_PROTOCOL("_TtP6AlxAds25AlxNativeAdLoaderDelegate_")
@@ -1253,6 +1266,7 @@ SWIFT_CLASS("_TtC6AlxAds16AlxRewardVideoAd")
 @property (nonatomic, weak) id <AlxRewardVideoAdDelegate> _Nullable delegate;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId;
+- (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId request:(AlxAdRequest * _Nullable)request;
 - (void)showAdWithPresent:(UIViewController * _Nonnull)present;
 - (BOOL)isReady SWIFT_WARN_UNUSED_RESULT;
 - (void)destroy;
