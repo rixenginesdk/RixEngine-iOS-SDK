@@ -114,8 +114,7 @@ class MainVC: BaseMenuVC {
         iconImage.contentMode = .scaleAspectFill
         iconImage.layer.cornerRadius = 18
         iconImage.clipsToBounds = true
-        iconImage.image = currentAppIcon() ?? UIImage(systemName: "app.badge.fill")
-        iconImage.tintColor = UIColor(red: 0.32, green: 0.44, blue: 0.89, alpha: 1)
+        iconImage.image = UIImage(named: "appLogo")
         iconWrap.addSubview(iconImage)
 
         let titleLabel = UILabel()
@@ -160,6 +159,11 @@ class MainVC: BaseMenuVC {
         container.addSubview(titleStack)
         container.addSubview(idfaLabel)
 
+        let idfaTopPreferred = idfaLabel.topAnchor.constraint(equalTo: iconWrap.bottomAnchor, constant: 14)
+        idfaTopPreferred.priority = .defaultHigh
+        let idfaBottomPreferred = idfaLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8)
+        idfaBottomPreferred.priority = .defaultHigh
+
         NSLayoutConstraint.activate([
             iconWrap.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: horizontalInset),
             iconWrap.topAnchor.constraint(equalTo: container.topAnchor, constant: 6),
@@ -180,37 +184,25 @@ class MainVC: BaseMenuVC {
 
             idfaLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: horizontalInset),
             idfaLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -horizontalInset),
-            idfaLabel.topAnchor.constraint(equalTo: iconWrap.bottomAnchor, constant: 14),
-            idfaLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8)
+            idfaLabel.topAnchor.constraint(greaterThanOrEqualTo: iconWrap.bottomAnchor, constant: 14),
+            idfaTopPreferred,
+            idfaLabel.bottomAnchor.constraint(lessThanOrEqualTo: container.bottomAnchor, constant: -8),
+            idfaBottomPreferred
         ])
 
-        let fittingWidth = max(tableView.bounds.width, UIScreen.main.bounds.width)
-        container.frame = CGRect(x: 0, y: 0, width: fittingWidth, height: 0)
-        container.setNeedsLayout()
-        container.layoutIfNeeded()
-        let size = container.systemLayoutSizeFitting(
-            CGSize(width: fittingWidth, height: UIView.layoutFittingCompressedSize.height),
-            withHorizontalFittingPriority: .required,
-            verticalFittingPriority: .fittingSizeLevel
-        )
-        container.frame.size.height = size.height
+        let fittingWidth = tableView.bounds.width
+        guard fittingWidth > 0 else { return }
+        let textWidth = max(0, fittingWidth - (horizontalInset * 2))
+        let idfaHeight = ceil(idfaLabel.sizeThatFits(
+            CGSize(width: textWidth, height: CGFloat.greatestFiniteMagnitude)
+        ).height)
+        let headerHeight = 6 + 44 + 14 + idfaHeight + 8
+        container.frame = CGRect(x: 0, y: 0, width: fittingWidth, height: headerHeight)
         tableView.tableHeaderView = container
     }
 
     private func appVersionText() -> String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
-    }
-
-    private func currentAppIcon() -> UIImage? {
-        guard
-            let icons = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
-            let primary = icons["CFBundlePrimaryIcon"] as? [String: Any],
-            let files = primary["CFBundleIconFiles"] as? [String],
-            let iconName = files.last
-        else {
-            return nil
-        }
-        return UIImage(named: iconName)
     }
 
     // MARK: - ATT
@@ -278,8 +270,9 @@ extension MainVC {
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 24),
             label.trailingAnchor.constraint(lessThanOrEqualTo: container.trailingAnchor, constant: -24),
-            label.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8),
-            label.topAnchor.constraint(equalTo: container.topAnchor, constant: 6)
+            label.bottomAnchor.constraint(lessThanOrEqualTo: container.bottomAnchor, constant: -8),
+            label.topAnchor.constraint(greaterThanOrEqualTo: container.topAnchor, constant: 6),
+            label.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
         return container
     }
@@ -375,11 +368,16 @@ final class MainMenuCardCell: UITableViewCell {
         cardView.addSubview(subtitleLabel)
         cardView.addSubview(chevronImageView)
 
+        let cardBottom = cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6)
+        cardBottom.priority = .defaultHigh
+        let subtitleBottom = subtitleLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -14)
+        subtitleBottom.priority = .defaultHigh
+
         NSLayoutConstraint.activate([
             cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             cardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
-            cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6),
+            cardBottom,
 
             titleLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
             titleLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 14),
@@ -388,7 +386,7 @@ final class MainMenuCardCell: UITableViewCell {
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             subtitleLabel.trailingAnchor.constraint(lessThanOrEqualTo: chevronImageView.leadingAnchor, constant: -12),
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 6),
-            subtitleLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -14),
+            subtitleBottom,
 
             chevronImageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
             chevronImageView.centerYAnchor.constraint(equalTo: cardView.centerYAnchor),
