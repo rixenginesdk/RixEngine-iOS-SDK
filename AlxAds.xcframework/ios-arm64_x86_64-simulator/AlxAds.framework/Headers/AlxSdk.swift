@@ -21,6 +21,8 @@ import AlxAds.AlxFix
     @objc public static func initializeSDK(token: String, sid: String, appId: String) {
         // 直接调用 OC 方法，这会强制链接器保留该符号
         AlxUniversalFix.injectAlxBlackMagic()
+        let savedTs = Date.alx_saveCurrentMillisecondTimestampToLocal(forKey: AlxConfig.Video_Ext_Control_Timestamp_Key)
+        AlxLog.d(.data, msg: "video_ext_control init save timestamp=\(savedTs), key=\(AlxConfig.Video_Ext_Control_Timestamp_Key)")
         AlxSdkManager.initializeSDK(token: token, sid: sid, appId: appId)
         isInit = true
     }

@@ -24,5 +24,4 @@ framework module AlxAds {
 
 module AlxAds.Swift {
   header "AlxAds-Swift.h"
-  requires objc
 }
