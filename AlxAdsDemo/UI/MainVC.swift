@@ -8,6 +8,7 @@
 import UIKit
 import AppTrackingTransparency
 import AdSupport
+import AlxAds
 
 class MainVC: BaseMenuVC {
 
@@ -123,13 +124,18 @@ class MainVC: BaseMenuVC {
         titleLabel.font = .systemFont(ofSize: 17, weight: .bold)
         titleLabel.textColor = UIColor(red: 0.10, green: 0.11, blue: 0.20, alpha: 1)
 
-        let versionLabel = UILabel()
+        let versionLabel = PaddingLabel()
         versionLabel.translatesAutoresizingMaskIntoConstraints = false
         versionLabel.text = appVersionText()
-        versionLabel.font = .systemFont(ofSize: 13, weight: .medium)
-        versionLabel.textColor = UIColor(red: 0.55, green: 0.56, blue: 0.63, alpha: 1)
+        versionLabel.font = .systemFont(ofSize: 11, weight: .medium)
+        versionLabel.textColor = UIColor(red: 0.35, green: 0.35, blue: 0.55, alpha: 1)
+        versionLabel.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.97, alpha: 1)
+        versionLabel.layer.cornerRadius = 10
+        versionLabel.clipsToBounds = true
 
-        let swiftIcon = UIImageView(image: UIImage(systemName: "swift"))
+        let swiftIcon = UIImageView()
+        let swiftConfig = UIImage.SymbolConfiguration(pointSize: 11, weight: .medium)
+        swiftIcon.image = UIImage(systemName: "swift", withConfiguration: swiftConfig)
         swiftIcon.translatesAutoresizingMaskIntoConstraints = false
         swiftIcon.tintColor = UIColor(red: 0.98, green: 0.38, blue: 0.14, alpha: 1)
         swiftIcon.contentMode = .scaleAspectFit
@@ -137,8 +143,8 @@ class MainVC: BaseMenuVC {
         let swiftLabel = UILabel()
         swiftLabel.translatesAutoresizingMaskIntoConstraints = false
         swiftLabel.text = "Swift"
-        swiftLabel.font = .systemFont(ofSize: 13, weight: .semibold)
-        swiftLabel.textColor = UIColor(red: 0.55, green: 0.56, blue: 0.63, alpha: 1)
+        swiftLabel.font = UIFont.systemFont(ofSize: 11, weight: .medium)
+        swiftLabel.textColor = UIColor(red: 0.5, green: 0.35, blue: 0.55, alpha: 1)
 
         let idfaLabel = UILabel()
         idfaLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -153,6 +159,7 @@ class MainVC: BaseMenuVC {
         titleStack.alignment = .center
         titleStack.spacing = 8
         titleStack.setCustomSpacing(12, after: titleLabel)
+        titleStack.setCustomSpacing(12, after: versionLabel)
         titleStack.setCustomSpacing(3, after: swiftIcon)
 
         container.addSubview(iconWrap)
@@ -202,7 +209,7 @@ class MainVC: BaseMenuVC {
     }
 
     private func appVersionText() -> String {
-        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
+        AlxSdk.getSDKVersion()
     }
 
     // MARK: - ATT
@@ -393,5 +400,18 @@ final class MainMenuCardCell: UITableViewCell {
             chevronImageView.widthAnchor.constraint(equalToConstant: 14),
             chevronImageView.heightAnchor.constraint(equalToConstant: 14)
         ])
+    }
+}
+
+// MARK: - PaddingLabel
+
+class PaddingLabel: UILabel {
+    override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(width: size.width + 16, height: size.height + 4)
+    }
+
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: rect.insetBy(dx: 8, dy: 2))
     }
 }
