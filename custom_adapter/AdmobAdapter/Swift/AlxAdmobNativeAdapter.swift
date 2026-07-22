@@ -6,6 +6,7 @@ import Foundation
 import GoogleMobileAds
 import AlxAds
 
+@objcMembers
 @objc(AlxAdmobNativeAdapter)
 public class AlxAdmobNativeAdapter: AlxAdmobBaseAdapter, MediationNativeAd {
     

@@ -6,6 +6,7 @@ import Foundation
 import GoogleMobileAds
 import AlxAds
 
+@objcMembers
 @objc(AlxAdmobRewardVideoAdapter)
 public class AlxAdmobRewardVideoAdapter: AlxAdmobBaseAdapter, MediationRewardedAd {
     

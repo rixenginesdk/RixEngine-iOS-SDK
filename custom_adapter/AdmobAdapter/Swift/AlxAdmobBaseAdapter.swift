@@ -6,8 +6,9 @@ import Foundation
 import GoogleMobileAds
 import AlxAds
 
+@objcMembers
 @objc(AlxAdmobBaseAdapter)
-public class AlxAdmobBaseAdapter: NSObject,MediationAdapter {
+public class AlxAdmobBaseAdapter: NSObject, MediationAdapter {
     
     private static let TAG = "AlxAdmobBaseAdapter"
     private static let PARAMETER = "parameter"

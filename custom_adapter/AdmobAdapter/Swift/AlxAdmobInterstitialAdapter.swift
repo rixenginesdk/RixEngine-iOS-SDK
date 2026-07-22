@@ -6,8 +6,9 @@ import Foundation
 import GoogleMobileAds
 import AlxAds
 
+@objcMembers
 @objc(AlxAdmobInterstitialAdapter)
-public class AlxAdmobInterstitialAdapter: AlxAdmobBaseAdapter,MediationInterstitialAd {
+public class AlxAdmobInterstitialAdapter: AlxAdmobBaseAdapter, MediationInterstitialAd {
     
     private static let TAG = "AlxAdmobInterstitialAdapter"
     

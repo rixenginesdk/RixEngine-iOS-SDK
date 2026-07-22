@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AlxToponAdapterCommonHeader.h"
+#import "AlxTopOnAdapterCommonHeader.h"
 
 @class AlxTopOnNativeEvent;
 
