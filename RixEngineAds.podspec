@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.swift_version         = '5.0'
 
   # GitHub release tags use the v-prefixed semantic version.
-  s.source       = { :git => "https://github.com/rixenginesdk/RixEngine-iOS-SDK.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/rixenginesdk/RixEngine-iOS-SDK.git", :tag => "#{s.version}" }
   
   # 声明包含静态二进制 (解决 Google/IronSource 传递依赖报错)
   s.static_framework = true
