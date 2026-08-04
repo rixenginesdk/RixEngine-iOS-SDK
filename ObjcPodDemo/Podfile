@@ -1,0 +1,18 @@
+workspace 'RixEngineObjcDemo'
+platform :ios, '13.0'
+use_frameworks!
+
+# Demo工程
+project 'RixEngineObjcDemo.xcodeproj'
+target 'RixEngineObjcDemo' do
+  project 'RixEngineObjcDemo.xcodeproj'
+  
+  # 添加SDK依赖库
+  # RixEngineAds
+  pod 'RixEngineAds/AdmobAdapterOC', '2.0.2'
+  pod 'RixEngineAds/MaxAdapterOC', '2.0.2'
+  pod 'RixEngineAds/TopOnAdapterOC', '2.0.2'
+  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.0.2'
+end
+
+
