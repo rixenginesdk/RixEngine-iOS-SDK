@@ -21,6 +21,7 @@
 		BA7D80242ED6A49000B78B40 /* AlxInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801A2ED6A49000B78B40 /* AlxInterstitialVC.swift */; };
 		BA7D80252ED6A49000B78B40 /* AlxNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */; };
 		BA7D80262ED6A49000B78B40 /* AlxBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */; };
+		BAFC0A803035646B00C7FF6D /* MenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC0A7F3035646B00C7FF6D /* MenuCardCell.swift */; };
 		E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816892E3C7372002E3112 /* AdmobBannerVC.swift */; };
 		E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168B2E3C7372002E3112 /* AdmobMainVC.swift */; };
 		E30816902E3C7372002E3112 /* AdmobInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */; };
@@ -78,6 +79,7 @@
 		BA7D801B2ED6A49000B78B40 /* AlxMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMainVC.swift; sourceTree = "<group>"; };
 		BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxNativeVC.swift; sourceTree = "<group>"; };
 		BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxRewardVideoVC.swift; sourceTree = "<group>"; };
+		BAFC0A7F3035646B00C7FF6D /* MenuCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardCell.swift; sourceTree = "<group>"; };
 		E30816892E3C7372002E3112 /* AdmobBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerVC.swift; sourceTree = "<group>"; };
 		E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialVC.swift; sourceTree = "<group>"; };
 		E308168B2E3C7372002E3112 /* AdmobMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMainVC.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */,
+				BAFC0A7F3035646B00C7FF6D /* MenuCardCell.swift */,
 				E33E7AC82DD4A0CB00C724B9 /* BaseUIViewController.swift */,
 			);
 			path = Base;
@@ -465,6 +468,7 @@
 				BA7D80232ED6A49000B78B40 /* AlxBannerXibVC.swift in Sources */,
 				BA7D80242ED6A49000B78B40 /* AlxInterstitialVC.swift in Sources */,
 				BA7D80252ED6A49000B78B40 /* AlxNativeVC.swift in Sources */,
+				BAFC0A803035646B00C7FF6D /* MenuCardCell.swift in Sources */,
 				BA7D80262ED6A49000B78B40 /* AlxBannerVC.swift in Sources */,
 				E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */,
 				E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */,
