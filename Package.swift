@@ -2,11 +2,6 @@
 
 import PackageDescription
 
-private let adapterLinkerSettings: [LinkerSetting] = [
-    // Mediation SDKs discover adapters through Objective-C runtime class names.
-    .unsafeFlags(["-ObjC"])
-]
-
 let package = Package(
     name: "RixEngineAds",
     platforms: [
@@ -70,8 +65,7 @@ let package = Package(
                     package: "swift-package-manager-google-mobile-ads"
                 )
             ],
-            path: "custom_adapter/AdmobAdapter/Swift",
-            linkerSettings: adapterLinkerSettings
+            path: "custom_adapter/AdmobAdapter/Swift"
         ),
         .target(
             name: "RixEngineAdsAdmobAdapterOC",
@@ -83,8 +77,7 @@ let package = Package(
                 )
             ],
             path: "custom_adapter/AdmobAdapter/Objc",
-            publicHeadersPath: ".",
-            linkerSettings: adapterLinkerSettings
+            publicHeadersPath: "."
         ),
         .target(
             name: "RixEngineAdsMaxAdapter",
@@ -95,8 +88,7 @@ let package = Package(
                     package: "AppLovin-MAX-Swift-Package"
                 )
             ],
-            path: "custom_adapter/MaxAdapter/Swift",
-            linkerSettings: adapterLinkerSettings
+            path: "custom_adapter/MaxAdapter/Swift"
         ),
         .target(
             name: "RixEngineAdsMaxAdapterOC",
@@ -108,8 +100,7 @@ let package = Package(
                 )
             ],
             path: "custom_adapter/MaxAdapter/Objc",
-            publicHeadersPath: ".",
-            linkerSettings: adapterLinkerSettings
+            publicHeadersPath: "."
         ),
         .target(
             name: "RixEngineAdsUnityLevelPlayAdapter",
@@ -120,8 +111,7 @@ let package = Package(
                     package: "LevelPlay-Swift-Package"
                 )
             ],
-            path: "custom_adapter/UnityLevelPlayAdapter/Swift",
-            linkerSettings: adapterLinkerSettings
+            path: "custom_adapter/UnityLevelPlayAdapter/Swift"
         ),
         .target(
             name: "RixEngineAdsUnityLevelPlayAdapterOC",
@@ -133,8 +123,7 @@ let package = Package(
                 )
             ],
             path: "custom_adapter/UnityLevelPlayAdapter/Objc",
-            publicHeadersPath: ".",
-            linkerSettings: adapterLinkerSettings
+            publicHeadersPath: "."
         )
     ],
     swiftLanguageModes: [.v5]

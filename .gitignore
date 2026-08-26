@@ -107,3 +107,6 @@ Podfile.lock
 
 # Derived data
 DerivedData/
+
+# SPM cache data
+Package.resolved
