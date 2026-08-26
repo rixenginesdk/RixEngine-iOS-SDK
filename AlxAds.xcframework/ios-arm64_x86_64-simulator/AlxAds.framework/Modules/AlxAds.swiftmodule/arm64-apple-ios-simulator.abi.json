@@ -8695,6 +8695,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AlxAds",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -9151,6 +9161,26 @@
         "moduleName": "AlxAds",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AlxAds",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "AlxAds",
+        "declAttributes": [
+          "Preconcurrency"
         ]
       },
       {
@@ -11565,7 +11595,8 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -11589,7 +11620,158 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getRixEngineHost",
+            "printedName": "getRixEngineHost()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxSdk(cm)getRixEngineHost",
+            "mangledName": "$s6AlxAds0A3SdkC16getRixEngineHostSSyFZ",
+            "moduleName": "AlxAds",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getPubToken",
+            "printedName": "getPubToken()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxSdk(cm)getPubToken",
+            "mangledName": "$s6AlxAds0A3SdkC11getPubTokenSSyFZ",
+            "moduleName": "AlxAds",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getPubSid",
+            "printedName": "getPubSid()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxSdk(cm)getPubSid",
+            "mangledName": "$s6AlxAds0A3SdkC9getPubSidSSyFZ",
+            "moduleName": "AlxAds",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAppID",
+            "printedName": "getAppID()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxSdk(cm)getAppID",
+            "mangledName": "$s6AlxAds0A3SdkC8getAppIDSSyFZ",
+            "moduleName": "AlxAds",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getOMSDKVersion",
+            "printedName": "getOMSDKVersion()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxSdk(cm)getOMSDKVersion",
+            "mangledName": "$s6AlxAds0A3SdkC15getOMSDKVersionSSyFZ",
+            "moduleName": "AlxAds",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAlxUserID",
+            "printedName": "getAlxUserID()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AlxAds@objc(cs)AlxSdk(cm)getAlxUserID",
+            "mangledName": "$s6AlxAds0A3SdkC03getA6UserIDSSyFZ",
+            "moduleName": "AlxAds",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -13358,14 +13540,14 @@
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Widget\/AlxAdWebView.swift",
       "kind": "StringLiteral",
-      "offset": 434,
+      "offset": 421,
       "length": 43,
       "value": "\"AlxInternalWebViewAccessibilityIdentifier\""
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Widget\/AlxAdWebView.swift",
       "kind": "BooleanLiteral",
-      "offset": 556,
+      "offset": 543,
       "length": 5,
       "value": "false"
     },
@@ -13554,21 +13736,21 @@
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Analytics\/Dau\/AlxDauType.swift",
       "kind": "IntegerLiteral",
-      "offset": 230,
+      "offset": 231,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Analytics\/Dau\/AlxDauType.swift",
       "kind": "IntegerLiteral",
-      "offset": 307,
+      "offset": 308,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Analytics\/Dau\/AlxDauType.swift",
       "kind": "IntegerLiteral",
-      "offset": 383,
+      "offset": 385,
       "length": 1,
       "value": "3"
     },
@@ -13841,98 +14023,98 @@
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "StringLiteral",
-      "offset": 270,
+      "offset": 279,
       "length": 7,
-      "value": "\"2.0.2\""
+      "value": "\"2.0.3\""
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "StringLiteral",
-      "offset": 309,
+      "offset": 318,
       "length": 11,
       "value": "\"RixEngine\""
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "IntegerLiteral",
-      "offset": 370,
+      "offset": 379,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "IntegerLiteral",
-      "offset": 474,
+      "offset": 483,
       "length": 4,
       "value": "2001"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "IntegerLiteral",
-      "offset": 582,
+      "offset": 591,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "IntegerLiteral",
-      "offset": 702,
+      "offset": 711,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "IntegerLiteral",
-      "offset": 735,
+      "offset": 744,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "IntegerLiteral",
-      "offset": 768,
+      "offset": 777,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "IntegerLiteral",
-      "offset": 848,
+      "offset": 857,
       "length": 2,
-      "value": "45"
+      "value": "48"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "IntegerLiteral",
-      "offset": 897,
+      "offset": 906,
       "length": 2,
-      "value": "15"
+      "value": "18"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "StringLiteral",
-      "offset": 957,
+      "offset": 966,
       "length": 38,
       "value": "\"00000000-0000-0000-0000-000000000000\""
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "StringLiteral",
-      "offset": 1049,
+      "offset": 1058,
       "length": 19,
       "value": "\"com.rixengine.ads\""
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "StringLiteral",
-      "offset": 1139,
+      "offset": 1148,
       "length": 5,
       "value": "\"1.0\""
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConst.swift",
       "kind": "StringLiteral",
-      "offset": 1277,
+      "offset": 1286,
       "length": 18,
       "value": "\"AlgorixRixEngine\""
     },
@@ -14121,35 +14303,42 @@
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 960,
+      "offset": 962,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 1056,
+      "offset": 1060,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConfig.swift",
       "kind": "StringLiteral",
-      "offset": 1185,
+      "offset": 1191,
       "length": 37,
       "value": "\"alx.video.ext.control.timestamp.key\""
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 1370,
+      "offset": 1378,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 2199,
+      "offset": 2188,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Config\/AlxConfig.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2364,
       "length": 5,
       "value": "false"
     },
@@ -14674,7 +14863,7 @@
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Bus\/AlxAdClickAction.swift",
       "kind": "BooleanLiteral",
-      "offset": 10818,
+      "offset": 10852,
       "length": 5,
       "value": "false"
     },
@@ -14889,6 +15078,83 @@
       "value": "\"unknown\""
     },
     {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 224,
+      "length": 2,
+      "value": "44"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 395,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 581,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "StringLiteral",
+      "offset": 646,
+      "length": 14,
+      "value": "\"chevron.left\""
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 797,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1062,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1227,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "StringLiteral",
+      "offset": 1394,
+      "length": 11,
+      "value": "\"alx_close\""
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1543,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1851,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxInnerBrowserVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2001,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
       "offset": 1243,
@@ -15075,7 +15341,7 @@
       "kind": "IntegerLiteral",
       "offset": 4539,
       "length": 1,
-      "value": "8"
+      "value": "4"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
@@ -15150,420 +15416,420 @@
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 5569,
+      "offset": 5584,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 5663,
+      "offset": 5678,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 5846,
+      "offset": 5861,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 5995,
+      "offset": 6010,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6005,
+      "offset": 6020,
       "length": 3,
       "value": "125"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6011,
+      "offset": 6026,
       "length": 3,
       "value": "255"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6022,
+      "offset": 6037,
       "length": 3,
       "value": "254"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6028,
+      "offset": 6043,
       "length": 3,
       "value": "255"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6040,
+      "offset": 6055,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 6088,
+      "offset": 6103,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6137,
+      "offset": 6152,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 6331,
+      "offset": 6346,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6395,
+      "offset": 6410,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6405,
+      "offset": 6420,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6414,
+      "offset": 6429,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "FloatLiteral",
-      "offset": 6424,
+      "offset": 6439,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 6655,
+      "offset": 6670,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 6704,
+      "offset": 6719,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6803,
+      "offset": 6818,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6813,
+      "offset": 6828,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6822,
+      "offset": 6837,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "FloatLiteral",
-      "offset": 6832,
+      "offset": 6847,
       "length": 4,
       "value": "0.65"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 6883,
+      "offset": 6898,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 7121,
+      "offset": 7136,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 7194,
+      "offset": 7209,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 7240,
+      "offset": 7255,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 7333,
+      "offset": 7348,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 7433,
+      "offset": 7448,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 7515,
+      "offset": 7530,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 7802,
+      "offset": 7817,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 7854,
+      "offset": 7869,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 7980,
+      "offset": 7995,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 8082,
+      "offset": 8097,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 8205,
+      "offset": 8220,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 8373,
+      "offset": 8388,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 8540,
+      "offset": 8555,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 8622,
+      "offset": 8637,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 8716,
+      "offset": 8731,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "FloatLiteral",
-      "offset": 8802,
+      "offset": 8817,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 8939,
+      "offset": 8954,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 9078,
+      "offset": 9093,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 9188,
+      "offset": 9203,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 9318,
+      "offset": 9333,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 9421,
+      "offset": 9436,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 9533,
+      "offset": 9548,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 9652,
+      "offset": 9667,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 9822,
+      "offset": 9837,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 9942,
+      "offset": 9957,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10046,
+      "offset": 10061,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10162,
+      "offset": 10177,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 10262,
+      "offset": 10277,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 10364,
+      "offset": 10379,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10475,
+      "offset": 10490,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10587,
+      "offset": 10602,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10717,
+      "offset": 10732,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10841,
+      "offset": 10856,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10961,
+      "offset": 10976,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 11033,
+      "offset": 11048,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "IntegerLiteral",
-      "offset": 11105,
+      "offset": 11120,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/algorix\/work_project\/rix-ads-ios-sdk\/AlxAds\/Control\/AlxVideoVC.swift",
       "kind": "BooleanLiteral",
-      "offset": 11550,
+      "offset": 11565,
       "length": 5,
       "value": "false"
     },

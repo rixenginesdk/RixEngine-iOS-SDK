@@ -694,8 +694,22 @@ SWIFT_CLASS("_TtC6AlxAds6AlxSdk")
 + (BOOL)isSDKInit SWIFT_WARN_UNUSED_RESULT;
 + (void)setHostWithHostUrl:(NSString * _Nonnull)hostUrl;
 + (void)setDebug:(BOOL)debug;
+/// SDK Name
 + (NSString * _Nonnull)getSDKName SWIFT_WARN_UNUSED_RESULT;
+/// Alx SDK Version
 + (NSString * _Nonnull)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
+/// RixEngineHost URL
++ (NSString * _Nonnull)getRixEngineHost SWIFT_WARN_UNUSED_RESULT;
+/// Pub Token
++ (NSString * _Nonnull)getPubToken SWIFT_WARN_UNUSED_RESULT;
+/// Pub Sid
++ (NSString * _Nonnull)getPubSid SWIFT_WARN_UNUSED_RESULT;
+/// App ID
++ (NSString * _Nonnull)getAppID SWIFT_WARN_UNUSED_RESULT;
+/// OMSDK Version
++ (NSString * _Nonnull)getOMSDKVersion SWIFT_WARN_UNUSED_RESULT;
+/// Alx User ID
++ (NSString * _Nonnull)getAlxUserID SWIFT_WARN_UNUSED_RESULT;
 + (void)addExtraParametersWithKey:(NSString * _Nonnull)key value:(id _Nonnull)value;
 + (NSDictionary<NSString *, id> * _Nonnull)getExtraParameters SWIFT_WARN_UNUSED_RESULT;
 + (void)setGDPRConsent:(BOOL)value;

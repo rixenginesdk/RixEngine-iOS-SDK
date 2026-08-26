@@ -28,7 +28,7 @@ import AlxAds.AlxFix
     }
     
     @objc public static func isSDKInit() -> Bool {
-        return isInit
+        isInit
     }
     
     @objc public static func setHost(hostUrl: String) {
@@ -39,12 +39,44 @@ import AlxAds.AlxFix
         AlxSdkManager.setDebug(debug)
     }
     
+    /// SDK Name
     @objc public static func getSDKName() -> String {
-        return AlxSdkManager.getSDKName()
+        AlxSdkManager.getSDKName()
     }
     
+    /// Alx SDK Version
     @objc public static func getSDKVersion() -> String {
-        return AlxSdkManager.getSDKVersion()
+        AlxSdkManager.getSDKVersion()
+    }
+    
+    /// RixEngineHost URL
+    @objc public static func getRixEngineHost() -> String {
+        AlxSdkManager.getRixEngineHost()
+    }
+    
+    /// Pub Token
+    @objc public static func getPubToken() -> String {
+        AlxSdkManager.getPubToken()
+    }
+    
+    /// Pub Sid
+    @objc public static func getPubSid() -> String {
+        AlxSdkManager.getPubSid()
+    }
+    
+    /// App ID
+    @objc public static func getAppID() -> String {
+        AlxSdkManager.getAppID()
+    }
+    
+    /// OMSDK Version
+    @objc public static func getOMSDKVersion() -> String {
+        AlxSdkManager.getOMSDKVersion()
+    }
+    
+    /// Alx User ID
+    @objc public static func getAlxUserID() -> String {
+        AlxSdkManager.getAlxUserID()
     }
     
     @objc public static func addExtraParameters(key: String, value: Any) {

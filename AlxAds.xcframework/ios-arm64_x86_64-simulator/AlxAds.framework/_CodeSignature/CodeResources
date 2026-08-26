@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		LCnhLnGliWTzDFN/xg3uTCO1Bpc=
+		G087D6aluHXotoD+3ovO0+ggiJs=
 		</data>
 		<key>Headers/AlxAdDelegate.swift</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/AlxAds-Swift.h</key>
 		<data>
-		021b39HY9wrImQadODu1NyW2TOw=
+		sEiBrxwbTHWngdyQhOkZdQV8xqM=
 		</data>
 		<key>Headers/AlxAds.h</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Headers/AlxSdk.swift</key>
 		<data>
-		X0qaU/rPilnpCNKFMHpYQmkTqVc=
+		Kd5GeDvPlxuLBTqJ6bDeMBhkYpo=
 		</data>
 		<key>Headers/AlxUniversalFix.h</key>
 		<data>
@@ -90,47 +90,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		M0LUe9ILnMF+9ZfmecIjReMBRqE=
+		weAAPUTlT4420KIoUfQNlUCG8Ao=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		32Q0jPK3UZyZTE410hjltpM90O8=
+		SwlJmER6wqBXUnEluvUmSPfQcAw=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		TCBEhGlUwi0/0o1Vvh6Hf9sWA+s=
+		t8amlFnQ1omffW5yce6wVWRfOCs=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		pykbWSX1Fd1Epqx01Fsq85yIcLU=
+		KIJ8XY38ZpGFnESnvzJ0Y5bn+Cc=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TCBEhGlUwi0/0o1Vvh6Hf9sWA+s=
+		t8amlFnQ1omffW5yce6wVWRfOCs=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		rxHfndfr9zOf1kxmNuTCKYXoFoo=
+		RNsE4Xc9bL2ueufKM9WSMZ5Wdps=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		32Q0jPK3UZyZTE410hjltpM90O8=
+		SwlJmER6wqBXUnEluvUmSPfQcAw=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		gILDSQ5NO+p16DHRuqx4L7/qmIs=
+		19bU1IQWKY9lF6sxll7rajBIA9w=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		WwR+qd1bAue0so3dmqbYF96xOTU=
+		brFGUzkFhX4LIuJH1kh8UmZmRO8=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		gILDSQ5NO+p16DHRuqx4L7/qmIs=
+		19bU1IQWKY9lF6sxll7rajBIA9w=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		rfL1fmbWPyXjJ+EsUTIhet7BHs4=
+		4MCUzLl4FYcnIH5pJDTHCoZ8sAc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -189,7 +189,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			92eu7UlsPB8ihnqRLDUENVob3hhXS0NQb0mpTialtHs=
+			koEzK8dPtNjxZIfjnUSWCruLX3e25TBcQF68zKvPCrc=
 			</data>
 		</dict>
 		<key>Headers/AlxAdDelegate.swift</key>
@@ -210,7 +210,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3yIqh08qYoDOpOn3in41UlQjpzJEekPbqX22pGobIAY=
+			k/UalSSyY6GuGZe29tt9K4zWk9Aen9HAYWHbUrDNT3o=
 			</data>
 		</dict>
 		<key>Headers/AlxAds.h</key>
@@ -322,7 +322,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uZY7JmNbENW/qO/omy6H9lZuLZXpsK1BV6feROeKBeM=
+			+2nwl5EHku7f1wKZsx2w+Gjr24h50/B9f2kmptJjdXY=
 			</data>
 		</dict>
 		<key>Headers/AlxUniversalFix.h</key>
@@ -336,70 +336,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ntRZNBb3vujHgyS808KLgYDQImipDvM4EelTefaJarI=
+			8NptT5upxwnExRtSfpsyTbZg9NAVLoohasN3g0GMVXs=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7g6WqJ5u4MYa4TpdfM4PFef1hO87E75N4lKtU07u5f0=
+			MPQ6FMlRxCCYhvlzb/gAzuBbTnI7zRfAF8ZVKkG0nOk=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			retlrb4L7T4LbkPvV9d1ewgDtZZFqar6OK8xU9KHBnM=
+			pft8eG3HBvLrotwOWR7eCAvKjEHFbPHwUyCTsjDhZ7A=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7g6WqJ5u4MYa4TpdfM4PFef1hO87E75N4lKtU07u5f0=
+			MPQ6FMlRxCCYhvlzb/gAzuBbTnI7zRfAF8ZVKkG0nOk=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hs6gToRxHZLsTIOsleBwsXFKtniPtGRAXS9HFO1Sb9o=
+			TL/eNTfx5w4GAMV/3NPrH13t7y9gyAKIRNvPVQhlOXQ=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ntRZNBb3vujHgyS808KLgYDQImipDvM4EelTefaJarI=
+			8NptT5upxwnExRtSfpsyTbZg9NAVLoohasN3g0GMVXs=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MPhctmYsEdxqAJN8k0vOkJ4yfArGij2xBLHf5QYOiXo=
+			1neIeKBhBzJx6f0/dpWrABmBbNpBC3LWcxpIiMEiyiw=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GzwPIWurvGpNhUdwmGsXNtPxQ/p5y1MewLKM37zby9g=
+			JMPN1+njE6XBBEcKjM/8GZW96KI0dzWo/Nw8hXsY/rU=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MPhctmYsEdxqAJN8k0vOkJ4yfArGij2xBLHf5QYOiXo=
+			1neIeKBhBzJx6f0/dpWrABmBbNpBC3LWcxpIiMEiyiw=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lg5x+VUd0kA3ZhCRnc59KiC1Opo5ZXpxJRTLiRvnX8E=
+			ZxuGkBWTlHRil+j7ONbxDdVOnS9maZIArIcCFc75TbA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

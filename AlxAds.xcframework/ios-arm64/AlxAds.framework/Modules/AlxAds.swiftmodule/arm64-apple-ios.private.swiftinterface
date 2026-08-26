@@ -332,6 +332,12 @@ import os
   @objc public static func setDebug(_ debug: Swift.Bool)
   @objc public static func getSDKName() -> Swift.String
   @objc public static func getSDKVersion() -> Swift.String
+  @objc public static func getRixEngineHost() -> Swift.String
+  @objc public static func getPubToken() -> Swift.String
+  @objc public static func getPubSid() -> Swift.String
+  @objc public static func getAppID() -> Swift.String
+  @objc public static func getOMSDKVersion() -> Swift.String
+  @objc public static func getAlxUserID() -> Swift.String
   @objc public static func addExtraParameters(key: Swift.String, value: Any)
   @objc public static func getExtraParameters() -> [Swift.String : Any]
   @objc public static func setGDPRConsent(_ value: Swift.Bool)
