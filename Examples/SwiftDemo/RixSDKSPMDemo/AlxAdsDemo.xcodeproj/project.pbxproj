@@ -1,0 +1,843 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41A760FCBF3802D5438B12BA /* LevelPlayBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B271E1FD2EC2A5648A511BFF /* LevelPlayBannerVC.swift */; };
+		50455122CF9A1181119FE621 /* LevelPlayMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D167379683C9ADA94B349 /* LevelPlayMainVC.swift */; };
+		8348998D5C7A297779671557 /* LevelPlayRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504AF30AA952B0F23249B36 /* LevelPlayRewardVideoVC.swift */; };
+		A1B2C3D62FABC00100D00E01 /* AlxRequestParamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D42FABC00100D00E01 /* AlxRequestParamStore.swift */; };
+		A1B2C3D72FABC00100D00E01 /* AlxRequestConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D52FABC00100D00E01 /* AlxRequestConfigVC.swift */; };
+		A1D0B5E12FCD000100AA0001 /* AdmobNativeRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0B5E22FCD000100AA0002 /* AdmobNativeRenderVC.swift */; };
+		A1D0B5E32FCD000100AA0003 /* TopOnNativeRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0B5E42FCD000100AA0004 /* TopOnNativeRenderVC.swift */; };
+		A1D0B5E52FCD000100AA0005 /* MaxNativeRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0B5E62FCD000100AA0006 /* MaxNativeRenderVC.swift */; };
+		B1C2D3E52FBC100100AA0001 /* AlxNativeRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E42FBC100100AA0001 /* AlxNativeRenderVC.swift */; };
+		BA4EF2352F7F6E5A00D20422 /* MenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF2342F7F6E5A00D20422 /* MenuCardCell.swift */; };
+		BA77DEC02FAF159B009F2730 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77DEBF2FAF159B009F2730 /* UIColor+Extension.swift */; };
+		BA796055303F011400716E0A /* RixEngineAds in Frameworks */ = {isa = PBXBuildFile; productRef = BA796054303F011400716E0A /* RixEngineAds */; };
+		BA796057303F011400716E0A /* RixEngineAdsAdmobAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA796056303F011400716E0A /* RixEngineAdsAdmobAdapter */; };
+		BA796059303F011400716E0A /* RixEngineAdsMaxAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA796058303F011400716E0A /* RixEngineAdsMaxAdapter */; };
+		BA79605B303F011400716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA79605A303F011400716E0A /* RixEngineAdsUnityLevelPlayAdapter */; };
+		BA79605E303F0AF600716E0A /* RixEngineAds in Frameworks */ = {isa = PBXBuildFile; productRef = BA79605D303F0AF600716E0A /* RixEngineAds */; };
+		BA796060303F0AF600716E0A /* RixEngineAdsAdmobAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA79605F303F0AF600716E0A /* RixEngineAdsAdmobAdapter */; };
+		BA796062303F0AF600716E0A /* RixEngineAdsMaxAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA796061303F0AF600716E0A /* RixEngineAdsMaxAdapter */; };
+		BA796064303F0AF600716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA796063303F0AF600716E0A /* RixEngineAdsUnityLevelPlayAdapter */; };
+		BA796067303F0D8000716E0A /* RixEngineAds in Frameworks */ = {isa = PBXBuildFile; productRef = BA796066303F0D8000716E0A /* RixEngineAds */; };
+		BA796069303F0D8000716E0A /* RixEngineAdsAdmobAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA796068303F0D8000716E0A /* RixEngineAdsAdmobAdapter */; };
+		BA79606B303F0D8000716E0A /* RixEngineAdsMaxAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA79606A303F0D8000716E0A /* RixEngineAdsMaxAdapter */; };
+		BA79606D303F0D8000716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA79606C303F0D8000716E0A /* RixEngineAdsUnityLevelPlayAdapter */; };
+		BA796070303F0DCB00716E0A /* RixEngineAds in Frameworks */ = {isa = PBXBuildFile; productRef = BA79606F303F0DCB00716E0A /* RixEngineAds */; };
+		BA796072303F0DCB00716E0A /* RixEngineAdsAdmobAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA796071303F0DCB00716E0A /* RixEngineAdsAdmobAdapter */; };
+		BA796074303F0DCB00716E0A /* RixEngineAdsMaxAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA796073303F0DCB00716E0A /* RixEngineAdsMaxAdapter */; };
+		BA796076303F0DCB00716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA796075303F0DCB00716E0A /* RixEngineAdsUnityLevelPlayAdapter */; };
+		BAD4650B2F2397730038E82B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD4650A2F2397730038E82B /* BaseTableViewController.swift */; };
+		C96DA4EF74E2D596B36D12A7 /* LevelPlayInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0C5D8BCB12A8B1542F6046 /* LevelPlayInterstitialVC.swift */; };
+		D4M0M3N4V1G2A3T4I0O5N02 /* DemoMenuNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4M0M3N4V1G2A3T4I0O5N01 /* DemoMenuNavigation.swift */; };
+		E308164C2E2DDFBD002E3112 /* AdmobNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308164A2E2DDFBD002E3112 /* AdmobNativeVC.swift */; };
+		E308164D2E2DDFBD002E3112 /* AdmobInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816482E2DDFBD002E3112 /* AdmobInterstitialVC.swift */; };
+		E308164E2E2DDFBD002E3112 /* AdmobRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308164B2E2DDFBD002E3112 /* AdmobRewardVideoVC.swift */; };
+		E308164F2E2DDFBD002E3112 /* AdmobMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816492E2DDFBD002E3112 /* AdmobMainVC.swift */; };
+		E30816502E2DDFBD002E3112 /* AdmobBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816472E2DDFBD002E3112 /* AdmobBannerVC.swift */; };
+		E319563F2DF7D9D60083BC3C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E319563D2DF7D9D60083BC3C /* Localizable.strings */; };
+		E33E7AC92DD4A0CB00C724B9 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E7AC82DD4A0CB00C724B9 /* BaseUIViewController.swift */; };
+		E33E7ACB2DD4A0E900C724B9 /* AdConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E7ACA2DD4A0E900C724B9 /* AdConfig.swift */; };
+		E33E7AEC2DD4AACF00C724B9 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E7AEB2DD4AACF00C724B9 /* UIImageView+Extensions.swift */; };
+		E37478D52E571ED8000AAF5F /* TopOnInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37478D42E571ECE000AAF5F /* TopOnInterstitialVC.swift */; };
+		E37D63902E58695B00FD6C50 /* TopOnNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D638F2E58695300FD6C50 /* TopOnNativeVC.swift */; };
+		E37D63922E5C0C4200FD6C50 /* TopOnSelfRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D63912E5C0C2F00FD6C50 /* TopOnSelfRenderView.swift */; };
+		E39022AA2E0018570096BC00 /* TestMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39022A92E0018510096BC00 /* TestMainVC.swift */; };
+		E39759FD2E5DA4740060D69D /* TopOnNativeSelfRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39759FC2E5DA4600060D69D /* TopOnNativeSelfRenderVC.swift */; };
+		E39D562A2ECB032C00BE96CA /* AlxRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D56272ECB032C00BE96CA /* AlxRewardVideoVC.swift */; };
+		E39D562B2ECB032C00BE96CA /* AlxNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D56262ECB032C00BE96CA /* AlxNativeVC.swift */; };
+		E39D562C2ECB032C00BE96CA /* AlxBannerXibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D561E2ECB032C00BE96CA /* AlxBannerXibVC.swift */; };
+		E39D562D2ECB032C00BE96CA /* AlxInterstitialBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D56232ECB032C00BE96CA /* AlxInterstitialBannerVC.swift */; };
+		E39D562E2ECB032C00BE96CA /* AlxMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D56252ECB032C00BE96CA /* AlxMainVC.swift */; };
+		E39D562F2ECB032C00BE96CA /* AlxInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D56242ECB032C00BE96CA /* AlxInterstitialVC.swift */; };
+		E39D56302ECB032C00BE96CA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D56292ECB032C00BE96CA /* MainVC.swift */; };
+		E39D56312ECB032C00BE96CA /* AlxBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D56222ECB032C00BE96CA /* AlxBannerVC.swift */; };
+		E39D56322ECB032C00BE96CA /* AlxBannerXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E39D561F2ECB032C00BE96CA /* AlxBannerXibVC.xib */; };
+		E3BD069A2E08EF2900C9D36D /* MaxBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD06952E08EF2900C9D36D /* MaxBannerVC.swift */; };
+		E3BD069B2E08EF2900C9D36D /* MaxMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD06972E08EF2900C9D36D /* MaxMainVC.swift */; };
+		E3BD069C2E08EF2900C9D36D /* MaxInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD06962E08EF2900C9D36D /* MaxInterstitialVC.swift */; };
+		E3BD069D2E08EF2900C9D36D /* MaxNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD06982E08EF2900C9D36D /* MaxNativeVC.swift */; };
+		E3BD069E2E08EF2900C9D36D /* MaxRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD06992E08EF2900C9D36D /* MaxRewardVideoVC.swift */; };
+		E3EC00632DD4933B00485DAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC00622DD4933B00485DAF /* AppDelegate.swift */; };
+		E3EC00652DD4933B00485DAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC00642DD4933B00485DAF /* SceneDelegate.swift */; };
+		E3EC00672DD4933B00485DAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC00662DD4933B00485DAF /* ViewController.swift */; };
+		E3EC006A2DD4933B00485DAF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E3EC00692DD4933B00485DAF /* Base */; };
+		E3EC006C2DD4933C00485DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3EC006B2DD4933C00485DAF /* Assets.xcassets */; };
+		E3EC006F2DD4933C00485DAF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E3EC006E2DD4933C00485DAF /* Base */; };
+		E3FF50BD2E53153A000BDC28 /* TopOnMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF50BC2E531532000BDC28 /* TopOnMainVC.swift */; };
+		E3FF50BF2E53176A000BDC28 /* TopOnRewardVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF50BE2E53175F000BDC28 /* TopOnRewardVideoVC.swift */; };
+		E3FF50C12E53261C000BDC28 /* TopOnBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF50C02E532614000BDC28 /* TopOnBannerVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D42FABC00100D00E01 /* AlxRequestParamStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxRequestParamStore.swift; sourceTree = "<group>"; };
+		A1B2C3D52FABC00100D00E01 /* AlxRequestConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxRequestConfigVC.swift; sourceTree = "<group>"; };
+		A1D0B5E22FCD000100AA0002 /* AdmobNativeRenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobNativeRenderVC.swift; sourceTree = "<group>"; };
+		A1D0B5E42FCD000100AA0004 /* TopOnNativeRenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnNativeRenderVC.swift; sourceTree = "<group>"; };
+		A1D0B5E62FCD000100AA0006 /* MaxNativeRenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxNativeRenderVC.swift; sourceTree = "<group>"; };
+		AC0D167379683C9ADA94B349 /* LevelPlayMainVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelPlayMainVC.swift; sourceTree = "<group>"; };
+		AE0C5D8BCB12A8B1542F6046 /* LevelPlayInterstitialVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelPlayInterstitialVC.swift; sourceTree = "<group>"; };
+		B1C2D3E42FBC100100AA0001 /* AlxNativeRenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxNativeRenderVC.swift; sourceTree = "<group>"; };
+		B271E1FD2EC2A5648A511BFF /* LevelPlayBannerVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelPlayBannerVC.swift; sourceTree = "<group>"; };
+		B504AF30AA952B0F23249B36 /* LevelPlayRewardVideoVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelPlayRewardVideoVC.swift; sourceTree = "<group>"; };
+		BA4EF2342F7F6E5A00D20422 /* MenuCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardCell.swift; sourceTree = "<group>"; };
+		BA77DEBF2FAF159B009F2730 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		BAD4650A2F2397730038E82B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		D4M0M3N4V1G2A3T4I0O5N01 /* DemoMenuNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMenuNavigation.swift; sourceTree = "<group>"; };
+		E30816472E2DDFBD002E3112 /* AdmobBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerVC.swift; sourceTree = "<group>"; };
+		E30816482E2DDFBD002E3112 /* AdmobInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialVC.swift; sourceTree = "<group>"; };
+		E30816492E2DDFBD002E3112 /* AdmobMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMainVC.swift; sourceTree = "<group>"; };
+		E308164A2E2DDFBD002E3112 /* AdmobNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobNativeVC.swift; sourceTree = "<group>"; };
+		E308164B2E2DDFBD002E3112 /* AdmobRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobRewardVideoVC.swift; sourceTree = "<group>"; };
+		E319563E2DF7D9D60083BC3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E31956402DF7D9F30083BC3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E33E7AC82DD4A0CB00C724B9 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		E33E7ACA2DD4A0E900C724B9 /* AdConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdConfig.swift; sourceTree = "<group>"; };
+		E33E7AEB2DD4AACF00C724B9 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		E37478D42E571ECE000AAF5F /* TopOnInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnInterstitialVC.swift; sourceTree = "<group>"; };
+		E37D638F2E58695300FD6C50 /* TopOnNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnNativeVC.swift; sourceTree = "<group>"; };
+		E37D63912E5C0C2F00FD6C50 /* TopOnSelfRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnSelfRenderView.swift; sourceTree = "<group>"; };
+		E39022A92E0018510096BC00 /* TestMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMainVC.swift; sourceTree = "<group>"; };
+		E39759FC2E5DA4600060D69D /* TopOnNativeSelfRenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnNativeSelfRenderVC.swift; sourceTree = "<group>"; };
+		E39D561E2ECB032C00BE96CA /* AlxBannerXibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerXibVC.swift; sourceTree = "<group>"; };
+		E39D561F2ECB032C00BE96CA /* AlxBannerXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlxBannerXibVC.xib; sourceTree = "<group>"; };
+		E39D56222ECB032C00BE96CA /* AlxBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxBannerVC.swift; sourceTree = "<group>"; };
+		E39D56232ECB032C00BE96CA /* AlxInterstitialBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxInterstitialBannerVC.swift; sourceTree = "<group>"; };
+		E39D56242ECB032C00BE96CA /* AlxInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxInterstitialVC.swift; sourceTree = "<group>"; };
+		E39D56252ECB032C00BE96CA /* AlxMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxMainVC.swift; sourceTree = "<group>"; };
+		E39D56262ECB032C00BE96CA /* AlxNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxNativeVC.swift; sourceTree = "<group>"; };
+		E39D56272ECB032C00BE96CA /* AlxRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxRewardVideoVC.swift; sourceTree = "<group>"; };
+		E39D56292ECB032C00BE96CA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		E3BD06952E08EF2900C9D36D /* MaxBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxBannerVC.swift; sourceTree = "<group>"; };
+		E3BD06962E08EF2900C9D36D /* MaxInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxInterstitialVC.swift; sourceTree = "<group>"; };
+		E3BD06972E08EF2900C9D36D /* MaxMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxMainVC.swift; sourceTree = "<group>"; };
+		E3BD06982E08EF2900C9D36D /* MaxNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxNativeVC.swift; sourceTree = "<group>"; };
+		E3BD06992E08EF2900C9D36D /* MaxRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxRewardVideoVC.swift; sourceTree = "<group>"; };
+		E3EC005F2DD4933B00485DAF /* AlxAdsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlxAdsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3EC00622DD4933B00485DAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3EC00642DD4933B00485DAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E3EC00662DD4933B00485DAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3EC00692DD4933B00485DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3EC006B2DD4933C00485DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3EC006E2DD4933C00485DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3EC00702DD4933C00485DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3FF50BC2E531532000BDC28 /* TopOnMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnMainVC.swift; sourceTree = "<group>"; };
+		E3FF50BE2E53175F000BDC28 /* TopOnRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnRewardVideoVC.swift; sourceTree = "<group>"; };
+		E3FF50C02E532614000BDC28 /* TopOnBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOnBannerVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3EC005C2DD4933B00485DAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA796064303F0AF600716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */,
+				BA796067303F0D8000716E0A /* RixEngineAds in Frameworks */,
+				BA79606B303F0D8000716E0A /* RixEngineAdsMaxAdapter in Frameworks */,
+				BA796070303F0DCB00716E0A /* RixEngineAds in Frameworks */,
+				BA796060303F0AF600716E0A /* RixEngineAdsAdmobAdapter in Frameworks */,
+				BA79605B303F011400716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */,
+				BA796072303F0DCB00716E0A /* RixEngineAdsAdmobAdapter in Frameworks */,
+				BA796069303F0D8000716E0A /* RixEngineAdsAdmobAdapter in Frameworks */,
+				BA796057303F011400716E0A /* RixEngineAdsAdmobAdapter in Frameworks */,
+				BA796076303F0DCB00716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */,
+				BA79606D303F0D8000716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */,
+				BA796059303F011400716E0A /* RixEngineAdsMaxAdapter in Frameworks */,
+				BA796055303F011400716E0A /* RixEngineAds in Frameworks */,
+				BA796062303F0AF600716E0A /* RixEngineAdsMaxAdapter in Frameworks */,
+				BA796074303F0DCB00716E0A /* RixEngineAdsMaxAdapter in Frameworks */,
+				BA79605E303F0AF600716E0A /* RixEngineAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E30816462E2DDF55002E3112 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				E30816472E2DDFBD002E3112 /* AdmobBannerVC.swift */,
+				E30816482E2DDFBD002E3112 /* AdmobInterstitialVC.swift */,
+				E30816492E2DDFBD002E3112 /* AdmobMainVC.swift */,
+				E308164A2E2DDFBD002E3112 /* AdmobNativeVC.swift */,
+				A1D0B5E22FCD000100AA0002 /* AdmobNativeRenderVC.swift */,
+				E308164B2E2DDFBD002E3112 /* AdmobRewardVideoVC.swift */,
+			);
+			path = Admob;
+			sourceTree = "<group>";
+		};
+		E33E7AC22DD4A02A00C724B9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BAD4650A2F2397730038E82B /* BaseTableViewController.swift */,
+				E33E7AC82DD4A0CB00C724B9 /* BaseUIViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E33E7AC42DD4A07900C724B9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E33E7ACA2DD4A0E900C724B9 /* AdConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E33E7AE22DD4AA4500C724B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E39D56292ECB032C00BE96CA /* MainVC.swift */,
+				D4M0M3N4V1G2A3T4I0O5N01 /* DemoMenuNavigation.swift */,
+				BA4EF2342F7F6E5A00D20422 /* MenuCardCell.swift */,
+				E3FF50BB2E531523000BDC28 /* TopOn */,
+				E30816462E2DDF55002E3112 /* Admob */,
+				E3BD06942E08EF0100C9D36D /* Max */,
+				E39D56282ECB032C00BE96CA /* Alx */,
+				E3A1A4C1419FE8395B9C9DFE /* LevelPlay */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E33E7AE32DD4AA5C00C724B9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E319563D2DF7D9D60083BC3C /* Localizable.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E33E7AEA2DD4AAB600C724B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E33E7AEB2DD4AACF00C724B9 /* UIImageView+Extensions.swift */,
+				BA77DEBF2FAF159B009F2730 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E39022A82E0018400096BC00 /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				E39022A92E0018510096BC00 /* TestMainVC.swift */,
+			);
+			path = Developer;
+			sourceTree = "<group>";
+		};
+		E39D56202ECB032C00BE96CA /* BannerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E39D561E2ECB032C00BE96CA /* AlxBannerXibVC.swift */,
+				E39D561F2ECB032C00BE96CA /* AlxBannerXibVC.xib */,
+			);
+			path = BannerViewController;
+			sourceTree = "<group>";
+		};
+		E39D56212ECB032C00BE96CA /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				E39D56202ECB032C00BE96CA /* BannerViewController */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		E39D56282ECB032C00BE96CA /* Alx */ = {
+			isa = PBXGroup;
+			children = (
+				E39D56212ECB032C00BE96CA /* Xib */,
+				E39D56222ECB032C00BE96CA /* AlxBannerVC.swift */,
+				E39D56232ECB032C00BE96CA /* AlxInterstitialBannerVC.swift */,
+				E39D56242ECB032C00BE96CA /* AlxInterstitialVC.swift */,
+				E39D56252ECB032C00BE96CA /* AlxMainVC.swift */,
+				A1B2C3D42FABC00100D00E01 /* AlxRequestParamStore.swift */,
+				A1B2C3D52FABC00100D00E01 /* AlxRequestConfigVC.swift */,
+				E39D56262ECB032C00BE96CA /* AlxNativeVC.swift */,
+				B1C2D3E42FBC100100AA0001 /* AlxNativeRenderVC.swift */,
+				E39D56272ECB032C00BE96CA /* AlxRewardVideoVC.swift */,
+			);
+			path = Alx;
+			sourceTree = "<group>";
+		};
+		E3A1A4C1419FE8395B9C9DFE /* LevelPlay */ = {
+			isa = PBXGroup;
+			children = (
+				AC0D167379683C9ADA94B349 /* LevelPlayMainVC.swift */,
+				B271E1FD2EC2A5648A511BFF /* LevelPlayBannerVC.swift */,
+				B504AF30AA952B0F23249B36 /* LevelPlayRewardVideoVC.swift */,
+				AE0C5D8BCB12A8B1542F6046 /* LevelPlayInterstitialVC.swift */,
+			);
+			path = LevelPlay;
+			sourceTree = "<group>";
+		};
+		E3BD06942E08EF0100C9D36D /* Max */ = {
+			isa = PBXGroup;
+			children = (
+				E3BD06952E08EF2900C9D36D /* MaxBannerVC.swift */,
+				E3BD06962E08EF2900C9D36D /* MaxInterstitialVC.swift */,
+				E3BD06972E08EF2900C9D36D /* MaxMainVC.swift */,
+				E3BD06982E08EF2900C9D36D /* MaxNativeVC.swift */,
+				A1D0B5E62FCD000100AA0006 /* MaxNativeRenderVC.swift */,
+				E3BD06992E08EF2900C9D36D /* MaxRewardVideoVC.swift */,
+			);
+			path = Max;
+			sourceTree = "<group>";
+		};
+		E3EC00562DD4933B00485DAF = {
+			isa = PBXGroup;
+			children = (
+				E3EC00612DD4933B00485DAF /* AlxAdsDemo */,
+				E3EC00602DD4933B00485DAF /* Products */,
+				E3EC00792DD4980C00485DAF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E3EC00602DD4933B00485DAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3EC005F2DD4933B00485DAF /* AlxAdsDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3EC00612DD4933B00485DAF /* AlxAdsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E39022A82E0018400096BC00 /* Developer */,
+				E33E7AEA2DD4AAB600C724B9 /* Extensions */,
+				E33E7AE32DD4AA5C00C724B9 /* Assets */,
+				E33E7AE22DD4AA4500C724B9 /* UI */,
+				E33E7AC42DD4A07900C724B9 /* Config */,
+				E33E7AC22DD4A02A00C724B9 /* Base */,
+				E3EC00622DD4933B00485DAF /* AppDelegate.swift */,
+				E3EC00642DD4933B00485DAF /* SceneDelegate.swift */,
+				E3EC00662DD4933B00485DAF /* ViewController.swift */,
+				E3EC00682DD4933B00485DAF /* Main.storyboard */,
+				E3EC006B2DD4933C00485DAF /* Assets.xcassets */,
+				E3EC006D2DD4933C00485DAF /* LaunchScreen.storyboard */,
+				E3EC00702DD4933C00485DAF /* Info.plist */,
+			);
+			path = AlxAdsDemo;
+			sourceTree = "<group>";
+		};
+		E3EC00792DD4980C00485DAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3FF50BB2E531523000BDC28 /* TopOn */ = {
+			isa = PBXGroup;
+			children = (
+				E39759FC2E5DA4600060D69D /* TopOnNativeSelfRenderVC.swift */,
+				E37D63912E5C0C2F00FD6C50 /* TopOnSelfRenderView.swift */,
+				E37D638F2E58695300FD6C50 /* TopOnNativeVC.swift */,
+				A1D0B5E42FCD000100AA0004 /* TopOnNativeRenderVC.swift */,
+				E37478D42E571ECE000AAF5F /* TopOnInterstitialVC.swift */,
+				E3FF50C02E532614000BDC28 /* TopOnBannerVC.swift */,
+				E3FF50BE2E53175F000BDC28 /* TopOnRewardVideoVC.swift */,
+				E3FF50BC2E531532000BDC28 /* TopOnMainVC.swift */,
+			);
+			path = TopOn;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3EC005E2DD4933B00485DAF /* AlxAdsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3EC00732DD4933C00485DAF /* Build configuration list for PBXNativeTarget "AlxAdsDemo" */;
+			buildPhases = (
+				E3EC005B2DD4933B00485DAF /* Sources */,
+				E3EC005C2DD4933B00485DAF /* Frameworks */,
+				E3EC005D2DD4933B00485DAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlxAdsDemo;
+			productName = AlxAdsDemo;
+			productReference = E3EC005F2DD4933B00485DAF /* AlxAdsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3EC00572DD4933B00485DAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					E3EC005E2DD4933B00485DAF = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+					};
+				};
+			};
+			buildConfigurationList = E3EC005A2DD4933B00485DAF /* Build configuration list for PBXProject "AlxAdsDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = E3EC00562DD4933B00485DAF;
+			packageReferences = (
+				BA79606E303F0DCB00716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */,
+			);
+			productRefGroup = E3EC00602DD4933B00485DAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3EC005E2DD4933B00485DAF /* AlxAdsDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3EC005D2DD4933B00485DAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3EC006C2DD4933C00485DAF /* Assets.xcassets in Resources */,
+				E319563F2DF7D9D60083BC3C /* Localizable.strings in Resources */,
+				E39D56322ECB032C00BE96CA /* AlxBannerXibVC.xib in Resources */,
+				E3EC006F2DD4933C00485DAF /* Base in Resources */,
+				E3EC006A2DD4933B00485DAF /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3EC005B2DD4933B00485DAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3FF50BF2E53176A000BDC28 /* TopOnRewardVideoVC.swift in Sources */,
+				E3EC00672DD4933B00485DAF /* ViewController.swift in Sources */,
+				E3BD069A2E08EF2900C9D36D /* MaxBannerVC.swift in Sources */,
+				E3BD069B2E08EF2900C9D36D /* MaxMainVC.swift in Sources */,
+				E3BD069C2E08EF2900C9D36D /* MaxInterstitialVC.swift in Sources */,
+				E3BD069D2E08EF2900C9D36D /* MaxNativeVC.swift in Sources */,
+				E3BD069E2E08EF2900C9D36D /* MaxRewardVideoVC.swift in Sources */,
+				E308164C2E2DDFBD002E3112 /* AdmobNativeVC.swift in Sources */,
+				A1D0B5E12FCD000100AA0001 /* AdmobNativeRenderVC.swift in Sources */,
+				E308164D2E2DDFBD002E3112 /* AdmobInterstitialVC.swift in Sources */,
+				E37D63902E58695B00FD6C50 /* TopOnNativeVC.swift in Sources */,
+				A1D0B5E32FCD000100AA0003 /* TopOnNativeRenderVC.swift in Sources */,
+				BA77DEC02FAF159B009F2730 /* UIColor+Extension.swift in Sources */,
+				E308164E2E2DDFBD002E3112 /* AdmobRewardVideoVC.swift in Sources */,
+				E308164F2E2DDFBD002E3112 /* AdmobMainVC.swift in Sources */,
+				E37478D52E571ED8000AAF5F /* TopOnInterstitialVC.swift in Sources */,
+				E30816502E2DDFBD002E3112 /* AdmobBannerVC.swift in Sources */,
+				E3FF50C12E53261C000BDC28 /* TopOnBannerVC.swift in Sources */,
+				E3FF50BD2E53153A000BDC28 /* TopOnMainVC.swift in Sources */,
+				E33E7AEC2DD4AACF00C724B9 /* UIImageView+Extensions.swift in Sources */,
+				E33E7ACB2DD4A0E900C724B9 /* AdConfig.swift in Sources */,
+				E33E7AC92DD4A0CB00C724B9 /* BaseUIViewController.swift in Sources */,
+				E39022AA2E0018570096BC00 /* TestMainVC.swift in Sources */,
+				BAD4650B2F2397730038E82B /* BaseTableViewController.swift in Sources */,
+				E37D63922E5C0C4200FD6C50 /* TopOnSelfRenderView.swift in Sources */,
+				E3EC00632DD4933B00485DAF /* AppDelegate.swift in Sources */,
+				BA4EF2352F7F6E5A00D20422 /* MenuCardCell.swift in Sources */,
+				E39D562A2ECB032C00BE96CA /* AlxRewardVideoVC.swift in Sources */,
+				E39D562B2ECB032C00BE96CA /* AlxNativeVC.swift in Sources */,
+				B1C2D3E52FBC100100AA0001 /* AlxNativeRenderVC.swift in Sources */,
+				E39D562C2ECB032C00BE96CA /* AlxBannerXibVC.swift in Sources */,
+				E39D562D2ECB032C00BE96CA /* AlxInterstitialBannerVC.swift in Sources */,
+				E39D562E2ECB032C00BE96CA /* AlxMainVC.swift in Sources */,
+				E39D562F2ECB032C00BE96CA /* AlxInterstitialVC.swift in Sources */,
+				A1B2C3D62FABC00100D00E01 /* AlxRequestParamStore.swift in Sources */,
+				A1B2C3D72FABC00100D00E01 /* AlxRequestConfigVC.swift in Sources */,
+				A1D0B5E52FCD000100AA0005 /* MaxNativeRenderVC.swift in Sources */,
+				E39D56302ECB032C00BE96CA /* MainVC.swift in Sources */,
+				D4M0M3N4V1G2A3T4I0O5N02 /* DemoMenuNavigation.swift in Sources */,
+				E39D56312ECB032C00BE96CA /* AlxBannerVC.swift in Sources */,
+				E3EC00652DD4933B00485DAF /* SceneDelegate.swift in Sources */,
+				E39759FD2E5DA4740060D69D /* TopOnNativeSelfRenderVC.swift in Sources */,
+				50455122CF9A1181119FE621 /* LevelPlayMainVC.swift in Sources */,
+				41A760FCBF3802D5438B12BA /* LevelPlayBannerVC.swift in Sources */,
+				8348998D5C7A297779671557 /* LevelPlayRewardVideoVC.swift in Sources */,
+				C96DA4EF74E2D596B36D12A7 /* LevelPlayInterstitialVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E319563D2DF7D9D60083BC3C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E31956402DF7D9F30083BC3C /* en */,
+				E319563E2DF7D9D60083BC3C /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E3EC00682DD4933B00485DAF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3EC00692DD4933B00485DAF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3EC006D2DD4933C00485DAF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3EC006E2DD4933C00485DAF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3EC00712DD4933C00485DAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3EC00722DD4933C00485DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3EC00742DD4933C00485DAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 23Q35ZFNJZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlxAdsDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RixSwiftDemo;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Alxgorix advertising application case";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rixengine.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3EC00752DD4933C00485DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 23Q35ZFNJZ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlxAdsDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RixSwiftDemo;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Alxgorix advertising application case";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rixengine.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3EC005A2DD4933B00485DAF /* Build configuration list for PBXProject "AlxAdsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3EC00712DD4933C00485DAF /* Debug */,
+				E3EC00722DD4933C00485DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3EC00732DD4933C00485DAF /* Build configuration list for PBXNativeTarget "AlxAdsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3EC00742DD4933C00485DAF /* Debug */,
+				E3EC00752DD4933C00485DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA796053303F011400716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rixenginesdk/RixEngine-iOS-SDK.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+		BA79605C303F0AF600716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rixenginesdk/RixEngine-iOS-SDK.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+		BA796065303F0D8000716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rixenginesdk/RixEngine-iOS-SDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+		BA79606E303F0DCB00716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rixenginesdk/RixEngine-iOS-SDK";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA796054303F011400716E0A /* RixEngineAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA796053303F011400716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAds;
+		};
+		BA796056303F011400716E0A /* RixEngineAdsAdmobAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA796053303F011400716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsAdmobAdapter;
+		};
+		BA796058303F011400716E0A /* RixEngineAdsMaxAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA796053303F011400716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsMaxAdapter;
+		};
+		BA79605A303F011400716E0A /* RixEngineAdsUnityLevelPlayAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA796053303F011400716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsUnityLevelPlayAdapter;
+		};
+		BA79605D303F0AF600716E0A /* RixEngineAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA79605C303F0AF600716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAds;
+		};
+		BA79605F303F0AF600716E0A /* RixEngineAdsAdmobAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA79605C303F0AF600716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsAdmobAdapter;
+		};
+		BA796061303F0AF600716E0A /* RixEngineAdsMaxAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA79605C303F0AF600716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsMaxAdapter;
+		};
+		BA796063303F0AF600716E0A /* RixEngineAdsUnityLevelPlayAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA79605C303F0AF600716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsUnityLevelPlayAdapter;
+		};
+		BA796066303F0D8000716E0A /* RixEngineAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA796065303F0D8000716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAds;
+		};
+		BA796068303F0D8000716E0A /* RixEngineAdsAdmobAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA796065303F0D8000716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsAdmobAdapter;
+		};
+		BA79606A303F0D8000716E0A /* RixEngineAdsMaxAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA796065303F0D8000716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsMaxAdapter;
+		};
+		BA79606C303F0D8000716E0A /* RixEngineAdsUnityLevelPlayAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA796065303F0D8000716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsUnityLevelPlayAdapter;
+		};
+		BA79606F303F0DCB00716E0A /* RixEngineAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA79606E303F0DCB00716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAds;
+		};
+		BA796071303F0DCB00716E0A /* RixEngineAdsAdmobAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA79606E303F0DCB00716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsAdmobAdapter;
+		};
+		BA796073303F0DCB00716E0A /* RixEngineAdsMaxAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA79606E303F0DCB00716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsMaxAdapter;
+		};
+		BA796075303F0DCB00716E0A /* RixEngineAdsUnityLevelPlayAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA79606E303F0DCB00716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAdsUnityLevelPlayAdapter;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E3EC00572DD4933B00485DAF /* Project object */;
+}

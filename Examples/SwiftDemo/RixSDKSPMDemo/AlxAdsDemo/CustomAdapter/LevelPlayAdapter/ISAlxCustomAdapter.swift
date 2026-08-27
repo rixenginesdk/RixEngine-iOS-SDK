@@ -1,0 +1,135 @@
+//
+//  ISAlxCustomAdapter.swift
+//  AlxAdsDemo
+//
+//  LevelPlay (Unity IronSource) 自定义网络基础适配器
+//  LevelPlay (Unity IronSource) Custom Network Base Adapter
+//  文档参考 / Documentation: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
+//
+
+import Foundation
+import IronSource
+import AlxAds
+
+@objc(ISAlxCustomAdapter)
+public class ISAlxCustomAdapter: ISBaseNetworkAdapter {
+
+    private static let TAG = "AlxUnityLevelPlayBaseCustomAdapter"
+    private static var _isInitialized = false
+
+    static var isInitialized: Bool {
+        get { _isInitialized }
+        set { _isInitialized = newValue }
+    }
+
+    // MARK: - ISBaseNetworkAdapter
+
+    /// LevelPlay 在初始化流程中调用此方法（可能被多次调用）
+    /// adData.configuration 包含 LevelPlay 平台配置的 app 级参数: appid / sid / token
+    ///
+    /// Called by LevelPlay during the initialization process (may be called multiple times).
+    /// adData.configuration contains app-level parameters configured on the LevelPlay platform: appid / sid / token
+    public override func `init`(_ adData: ISAdData, delegate: ISNetworkInitializationDelegate) {
+        NSLog("%@: init", ISAlxCustomAdapter.TAG)
+        NSLog("%@: alx-sdk-version:%@", ISAlxCustomAdapter.TAG, AlxSdk.getSDKVersion())
+        NSLog("%@: unity-levelplay-sdk-version:%@", ISAlxCustomAdapter.TAG, LevelPlay.sdkVersion())
+        NSLog("%@: unity-levelplay-adapter-version:%@", ISAlxCustomAdapter.TAG, AlxLevelPlayMetaInfo.ADAPTER_VERSION)
+
+        let appid = adData.configuration["appid"] as? String
+        let sid   = adData.configuration["sid"] as? String
+        let token = adData.configuration["token"] as? String
+
+        guard let appid, let sid, let token else {
+            let msg = "init failed: appid / sid / token is empty"
+            NSLog("%@: %@", ISAlxCustomAdapter.TAG, msg)
+            (delegate as? ISAlxInitFailureReporter)?.onInitDidFail(
+                withErrorCode: ISAdapterErrors.missingParams.rawValue,
+                errorMessage: msg)
+            return
+        }
+
+        if Self._isInitialized {
+            NSLog("%@: already initialized", ISAlxCustomAdapter.TAG)
+            delegate.onInitDidSucceed()
+            return
+        }
+
+        // AlxAds SDK 必须在主线程初始化
+        // AlxAds SDK must be initialized on the main thread
+        DispatchQueue.main.async {
+            NSLog("%@: initializeSDK token=%@ sid=%@ appid=%@", Self.TAG, token, sid, appid)
+            AlxSdk.initializeSDK(token: token, sid: sid, appId: appid)
+            Self._isInitialized = true
+            NSLog("%@: initializeSDK success", ISAlxCustomAdapter.TAG)
+            delegate.onInitDidSucceed()
+        }
+    }
+
+    // MARK: - SDK 版本与适配器版本 / SDK & Adapter Versions
+
+    public override func networkSDKVersion() -> String {
+        return AlxSdk.getSDKVersion()
+    }
+
+    public override func adapterVersion() -> String {
+        return AlxLevelPlayMetaInfo.ADAPTER_VERSION
+    }
+
+    // MARK: - 共享初始化辅助方法 / Shared Init Helper
+
+    /// 各 ad unit 适配器调用此方法确保 SDK 已初始化（幂等）
+    /// Called by each ad unit adapter to ensure the SDK is initialized (idempotent).
+    static func initSdk(with adData: ISAdData) {
+        guard !_isInitialized else { return }
+        guard let appid = adData.configuration["appid"] as? String,
+              let sid   = adData.configuration["sid"] as? String,
+              let token = adData.configuration["token"] as? String else {
+            NSLog("%@: initSdk failed: missing params", TAG)
+            return
+        }
+        DispatchQueue.main.async {
+            AlxSdk.initializeSDK(token: token, sid: sid, appId: appid)
+            _isInitialized = true
+            NSLog("%@: initSdk success", TAG)
+        }
+    }
+}
+
+// MARK: - 失败回调协议 / Failure Reporter Protocol
+//
+// ISAdapterAdDelegate 中的 adDidFailToLoad 和 adDidFailToShow 方法
+// 因为 ISAdapterErrorType 枚举有一个 case `ISAdapterErrorTypeInternal`，
+// 它被 Swift 桥接为关键字 `internal`，导致 Swift 无法通过 existential 或
+// NSObject & Protocol 组合类型直接访问这两个方法。
+//
+// The adDidFailToLoad and adDidFailToShow methods in ISAdapterAdDelegate
+// cannot be accessed directly in Swift because ISAdapterErrorType has a case
+// `ISAdapterErrorTypeInternal` which is bridged as the Swift keyword `internal`,
+// preventing direct access via existential or NSObject & Protocol composition.
+//
+// 解决方案：定义一个 @objc 协议，用 Int 替代 ISAdapterErrorType 参数
+// （两者底层都是 NSInteger）。ObjC 运行时根据 selector 匹配方法实现，
+// 无视 Swift 类型系统限制，因此 `as? ISAlxAdapterFailureReporter` 的
+// 转型在运行时会成功，方法也能被正确调用。
+//
+// Solution: Define an @objc protocol using Int instead of ISAdapterErrorType
+// (both are NSInteger at runtime). The ObjC runtime matches methods by selector,
+// bypassing Swift's type system, so the cast `as? ISAlxAdapterFailureReporter`
+// succeeds at runtime and the methods are called correctly.
+
+@objc protocol ISAlxAdapterFailureReporter: AnyObject {
+    func adDidFailToLoad(withErrorType errorType: Int,
+                        errorCode: Int,
+                        errorMessage: String?)
+    func adDidFailToShow(withErrorCode errorCode: Int,
+                        errorMessage: String?)
+}
+
+// ISNetworkInitializationDelegate 中的 onInitDidFailWithErrorCode:errorMessage:
+// 在 Swift existential 下同样无法直接调用，使用相同的 @objc protocol 绕过
+//
+// onInitDidFailWithErrorCode:errorMessage: in ISNetworkInitializationDelegate
+// also cannot be called directly under Swift existential; use the same @objc protocol workaround.
+@objc protocol ISAlxInitFailureReporter: AnyObject {
+    func onInitDidFail(withErrorCode errorCode: Int, errorMessage: String?)
+}
