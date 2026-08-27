@@ -13,28 +13,28 @@ let package = Package(
             targets: ["AlxAds"]
         ),
         .library(
-            name: "RixEngineAdsAdmobAdapter",
-            targets: ["RixEngineAdsAdmobAdapter"]
+            name: "RixAdsAdmobAdapter",
+            targets: ["RixAdsAdmobAdapter"]
         ),
         .library(
-            name: "RixEngineAdsAdmobAdapterOC",
-            targets: ["RixEngineAdsAdmobAdapterOC"]
+            name: "RixAdsAdmobAdapterOC",
+            targets: ["RixAdsAdmobAdapterOC"]
         ),
         .library(
-            name: "RixEngineAdsMaxAdapter",
-            targets: ["RixEngineAdsMaxAdapter"]
+            name: "RixAdsMaxAdapter",
+            targets: ["RixAdsMaxAdapter"]
         ),
         .library(
-            name: "RixEngineAdsMaxAdapterOC",
-            targets: ["RixEngineAdsMaxAdapterOC"]
+            name: "RixAdsMaxAdapterOC",
+            targets: ["RixAdsMaxAdapterOC"]
         ),
         .library(
-            name: "RixEngineAdsUnityLevelPlayAdapter",
-            targets: ["RixEngineAdsUnityLevelPlayAdapter"]
+            name: "RixAdsUnityLevelPlayAdapter",
+            targets: ["RixAdsUnityLevelPlayAdapter"]
         ),
         .library(
-            name: "RixEngineAdsUnityLevelPlayAdapterOC",
-            targets: ["RixEngineAdsUnityLevelPlayAdapterOC"]
+            name: "RixAdsUnityLevelPlayAdapterOC",
+            targets: ["RixAdsUnityLevelPlayAdapterOC"]
         )
     ],
     dependencies: [
@@ -54,10 +54,10 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "AlxAds",
-            path: "AlxAds.xcframework"
+            path: "Sources/AlxAds.xcframework"
         ),
         .target(
-            name: "RixEngineAdsAdmobAdapter",
+            name: "RixAdsAdmobAdapter",
             dependencies: [
                 "AlxAds",
                 .product(
@@ -65,10 +65,10 @@ let package = Package(
                     package: "swift-package-manager-google-mobile-ads"
                 )
             ],
-            path: "custom_adapter/AdmobAdapter/Swift"
+            path: "Sources/custom_adapter/AdmobAdapter/Swift"
         ),
         .target(
-            name: "RixEngineAdsAdmobAdapterOC",
+            name: "RixAdsAdmobAdapterOC",
             dependencies: [
                 "AlxAds",
                 .product(
@@ -76,11 +76,11 @@ let package = Package(
                     package: "swift-package-manager-google-mobile-ads"
                 )
             ],
-            path: "custom_adapter/AdmobAdapter/Objc",
+            path: "Sources/custom_adapter/AdmobAdapter/Objc",
             publicHeadersPath: "."
         ),
         .target(
-            name: "RixEngineAdsMaxAdapter",
+            name: "RixAdsMaxAdapter",
             dependencies: [
                 "AlxAds",
                 .product(
@@ -88,10 +88,10 @@ let package = Package(
                     package: "AppLovin-MAX-Swift-Package"
                 )
             ],
-            path: "custom_adapter/MaxAdapter/Swift"
+            path: "Sources/custom_adapter/MaxAdapter/Swift"
         ),
         .target(
-            name: "RixEngineAdsMaxAdapterOC",
+            name: "RixAdsMaxAdapterOC",
             dependencies: [
                 "AlxAds",
                 .product(
@@ -99,11 +99,11 @@ let package = Package(
                     package: "AppLovin-MAX-Swift-Package"
                 )
             ],
-            path: "custom_adapter/MaxAdapter/Objc",
+            path: "Sources/custom_adapter/MaxAdapter/Objc",
             publicHeadersPath: "."
         ),
         .target(
-            name: "RixEngineAdsUnityLevelPlayAdapter",
+            name: "RixAdsUnityLevelPlayAdapter",
             dependencies: [
                 "AlxAds",
                 .product(
@@ -111,10 +111,10 @@ let package = Package(
                     package: "LevelPlay-Swift-Package"
                 )
             ],
-            path: "custom_adapter/UnityLevelPlayAdapter/Swift"
+            path: "Sources/custom_adapter/UnityLevelPlayAdapter/Swift"
         ),
         .target(
-            name: "RixEngineAdsUnityLevelPlayAdapterOC",
+            name: "RixAdsUnityLevelPlayAdapterOC",
             dependencies: [
                 "AlxAds",
                 .product(
@@ -122,7 +122,7 @@ let package = Package(
                     package: "LevelPlay-Swift-Package"
                 )
             ],
-            path: "custom_adapter/UnityLevelPlayAdapter/Objc",
+            path: "Sources/custom_adapter/UnityLevelPlayAdapter/Objc",
             publicHeadersPath: "."
         )
     ],
