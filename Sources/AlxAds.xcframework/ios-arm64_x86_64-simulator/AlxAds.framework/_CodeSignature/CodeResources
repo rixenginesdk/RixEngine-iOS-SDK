@@ -90,11 +90,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		weAAPUTlT4420KIoUfQNlUCG8Ao=
+		4pL96xslfx3sx/dPjobgM9FQG3o=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		SwlJmER6wqBXUnEluvUmSPfQcAw=
+		+2gGD4b8rRaMhSwpUmznvVJp35I=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		RNsE4Xc9bL2ueufKM9WSMZ5Wdps=
+		y1f0NgJro19BxrkUWgRXx+93MHI=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		SwlJmER6wqBXUnEluvUmSPfQcAw=
+		+2gGD4b8rRaMhSwpUmznvVJp35I=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4MCUzLl4FYcnIH5pJDTHCoZ8sAc=
+		anyhqUnwSnwiWxjykMKnzuXDvxU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -336,7 +336,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8NptT5upxwnExRtSfpsyTbZg9NAVLoohasN3g0GMVXs=
+			n11YUK6WHcB06HZkKGPPhDNVxbDjTJuvJsTUQUwFd9U=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -364,14 +364,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TL/eNTfx5w4GAMV/3NPrH13t7y9gyAKIRNvPVQhlOXQ=
+			TlWXCTmxZOG2sSKDO1DbgVOr3/eOAy2cJDe9ROwTFng=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8NptT5upxwnExRtSfpsyTbZg9NAVLoohasN3g0GMVXs=
+			n11YUK6WHcB06HZkKGPPhDNVxbDjTJuvJsTUQUwFd9U=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -399,7 +399,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZxuGkBWTlHRil+j7ONbxDdVOnS9maZIArIcCFc75TbA=
+			xFJycPTt52QbYxYopT8P4Ov2B8ScvkadvisED9B0afI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

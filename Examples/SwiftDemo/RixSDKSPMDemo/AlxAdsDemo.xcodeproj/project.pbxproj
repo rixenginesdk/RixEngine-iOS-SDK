@@ -16,6 +16,10 @@
 		A1D0B5E32FCD000100AA0003 /* TopOnNativeRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0B5E42FCD000100AA0004 /* TopOnNativeRenderVC.swift */; };
 		A1D0B5E52FCD000100AA0005 /* MaxNativeRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0B5E62FCD000100AA0006 /* MaxNativeRenderVC.swift */; };
 		B1C2D3E52FBC100100AA0001 /* AlxNativeRenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E42FBC100100AA0001 /* AlxNativeRenderVC.swift */; };
+		BA0502C33041277F0031167E /* RixAdsAdmobAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA0502C23041277F0031167E /* RixAdsAdmobAdapter */; };
+		BA0502C53041277F0031167E /* RixAdsMaxAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA0502C43041277F0031167E /* RixAdsMaxAdapter */; };
+		BA0502C73041277F0031167E /* RixAdsUnityLevelPlayAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = BA0502C63041277F0031167E /* RixAdsUnityLevelPlayAdapter */; };
+		BA0502C93041277F0031167E /* RixEngineAds in Frameworks */ = {isa = PBXBuildFile; productRef = BA0502C83041277F0031167E /* RixEngineAds */; };
 		BA4EF2352F7F6E5A00D20422 /* MenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF2342F7F6E5A00D20422 /* MenuCardCell.swift */; };
 		BA77DEC02FAF159B009F2730 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77DEBF2FAF159B009F2730 /* UIColor+Extension.swift */; };
 		BA796055303F011400716E0A /* RixEngineAds in Frameworks */ = {isa = PBXBuildFile; productRef = BA796054303F011400716E0A /* RixEngineAds */; };
@@ -139,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA796064303F0AF600716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */,
+				BA0502C93041277F0031167E /* RixEngineAds in Frameworks */,
 				BA796067303F0D8000716E0A /* RixEngineAds in Frameworks */,
 				BA79606B303F0D8000716E0A /* RixEngineAdsMaxAdapter in Frameworks */,
 				BA796070303F0DCB00716E0A /* RixEngineAds in Frameworks */,
@@ -149,9 +154,12 @@
 				BA796057303F011400716E0A /* RixEngineAdsAdmobAdapter in Frameworks */,
 				BA796076303F0DCB00716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */,
 				BA79606D303F0D8000716E0A /* RixEngineAdsUnityLevelPlayAdapter in Frameworks */,
+				BA0502C73041277F0031167E /* RixAdsUnityLevelPlayAdapter in Frameworks */,
 				BA796059303F011400716E0A /* RixEngineAdsMaxAdapter in Frameworks */,
+				BA0502C53041277F0031167E /* RixAdsMaxAdapter in Frameworks */,
 				BA796055303F011400716E0A /* RixEngineAds in Frameworks */,
 				BA796062303F0AF600716E0A /* RixEngineAdsMaxAdapter in Frameworks */,
+				BA0502C33041277F0031167E /* RixAdsAdmobAdapter in Frameworks */,
 				BA796074303F0DCB00716E0A /* RixEngineAdsMaxAdapter in Frameworks */,
 				BA79605E303F0AF600716E0A /* RixEngineAds in Frameworks */,
 			);
@@ -394,7 +402,6 @@
 			);
 			mainGroup = E3EC00562DD4933B00485DAF;
 			packageReferences = (
-				BA79606E303F0DCB00716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */,
 			);
 			productRefGroup = E3EC00602DD4933B00485DAF /* Products */;
 			projectDirPath = "";
@@ -722,6 +729,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BA0502C13041277F0031167E /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rixenginesdk/RixEngine-iOS-SDK.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		BA796053303F011400716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rixenginesdk/RixEngine-iOS-SDK.git";
@@ -757,6 +772,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BA0502C23041277F0031167E /* RixAdsAdmobAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA0502C13041277F0031167E /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixAdsAdmobAdapter;
+		};
+		BA0502C43041277F0031167E /* RixAdsMaxAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA0502C13041277F0031167E /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixAdsMaxAdapter;
+		};
+		BA0502C63041277F0031167E /* RixAdsUnityLevelPlayAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA0502C13041277F0031167E /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixAdsUnityLevelPlayAdapter;
+		};
+		BA0502C83041277F0031167E /* RixEngineAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA0502C13041277F0031167E /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			productName = RixEngineAds;
+		};
 		BA796054303F011400716E0A /* RixEngineAds */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BA796053303F011400716E0A /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
