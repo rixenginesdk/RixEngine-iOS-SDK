@@ -5,7 +5,6 @@
 
 #import "AlxTopOnInitAdapter.h"
 #import <AdSupport/AdSupport.h>
-#import "AdConfig.h"
 
 @implementation AlxTopOnInitAdapter
 
