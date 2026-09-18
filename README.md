@@ -41,7 +41,7 @@ Installing the root Pod includes only the Core SDK:
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds', '2.0.4'
+  pod 'RixEngineAds', '2.1.0'
 end
 ```
 
@@ -52,10 +52,10 @@ Add only the mediation adapters required by your application:
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.0.4'
-  pod 'RixEngineAds/MaxAdapter', '2.0.4'
-  pod 'RixEngineAds/TopOnAdapter', '2.0.4'
-  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.0.4'
+  pod 'RixEngineAds/AdmobAdapter', '2.1.0'
+  pod 'RixEngineAds/MaxAdapter', '2.1.0'
+  pod 'RixEngineAds/TopOnAdapter', '2.1.0'
+  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.1.0'
 end
 ```
 
@@ -65,10 +65,10 @@ Objective-C implementations are available as separate subspecs:
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapterOC', '2.0.4'
-  pod 'RixEngineAds/MaxAdapterOC', '2.0.4'
-  pod 'RixEngineAds/TopOnAdapterOC', '2.0.4'
-  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.0.4'
+  pod 'RixEngineAds/AdmobAdapterOC', '2.1.0'
+  pod 'RixEngineAds/MaxAdapterOC', '2.1.0'
+  pod 'RixEngineAds/TopOnAdapterOC', '2.1.0'
+  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.1.0'
 end
 ```
 
@@ -80,8 +80,8 @@ Multiple different mediation networks can be installed together. For example:
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.0.4'
-  pod 'RixEngineAds/MaxAdapter', '2.0.4'
+  pod 'RixEngineAds/AdmobAdapter', '2.1.0'
+  pod 'RixEngineAds/MaxAdapter', '2.1.0'
 end
 ```
 
@@ -99,7 +99,7 @@ If you need to integrate directly from GitHub instead of CocoaPods Trunk:
 ```ruby
 pod 'RixEngineAds/AdmobAdapter',
     :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git',
-    :tag => '2.0.4'
+    :tag => '2.1.0'
 ```
 
 ### Swift Package Manager integration
@@ -122,8 +122,6 @@ An adapter product automatically links the Core SDK and the matching mediation S
 The package pins Google Mobile Ads 12.6.0 and AppLovin MAX 13.3.0. LevelPlay uses 9.3.0 because it is the first LevelPlay release with official Swift Package Manager support. Add `-ObjC` to the application target's **Other Linker Flags** when using an adapter.
 
 > TopOn does not provide an official Swift Package Manager package. Therefore, the TopOn adapter remains available through CocoaPods only; publishing an SPM product without a resolvable TopOn dependency would produce an integration that cannot build.
-
-> The existing `2.0.2` Git tag predates `Package.swift` and is CocoaPods-only. Select release tag containing `Package.swift`, for example `2.0.4`, or use the repository branch while validating unreleased changes.
 
 ### Importing the SDK
 
@@ -183,7 +181,7 @@ To test GitHub connectivity:
 ```shell
 git ls-remote \
   https://github.com/rixenginesdk/RixEngine-iOS-SDK.git \
-  refs/tags/2.0.4
+  refs/tags/2.1.0
 ```
 
 If this command also fails, check your proxy, VPN, firewall, or network connection.
@@ -241,7 +239,7 @@ use_frameworks!
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds', '2.0.4'
+  pod 'RixEngineAds', '2.1.0'
 end
 ```
 
@@ -252,10 +250,10 @@ end
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.0.4'
-  pod 'RixEngineAds/MaxAdapter', '2.0.4'
-  pod 'RixEngineAds/TopOnAdapter', '2.0.4'
-  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.0.4'
+  pod 'RixEngineAds/AdmobAdapter', '2.1.0'
+  pod 'RixEngineAds/MaxAdapter', '2.1.0'
+  pod 'RixEngineAds/TopOnAdapter', '2.1.0'
+  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.1.0'
 end
 ```
 
@@ -265,10 +263,10 @@ Objective-C 实现通过独立 subspec 提供：
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapterOC', '2.0.4'
-  pod 'RixEngineAds/MaxAdapterOC', '2.0.4'
-  pod 'RixEngineAds/TopOnAdapterOC', '2.0.4'
-  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.0.4'
+  pod 'RixEngineAds/AdmobAdapterOC', '2.1.0'
+  pod 'RixEngineAds/MaxAdapterOC', '2.1.0'
+  pod 'RixEngineAds/TopOnAdapterOC', '2.1.0'
+  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.1.0'
 end
 ```
 
@@ -280,8 +278,8 @@ end
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.0.4'
-  pod 'RixEngineAds/MaxAdapter', '2.0.4'
+  pod 'RixEngineAds/AdmobAdapter', '2.1.0'
+  pod 'RixEngineAds/MaxAdapter', '2.1.0'
 end
 ```
 
@@ -299,7 +297,7 @@ open YourApp.xcworkspace
 ```ruby
 pod 'RixEngineAds/AdmobAdapter',
     :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git',
-    :tag => '2.0.4'
+    :tag => '2.1.0'
 ```
 
 ### Swift Package Manager 集成
@@ -322,8 +320,6 @@ https://github.com/rixenginesdk/RixEngine-iOS-SDK.git
 依赖版本固定为 Google Mobile Ads 12.6.0、AppLovin MAX 13.3.0。LevelPlay 使用 9.3.0，因为这是官方支持 Swift Package Manager 的首个版本。使用适配器时，请在应用 Target 的 **Other Linker Flags** 中添加 `-ObjC`。
 
 > TopOn 官方目前没有提供 Swift Package Manager 包，因此 TopOn 适配器仍需通过 CocoaPods 集成。缺少可解析的 TopOn SPM 依赖时直接暴露该 Product，只会得到无法编译的集成配置。
-
-> 已有的 `2.0.2` Git 标签早于 `Package.swift`，仅支持 CocoaPods。请使用包含 `Package.swift` 的发布标签`2.0.4`；验证尚未发布的改动时可暂时选择仓库分支。
 
 ### 导入 SDK
 
@@ -383,7 +379,7 @@ pod install --repo-update
 ```shell
 git ls-remote \
   https://github.com/rixenginesdk/RixEngine-iOS-SDK.git \
-  refs/tags/2.0.4
+  refs/tags/2.1.0
 ```
 
 如果这条命令也失败，请检查代理、VPN、防火墙或当前网络。
