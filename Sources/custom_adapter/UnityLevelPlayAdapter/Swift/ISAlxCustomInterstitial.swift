@@ -2,8 +2,8 @@
 //  ISAlxCustomInterstitial.swift
 //  AlxAdsDemo
 //
-//  LevelPlay Interstitial 广告适配器 / LevelPlay Interstitial Ad Adapter
-//  文档参考 / Documentation: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
+//  LevelPlay Interstitial 广告适配器
+//  文档参考: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
 //
 
 import Foundation
@@ -40,7 +40,11 @@ public class ISAlxCustomInterstitial: ISBaseInterstitial {
         let ad = AlxInterstitialAd()
         ad.delegate = self
         self.interstitialAd = ad
-        ad.loadAd(adUnitId: unitId)
+        // 测试新增的扩展字段
+        let req = AlxAdRequest().withUserExt([
+            "bid_floor": "1.68"
+        ])
+        ad.loadAd(adUnitId: unitId, request: req)
     }
 
     public override func isAdAvailable(with adData: ISAdData) -> Bool {

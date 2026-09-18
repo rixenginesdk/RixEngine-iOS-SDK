@@ -2,8 +2,8 @@
 //  ISAlxCustomBanner.swift
 //  AlxAdsDemo
 //
-//  LevelPlay Banner 广告适配器 / LevelPlay Banner Ad Adapter
-//  文档参考 / Documentation: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
+//  LevelPlay Banner 广告适配器
+//  文档参考: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
 //
 
 import Foundation
@@ -21,13 +21,9 @@ public class ISAlxCustomBanner: ISBaseBanner {
 
     // MARK: - ISBaseBanner
 
-    /**
-     * LevelPlay 请求加载 Banner 广告。
-     * LevelPlay requests to load a Banner ad.
-     *
-     * adData.configuration 包含 / contains:
-     *   appid / sid / token (app 级 / app-level) + unitid (instance 级 / instance-level)
-     */
+    /// LevelPlay 请求加载 Banner 广告
+    /// adData.configuration 包含:
+    ///   appid / sid / token (app 级) + unitid (instance 级)
     public override func loadAd(with adData: ISAdData,
                                 viewController: UIViewController,
                                 size: ISBannerSize,
@@ -57,14 +53,15 @@ public class ISAlxCustomBanner: ISBaseBanner {
             banner.refreshInterval = 0
             banner.rootViewController = viewController
             self.bannerAdView = banner
-            banner.loadAd(adUnitId: unitId)
+            // 测试新增的扩展字段
+            let req = AlxAdRequest().withUserExt([
+                "bid_floor": "1.68"
+            ])
+            banner.loadAd(adUnitId: unitId, request: req)
         }
     }
 
-    /**
-     * LevelPlay 销毁 Banner。
-     * LevelPlay destroys the Banner.
-     */
+    /// LevelPlay 销毁 Banner
     public override func destroyAd(with adData: ISAdData) {
         NSLog("%@: destroyAd", Self.TAG)
         DispatchQueue.main.async { [weak self] in
@@ -75,13 +72,8 @@ public class ISAlxCustomBanner: ISBaseBanner {
 
     // MARK: - Private
 
-    /**
-     * 将 LevelPlay ISBannerSize 映射为 CGSize。
-     * Maps LevelPlay ISBannerSize to CGSize.
-     *
-     * ⚠️ 此方法可能在后台线程调用，禁止访问 vc.view（UI API），改用 UIScreen。
-     * ⚠️ This method may be called on a background thread; do not access vc.view (UI API), use UIScreen instead.
-     */
+    /// 将 LevelPlay ISBannerSize 映射为 CGSize
+    /// ⚠️ 此方法可能在后台线程调用，禁止访问 vc.view（UI API），改用 UIScreen
     private func bannerSize(from size: ISBannerSize) -> CGSize {
         let screenWidth = UIScreen.main.bounds.size.width
         switch size.sizeDescription {

@@ -2,8 +2,8 @@
 //  ISAlxCustomRewardedVideo.swift
 //  AlxAdsDemo
 //
-//  LevelPlay RewardedVideo 广告适配器 / LevelPlay RewardedVideo Ad Adapter
-//  文档参考 / Documentation: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
+//  LevelPlay RewardedVideo 广告适配器
+//  文档参考: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
 //
 
 import Foundation
@@ -40,7 +40,11 @@ public class ISAlxCustomRewardedVideo: ISBaseRewardedVideo {
         let ad = AlxRewardVideoAd()
         ad.delegate = self
         self.rewardedAd = ad
-        ad.loadAd(adUnitId: unitId)
+        // 测试新增的扩展字段
+        let req = AlxAdRequest().withUserExt([
+            "bid_floor": "1.68"
+        ])
+        ad.loadAd(adUnitId: unitId, request: req)
     }
 
     public override func isAdAvailable(with adData: ISAdData) -> Bool {
@@ -49,18 +53,14 @@ public class ISAlxCustomRewardedVideo: ISBaseRewardedVideo {
         return ready
     }
 
-    public override func showAd(with viewController: UIViewController,
-                                adData: ISAdData,
-                                delegate: ISRewardedVideoAdDelegate) {
+    public override func showAd(with viewController: UIViewController, adData: ISAdData, delegate: ISRewardedVideoAdDelegate) {
         NSLog("%@: showAd", Self.TAG)
         self.adDelegate = delegate
 
         guard isAdAvailable(with: adData) else {
             let msg = "ad is not ready"
             NSLog("%@: error: %@", Self.TAG, msg)
-            (delegate as? ISAlxAdapterFailureReporter)?.adDidFailToShow(
-                withErrorCode: 1000,
-                errorMessage: msg)
+            (delegate as? ISAlxAdapterFailureReporter)?.adDidFailToShow(withErrorCode: 1000, errorMessage: msg)
             return
         }
 
