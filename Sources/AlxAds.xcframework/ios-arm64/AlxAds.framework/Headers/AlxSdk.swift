@@ -56,17 +56,17 @@ import AlxAds.AlxFix
     
     /// Pub Token
     @objc public static func getPubToken() -> String {
-        AlxSdkManager.getPubToken()
+        return AlxSdkManager.getPubToken()
     }
     
     /// Pub Sid
     @objc public static func getPubSid() -> String {
-        AlxSdkManager.getPubSid()
+        return AlxSdkManager.getPubSid()
     }
     
     /// App ID
     @objc public static func getAppID() -> String {
-        AlxSdkManager.getAppID()
+        return AlxSdkManager.getAppID()
     }
     
     /// OMSDK Version

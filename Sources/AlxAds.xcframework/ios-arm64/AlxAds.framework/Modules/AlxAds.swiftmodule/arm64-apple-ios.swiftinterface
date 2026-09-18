@@ -94,17 +94,6 @@ import os
     get
   }
 }
-@_inheritsConvenienceInitializers @objc final public class AlxVideoExtDebugConfig : ObjectiveC.NSObject {
-  @objc public static var isEnabled: Swift.Bool
-  public static var rawValue: [Swift.String : Any]?
-  @objc public static var rawValueObjc: [Swift.String : Any]? {
-    @objc get
-    @objc set
-  }
-  @objc public static func reset()
-  @objc override dynamic public init()
-  @objc deinit
-}
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class AlxBannerAdView : AlxAds.AlxBaseBannerView, AlxAds.AlxAdDelegate {
   @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var delegate: (any AlxAds.AlxBannerViewAdDelegate)?
   @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var rootViewController: UIKit.UIViewController? {
@@ -195,6 +184,40 @@ import os
   @objc public func reportBiddingUrl()
   @objc public func reportChargingUrl()
   @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class AlxSplashAd : ObjectiveC.NSObject, AlxAds.AlxAdDelegate {
+  @objc weak public var delegate: (any AlxAds.AlxSplashAdDelegate)? {
+    @objc get
+    @objc set
+  }
+  @objc public var customBottomView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc public var autoCloseOnFinish: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public func loadAd(adUnitId: Swift.String)
+  @objc public func loadAd(adUnitId: Swift.String, request: AlxAds.AlxAdRequest? = nil)
+  @objc public func showAd(present: UIKit.UIViewController)
+  @objc public func showAd(inWindow: UIKit.UIWindow)
+  @objc public func isReady() -> Swift.Bool
+  @objc public func destroy()
+  @objc public func getPrice() -> Swift.Double
+  @objc public func reportBiddingUrl()
+  @objc public func reportChargingUrl()
+  @objc deinit
+}
+@objc public protocol AlxSplashAdDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func splashAdDidLoad(_ ad: AlxAds.AlxSplashAd)
+  @objc func splashAdDidFailToLoad(_ ad: AlxAds.AlxSplashAd, didFailWithError error: any Swift.Error)
+  @objc optional func splashAdDidShow(_ ad: AlxAds.AlxSplashAd)
+  @objc optional func splashAdDidClick(_ ad: AlxAds.AlxSplashAd)
+  @objc optional func splashAdDidClose(_ ad: AlxAds.AlxSplashAd)
+  @objc optional func splashAdRenderDidFail(_ ad: AlxAds.AlxSplashAd, didFailWithError error: any Swift.Error)
+  @objc optional func splashAdCountdown(_ ad: AlxAds.AlxSplashAd, countdown: Swift.Int)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AlxUserAgentService : ObjectiveC.NSObject {
   public static let shared: AlxAds.AlxUserAgentService

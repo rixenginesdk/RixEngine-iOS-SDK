@@ -718,6 +718,38 @@ SWIFT_CLASS("_TtC6AlxAds6AlxSdk")
 + (void)setCCPA:(NSString * _Nonnull)value;
 @end
 
+@protocol AlxSplashAdDelegate;
+SWIFT_CLASS("_TtC6AlxAds11AlxSplashAd")
+@interface AlxSplashAd : NSObject <AlxAdDelegate>
+@property (nonatomic, weak) id <AlxSplashAdDelegate> _Nullable delegate;
+@property (nonatomic, strong) UIView * _Nullable customBottomView;
+/// 倒计时结束/视频播放完成是否自动关闭广告（默认 false：海外模式由用户手动关闭；true：国内模式自动关闭跳转主页）
+@property (nonatomic) BOOL autoCloseOnFinish;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId;
+- (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId request:(AlxAdRequest * _Nullable)request;
+- (void)showAdWithPresent:(UIViewController * _Nonnull)present;
+- (void)showAdInWindow:(UIWindow * _Nonnull)inWindow;
+- (BOOL)isReady SWIFT_WARN_UNUSED_RESULT;
+- (void)destroy;
+- (double)getPrice SWIFT_WARN_UNUSED_RESULT;
+- (void)reportBiddingUrl;
+- (void)reportChargingUrl;
+@end
+
+SWIFT_PROTOCOL("_TtP6AlxAds19AlxSplashAdDelegate_")
+@protocol AlxSplashAdDelegate <NSObject>
+- (void)splashAdDidLoad:(AlxSplashAd * _Nonnull)ad;
+- (void)splashAdDidFailToLoad:(AlxSplashAd * _Nonnull)ad didFailWithError:(NSError * _Nonnull)error;
+@optional
+- (void)splashAdDidShow:(AlxSplashAd * _Nonnull)ad;
+- (void)splashAdDidClick:(AlxSplashAd * _Nonnull)ad;
+- (void)splashAdDidClose:(AlxSplashAd * _Nonnull)ad;
+/// 广告渲染失败【包含：视频播放失败、web失败等】
+- (void)splashAdRenderDidFail:(AlxSplashAd * _Nonnull)ad didFailWithError:(NSError * _Nonnull)error;
+- (void)splashAdCountdown:(AlxSplashAd * _Nonnull)ad countdown:(NSInteger)countdown;
+@end
+
 SWIFT_CLASS("_TtC6AlxAds19AlxUserAgentService")
 @interface AlxUserAgentService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -727,28 +759,6 @@ SWIFT_CLASS("_TtC6AlxAds19AlxUserAgentService")
 SWIFT_CLASS_NAMED("AlxUtil")
 @interface AlxUtil : NSObject
 + (BOOL)isEmpty:(NSString * _Nullable)str SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-/// Debug override for video_ext. Mainly used by demo tools.
-SWIFT_CLASS("_TtC6AlxAds22AlxVideoExtDebugConfig")
-@interface AlxVideoExtDebugConfig : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isEnabled;)
-+ (BOOL)isEnabled SWIFT_WARN_UNUSED_RESULT;
-+ (void)setIsEnabled:(BOOL)value;
-/// Objective-C 侧桥接入口：用于读写同一份 <code>rawValue</code> 配置。
-/// <ul>
-///   <li>
-///     get: 返回当前 Swift 配置字典 <code>rawValue</code>
-///   </li>
-///   <li>
-///     set: 将 Objective-C 传入的新字典写回 <code>rawValue</code>
-///   </li>
-/// </ul>
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *, id> * _Nullable rawValueObjc;)
-+ (NSDictionary<NSString *, id> * _Nullable)rawValueObjc SWIFT_WARN_UNUSED_RESULT;
-+ (void)setRawValueObjc:(NSDictionary<NSString *, id> * _Nullable)newValue;
-+ (void)reset;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1491,6 +1501,38 @@ SWIFT_CLASS("_TtC6AlxAds6AlxSdk")
 + (void)setCCPA:(NSString * _Nonnull)value;
 @end
 
+@protocol AlxSplashAdDelegate;
+SWIFT_CLASS("_TtC6AlxAds11AlxSplashAd")
+@interface AlxSplashAd : NSObject <AlxAdDelegate>
+@property (nonatomic, weak) id <AlxSplashAdDelegate> _Nullable delegate;
+@property (nonatomic, strong) UIView * _Nullable customBottomView;
+/// 倒计时结束/视频播放完成是否自动关闭广告（默认 false：海外模式由用户手动关闭；true：国内模式自动关闭跳转主页）
+@property (nonatomic) BOOL autoCloseOnFinish;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId;
+- (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId request:(AlxAdRequest * _Nullable)request;
+- (void)showAdWithPresent:(UIViewController * _Nonnull)present;
+- (void)showAdInWindow:(UIWindow * _Nonnull)inWindow;
+- (BOOL)isReady SWIFT_WARN_UNUSED_RESULT;
+- (void)destroy;
+- (double)getPrice SWIFT_WARN_UNUSED_RESULT;
+- (void)reportBiddingUrl;
+- (void)reportChargingUrl;
+@end
+
+SWIFT_PROTOCOL("_TtP6AlxAds19AlxSplashAdDelegate_")
+@protocol AlxSplashAdDelegate <NSObject>
+- (void)splashAdDidLoad:(AlxSplashAd * _Nonnull)ad;
+- (void)splashAdDidFailToLoad:(AlxSplashAd * _Nonnull)ad didFailWithError:(NSError * _Nonnull)error;
+@optional
+- (void)splashAdDidShow:(AlxSplashAd * _Nonnull)ad;
+- (void)splashAdDidClick:(AlxSplashAd * _Nonnull)ad;
+- (void)splashAdDidClose:(AlxSplashAd * _Nonnull)ad;
+/// 广告渲染失败【包含：视频播放失败、web失败等】
+- (void)splashAdRenderDidFail:(AlxSplashAd * _Nonnull)ad didFailWithError:(NSError * _Nonnull)error;
+- (void)splashAdCountdown:(AlxSplashAd * _Nonnull)ad countdown:(NSInteger)countdown;
+@end
+
 SWIFT_CLASS("_TtC6AlxAds19AlxUserAgentService")
 @interface AlxUserAgentService : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1500,28 +1542,6 @@ SWIFT_CLASS("_TtC6AlxAds19AlxUserAgentService")
 SWIFT_CLASS_NAMED("AlxUtil")
 @interface AlxUtil : NSObject
 + (BOOL)isEmpty:(NSString * _Nullable)str SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-/// Debug override for video_ext. Mainly used by demo tools.
-SWIFT_CLASS("_TtC6AlxAds22AlxVideoExtDebugConfig")
-@interface AlxVideoExtDebugConfig : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isEnabled;)
-+ (BOOL)isEnabled SWIFT_WARN_UNUSED_RESULT;
-+ (void)setIsEnabled:(BOOL)value;
-/// Objective-C 侧桥接入口：用于读写同一份 <code>rawValue</code> 配置。
-/// <ul>
-///   <li>
-///     get: 返回当前 Swift 配置字典 <code>rawValue</code>
-///   </li>
-///   <li>
-///     set: 将 Objective-C 传入的新字典写回 <code>rawValue</code>
-///   </li>
-/// </ul>
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *, id> * _Nullable rawValueObjc;)
-+ (NSDictionary<NSString *, id> * _Nullable)rawValueObjc SWIFT_WARN_UNUSED_RESULT;
-+ (void)setRawValueObjc:(NSDictionary<NSString *, id> * _Nullable)newValue;
-+ (void)reset;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
