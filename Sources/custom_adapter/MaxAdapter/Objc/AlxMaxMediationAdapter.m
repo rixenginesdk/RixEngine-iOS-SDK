@@ -12,6 +12,7 @@ static NSString *const ADAPTER_VERSION = @"1.5.0";
 #pragma mark - MaxAlxNativeAd
 
 @interface MaxAlxNativeAd : MANativeAd
+// Alx 原生广告对象 / Alx native ad object
 @property (nonatomic, strong) AlxNativeAd *nativeAd;
 - (instancetype)initWithNativeAd:(AlxNativeAd *)nativeAd;
 @end
@@ -62,20 +63,28 @@ static NSString *const ADAPTER_VERSION = @"1.5.0";
 
 #pragma mark - AlxMaxMediationAdapter
 
-@interface AlxMaxMediationAdapter () <AlxBannerViewAdDelegate, AlxInterstitialAdDelegate, AlxRewardVideoAdDelegate, AlxNativeAdLoaderDelegate, AlxNativeAdDelegate>
+@interface AlxMaxMediationAdapter () <AlxBannerViewAdDelegate, AlxInterstitialAdDelegate, AlxRewardVideoAdDelegate, AlxNativeAdLoaderDelegate, AlxNativeAdDelegate, AlxSplashAdDelegate>
 
+// Banner 广告相关 / Banner ad
 @property (nonatomic, strong, nullable) AlxBannerAdView *bannerAd;
 @property (nonatomic, weak, nullable) id<MAAdViewAdapterDelegate> bannerAdDelegate;
 
+// 插屏广告相关 / Interstitial ad
 @property (nonatomic, strong, nullable) AlxInterstitialAd *interstitialAd;
 @property (nonatomic, weak, nullable) id<MAInterstitialAdapterDelegate> interstitialAdDelegate;
 
+// 激励视频广告相关 / Rewarded video ad
 @property (nonatomic, strong, nullable) AlxRewardVideoAd *rewardedAd;
 @property (nonatomic, weak, nullable) id<MARewardedAdapterDelegate> rewardedAdDelegate;
 
+// 原生广告相关 / Native ad
 @property (nonatomic, weak, nullable) id<MANativeAdAdapterDelegate> nativeAdDelegate;
 @property (nonatomic, strong, nullable) AlxNativeAd *nativeAd;
 @property (nonatomic, strong, nullable) id<MAAdapterResponseParameters> nativeParameters;
+
+// App Open (开屏) 广告相关 / App Open ad
+@property (nonatomic, strong, nullable) AlxSplashAd *appOpenAd;
+@property (nonatomic, weak, nullable) id<MAAppOpenAdapterDelegate> appOpenAdDelegate;
 
 @end
 
@@ -95,7 +104,7 @@ static BOOL isInitialized = NO;
     }
 }
 
-#pragma mark - MAAdViewAdapter (Banner)
+#pragma mark - MAAdViewAdapter（Banner 广告）/ MAAdViewAdapter (Banner Ad)
 
 - (void)loadAdViewAdForParameters:(id<MAAdapterResponseParameters>)parameters adFormat:(MAAdFormat *)adFormat andNotify:(id<MAAdViewAdapterDelegate>)delegate {
     NSLog(@"%@: loadAdViewAd", TAG);
@@ -116,7 +125,7 @@ static BOOL isInitialized = NO;
     [self.bannerAd loadAdWithAdUnitId:adId];
 }
 
-#pragma mark - MARewardedAdapter
+#pragma mark - MARewardedAdapter（激励视频广告）/ MARewardedAdapter (Rewarded Ad)
 
 - (void)loadRewardedAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MARewardedAdapterDelegate>)delegate {
     NSLog(@"%@: loadRewardedAd", TAG);
@@ -143,7 +152,7 @@ static BOOL isInitialized = NO;
     }
 }
 
-#pragma mark - MAInterstitialAdapter
+#pragma mark - MAInterstitialAdapter（插屏广告）/ MAInterstitialAdapter (Interstitial Ad)
 
 - (void)loadInterstitialAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MAInterstitialAdapterDelegate>)delegate {
     NSLog(@"%@: loadInterstitialAd", TAG);
@@ -170,7 +179,7 @@ static BOOL isInitialized = NO;
     }
 }
 
-#pragma mark - MANativeAdAdapter
+#pragma mark - MANativeAdAdapter（原生广告）/ MANativeAdAdapter (Native Ad)
 
 - (void)loadNativeAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MANativeAdAdapterDelegate>)delegate {
     NSLog(@"%@: loadNativeAd", TAG);
@@ -187,7 +196,48 @@ static BOOL isInitialized = NO;
     [loader loadAd];
 }
 
-#pragma mark - Lifecycle
+#pragma mark - MAAppOpenAdapter（App Open / 开屏广告）
+
+- (void)loadAppOpenAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MAAppOpenAdapterDelegate>)delegate {
+    NSLog(@"%@: loadAppOpenAd", TAG);
+    if (!isInitialized) {
+        [self initSdkFor:parameters];
+    }
+    NSString *adId = parameters.thirdPartyAdPlacementIdentifier;
+    self.appOpenAdDelegate = delegate;
+
+    NSDictionary *params = parameters.customParameters;
+    BOOL autoClose = NO;
+    if (params[@"autoCloseOnFinish"]) {
+        autoClose = [params[@"autoCloseOnFinish"] boolValue];
+    } else if (params[@"auto_close"]) {
+        autoClose = [params[@"auto_close"] boolValue];
+    } else if (params[@"is_auto_close"]) {
+        autoClose = [params[@"is_auto_close"] boolValue];
+    }
+
+    self.appOpenAd = [[AlxSplashAd alloc] init];
+    self.appOpenAd.delegate = self;
+    self.appOpenAd.autoCloseOnFinish = autoClose;
+
+    AlxAdRequest *req = [[[AlxAdRequest alloc] init] withUserExt:@{ @"bid_floor": @"1.68" }];
+    [self.appOpenAd loadAdWithAdUnitId:adId request:req];
+}
+
+- (void)showAppOpenAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MAAppOpenAdapterDelegate>)delegate {
+    NSLog(@"%@: showAppOpenAd", TAG);
+    self.appOpenAdDelegate = delegate;
+    UIViewController *viewController = parameters.presentingViewController ?: [ALUtils topViewControllerFromKeyWindow];
+    if (self.appOpenAd && [self.appOpenAd isReady]) {
+        [self.appOpenAd showAdWithPresent:viewController];
+    } else {
+        NSLog(@"%@: show app open is empty or not ready", TAG);
+        MAAdapterError *error = MAAdapterError.adNotReady;
+        [self.appOpenAdDelegate didFailToDisplayAppOpenAdWithError:error];
+    }
+}
+
+#pragma mark - 生命周期 / Lifecycle
 
 - (void)destroy {
     NSLog(@"%@: destroy", TAG);
@@ -204,6 +254,9 @@ static BOOL isInitialized = NO;
     self.nativeAd = nil;
     self.nativeParameters = nil;
     
+    self.appOpenAd = nil;
+    self.appOpenAdDelegate = nil;
+    
     [super destroy];
 }
 
@@ -217,7 +270,7 @@ static BOOL isInitialized = NO;
     return ADAPTER_VERSION;
 }
 
-#pragma mark - Private Methods
+#pragma mark - 私有方法 / Private Methods
 
 - (void)sdkInfo {
     NSDictionary *data = @{
@@ -254,7 +307,7 @@ static BOOL isInitialized = NO;
         }
     }
     
-    // Set extra params
+    // 设置 Max 额外参数 / Set extra params from Max settings
     NSDictionary *settings = ALSdk.shared.settings.extraParameters;
     for (NSString *key in settings) {
         id value = settings[key];
@@ -262,7 +315,7 @@ static BOOL isInitialized = NO;
         [AlxSdk addExtraParametersWithKey:key value:value];
     }
     
-    // User Privacy - GDPR Consent Handling
+    // 用户隐私合规 - GDPR 同意处理 / User Privacy - GDPR Consent Handling
     NSInteger gdprFlag = [[NSUserDefaults standardUserDefaults] integerForKey:@"IABTCF_gdprApplies"];
     NSString *gdprConsent = [[NSUserDefaults standardUserDefaults] stringForKey:@"IABTCF_TCString"];
     
@@ -283,7 +336,7 @@ static BOOL isInitialized = NO;
         }
     }
     
-    // CCPA Handling (US Privacy)
+    // CCPA 处理（美国隐私）/ CCPA Handling (US Privacy)
     [AlxSdk setCCPA:[ALPrivacySettings isDoNotSell] ? @"1" : @"0"];
     
     return YES;
@@ -404,10 +457,8 @@ static BOOL isInitialized = NO;
 
 #pragma mark - AlxNativeAdLoaderDelegate
 
-/**
- * Swift 协议 func nativeAdLoaded(didReceive:) 桥接到 OC 后 selector 为 nativeAdLoadedWithDidReceive:。
- * Swift protocol func nativeAdLoaded(didReceive:) is bridged to OC with selector nativeAdLoadedWithDidReceive:.
- */
+// Swift 协议 func nativeAdLoaded(didReceive:) 桥接到 OC 后 selector 为 nativeAdLoadedWithDidReceive:
+// Swift protocol func nativeAdLoaded(didReceive:) is bridged to OC as nativeAdLoadedWithDidReceive:
 - (void)nativeAdLoadedWithDidReceive:(NSArray<AlxNativeAd *> *)ads {
     NSLog(@"%@: nativeAdLoaded", TAG);
     
@@ -427,10 +478,8 @@ static BOOL isInitialized = NO;
     [self.nativeAdDelegate didLoadAdForNativeAd:maxNativeAd withExtraInfo:nil];
 }
 
-/**
- * Swift 协议 func nativeAdFailToLoad(didFailWithError:) 桥接到 OC 后 selector 为 nativeAdFailToLoadWithDidFailWithError:。
- * Swift protocol func nativeAdFailToLoad(didFailWithError:) is bridged to OC with selector nativeAdFailToLoadWithDidFailWithError:.
- */
+// Swift 协议 func nativeAdFailToLoad(didFailWithError:) 桥接到 OC 后 selector 为 nativeAdFailToLoadWithDidFailWithError:
+// Swift protocol func nativeAdFailToLoad(didFailWithError:) is bridged to OC as nativeAdFailToLoadWithDidFailWithError:
 - (void)nativeAdFailToLoadWithDidFailWithError:(NSError *)error {
     NSLog(@"%@: nativeAdFailToLoad", TAG);
     MAAdapterError *adapterError = [MAAdapterError errorWithCode:error.code errorString:error.localizedDescription];
@@ -451,6 +500,44 @@ static BOOL isInitialized = NO;
 
 - (void)nativeAdClose:(AlxNativeAd *)nativeAd {
     NSLog(@"%@: nativeAdClose", TAG);
+}
+
+#pragma mark - AlxSplashAdDelegate
+
+- (void)splashAdDidLoad:(AlxSplashAd *)ad {
+    NSLog(@"%@: splashAdDidLoad", TAG);
+    [self.appOpenAdDelegate didLoadAppOpenAd];
+}
+
+- (void)splashAdDidFailToLoad:(AlxSplashAd *)ad didFailWithError:(NSError *)error {
+    NSLog(@"%@: splashAdDidFailToLoad: %@", TAG, error.localizedDescription);
+    MAAdapterError *error1 = [MAAdapterError errorWithCode:error.code errorString:error.localizedDescription];
+    [self.appOpenAdDelegate didFailToLoadAppOpenAdWithError:error1];
+}
+
+- (void)splashAdDidShow:(AlxSplashAd *)ad {
+    NSLog(@"%@: splashAdDidShow", TAG);
+    [self.appOpenAdDelegate didDisplayAppOpenAd];
+}
+
+- (void)splashAdDidClick:(AlxSplashAd *)ad {
+    NSLog(@"%@: splashAdDidClick", TAG);
+    [self.appOpenAdDelegate didClickAppOpenAd];
+}
+
+- (void)splashAdDidClose:(AlxSplashAd *)ad {
+    NSLog(@"%@: splashAdDidClose", TAG);
+    [self.appOpenAdDelegate didHideAppOpenAd];
+}
+
+- (void)splashAdRenderDidFail:(AlxSplashAd *)ad didFailWithError:(NSError *)error {
+    NSLog(@"%@: splashAdRenderDidFail: %@", TAG, error.localizedDescription);
+    MAAdapterError *error1 = [MAAdapterError errorWithCode:error.code errorString:error.localizedDescription];
+    [self.appOpenAdDelegate didFailToDisplayAppOpenAdWithError:error1];
+}
+
+- (void)splashAdCountdown:(AlxSplashAd *)ad countdown:(NSInteger)countdown {
+    NSLog(@"%@: splashAdCountdown: %ld", TAG, (long)countdown);
 }
 
 @end
