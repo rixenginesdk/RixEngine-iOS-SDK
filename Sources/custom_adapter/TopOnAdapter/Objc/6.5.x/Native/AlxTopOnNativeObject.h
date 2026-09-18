@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AlxTopOnAdapterCommonHeader.h"
+#import "AlxToponAdapterCommonHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,10 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) AlxNativeAd *nativeAd;
 @property (nonatomic, weak) AlxTopOnNativeEvent *nativeEvent;
-/**
- * ⚠️ 缓存 mediaView 实例，避免 TopOn SDK 多次调用时返回不同对象导致渲染异常。
- * ⚠️ Cache the mediaView instance to prevent rendering issues caused by returning different objects on repeated calls from TopOn SDK.
- */
+// ⚠️ 缓存 mediaView 实例，避免 TopOn SDK 多次调用时返回不同对象导致渲染异常
 @property (nonatomic, strong, nullable) AlxMediaView *cachedMediaView;
 
 @end

@@ -5,16 +5,18 @@
 
 #import "AlxTopOnInitAdapter.h"
 #import <AdSupport/AdSupport.h>
+#import "AdConfig.h"
 
 @implementation AlxTopOnInitAdapter
 
-/// Init Ad SDK
-/// - Parameter adInitArgument: server info
+/// 初始化 Ad SDK
+/// Initialize the Ad SDK.
+/// - Parameter adInitArgument: 包含后台配置信息的参数对象 / Parameter object containing server configuration info.
 - (void)initWithInitArgument:(ATAdInitArgument *)adInitArgument {
     NSLog(@"AlxTopOnInitAdapter: initWithInitArgument");
     
-    // 从adInitArgument对象中拿取后台配置的信息
-    // Retrieve server-configured info from the adInitArgument object
+    // 从 adInitArgument 对象中获取后台配置的信息
+    // Retrieve server-configured parameters from the adInitArgument object
     NSString *appid = adInitArgument.serverContentDic[@"appid"];
     NSString *sid = adInitArgument.serverContentDic[@"sid"];
     NSString *token = adInitArgument.serverContentDic[@"token"];
@@ -27,7 +29,7 @@
         NSString *errorStr = @"initialize alx params: appid or sid or token is empty";
         NSLog(@"AlxTopOnInitAdapter: error: %@", errorStr);
         NSError *error = [NSError errorWithDomain:@"AlxTopOnAdapter" code:-100 userInfo:@{NSLocalizedDescriptionKey: errorStr}];
-        // 通知 TopOn SDK 初始化失败 / Notify TopOn SDK that initialization failed
+        // 通知 TopOn SDK 初始化失败 / Notify TopOn SDK of initialization failure
         [self notificationNetworkInitFail:error];
         return;
     }
@@ -45,7 +47,7 @@
             }
         }
         
-        // 设置隐私合规 / Set privacy compliance
+        // 设置隐私合规 / Configure privacy compliance
         NSInteger gdprFlag = [[NSUserDefaults standardUserDefaults] integerForKey:@"IABTCF_gdprApplies"];
         NSString *gdprConsent = [[NSUserDefaults standardUserDefaults] stringForKey:@"IABTCF_TCString"];
         
@@ -56,7 +58,7 @@
         }
         [AlxSdk setGDPRConsentMessage:gdprConsent ?: @""];
         
-        // 记录SDK信息 / Record SDK info
+        // 记录 SDK 信息 / Record SDK info
         NSDictionary *data = @{
             @"sdk_name": @"TopOn",
             @"sdk_version": [[ATAPI sharedInstance] version] ?: @"",
@@ -66,24 +68,19 @@
         
         NSLog(@"AlxTopOnInitAdapter: init success");
         // ⚠️ 注意：通知 TopOn SDK 初始化成功
-        // ⚠️ Note: Notify TopOn SDK that initialization succeeded
+        // ⚠️ Note: Notify TopOn SDK of successful initialization
         [self notificationNetworkInitSuccess];
     });
 }
 
-/**
- * 返回广告平台SDK的版本号。
- * Return the ad platform SDK version.
- */
+/// 返回广告平台 SDK 的版本号
+/// Returns the version number of the ad platform SDK.
 - (nullable NSString *)sdkVersion {
-    // 例如 / For example
     return AlxSdk.getSDKVersion;
 }
 
-/**
- * 返回适配器版本号。
- * Return the adapter version.
- */
+/// 返回适配器版本号
+/// Returns the adapter version number.
 - (nullable NSString *)adapterVersion {
     return @"1.3.0";
 }

@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AlxTopOnAdapterCommonHeader.h"
+#import "AlxToponAdapterCommonHeader.h"
 
 @class AlxTopOnNativeEvent;
 
@@ -13,11 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AlxTopOnNativeDelegate : NSObject <AlxNativeAdLoaderDelegate, AlxNativeAdDelegate>
 
 @property (nonatomic, strong) ATNativeAdStatusBridge *adStatusBridge;
-/**
- * 用于传递给 TopOn SDK。
- * For passing to TopOn SDK.
- */
-@property (nonatomic, weak) AlxTopOnNativeEvent *nativeEvent;
+@property (nonatomic, weak) AlxTopOnNativeEvent *nativeEvent;  // 用于传递给 TopOn SDK
 
 @end
 

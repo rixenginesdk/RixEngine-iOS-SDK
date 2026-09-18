@@ -13,30 +13,23 @@
 
 static NSString *const TAG = @"AlxTopOnBannerAdapter";
 
-/**
- * 告诉编译器：这个类其实是会这个协议的。
- * Tell the compiler that this class actually conforms to this protocol.
- */
+// 告诉编译器：这个类实现了该协议
+// Inform the compiler that this class conforms to AlxBannerViewAdDelegate
 @interface ATBannerAdStatusBridge (AlxDelegate) <AlxBannerViewAdDelegate>
 @end
 
 @interface AlxTopOnBannerAdapter ()
-/**
- * Alx SDK 的 banner 广告对象。
- * Alx SDK banner ad object.
- */
+// Alx SDK 的 Banner 广告对象 / Alx SDK banner ad object
 @property (nonatomic, strong) AlxBannerAdView *bannerAd;
-// delegate
+// 广告事件代理 / Ad event delegate
 @property (nonatomic, strong) AlxTopOnBannerDelegate *bannerDelegate;
 @end
 
 @implementation AlxTopOnBannerAdapter
 
-#pragma mark - lazy load
-/**
- * 初始化bannerDelegate属性。
- * Initialize the bannerDelegate property.
- */
+#pragma mark - 懒加载 / Lazy Load
+
+// 初始化 bannerDelegate 属性 / Initialize the bannerDelegate property
 - (AlxTopOnBannerDelegate *)bannerDelegate {
     if (_bannerDelegate == nil) {
         _bannerDelegate = [[AlxTopOnBannerDelegate alloc] init];
@@ -45,11 +38,10 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
     return _bannerDelegate;
 }
 
-#pragma mark - Ad load
-/**
- * 实现广告加载方法。
- * Implement the ad loading method.
- */
+#pragma mark - 广告加载 / Ad Load
+
+// 实现广告加载方法（文档要求通常需要在主线程执行）
+// Implement the ad loading method (documentation requires execution on the main thread)
 - (void)loadADWithArgument:(ATAdMediationArgument *)argument {
     NSLog(@"%@: loadAD", TAG);
     NSLog(@"%@: loadAD: isMainThread=%@", TAG, [NSThread isMainThread] ? @"YES" : @"NO");
@@ -57,7 +49,7 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
     NSString *bidId = argument.serverContentDic[kATAdapterCustomInfoBuyeruIdKey];
     NSLog(@"%@: loadAD: bidId=%@", TAG, bidId ?: @"空");
     
-    // 文档要求，通常需要在主线程执行 / As required by the documentation, this usually needs to run on the main thread
+    // 文档要求，通常需要在主线程执行 / Documentation requires execution on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString *uuitKeyStr = [AlxTopOnBaseManager unitID];
         NSString *uuitId = argument.serverContentDic[uuitKeyStr];
@@ -70,7 +62,8 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
         NSLog(@"%@: loadAD: uuitid = %@", TAG, uuitId);
         
         if (bidId) {
-            // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve the pre-loaded ad from cache
+            // Bidding 场景：从缓存中取出已加载的广告
+            // Bidding scenario: retrieve the pre-loaded ad from cache
             AlxTopOnBiddingRequest *biddingRequest = [[AlxTopOnTool shared] getRequestItemWithUnitID:uuitId];
             if (biddingRequest) {
                 self.bannerAd = (AlxBannerAdView *)biddingRequest.customObject;
@@ -88,12 +81,12 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
                 NSError *error = [NSError errorWithDomain:@"AlxTopOnAdapter" code:-100 userInfo:@{NSLocalizedDescriptionKey: @"Bid request not found"}];
                 [self.adStatusBridge atOnAdLoadFailed:error adExtra:nil];
             }
-            // ⚠️ 注意：移除缓存 / ⚠️ Note: Remove from cache
+            // ⚠️ 注意：移除缓存 / Remove from cache
             [[AlxTopOnTool shared] removeRequestItemWithUnitID:uuitId];
         } else {
             ATUnitGroupModel *unitGroupModel = argument.serverContentDic[kATAdapterCustomInfoUnitGroupModelKey];
-            // 通过argument对象获取必要的加载信息，如尺寸等，创建好必要的参数，准备传入给第三方的横幅加载方法，开始加载广告
-            // Get necessary loading info (e.g. size) from the argument object, prepare parameters, and pass them to the third-party banner loading method to start loading the ad
+            // 通过 argument 对象获取必要的加载信息，如尺寸等，创建好必要的参数，准备传入给第三方的横幅加载方法
+            // Retrieve necessary loading info (e.g. size) from the argument object, prepare parameters for the banner load method
             CGSize bannerSize = CGSizeMake(320, 50);
             if (!CGSizeEqualToSize(argument.bannerSize, CGSizeZero) && unitGroupModel) {
                 bannerSize = argument.bannerSize;
@@ -103,7 +96,7 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
             self.bannerAd = [[AlxBannerAdView alloc] initWithFrame:CGRectMake(0, 0, bannerSize.width, bannerSize.height)];
             
             // ⚠️ 注意：delegate 应该设置为 bannerDelegate，而不是 adStatusBridge
-            // ⚠️ Note: delegate should be set to bannerDelegate, not adStatusBridge
+            // ⚠️ Note: delegate must be set to bannerDelegate, not adStatusBridge
             self.bannerAd.delegate = self.bannerDelegate;
             self.bannerAd.refreshInterval = 0;
             self.bannerAd.translatesAutoresizingMaskIntoConstraints = NO;
@@ -114,20 +107,7 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
     });
 }
 
-
-//- (instancetype)initWithNetworkCustomInfo:(NSDictionary *)serverInfo localInfo:(NSDictionary *)localInfo {
-//    self = [super init];
-//    if (self) {
-//        NSLog(@"%@: init", TAG);
-//        NSLog(@"%@: init: isMainThread=%@", TAG, [NSThread isMainThread] ? @"YES" : @"NO");
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            if (![AlxTopOnBaseManager isInitialized]) {
-//                [AlxTopOnBaseManager initSDKWithServerInfo:serverInfo];
-//            }
-//        });
-//    }
-//    return self;
-//}
+#pragma mark - C2S Header Bidding 竞价 / C2S Header Bidding
 
 + (void)bidRequestWithPlacementModel:(ATPlacementModel *)placementModel
                       unitGroupModel:(ATUnitGroupModel *)unitGroupModel
@@ -156,6 +136,8 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
     [[AlxTopOnBiddingRequestManager shared] startWithRequest:request];
 }
 
+#pragma mark - 广告就绪检查 / Ad Ready Check
+
 + (BOOL)adReadyWithCustomObject:(id)customObject info:(NSDictionary *)info {
     NSLog(@"%@: adReady", TAG);
     if ([customObject isKindOfClass:[AlxBannerAdView class]]) {
@@ -166,6 +148,8 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
         return NO;
     }
 }
+
+#pragma mark - 广告展示 / Show Ad
 
 + (void)showBanner:(ATBanner *)banner inView:(UIView *)view presentingViewController:(UIViewController *)viewController {
     NSLog(@"%@: showBanner", TAG);

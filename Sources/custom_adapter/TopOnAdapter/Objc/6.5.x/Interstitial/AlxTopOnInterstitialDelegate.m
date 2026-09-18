@@ -12,10 +12,10 @@ static NSString *const TAG = @"AlxTopOnInterstitialDelegate";
 - (void)interstitialAdLoad:(AlxInterstitialAd *)ad {
     NSLog(@"%@: interstitialAdLoad", TAG);
     
-    // 保存广告对象引用 / Save ad object reference
+    // 保存广告对象引用
     self.interstitialAd = ad;
     
-    // 获取价格（用于 C2S Bidding）/ Get the price (for C2S Bidding)
+    // 获取价格（用于 C2S Bidding）
     double price = [ad getPrice];
     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
     
@@ -26,10 +26,10 @@ static NSString *const TAG = @"AlxTopOnInterstitialDelegate";
         NSLog(@"%@: interstitialAdLoad: price = %@", TAG, priceStr);
     }
     
-    // ⚠️ 关键：将广告对象传给 TopOn SDK / Key: pass the ad object to TopOn SDK
+    // ⚠️ 关键：将广告对象传给 TopOn SDK
     adExtra[kATAdAssetsCustomObjectKey] = ad;
     
-    // Interstitial 应该调用的方法 / The method that interstitial should call
+    // Interstitial 应该调用的方法
     [self.adStatusBridge atOnInterstitialAdLoadedExtra:adExtra];
 }
 

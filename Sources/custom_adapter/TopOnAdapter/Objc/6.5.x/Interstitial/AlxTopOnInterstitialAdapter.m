@@ -14,13 +14,16 @@
 static NSString *const TAG = @"AlxTopOnInterstitialAdapter";
 
 @interface AlxTopOnInterstitialAdapter ()
+// Alx SDK 插屏广告对象 / Alx SDK interstitial ad object
 @property (nonatomic, strong) AlxInterstitialAd *interstitialAd;
+// 广告事件代理 / Ad event delegate
 @property (nonatomic, strong) AlxTopOnInterstitialDelegate *interstitialDelegate;
 @end
 
 @implementation AlxTopOnInterstitialAdapter
 
-#pragma mark - lazy load
+#pragma mark - 懒加载 / Lazy Load
+
 - (AlxTopOnInterstitialDelegate *)interstitialDelegate {
     if (_interstitialDelegate == nil) {
         _interstitialDelegate = [[AlxTopOnInterstitialDelegate alloc] init];
@@ -29,7 +32,8 @@ static NSString *const TAG = @"AlxTopOnInterstitialAdapter";
     return _interstitialDelegate;
 }
 
-#pragma mark - Ad load
+#pragma mark - 广告加载 / Ad Load
+
 - (void)loadADWithArgument:(ATAdMediationArgument *)argument {
     NSLog(@"%@: loadADWithArgument", TAG);
     NSLog(@"%@: loadAD: isMainThread=%@", TAG, [NSThread isMainThread] ? @"YES" : @"NO");
@@ -51,14 +55,16 @@ static NSString *const TAG = @"AlxTopOnInterstitialAdapter";
         NSLog(@"%@: loadAD: unitid = %@", TAG, unitId);
         
         if (bidId) {
-            // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve the pre-loaded ad from cache
+            // Bidding 场景：从缓存中取出已加载的广告
+            // Bidding scenario: retrieve the pre-loaded ad from cache
             AlxTopOnBiddingRequest *biddingRequest = [[AlxTopOnTool shared] getRequestItemWithUnitID:unitId];
             if (biddingRequest) {
                 self.interstitialAd = (AlxInterstitialAd *)biddingRequest.customObject;
                 
                 if (self.interstitialAd) {
                     NSLog(@"%@: loadAD: bid ad loaded, notify success", TAG);
-                    // ⚠️ 注意：将广告对象传给 TopOn SDK / Note: pass the ad object to TopOn SDK
+                    // ⚠️ 注意：将广告对象传给 TopOn SDK
+                    // ⚠️ Note: Pass the ad object to the TopOn SDK
                     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
                     adExtra[kATAdAssetsCustomObjectKey] = self.interstitialAd;
                     [self.adStatusBridge atOnInterstitialAdLoadedExtra:adExtra];
@@ -74,10 +80,10 @@ static NSString *const TAG = @"AlxTopOnInterstitialAdapter";
             }
             [[AlxTopOnTool shared] removeRequestItemWithUnitID:unitId];
         } else {
-            // 普通加载场景 / Normal loading scenario
+            // 普通加载场景 / Normal (non-bidding) load scenario
             self.interstitialAd = [[AlxInterstitialAd alloc] init];
             self.interstitialAd.delegate = self.interstitialDelegate;
-            // 设置 Delegate 的广告对象引用 / Set the delegate's ad object reference
+            // 设置 Delegate 的广告对象引用 / Set the ad object reference on the delegate
             self.interstitialDelegate.interstitialAd = self.interstitialAd;
             
             NSLog(@"%@: start loading ad with unitId: %@", TAG, unitId);
@@ -86,7 +92,8 @@ static NSString *const TAG = @"AlxTopOnInterstitialAdapter";
     });
 }
 
-#pragma mark - C2S Bidding
+#pragma mark - C2S 竞价 / C2S Bidding
+
 + (void)bidRequestWithPlacementModel:(ATPlacementModel *)placementModel
                       unitGroupModel:(ATUnitGroupModel *)unitGroupModel
                                 info:(NSDictionary *)info
@@ -114,13 +121,13 @@ static NSString *const TAG = @"AlxTopOnInterstitialAdapter";
     [[AlxTopOnBiddingRequestManager shared] startWithRequest:request];
 }
 
-#pragma mark - Ad Ready Check (实例方法 / Instance Method)
+#pragma mark - 广告就绪检查（实例方法）/ Ad Ready Check (Instance Method)
+
 - (BOOL)adReadyInterstitialWithInfo:(NSDictionary *)info {
     NSLog(@"%@: adReadyInterstitialWithInfo", TAG);
     
-    // 检查广告对象是否准备好 / Check if the ad object is ready
+    // 检查广告对象是否准备好 / Check whether the ad object is ready
     if (self.interstitialAd) {
-        // 可以调用 isReady 或其他检查方法 / Can call isReady or other check methods
         NSLog(@"%@: adReady = YES", TAG);
         return YES;
     }
@@ -129,7 +136,8 @@ static NSString *const TAG = @"AlxTopOnInterstitialAdapter";
     return NO;
 }
 
-#pragma mark - Show Ad (实例方法 / Instance Method)
+#pragma mark - 展示广告（实例方法）/ Show Ad (Instance Method)
+
 - (void)showInterstitialInViewController:(UIViewController *)viewController {
     NSLog(@"%@: showInterstitialInViewController", TAG);
     

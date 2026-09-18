@@ -4,18 +4,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AlxTopOnAdapterCommonHeader.h"
+#import "AlxToponAdapterCommonHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AlxTopOnRewardVideoDelegate : NSObject <AlxRewardVideoAdDelegate>
 
 @property (nonatomic, strong) ATRewardedAdStatusBridge *adStatusBridge;
-/**
- * 保存广告对象引用。
- * Save ad object reference.
- */
-@property (nonatomic, weak) AlxRewardVideoAd *rewardedAd;
+@property (nonatomic, weak) AlxRewardVideoAd *rewardedAd;  // 保存广告对象引用
 
 @end
 
