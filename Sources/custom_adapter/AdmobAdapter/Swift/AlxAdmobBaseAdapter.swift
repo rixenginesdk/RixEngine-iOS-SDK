@@ -45,7 +45,8 @@ public class AlxAdmobBaseAdapter: NSObject, MediationAdapter {
     public static func setUp(with configuration: MediationServerConfiguration,
                                   completionHandler: GADMediationAdapterSetUpCompletionBlock) {
         NSLog("%@: setUp",TAG)
-        // This is where you you will initialize the SDK that this custom event is built for.
+        // 在此处初始化自定义事件所对应的 SDK，初始化完成后调用 completionHandler 通知成功
+        // This is where you will initialize the SDK that this custom event is built for.
         // Upon finishing the SDK initialization, call the completion handler with success.
         
         if AlxAdmobBaseAdapter.isInitialized {
@@ -71,7 +72,7 @@ public class AlxAdmobBaseAdapter: NSObject, MediationAdapter {
         NSLog("%@: init",AlxAdmobBaseAdapter.TAG)
     }
     
-    // MARK: - parase parameter
+    // MARK: - 解析广告参数 / Parse Ad Parameters
     public static func parseAdparameter(for parameters: MediationCredentials)-> [String:Any]?{
         guard let params:String = parameters.settings[AlxAdmobBaseAdapter.PARAMETER] as? String else{
             let errorStr="The parameter field is not found in the adConfiguration object"
@@ -93,7 +94,7 @@ public class AlxAdmobBaseAdapter: NSObject, MediationAdapter {
     }
     
     
-    // MARK: - SDK init
+    // MARK: - SDK 初始化 / SDK Initialization
     @discardableResult
     public static func initSdk(for parameters: [String:Any]?)->(success:Bool,error:String){
         NSLog("%@: alx-sdk-version:%@",AlxAdmobBaseAdapter.TAG,AlxSdk.getSDKVersion())
@@ -106,21 +107,24 @@ public class AlxAdmobBaseAdapter: NSObject, MediationAdapter {
             return (success:false,error:errorStr)
         }
         
-        // 从 parameters 中获取参数字符串 / Get the parameter string from parameters
+        // 从 parameters 中获取参数字符串
+        // Retrieve the parameter string from the parameters dictionary
         guard let paramsStr = parameters["parameter"] as? String else {
             let errorStr = "parameter string is missing or not a string"
             NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)
             return (success: false, error: errorStr)
         }
         
-        // 将 JSON 字符串转换为Data类型 / Convert the JSON string to Data type
+        // 将 JSON 字符串转换为 Data 类型
+        // Convert the JSON string to a Data object
         guard let admobJSONData = paramsStr.data(using: .utf8) else {
             let errorStr = "failed to convert parameter string to data"
             NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)
             return (success: false, error: errorStr)
         }
         
-        // 将Data类型转为JSON字典 / Convert Data type to JSON dictionary
+        // 将 Data 类型转为 JSON 字典
+        // Parse the Data object into a JSON dictionary
         guard let paramsDict = (try? JSONSerialization.jsonObject(with: admobJSONData, options: [])) as? [String: Any] else {
             let errorStr = "failed to parse parameter JSON"
             NSLog("%@: error: %@", AlxAdmobBaseAdapter.TAG, errorStr)
@@ -152,11 +156,12 @@ public class AlxAdmobBaseAdapter: NSObject, MediationAdapter {
         }
         
         
-        // User Privacy
-        // MARK: - GDPR Consent Handling
+        // 用户隐私合规设置
+        // User Privacy Settings
+        // MARK: - GDPR 同意处理 / GDPR Consent Handling
         let gdprFlag = UserDefaults.standard.integer(forKey: "IABTCF_gdprApplies")
         let gdprConsent = UserDefaults.standard.string(forKey: "IABTCF_TCString")
-        // tcf v2 consent
+        // TCF v2 同意字符串处理 / TCF v2 consent string handling
         if gdprFlag == 1{
             AlxSdk.setGDPRConsent(true)
         }else  {
@@ -181,6 +186,4 @@ public class AlxAdmobBaseAdapter: NSObject, MediationAdapter {
         return NSError(domain: "\(AlxAdmobBaseAdapter.TAG)", code: code, userInfo: [NSLocalizedDescriptionKey : msg])
     }
     
-    
-
 }

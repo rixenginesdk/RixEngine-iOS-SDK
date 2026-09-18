@@ -1,7 +1,6 @@
 //
 //  AlxAdmobInterstitialAdapter.swift
 //
-
 import Foundation
 import GoogleMobileAds
 import AlxAds
@@ -39,10 +38,15 @@ public class AlxAdmobInterstitialAdapter: AlxAdmobBaseAdapter, MediationIntersti
         NSLog("%@: loadInterstitial unitid=%@",AlxAdmobInterstitialAdapter.TAG,adId)
         self.completionHandler = completionHandler
         
-        // load ad
+        // 开始加载广告
+        // Load ad
         self.interstitialAd = AlxInterstitialAd()
         self.interstitialAd?.delegate = self
-        self.interstitialAd?.loadAd(adUnitId: adId)
+        // 测试新增的扩展字段
+        let req = AlxAdRequest().withUserExt([
+            "bid_floor": "1.68"
+        ])
+        self.interstitialAd?.loadAd(adUnitId: adId, request: req)
     }
     
     public func present(from viewController: UIViewController) {

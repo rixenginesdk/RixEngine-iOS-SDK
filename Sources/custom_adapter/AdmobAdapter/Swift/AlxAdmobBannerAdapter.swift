@@ -1,7 +1,6 @@
 //
 //  AlxAdmobBannerAdapter.swift
 //
-
 import Foundation
 import GoogleMobileAds
 import AlxAds
@@ -12,10 +11,13 @@ public class AlxAdmobBannerAdapter: AlxAdmobBaseAdapter, MediationBannerAd {
     
     private static let TAG = "AlxAdmobBannerAdapter"
     
-    // Mark - Banner Ad
+    // MARK: - Banner Ad
+    // Banner 广告
     private var bannerAd:AlxBannerAdView? = nil
+    // 广告事件代理，用于将广告渲染事件转发给 Google Mobile Ads SDK
     // The ad event delegate to forward ad rendering events to the Google Mobile Ads SDK.
     private var delegate:MediationBannerAdEventDelegate? = nil
+    // 广告加载完成后调用的回调
     // Completion handler called after ad load
     private var completionHandler: GADMediationBannerLoadCompletionHandler? = nil
     
@@ -42,13 +44,18 @@ public class AlxAdmobBannerAdapter: AlxAdmobBaseAdapter, MediationBannerAd {
         NSLog("%@: loadBanner unitid=%@",AlxAdmobBannerAdapter.TAG,adId)
         self.completionHandler = completionHandler
         
-        // load ad
+        // 开始加载广告
+        // Load ad
         let adSize = CGSize(width: adConfiguration.adSize.size.width, height: adConfiguration.adSize.size.height)
         self.bannerAd=AlxBannerAdView(frame: CGRect(origin: .zero, size: adSize))
         self.bannerAd?.delegate = self
         self.bannerAd?.refreshInterval = 0
         self.bannerAd?.rootViewController=adConfiguration.topViewController
-        self.bannerAd?.loadAd(adUnitId: adId)
+        // 测试新增的扩展字段
+        let req = AlxAdRequest().withUserExt([
+            "bid_floor": "1.68"
+        ])
+        self.bannerAd?.loadAd(adUnitId: adId, request: req)
     }
     
     

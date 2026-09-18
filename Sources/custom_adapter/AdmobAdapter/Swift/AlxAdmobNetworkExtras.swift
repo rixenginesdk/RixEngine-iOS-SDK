@@ -1,7 +1,7 @@
 //
 //  AlxAdmobNetworkExtras.swift
 //
-//
+
 import Foundation
 import GoogleMobileAds
 
