@@ -2,17 +2,14 @@
 //  ISAlxCustomInterstitial.h
 //  AlxAdsOCDemo
 //
-//  LevelPlay Interstitial 广告适配器 / LevelPlay Interstitial ad adapter
+//  LevelPlay Interstitial 广告适配器
 //
 
 #import "ISAlxCustomAdapter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- * AlxAds LevelPlay 插屏广告适配器。
- * AlxAds LevelPlay interstitial ad adapter.
- */
+/// AlxAds LevelPlay 插屏广告适配器
 @interface ISAlxCustomInterstitial : ISBaseInterstitial
 
 @end

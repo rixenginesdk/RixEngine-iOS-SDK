@@ -2,8 +2,9 @@
 //  ISAlxCustomAdapter.m
 //  AlxAdsOCDemo
 //
-//  LevelPlay (Unity IronSource) 自定义网络基础适配器 / LevelPlay (Unity IronSource) custom network base adapter
-//  文档参考 / Documentation reference: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
+//  LevelPlay (Unity IronSource) 自定义网络基础适配器
+//  LevelPlay (Unity IronSource) Custom Network Base Adapter
+//  文档参考 / Documentation: https://docs.unity.com/zh-cn/grow/levelplay/sdk/ios/build-custom-adapter
 //
 
 #import "ISAlxCustomAdapter.h"
@@ -26,14 +27,11 @@ static BOOL _isInitialized = NO;
 
 #pragma mark - ISBaseNetworkAdapter
 
-/**
- * LevelPlay 会在初始化流程中调用此方法（可能被多次调用）。
- * LevelPlay calls this method during initialization flow (may be called multiple times).
- *
- * adData.configuration 包含 LevelPlay 平台配置的 app 级参数:
- * adData.configuration contains app-level parameters configured on the LevelPlay platform:
- *   appid / sid / token
- */
+/// LevelPlay 会在初始化流程中调用此方法（可能被多次调用）
+/// adData.configuration 包含 LevelPlay 平台配置的 app 级参数: appid / sid / token
+///
+/// Called by LevelPlay during initialization (may be called multiple times).
+/// adData.configuration contains app-level parameters configured on the LevelPlay platform: appid / sid / token
 - (void)init:(ISAdData *)adData delegate:(id<ISNetworkInitializationDelegate>)delegate {
     NSLog(@"%@: init", TAG);
 
@@ -55,7 +53,8 @@ static BOOL _isInitialized = NO;
         return;
     }
 
-    // 主线程初始化 AlxAds SDK / Initialize AlxAds SDK on the main thread
+    // 主线程初始化 AlxAds SDK
+    // Initialize AlxAds SDK on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"%@: initializeSDK token=%@ sid=%@ appid=%@", TAG, token, sid, appid);
         [AlxSdk initializeSDKWithToken:token sid:sid appId:appid];
@@ -65,7 +64,7 @@ static BOOL _isInitialized = NO;
     });
 }
 
-#pragma mark - SDK & Adapter Versions
+#pragma mark - SDK 版本与适配器版本 / SDK & Adapter Versions
 
 - (NSString *)networkSDKVersion {
     return [AlxSdk getSDKVersion];
@@ -75,7 +74,7 @@ static BOOL _isInitialized = NO;
     return AlxLevelPlayMetaInfo.ADAPTER_VERSION;
 }
 
-#pragma mark - Shared Init Helper
+#pragma mark - 共享初始化辅助方法 / Shared Init Helper
 
 + (void)initSdkWithAdData:(ISAdData *)adData {
     if (_isInitialized) {

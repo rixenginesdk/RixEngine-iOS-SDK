@@ -2,17 +2,14 @@
 //  ISAlxCustomRewardedVideo.h
 //  AlxAdsOCDemo
 //
-//  LevelPlay RewardedVideo 广告适配器 / LevelPlay RewardedVideo ad adapter
+//  LevelPlay RewardedVideo 广告适配器
 //
 
 #import "ISAlxCustomAdapter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- * AlxAds LevelPlay 激励视频广告适配器。
- * AlxAds LevelPlay rewarded video ad adapter.
- */
+/// AlxAds LevelPlay 激励视频广告适配器
 @interface ISAlxCustomRewardedVideo : ISBaseRewardedVideo
 
 @end

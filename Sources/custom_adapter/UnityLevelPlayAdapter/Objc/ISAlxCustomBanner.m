@@ -2,7 +2,7 @@
 //  ISAlxCustomBanner.m
 //  AlxAdsOCDemo
 //
-//  LevelPlay Banner 广告适配器 / LevelPlay Banner ad adapter
+//  LevelPlay Banner 广告适配器
 //
 
 #import "ISAlxCustomBanner.h"
@@ -19,13 +19,9 @@ static NSString *const TAG = @"ISAlxCustomBanner";
 
 #pragma mark - ISBaseBanner
 
-/**
- * LevelPlay 请求加载 Banner 广告。
- * LevelPlay requests to load Banner ad.
- *
- * adData.configuration 包含 / adData.configuration contains:
- *   appid / sid / token (app 级 / app level) + unitid (instance 级 / instance level)
- */
+/// LevelPlay 请求加载 Banner 广告
+/// adData.configuration 包含:
+///   appid / sid / token (app 级) + unitid (instance 级)
 - (void)loadAdWithAdData:(ISAdData *)adData
          viewController:(UIViewController *)viewController
                    size:(ISBannerSize *)size
@@ -57,10 +53,7 @@ static NSString *const TAG = @"ISAlxCustomBanner";
     });
 }
 
-/**
- * LevelPlay 销毁 Banner。
- * LevelPlay destroys Banner.
- */
+/// LevelPlay 销毁 Banner
 - (void)destroyAdWithAdData:(ISAdData *)adData {
     NSLog(@"%@: destroyAd", TAG);
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -100,13 +93,8 @@ static NSString *const TAG = @"ISAlxCustomBanner";
 
 #pragma mark - Private
 
-/**
- * 将 LevelPlay ISBannerSize 映射为 CGSize。
- * Map LevelPlay ISBannerSize to CGSize.
- *
- * ⚠️ 此方法可能在后台线程调用，禁止访问 vc.view（UI API），改用 UIScreen。
- * ⚠️ This method may be called on a background thread; do not access vc.view (UI API), use UIScreen instead.
- */
+/// 将 LevelPlay ISBannerSize 映射为 CGSize
+/// ⚠️ 此方法可能在后台线程调用，禁止访问 vc.view（UI API），改用 UIScreen
 - (CGSize)bannerSizeFromISSize:(ISBannerSize *)size {
     CGFloat screenWidth = UIScreen.mainScreen.bounds.size.width;
 

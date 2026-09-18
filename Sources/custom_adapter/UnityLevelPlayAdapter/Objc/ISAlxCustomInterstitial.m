@@ -2,7 +2,7 @@
 //  ISAlxCustomInterstitial.m
 //  AlxAdsOCDemo
 //
-//  LevelPlay Interstitial 广告适配器 / LevelPlay Interstitial ad adapter
+//  LevelPlay Interstitial 广告适配器
 //
 
 #import "ISAlxCustomInterstitial.h"
@@ -19,10 +19,7 @@ static NSString *const TAG = @"ISAlxCustomInterstitial";
 
 #pragma mark - ISBaseInterstitial
 
-/**
- * LevelPlay 请求加载插屏广告。
- * LevelPlay requests to load interstitial ad.
- */
+/// LevelPlay 请求加载插屏广告
 - (void)loadAdWithAdData:(ISAdData *)adData delegate:(id<ISInterstitialAdDelegate>)delegate {
     NSLog(@"%@: loadAd", TAG);
     self.adDelegate = delegate;
@@ -46,20 +43,14 @@ static NSString *const TAG = @"ISAlxCustomInterstitial";
     [self.interstitialAd loadAdWithAdUnitId:unitId];
 }
 
-/**
- * LevelPlay 检查广告是否就绪。
- * LevelPlay checks if the ad is ready.
- */
+/// LevelPlay 检查广告是否就绪
 - (BOOL)isAdAvailableWithAdData:(ISAdData *)adData {
     BOOL ready = self.interstitialAd != nil && [self.interstitialAd isReady];
     NSLog(@"%@: isAdAvailable = %@", TAG, ready ? @"YES" : @"NO");
     return ready;
 }
 
-/**
- * LevelPlay 展示插屏广告。
- * LevelPlay shows interstitial ad.
- */
+/// LevelPlay 展示插屏广告
 - (void)showAdWithViewController:(UIViewController *)viewController
                           adData:(ISAdData *)adData
                         delegate:(id<ISInterstitialAdDelegate>)delegate {
