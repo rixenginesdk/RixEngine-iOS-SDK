@@ -10,18 +10,23 @@ static NSString *const TAG = @"AlxAdmobNativeAdapter";
 
 @interface AlxAdmobNativeAdapter () <AlxNativeAdLoaderDelegate, AlxNativeAdDelegate>
 
+// 广告事件代理 / Ad event delegate
 @property (nonatomic, weak, nullable) id<GADMediationNativeAdEventDelegate> delegate;
+// Alx SDK 原生广告对象 / Alx SDK native ad object
 @property (nonatomic, strong, nullable) AlxNativeAd *nativeAd;
+// 广告加载完成回调 / Completion handler called after ad load
 @property (nonatomic, copy, nullable) GADMediationNativeLoadCompletionHandler completionHandler;
 
+// 原生广告图片资源 / Native ad image assets
 @property (nonatomic, strong, nullable) NSArray<GADNativeAdImage *> *images;
+// 原生广告图标资源 / Native ad icon asset
 @property (nonatomic, strong, nullable) GADNativeAdImage *icon;
 
 @end
 
 @implementation AlxAdmobNativeAdapter
 
-#pragma mark - GADMediationNativeAd Properties
+#pragma mark - GADMediationNativeAd 属性 / GADMediationNativeAd Properties
 
 - (nullable NSString *)headline {
     return self.nativeAd.title;
@@ -67,7 +72,7 @@ static NSString *const TAG = @"AlxAdmobNativeAdapter";
     return nil;
 }
 
-#pragma mark - Load
+#pragma mark - 广告加载 / Ad Load
 
 - (void)loadNativeAdForAdConfiguration:(GADMediationNativeAdConfiguration *)adConfiguration
                      completionHandler:(GADMediationNativeLoadCompletionHandler)completionHandler {
@@ -96,7 +101,7 @@ static NSString *const TAG = @"AlxAdmobNativeAdapter";
     NSLog(@"%@: loadNativeAd unitid=%@", TAG, adId);
     self.completionHandler = completionHandler;
     
-    // Load ad
+    // 开始加载广告 / Load ad
     AlxNativeAdLoader *loader = [[AlxNativeAdLoader alloc] initWithAdUnitID:adId];
     loader.delegate = self;
     [loader loadAd];
@@ -118,10 +123,10 @@ static NSString *const TAG = @"AlxAdmobNativeAdapter";
     return YES;
 }
 
-#pragma mark - Private Methods
+#pragma mark - 私有方法 / Private Methods
 
 - (void)downloadImagesWithNativeAd:(AlxNativeAd *)nativeAd completion:(void (^)(void))completion {
-    // Download icon
+    // 下载图标图片 / Download icon image
     if (nativeAd.icon && nativeAd.icon.url) {
         NSURL *url = [NSURL URLWithString:nativeAd.icon.url];
         if (url) {
@@ -130,7 +135,7 @@ static NSString *const TAG = @"AlxAdmobNativeAdapter";
         }
     }
     
-    // Download main image
+    // 下载主图 / Download main image
     if (nativeAd.images.firstObject && nativeAd.images.firstObject.url) {
         NSString *imageUrl = nativeAd.images.firstObject.url;
         [self downloadImageAsync:imageUrl completion:^(UIImage * _Nullable image, NSError * _Nullable error) {

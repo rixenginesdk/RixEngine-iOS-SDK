@@ -10,8 +10,11 @@ static NSString *const TAG = @"AlxAdmobInterstitialAdapter";
 
 @interface AlxAdmobInterstitialAdapter () <AlxInterstitialAdDelegate>
 
+// Alx SDK 插屏广告对象 / Alx SDK interstitial ad object
 @property (nonatomic, strong, nullable) AlxInterstitialAd *interstitialAd;
+// 广告事件代理 / Ad event delegate
 @property (nonatomic, weak, nullable) id<GADMediationInterstitialAdEventDelegate> delegate;
+// 广告加载完成回调 / Completion handler called after ad load
 @property (nonatomic, copy, nullable) GADMediationInterstitialLoadCompletionHandler completionHandler;
 
 @end
@@ -45,7 +48,7 @@ static NSString *const TAG = @"AlxAdmobInterstitialAdapter";
     NSLog(@"%@: loadInterstitial unitid=%@", TAG, adId);
     self.completionHandler = completionHandler;
     
-    // Load ad
+    // 开始加载广告 / Load ad
     self.interstitialAd = [[AlxInterstitialAd alloc] init];
     self.interstitialAd.delegate = self;
     [self.interstitialAd loadAdWithAdUnitId:adId];

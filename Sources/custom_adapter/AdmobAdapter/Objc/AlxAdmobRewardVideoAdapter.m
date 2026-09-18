@@ -10,8 +10,11 @@ static NSString *const TAG = @"AlxAdmobRewardVideoAdapter";
 
 @interface AlxAdmobRewardVideoAdapter () <AlxRewardVideoAdDelegate>
 
+// Alx SDK 激励视频广告对象 / Alx SDK rewarded video ad object
 @property (nonatomic, strong, nullable) AlxRewardVideoAd *rewardedAd;
+// 广告事件代理 / Ad event delegate
 @property (nonatomic, weak, nullable) id<GADMediationRewardedAdEventDelegate> delegate;
+// 广告加载完成回调 / Completion handler called after ad load
 @property (nonatomic, copy, nullable) GADMediationRewardedLoadCompletionHandler completionHandler;
 
 @end
@@ -45,7 +48,7 @@ static NSString *const TAG = @"AlxAdmobRewardVideoAdapter";
     NSLog(@"%@: loadRewardedAd unitid=%@", TAG, adId);
     self.completionHandler = completionHandler;
     
-    // Load ad
+    // 开始加载广告 / Load ad
     self.rewardedAd = [[AlxRewardVideoAd alloc] init];
     self.rewardedAd.delegate = self;
     [self.rewardedAd loadAdWithAdUnitId:adId];

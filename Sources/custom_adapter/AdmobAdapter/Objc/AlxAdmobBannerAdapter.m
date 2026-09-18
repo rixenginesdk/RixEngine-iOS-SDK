@@ -10,8 +10,11 @@ static NSString *const TAG = @"AlxAdmobBannerAdapter";
 
 @interface AlxAdmobBannerAdapter () <AlxBannerViewAdDelegate>
 
+// Alx SDK Banner 广告对象 / Alx SDK Banner ad object
 @property (nonatomic, strong, nullable) AlxBannerAdView *bannerAd;
+// 广告事件代理，转发渲染事件给 Admob SDK / Ad event delegate to forward events to Admob SDK
 @property (nonatomic, weak, nullable) id<GADMediationBannerAdEventDelegate> delegate;
+// 广告加载完成回调 / Completion handler called after ad load
 @property (nonatomic, copy, nullable) GADMediationBannerLoadCompletionHandler completionHandler;
 
 @end
@@ -45,7 +48,7 @@ static NSString *const TAG = @"AlxAdmobBannerAdapter";
     NSLog(@"%@: loadBanner unitid=%@", TAG, adId);
     self.completionHandler = completionHandler;
     
-    // Load ad
+    // 开始加载广告 / Load ad
     CGSize adSize = adConfiguration.adSize.size;
     self.bannerAd = [[AlxBannerAdView alloc] initWithFrame:CGRectMake(0, 0, adSize.width, adSize.height)];
     self.bannerAd.delegate = self;

@@ -47,6 +47,7 @@ static BOOL _isInitialized = NO;
              completionHandler:(GADMediationAdapterSetUpCompletionBlock)completionHandler {
     NSLog(@"%@: setUp", TAG);
     
+    // 在此处初始化自定义事件所对应的 SDK，初始化完成后调用 completionHandler 通知成功
     // This is where you will initialize the SDK that this custom event is built for.
     // Upon finishing the SDK initialization, call the completion handler with success.
     
@@ -75,7 +76,7 @@ static BOOL _isInitialized = NO;
     return self;
 }
 
-#pragma mark - Parse Parameter
+#pragma mark - 解析广告参数 / Parse Ad Parameters
 
 + (nullable NSDictionary<NSString *, id> *)parseAdparameterFor:(GADMediationCredentials *)parameters {
     NSString *params = parameters.settings[PARAMETER];
@@ -101,7 +102,7 @@ static BOOL _isInitialized = NO;
     return json;
 }
 
-#pragma mark - SDK Init
+#pragma mark - SDK 初始化 / SDK Initialization
 
 + (NSDictionary<NSString *, id> *)initSdkFor:(nullable NSDictionary<NSString *, id> *)parameters {
     NSLog(@"%@: alx-sdk-version:%@", TAG, [AlxSdk getSDKVersion]);
@@ -114,7 +115,8 @@ static BOOL _isInitialized = NO;
         return @{@"success": @NO, @"error": errorStr};
     }
     
-    // 从 parameters 中获取参数字符串 / Get the parameter string from parameters
+    // 从 parameters 中获取参数字符串
+    // Retrieve the parameter string from the parameters dictionary
     NSString *paramsStr = parameters[@"parameter"];
     if (![paramsStr isKindOfClass:[NSString class]] || paramsStr.length == 0) {
         NSString *errorStr = @"parameter string is missing or not a string";
@@ -122,7 +124,8 @@ static BOOL _isInitialized = NO;
         return @{@"success": @NO, @"error": errorStr};
     }
     
-    // 将 JSON 字符串转换为 Data / Convert the JSON string to Data
+    // 将 JSON 字符串转换为 Data
+    // Convert the JSON string to NSData
     NSData *admobJSONData = [paramsStr dataUsingEncoding:NSUTF8StringEncoding];
     if (!admobJSONData) {
         NSString *errorStr = @"failed to convert parameter string to data";
@@ -130,7 +133,8 @@ static BOOL _isInitialized = NO;
         return @{@"success": @NO, @"error": errorStr};
     }
     
-    // 将 Data 转为 JSON 字典 / Convert Data to JSON dictionary
+    // 将 Data 转为 JSON 字典
+    // Parse the NSData into a JSON dictionary
     NSError *jsonError = nil;
     NSDictionary<NSString *, id> *paramsDict = [NSJSONSerialization JSONObjectWithData:admobJSONData options:0 error:&jsonError];
     if (![paramsDict isKindOfClass:[NSDictionary class]]) {
@@ -163,12 +167,13 @@ static BOOL _isInitialized = NO;
         }
     }
     
-    // User Privacy
-    // MARK: - GDPR Consent Handling
+    // 用户隐私合规设置
+    // User Privacy Settings
+    // MARK: - GDPR 同意处理 / GDPR Consent Handling
     NSInteger gdprFlag = [[NSUserDefaults standardUserDefaults] integerForKey:@"IABTCF_gdprApplies"];
     NSString *gdprConsent = [[NSUserDefaults standardUserDefaults] stringForKey:@"IABTCF_TCString"];
     
-    // tcf v2 consent
+    // TCF v2 同意字符串处理 / TCF v2 consent string handling
     if (gdprFlag == 1) {
         [AlxSdk setGDPRConsent:YES];
     } else {
@@ -201,7 +206,7 @@ static BOOL _isInitialized = NO;
                            userInfo:@{NSLocalizedDescriptionKey: msg}];
 }
 
-#pragma mark - Property
+#pragma mark - 属性存取 / Property Accessors
 
 + (BOOL)isInitialized {
     return _isInitialized;
