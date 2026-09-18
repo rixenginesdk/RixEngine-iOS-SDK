@@ -2,30 +2,33 @@
 //  AlxTopOnBannerAdapter.swift
 //  AlxAdsDemo
 //
-//  TopOn 6.5.x 新架构 / TopOn 6.5.x new architecture
+//  TopOn 6.5.x 新架构
+//  TopOn 6.5.x New Architecture
 //
 
 import Foundation
 import AnyThinkSDK
 import AlxAds
 
-// ⚠️ 关键：必须遵循 ATBaseBannerAdapterProtocol 协议才能访问 adStatusBridge / Key: Must conform to ATBaseBannerAdapterProtocol to access adStatusBridge
+// ⚠️ 关键：必须遵循 ATBaseBannerAdapterProtocol 协议才能访问 adStatusBridge
+// ⚠️ Critical: Must conform to ATBaseBannerAdapterProtocol to access adStatusBridge
 @objc(AlxTopOnBannerAdapter)
 public class AlxTopOnBannerAdapter: AlxTopOnBaseAdapter, ATBaseBannerAdapterProtocol {
     
     private static let TAG = "AlxTopOnBannerAdapter"
     
-    // ⚠️ ATBaseBannerAdapterProtocol 要求的属性 / Property required by ATBaseBannerAdapterProtocol
-    // 这个属性会由 TopOn SDK 自动设置 / This property is automatically set by TopOn SDK
-    // 使用隐式解包可选类型，表示运行时总是有值，但初始化时可以为 nil / Using implicitly unwrapped optional, meaning it always has a value at runtime but can be nil during initialization
+    // ⚠️ ATBaseBannerAdapterProtocol 要求的属性，由 TopOn SDK 自动设置
+    // ⚠️ Required property of ATBaseBannerAdapterProtocol; automatically set by TopOn SDK.
+    // 使用隐式解包可选类型，表示运行时总是有值，但初始化时可以为 nil
+    // Uses implicitly unwrapped optional: always has a value at runtime, but can be nil at init.
     @objc public var adStatusBridge: ATBannerAdStatusBridge!
     
     // Alx SDK 的 banner 广告对象 / Alx SDK banner ad object
     private var bannerAd: AlxBannerAdView?
-    // Delegate
+    // 广告事件代理 / Ad event delegate
     private var bannerDelegate: AlxTopOnBannerDelegate?
     
-    // MARK: - Lazy Load
+    // MARK: - 懒加载 / Lazy Load
     private func getBannerDelegate() -> AlxTopOnBannerDelegate {
         if bannerDelegate == nil {
             bannerDelegate = AlxTopOnBannerDelegate()
@@ -34,11 +37,9 @@ public class AlxTopOnBannerAdapter: AlxTopOnBaseAdapter, ATBaseBannerAdapterProt
         return bannerDelegate!
     }
     
-    // MARK: - Ad Load (ATBaseBannerAdapterProtocol)
-    /**
-     * 实现广告加载方法（TopOn 6.5.x 新架构）。
-     * Implement ad loading method (TopOn 6.5.x new architecture).
-     */
+    // MARK: - 广告加载 / Ad Load (ATBaseBannerAdapterProtocol)
+    /// 实现广告加载方法（TopOn 6.5.x 新架构）
+    /// Implements the ad loading method (TopOn 6.5.x new architecture).
     @objc public override func loadAD(with argument: ATAdMediationArgument) {
         NSLog("%@: loadAD", AlxTopOnBannerAdapter.TAG)
         NSLog("%@: loadAD: isMainThread=%@", AlxTopOnBannerAdapter.TAG, Thread.current.isMainThread ? "YES" : "NO")
@@ -52,14 +53,16 @@ public class AlxTopOnBannerAdapter: AlxTopOnBaseAdapter, ATBaseBannerAdapterProt
                 let errorStr = "unitid is empty"
                 NSLog("%@: loadAD: error = %@", AlxTopOnBannerAdapter.TAG, errorStr)
                 let error = AlxTopOnBaseManager.error(code: -100, msg: errorStr)
-                // 使用 delegate 来调用，避免 Swift 桥接问题 / Use delegate to invoke, avoiding Swift bridging issues
+                // 使用 delegate 来调用，避免 Swift 桥接问题
+                // Use delegate to call, avoiding Swift bridging issues
                 self.notifyLoadFailed(error: error)
                 return
             }
             NSLog("%@: loadAD: unitid = %@", AlxTopOnBannerAdapter.TAG, unitId)
             
-            if let bidId = bidId {
-                // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve pre-loaded ad from cache
+            if bidId != nil {
+                // Bidding 场景：从缓存中取出已加载的广告
+                // Bidding scenario: retrieve the pre-loaded ad from cache
                 if let biddingRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitId) as? AlxTopOnBiddingRequest {
                     self.bannerAd = biddingRequest.customObject as? AlxBannerAdView
                     
@@ -78,10 +81,11 @@ public class AlxTopOnBannerAdapter: AlxTopOnBaseAdapter, ATBaseBannerAdapterProt
                                       userInfo: [NSLocalizedDescriptionKey: "Bid request not found"])
                     self.notifyLoadFailed(error: error)
                 }
-                // ⚠️ 注意：移除缓存 / Note: Remove cache
+                // ⚠️ 注意：移除缓存 / Remove from cache
                 AlxTopOnTool.shared.removeRequestItem(withUnitID: unitId)
             } else {
-                // 非 Bidding 场景：直接加载广告 / Non-bidding scenario: load ad directly
+                // 非 Bidding 场景：直接加载广告
+                // Non-bidding scenario: load the ad directly
                 var bannerSize = CGSize(width: 320, height: 50)
                 if !argument.bannerSize.equalTo(.zero),
                    let _ = argument.serverContentDic[kATAdapterCustomInfoUnitGroupModelKey] as? ATUnitGroupModel {
@@ -92,20 +96,26 @@ public class AlxTopOnBannerAdapter: AlxTopOnBaseAdapter, ATBaseBannerAdapterProt
                 
                 self.bannerAd = AlxBannerAdView(frame: CGRect(origin: .zero, size: bannerSize))
                 
-                // ⚠️ 注意：delegate 应该设置为 bannerDelegate，而不是 adStatusBridge / Note: delegate should be set to bannerDelegate, not adStatusBridge
+                // ⚠️ 注意：delegate 应该设置为 bannerDelegate，而不是 adStatusBridge
+                // ⚠️ Note: delegate must be set to bannerDelegate, not adStatusBridge
                 self.bannerAd?.delegate = self.getBannerDelegate()
                 self.bannerAd?.refreshInterval = 0
                 self.bannerAd?.translatesAutoresizingMaskIntoConstraints = false
                 
                 NSLog("%@: start loading ad with unitId: %@", AlxTopOnBannerAdapter.TAG, unitId)
-                self.bannerAd?.loadAd(adUnitId: unitId)
+                // 测试新增的扩展字段
+                let req = AlxAdRequest().withUserExt([
+                    "bid_floor": "1.68"
+                ])
+                self.bannerAd?.loadAd(adUnitId: unitId, request: req)
             }
         }
     }
     
-    // MARK: - Helper Methods (避免 Swift 桥接问题 / Avoiding Swift Bridging Issues)
+    // MARK: - 辅助方法（避免 Swift 桥接问题）/ Helper Methods (Avoiding Swift Bridging Issues)
     private func notifyBannerLoaded(banner: AlxBannerAdView) {
-        // 使用 OC 选择器动态调用，避免 Swift 桥接问题 / Use OC selector for dynamic invocation, avoiding Swift bridging issues
+        // 使用 OC 选择器动态调用，避免 Swift 桥接问题
+        // Dynamically invoke using ObjC selector to avoid Swift bridging issues
         if let bridge = self.adStatusBridge {
             let selector = NSSelectorFromString("atOnBannerAdLoadedWithView:adExtra:")
             if bridge.responds(to: selector) {
@@ -115,7 +125,8 @@ public class AlxTopOnBannerAdapter: AlxTopOnBaseAdapter, ATBaseBannerAdapterProt
     }
     
     private func notifyLoadFailed(error: Error) {
-        // 使用 OC 选择器动态调用，避免 Swift 桥接问题 / Use OC selector for dynamic invocation, avoiding Swift bridging issues
+        // 使用 OC 选择器动态调用，避免 Swift 桥接问题
+        // Dynamically invoke using ObjC selector to avoid Swift bridging issues
         if let bridge = self.adStatusBridge {
             let selector = NSSelectorFromString("atOnAdLoadFailed:adExtra:")
             if bridge.responds(to: selector) {
@@ -152,7 +163,7 @@ public class AlxTopOnBannerAdapter: AlxTopOnBaseAdapter, ATBaseBannerAdapterProt
         AlxTopOnBiddingRequestManager.shared.start(with: request)
     }
     
-    // MARK: - 广告就绪检查 / Ad Readiness Check
+    // MARK: - 广告就绪检查 / Ad Ready Check
     @objc public static func adReady(withCustomObject customObject: Any, info: [AnyHashable: Any]) -> Bool {
         NSLog("%@: adReady", AlxTopOnBannerAdapter.TAG)
         if customObject as? AlxBannerAdView != nil {
@@ -164,7 +175,7 @@ public class AlxTopOnBannerAdapter: AlxTopOnBaseAdapter, ATBaseBannerAdapterProt
         }
     }
     
-    // MARK: - 广告展示 / Ad Display
+    // MARK: - 广告展示 / Show Ad
     @objc(showBanner:inView:presentingViewController:)
     public static func showBanner(_ banner: ATBanner, in view: UIView, presenting viewController: UIViewController) {
         NSLog("%@: showBanner", AlxTopOnBannerAdapter.TAG)

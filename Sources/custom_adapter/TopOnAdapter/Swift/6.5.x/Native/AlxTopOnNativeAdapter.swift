@@ -25,7 +25,7 @@ public class AlxTopOnNativeAdapter: AlxTopOnBaseAdapter, ATBaseNativeAdapterProt
         return AlxTopOnNativeEvent(info: [:], localInfo: [:])
     }()
     
-    // MARK: - Ad Load
+    // MARK: - 广告加载 / Ad Load
     
     @objc public override func loadAD(with argument: ATAdMediationArgument) {
         NSLog("%@: loadAD(with:)", AlxTopOnNativeAdapter.TAG)
@@ -44,23 +44,25 @@ public class AlxTopOnNativeAdapter: AlxTopOnBaseAdapter, ATBaseNativeAdapterProt
             }
             NSLog("%@: loadAD: unitid = %@", AlxTopOnNativeAdapter.TAG, unitId)
             
-            if let bidId = bidId {
-                // Bidding 场景：从缓存中取出已加载的广告 / Bidding scenario: retrieve the pre-loaded ad from cache
+            if bidId != nil {
+                // Bidding 场景：从缓存中取出已加载的广告
+                // Bidding scenario: retrieve the pre-loaded ad from cache
                 if let biddingRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitId) as? AlxTopOnBiddingRequest {
                     self.nativeAd = biddingRequest.customObject as? AlxNativeAd
                     
                     if let nativeAd = self.nativeAd {
                         NSLog("%@: loadAD: bid ad loaded, creating native object", AlxTopOnNativeAdapter.TAG)
                         
-                        // ⚠️ 创建 AlxTopOnNativeObject 对象 / Create AlxTopOnNativeObject instance
+                        // ⚠️ 创建 AlxTopOnNativeObject 对象 / Create AlxTopOnNativeObject
                         let nativeObject = AlxTopOnNativeObject()
                         nativeObject.nativeAd = nativeAd
                         nativeObject.nativeEvent = self.nativeEvent
                         
-                        // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调 / Key: set nativeAd's delegate to receive impression, click, and close callbacks
+                        // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调
+                        // ✅ Critical: Set nativeAd delegate to receive impression/click/close callbacks
                         nativeAd.delegate = self.nativeDelegate
                         
-                        // ⚠️ 传递对象数组 / Pass the object array
+                        // ⚠️ 传递对象数组 / Pass object array
                         self.notifyNativeAdLoaded(objects: [nativeObject], adExtra: [:])
                     } else {
                         NSLog("%@: loadAD: bid ad object is empty", AlxTopOnNativeAdapter.TAG)
@@ -74,18 +76,22 @@ public class AlxTopOnNativeAdapter: AlxTopOnBaseAdapter, ATBaseNativeAdapterProt
                 }
                 AlxTopOnTool.shared.removeRequestItem(withUnitID: unitId)
             } else {
-                // 普通加载场景 / Normal loading scenario
+                // 普通加载场景 / Normal (non-bidding) load scenario
                 self.nativeAdLoader = AlxNativeAdLoader(adUnitID: unitId)
                 self.nativeAdLoader?.delegate = self.getNativeDelegate()
                 self.nativeDelegate.nativeEvent = self.nativeEvent
                 
                 NSLog("%@: start loading ad with unitId: %@", AlxTopOnNativeAdapter.TAG, unitId)
-                self.nativeAdLoader?.loadAd()
+                // 测试新增的扩展字段
+                let req = AlxAdRequest().withUserExt([
+                    "bid_floor": "1.68"
+                ])
+                self.nativeAdLoader?.loadAd(request: req)
             }
         }
     }
     
-    // MARK: - C2S Bidding
+    // MARK: - C2S 竞价 / C2S Bidding
     
     @objc public static func bidRequestWithPlacementModel(_ placementModel: ATPlacementModel,
                                                           unitGroupModel: ATUnitGroupModel,
@@ -115,21 +121,21 @@ public class AlxTopOnNativeAdapter: AlxTopOnBaseAdapter, ATBaseNativeAdapterProt
         AlxTopOnBiddingRequestManager.shared.start(with: request)
     }
     
-    // MARK: - Renderer Class
+    // MARK: - 渲染类 / Renderer Class
     
     @objc public static func rendererClass() -> AnyClass {
         NSLog("%@: rendererClass", AlxTopOnNativeAdapter.TAG)
         return AlxTopOnNativeRender.self
     }
     
-    // MARK: - Helper Methods
+    // MARK: - 辅助方法 / Helper Methods
     
     private func getNativeDelegate() -> AlxTopOnNativeDelegate {
         self.nativeDelegate.adStatusBridge = self.adStatusBridge
         return self.nativeDelegate
     }
     
-    // MARK: - Dynamic Invocation Helper Methods
+    // MARK: - 动态调用辅助方法 / Dynamic Invocation Helper Methods
     
     private func notifyNativeAdLoaded(objects: [AlxTopOnNativeObject], adExtra: [AnyHashable: Any]) {
         if let bridge = self.adStatusBridge {

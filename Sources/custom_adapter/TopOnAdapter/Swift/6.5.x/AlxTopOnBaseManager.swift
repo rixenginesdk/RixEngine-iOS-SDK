@@ -27,7 +27,7 @@ public class AlxTopOnBaseManager:NSObject {
         let debug:String? = serverInfo["isdebug"] as? String
         
         NSLog("%@: token=%@; appid=%@; sid=%@",AlxTopOnBaseManager.TAG,token ?? "",appid ?? "",sid ?? "")
-        guard let appid=appid,let sid=sid,let token=token else{
+        guard let appid = appid,let sid=sid,let token=token else{
             let errorStr="initialize alx params: appid or sid or token is empty"
             NSLog("%@: error: %@",AlxTopOnBaseManager.TAG,errorStr)
             return errorStr
@@ -40,7 +40,7 @@ public class AlxTopOnBaseManager:NSObject {
         if let debug,!debug.isEmpty {
             if debug.lowercased() == "true" {
                 AlxSdk.setDebug(true)
-            }else if debug.lowercased() == "false" {
+            } else if debug.lowercased() == "false" {
                 AlxSdk.setDebug(false)
             }
         }
@@ -50,9 +50,9 @@ public class AlxTopOnBaseManager:NSObject {
         // MARK: - GDPR Consent Handling
         let gdprFlag = UserDefaults.standard.integer(forKey: "IABTCF_gdprApplies")
         let gdprConsent = UserDefaults.standard.string(forKey: "IABTCF_TCString")
-        if gdprFlag == 1{
+        if gdprFlag == 1 {
             AlxSdk.setGDPRConsent(true)
-        }else  {
+        } else  {
             AlxSdk.setGDPRConsent(false)
         }
         AlxSdk.setGDPRConsentMessage(gdprConsent ?? "")
@@ -60,15 +60,15 @@ public class AlxTopOnBaseManager:NSObject {
         return nil
     }
     
-    public static func sdkInfo(){
+    public static func sdkInfo() {
         var data:[String:String] = [:]
         data["sdk_name"] = "TopOn"
         data["sdk_version"] = ATAPI.sharedInstance().version()
         data["adapter_version"] = AlxTopOnMetaInf.ADAPTER_VERSION
-        AlxSdk.addExtraParameters(key:"alx_adapter",value:data)
+        AlxSdk.addExtraParameters(key: "alx_adapter", value: data)
     }
     
-    public static func error(code:Int,msg:String) -> NSError{
+    public static func error(code: Int, msg: String) -> NSError {
         return NSError(domain: "AlxTopOnAdapter", code: code, userInfo: [NSLocalizedDescriptionKey : msg])
     }
     
