@@ -7,7 +7,7 @@
 #import <AlxAds/AlxAds.h>
 
 static NSString *const TAG = @"AlxMaxMediationAdapter";
-static NSString *const ADAPTER_VERSION = @"1.5.0";
+static NSString *const ADAPTER_VERSION = @"2.1.0";
 
 #pragma mark - MaxAlxNativeAd
 
@@ -145,11 +145,13 @@ static BOOL isInitialized = NO;
     NSLog(@"%@: showRewardedAd", TAG);
     UIViewController *viewController = parameters.presentingViewController ?: [ALUtils topViewControllerFromKeyWindow];
     
-    if (self.rewardedAd && [self.rewardedAd isReady]) {
-        [self.rewardedAd showAdWithPresent:viewController];
-    } else {
-        NSLog(@"%@: show reward is empty", TAG);
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.rewardedAd && [self.rewardedAd isReady]) {
+            [self.rewardedAd showAdWithPresent:viewController];
+        } else {
+            NSLog(@"%@: show reward is empty", TAG);
+        }
+    });
 }
 
 #pragma mark - MAInterstitialAdapter（插屏广告）/ MAInterstitialAdapter (Interstitial Ad)
@@ -172,11 +174,13 @@ static BOOL isInitialized = NO;
     NSLog(@"%@: showInterstitialAd", TAG);
     UIViewController *viewController = parameters.presentingViewController ?: [ALUtils topViewControllerFromKeyWindow];
     
-    if (self.interstitialAd && [self.interstitialAd isReady]) {
-        [self.interstitialAd showAdWithPresent:viewController];
-    } else {
-        NSLog(@"%@: show interstitial is empty", TAG);
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.interstitialAd && [self.interstitialAd isReady]) {
+            [self.interstitialAd showAdWithPresent:viewController];
+        } else {
+            NSLog(@"%@: show interstitial is empty", TAG);
+        }
+    });
 }
 
 #pragma mark - MANativeAdAdapter（原生广告）/ MANativeAdAdapter (Native Ad)
@@ -228,13 +232,16 @@ static BOOL isInitialized = NO;
     NSLog(@"%@: showAppOpenAd", TAG);
     self.appOpenAdDelegate = delegate;
     UIViewController *viewController = parameters.presentingViewController ?: [ALUtils topViewControllerFromKeyWindow];
-    if (self.appOpenAd && [self.appOpenAd isReady]) {
-        [self.appOpenAd showAdWithPresent:viewController];
-    } else {
-        NSLog(@"%@: show app open is empty or not ready", TAG);
-        MAAdapterError *error = MAAdapterError.adNotReady;
-        [self.appOpenAdDelegate didFailToDisplayAppOpenAdWithError:error];
-    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.appOpenAd && [self.appOpenAd isReady]) {
+            [self.appOpenAd showAdWithPresent:viewController];
+        } else {
+            NSLog(@"%@: show app open is empty or not ready", TAG);
+            MAAdapterError *error = MAAdapterError.adNotReady;
+            [self.appOpenAdDelegate didFailToDisplayAppOpenAdWithError:error];
+        }
+    });
 }
 
 #pragma mark - 生命周期 / Lifecycle
