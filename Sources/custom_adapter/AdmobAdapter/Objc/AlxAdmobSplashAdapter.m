@@ -64,13 +64,15 @@ static NSString *const TAG = @"AlxAdmobSplashAdapter";
 
 - (void)presentFromViewController:(UIViewController *)viewController {
     NSLog(@"%@: present", TAG);
-    if (self.splashAd && [self.splashAd isReady]) {
-        [self.splashAd showAdWithPresent:viewController];
-    } else {
-        NSString *errorStr = @"Splash ad is not ready to present";
-        NSLog(@"%@: error: %@", TAG, errorStr);
-        [self.delegate didFailToPresentWithError:[self errorWithCode:-101 msg:errorStr]];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.splashAd && [self.splashAd isReady]) {
+            [self.splashAd showAdWithPresent:viewController];
+        } else {
+            NSString *errorStr = @"Splash ad is not ready to present";
+            NSLog(@"%@: error: %@", TAG, errorStr);
+            [self.delegate didFailToPresentWithError:[self errorWithCode:-101 msg:errorStr]];
+        }
+    });
 }
 
 #pragma mark - AlxSplashAdDelegate

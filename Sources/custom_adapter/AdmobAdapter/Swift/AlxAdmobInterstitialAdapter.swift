@@ -50,10 +50,11 @@ public class AlxAdmobInterstitialAdapter: AlxAdmobBaseAdapter, MediationIntersti
     }
     
     public func present(from viewController: UIViewController) {
-        NSLog("%@: present",AlxAdmobInterstitialAdapter.TAG)
-        
-        if let interstitialAd = self.interstitialAd,interstitialAd.isReady(){
-            interstitialAd.showAd(present: viewController)
+        NSLog("%@: present", AlxAdmobInterstitialAdapter.TAG)
+        DispatchQueue.main.async {
+            if let interstitialAd = self.interstitialAd,interstitialAd.isReady(){
+                interstitialAd.showAd(present: viewController)
+            }
         }
     }
     

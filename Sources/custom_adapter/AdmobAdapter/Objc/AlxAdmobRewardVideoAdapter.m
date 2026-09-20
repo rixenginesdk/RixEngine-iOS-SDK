@@ -56,9 +56,11 @@ static NSString *const TAG = @"AlxAdmobRewardVideoAdapter";
 
 - (void)presentFromViewController:(UIViewController *)viewController {
     NSLog(@"%@: present", TAG);
-    if (self.rewardedAd && [self.rewardedAd isReady]) {
-        [self.rewardedAd showAdWithPresent:viewController];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.rewardedAd && [self.rewardedAd isReady]) {
+            [self.rewardedAd showAdWithPresent:viewController];
+        }
+    });
 }
 
 #pragma mark - AlxRewardVideoAdDelegate

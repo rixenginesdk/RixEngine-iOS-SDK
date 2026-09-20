@@ -66,13 +66,14 @@ public class AlxAdmobSplashAdapter: AlxAdmobBaseAdapter, MediationAppOpenAd {
     
     public func present(from viewController: UIViewController) {
         NSLog("%@: present", AlxAdmobSplashAdapter.TAG)
-        
-        if let splashAd = self.splashAd, splashAd.isReady() {
-            splashAd.showAd(present: viewController)
-        } else {
-            let errorStr = "Splash ad is not ready to present"
-            NSLog("%@: error: %@", AlxAdmobSplashAdapter.TAG, errorStr)
-            self.delegate?.didFailToPresentWithError(self.error(code: -101, msg: errorStr))
+        DispatchQueue.main.async {
+            if let splashAd = self.splashAd, splashAd.isReady() {
+                splashAd.showAd(present: viewController)
+            } else {
+                let errorStr = "Splash ad is not ready to present"
+                NSLog("%@: error: %@", AlxAdmobSplashAdapter.TAG, errorStr)
+                self.delegate?.didFailToPresentWithError(self.error(code: -101, msg: errorStr))
+            }
         }
     }
 }

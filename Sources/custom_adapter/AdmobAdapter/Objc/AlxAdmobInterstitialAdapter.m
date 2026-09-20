@@ -56,9 +56,11 @@ static NSString *const TAG = @"AlxAdmobInterstitialAdapter";
 
 - (void)presentFromViewController:(UIViewController *)viewController {
     NSLog(@"%@: present", TAG);
-    if (self.interstitialAd && [self.interstitialAd isReady]) {
-        [self.interstitialAd showAdWithPresent:viewController];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.interstitialAd && [self.interstitialAd isReady]) {
+            [self.interstitialAd showAdWithPresent:viewController];
+        }
+    });
 }
 
 #pragma mark - AlxInterstitialAdDelegate

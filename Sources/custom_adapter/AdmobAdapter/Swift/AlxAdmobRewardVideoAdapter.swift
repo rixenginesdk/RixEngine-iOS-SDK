@@ -52,8 +52,10 @@ public class AlxAdmobRewardVideoAdapter: AlxAdmobBaseAdapter, MediationRewardedA
     
     public func present(from viewController: UIViewController) {
         NSLog("%@: present",AlxAdmobRewardVideoAdapter.TAG)
-        if let rewardedAd = self.rewardedAd,rewardedAd.isReady(){
-            rewardedAd.showAd(present: viewController)
+        DispatchQueue.main.async {
+            if let rewardedAd = self.rewardedAd, rewardedAd.isReady() {
+                rewardedAd.showAd(present: viewController)
+            }
         }
     }
     
