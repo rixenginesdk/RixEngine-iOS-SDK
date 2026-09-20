@@ -8,11 +8,11 @@
 @implementation AlxLevelPlayMetaInfo
 
 + (NSString *)ADAPTER_VERSION {
-    return @"1.0.0";
+    return @"2.1.1";
 }
 
 + (NSString *)NETWORK_NAME {
-    return @"AlxAds";
+    return @"RixEngine";
 }
 
 @end

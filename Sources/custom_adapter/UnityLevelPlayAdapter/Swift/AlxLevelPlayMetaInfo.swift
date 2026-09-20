@@ -9,7 +9,7 @@ import Foundation
 
 struct AlxLevelPlayMetaInfo {
     /// 适配器版本号
-    static let ADAPTER_VERSION = "1.0.0"
+    static let ADAPTER_VERSION = "2.1.1"
     /// 网络名称（与 LevelPlay 平台注册时的名称一致）
-    static let NETWORK_NAME = "AlxAds"
+    static let NETWORK_NAME = "RixEngine"
 }
