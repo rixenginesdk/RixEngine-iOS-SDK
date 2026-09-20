@@ -83,8 +83,8 @@ public class AlxMaxMediationAdapter: ALMediationAdapter, MAAdViewAdapter, MARewa
     public func showRewardedAd(for parameters: any MAAdapterResponseParameters, andNotify delegate: any MARewardedAdapterDelegate) {
         NSLog("%@: showRewardedAd", AlxMaxMediationAdapter.TAG)
         let viewController:UIViewController = parameters.presentingViewController ?? ALUtils.topViewControllerFromKeyWindow()
-        DispatchQueue.main.async {
-            if let rewardedAd = rewardedAd, rewardedAd.isReady() {
+        DispatchQueue.main.async { [weak self] in
+            if let rewardedAd = self?.rewardedAd, rewardedAd.isReady() {
                 rewardedAd.showAd(present: viewController)
             } else {
                 NSLog("%@: show reward is empty", AlxMaxMediationAdapter.TAG)
@@ -109,8 +109,8 @@ public class AlxMaxMediationAdapter: ALMediationAdapter, MAAdViewAdapter, MARewa
     public func showInterstitialAd(for parameters: any MAAdapterResponseParameters, andNotify delegate: any MAInterstitialAdapterDelegate) {
         NSLog("%@: showInterstitialAd", AlxMaxMediationAdapter.TAG)
         let viewController:UIViewController = parameters.presentingViewController ?? ALUtils.topViewControllerFromKeyWindow()
-        DispatchQueue.main.async {
-            if let interstitial = interstitialAd, interstitial.isReady() {
+        DispatchQueue.main.async { [weak self] in
+            if let interstitial = self?.interstitialAd, interstitial.isReady() {
                 interstitial.showAd(present: viewController)
             } else {
                 NSLog("%@: show interstitial is empty", AlxMaxMediationAdapter.TAG)
