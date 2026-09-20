@@ -31,7 +31,10 @@ import UIKit
     }
     
     @objc public func showAd(present: UIViewController) {
-        model?.showAd(present: present)
+        DispatchQueue.main.async { [weak self] in
+            guard let this = self else { return }
+            this.model?.showAd(present: present)
+        }
     }
     
     @objc public func isReady() -> Bool {
