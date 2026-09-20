@@ -110,7 +110,8 @@ public class AlxMaxMediationAdapter: ALMediationAdapter, MAAdViewAdapter, MARewa
         NSLog("%@: showInterstitialAd", AlxMaxMediationAdapter.TAG)
         let viewController:UIViewController = parameters.presentingViewController ?? ALUtils.topViewControllerFromKeyWindow()
         DispatchQueue.main.async { [weak self] in
-            if let interstitial = self?.interstitialAd, interstitial.isReady() {
+            guard let self = self else { return }
+            if let interstitial = self.interstitialAd, interstitial.isReady() {
                 interstitial.showAd(present: viewController)
             } else {
                 NSLog("%@: show interstitial is empty", AlxMaxMediationAdapter.TAG)
@@ -165,8 +166,9 @@ public class AlxMaxMediationAdapter: ALMediationAdapter, MAAdViewAdapter, MARewa
         NSLog("%@: showAppOpenAd", AlxMaxMediationAdapter.TAG)
         self.appOpenAdDelegate = delegate
         let viewController: UIViewController = parameters.presentingViewController ?? ALUtils.topViewControllerFromKeyWindow()
-        DispatchQueue.main.async {
-            if let appOpen = appOpenAd, appOpen.isReady() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if let appOpen = self.appOpenAd, appOpen.isReady() {
                 appOpen.showAd(present: viewController)
             } else {
                 debugPrint("%@: show app open is empty or not ready", AlxMaxMediationAdapter.TAG)
