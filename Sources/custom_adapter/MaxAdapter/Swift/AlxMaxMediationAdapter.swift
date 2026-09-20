@@ -11,7 +11,7 @@ import AppLovinSDK
 public class AlxMaxMediationAdapter: ALMediationAdapter, MAAdViewAdapter, MARewardedAdapter, MAInterstitialAdapter, MANativeAdAdapter, MAAppOpenAdapter {
     
     private static let TAG = "AlxMaxMediationAdapter"
-    private static let ADAPTER_VERSION = "2.1.0"
+    private static let ADAPTER_VERSION = "2.1.1"
     
     private var bannerAd: AlxBannerAdView? = nil
     private var bannerAdDelegate: MAAdViewAdapterDelegate? = nil
