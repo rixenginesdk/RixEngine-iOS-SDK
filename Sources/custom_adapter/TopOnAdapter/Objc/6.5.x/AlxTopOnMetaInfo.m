@@ -8,7 +8,7 @@
 @implementation AlxTopOnMetaInfo
 
 + (NSString *)ADAPTER_VERSION {
-    return @"1.2.0";
+    return @"2.1.1";
 }
 
 @end
