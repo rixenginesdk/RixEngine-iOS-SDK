@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # ――― 1. Spec Metadata ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RixEngineAds"
-  s.version      = "2.1.0"
+  s.version      = "2.1.1"
   s.summary      = "RixEngineAds Mobile Ad Aggregation SDK."
 
   s.description  = <<-DESC
@@ -75,14 +75,14 @@ Pod::Spec.new do |s|
     topon.source_files = 'Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/**/*.swift'
     topon.dependency 'RixEngineAds/Core'
     topon.dependency 'TPNiOS', '~> 6.5.34'
-    topon.dependency 'TPNMediationAdxSmartdigimktAdapter', '~> 6.5.78'
+    topon.dependency 'TPNMediationAdxSmartdigimktAdapter', '~> 6.5.79'
   end
 
   s.subspec 'TopOnAdapterOC' do |topon_oc|
     topon_oc.source_files = 'Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/**/*.{h,m}'
     topon_oc.dependency 'RixEngineAds/Core'
     topon_oc.dependency 'TPNiOS', '~> 6.5.34'
-    topon_oc.dependency 'TPNMediationAdxSmartdigimktAdapter', '~> 6.5.78'
+    topon_oc.dependency 'TPNMediationAdxSmartdigimktAdapter', '~> 6.5.79'
   end
 
   # ==========================================================
