@@ -41,7 +41,7 @@ Installing the root Pod includes only the Core SDK:
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds', '2.1.0'
+  pod 'RixEngineAds', '2.1.1'
 end
 ```
 
@@ -52,10 +52,10 @@ Add only the mediation adapters required by your application:
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.1.0'
-  pod 'RixEngineAds/MaxAdapter', '2.1.0'
-  pod 'RixEngineAds/TopOnAdapter', '2.1.0'
-  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.1.0'
+  pod 'RixEngineAds/AdmobAdapter', '2.1.1'
+  pod 'RixEngineAds/MaxAdapter', '2.1.1'
+  pod 'RixEngineAds/TopOnAdapter', '2.1.1'
+  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.1.1'
 end
 ```
 
@@ -65,10 +65,10 @@ Objective-C implementations are available as separate subspecs:
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapterOC', '2.1.0'
-  pod 'RixEngineAds/MaxAdapterOC', '2.1.0'
-  pod 'RixEngineAds/TopOnAdapterOC', '2.1.0'
-  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.1.0'
+  pod 'RixEngineAds/AdmobAdapterOC', '2.1.1'
+  pod 'RixEngineAds/MaxAdapterOC', '2.1.1'
+  pod 'RixEngineAds/TopOnAdapterOC', '2.1.1'
+  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.1.1'
 end
 ```
 
@@ -80,8 +80,8 @@ Multiple different mediation networks can be installed together. For example:
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.1.0'
-  pod 'RixEngineAds/MaxAdapter', '2.1.0'
+  pod 'RixEngineAds/AdmobAdapter', '2.1.1'
+  pod 'RixEngineAds/MaxAdapter', '2.1.1'
 end
 ```
 
@@ -99,7 +99,7 @@ If you need to integrate directly from GitHub instead of CocoaPods Trunk:
 ```ruby
 pod 'RixEngineAds/AdmobAdapter',
     :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git',
-    :tag => '2.1.0'
+    :tag => '2.1.1'
 ```
 
 ### Swift Package Manager integration
@@ -181,7 +181,7 @@ To test GitHub connectivity:
 ```shell
 git ls-remote \
   https://github.com/rixenginesdk/RixEngine-iOS-SDK.git \
-  refs/tags/2.1.0
+  refs/tags/2.1.1
 ```
 
 If this command also fails, check your proxy, VPN, firewall, or network connection.
@@ -239,7 +239,7 @@ use_frameworks!
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds', '2.1.0'
+  pod 'RixEngineAds', '2.1.1'
 end
 ```
 
@@ -250,10 +250,10 @@ end
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.1.0'
-  pod 'RixEngineAds/MaxAdapter', '2.1.0'
-  pod 'RixEngineAds/TopOnAdapter', '2.1.0'
-  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.1.0'
+  pod 'RixEngineAds/AdmobAdapter', '2.1.1'
+  pod 'RixEngineAds/MaxAdapter', '2.1.1'
+  pod 'RixEngineAds/TopOnAdapter', '2.1.1'
+  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.1.1'
 end
 ```
 
@@ -263,10 +263,10 @@ Objective-C 实现通过独立 subspec 提供：
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapterOC', '2.1.0'
-  pod 'RixEngineAds/MaxAdapterOC', '2.1.0'
-  pod 'RixEngineAds/TopOnAdapterOC', '2.1.0'
-  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.1.0'
+  pod 'RixEngineAds/AdmobAdapterOC', '2.1.1'
+  pod 'RixEngineAds/MaxAdapterOC', '2.1.1'
+  pod 'RixEngineAds/TopOnAdapterOC', '2.1.1'
+  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.1.1'
 end
 ```
 
@@ -278,8 +278,8 @@ end
 
 ```ruby
 target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.1.0'
-  pod 'RixEngineAds/MaxAdapter', '2.1.0'
+  pod 'RixEngineAds/AdmobAdapter', '2.1.1'
+  pod 'RixEngineAds/MaxAdapter', '2.1.1'
 end
 ```
 
@@ -297,7 +297,7 @@ open YourApp.xcworkspace
 ```ruby
 pod 'RixEngineAds/AdmobAdapter',
     :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git',
-    :tag => '2.1.0'
+    :tag => '2.1.1'
 ```
 
 ### Swift Package Manager 集成
@@ -379,7 +379,7 @@ pod install --repo-update
 ```shell
 git ls-remote \
   https://github.com/rixenginesdk/RixEngine-iOS-SDK.git \
-  refs/tags/2.1.0
+  refs/tags/2.1.1
 ```
 
 如果这条命令也失败，请检查代理、VPN、防火墙或当前网络。
