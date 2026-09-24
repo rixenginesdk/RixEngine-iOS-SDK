@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0191352DD1EC800A4114C96A /* RixEngineAds in Frameworks */ = {isa = PBXBuildFile; productRef = DC39AB41DE2FE0B39F696B68 /* RixEngineAds */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		BA79610C3040326200716E0A /* RixEngineSPMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RixEngineSPMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0191352DD1EC800A4114C96A /* RixEngineAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = RixEngineSPMDemo;
 			packageProductDependencies = (
+				DC39AB41DE2FE0B39F696B68 /* RixEngineAds */,
 			);
 			productName = RixEngineSPMDemo;
 			productReference = BA79610C3040326200716E0A /* RixEngineSPMDemo.app */;
@@ -106,6 +112,9 @@
 			);
 			mainGroup = BA7961033040326200716E0A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				ECE45BF282695D4B7ABC5738 /* XCLocalSwiftPackageReference ".." */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BA79610D3040326200716E0A /* Products */;
 			projectDirPath = "";
@@ -152,6 +161,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -180,6 +190,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,6 +344,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		ECE45BF282695D4B7ABC5738 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC39AB41DE2FE0B39F696B68 /* RixEngineAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECE45BF282695D4B7ABC5738 /* XCLocalSwiftPackageReference ".." */;
+			productName = RixEngineAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA7961043040326200716E0A /* Project object */;
 }

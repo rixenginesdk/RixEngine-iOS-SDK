@@ -31,6 +31,7 @@ target 'AlxAdsDemo' do
 end
 
 post_install do |installer|
+  # 适配 Xcode 最低部署目标
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 15.0
@@ -38,4 +39,40 @@ post_install do |installer|
       end
     end
   end
+
+  # 保证 Workspace 统一入口包含 CocoaPods 与 SPM 双语言版本及本地 Package
+  workspace_data_path = File.join(__dir__, 'RixEngineDemos.xcworkspace', 'contents.xcworkspacedata')
+  workspace_xml = <<~XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Workspace
+       version = "1.0">
+       <Group
+          location = "container:"
+          name = "CocoaPods Demos">
+          <FileRef
+             location = "group:ObjcDemo/RixSDKPodDemo/RixEngineObjcDemo.xcodeproj">
+          </FileRef>
+          <FileRef
+             location = "group:SwiftDemo/RixSDKPodDemo/AlxAdsDemo.xcodeproj">
+          </FileRef>
+       </Group>
+       <Group
+          location = "container:"
+          name = "SPM Demos">
+          <FileRef
+             location = "group:ObjcDemo/RixSDKSPMDemo/RixEngineSPMDemo.xcodeproj">
+          </FileRef>
+          <FileRef
+             location = "group:SwiftDemo/RixSDKSPMDemo/RixAdsSDKDemo.xcodeproj">
+          </FileRef>
+       </Group>
+       <FileRef
+          location = "group:..">
+       </FileRef>
+       <FileRef
+          location = "group:Pods/Pods.xcodeproj">
+       </FileRef>
+    </Workspace>
+  XML
+  File.write(workspace_data_path, workspace_xml)
 end

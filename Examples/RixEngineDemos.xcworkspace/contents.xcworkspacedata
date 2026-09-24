@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "CocoaPods Demos">
+      <FileRef
+         location = "group:ObjcDemo/RixSDKPodDemo/RixEngineObjcDemo.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:SwiftDemo/RixSDKPodDemo/AlxAdsDemo.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "SPM Demos">
+      <FileRef
+         location = "group:ObjcDemo/RixSDKSPMDemo/RixEngineSPMDemo.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:SwiftDemo/RixSDKSPMDemo/RixAdsSDKDemo.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
-      location = "group:ObjcDemo/RixSDKPodDemo/RixEngineObjcDemo.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:SwiftDemo/RixSDKPodDemo/AlxAdsDemo.xcodeproj">
+      location = "group:..">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
