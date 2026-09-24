@@ -30,6 +30,8 @@ public class AlxTopOnBiddingRequestManager:NSObject {
                    self.startLoadNativeAd(with: request)
                case .banner:
                    self.startLoadBannerAd(with: request)
+               case .splash:
+                   self.startLoadSplashAd(with: request)
                default:
                    break
            }
@@ -148,6 +150,48 @@ public class AlxTopOnBiddingRequestManager:NSObject {
         AlxTopOnTool.shared.saveRequestItem(request,withUnitId: unitID)
         
         bannerAd.loadAd(adUnitId: unitID)
+    }
+    
+    private func startLoadSplashAd(with request: AlxTopOnBiddingRequest) {
+        guard let unitID = request.unitID, !unitID.isEmpty else {
+            let errorStr = "unitid is empty"
+            NSLog("%@: startLoadSplashAd: error = %@", AlxTopOnBiddingRequestManager.TAG, errorStr)
+            request.bidCompletion?(nil, AlxTopOnBaseManager.error(code: -100, msg: "unitId is empty"))
+            return
+        }
+        NSLog("%@: startLoadSplashAd: unitid = %@", AlxTopOnBiddingRequestManager.TAG, unitID)
+        
+        guard let customEvent = request.customEvent as? AlxTopOnSplashEvent else {
+            NSLog("%@: startLoadSplashAd: customEvent is empty", AlxTopOnBiddingRequestManager.TAG)
+            request.bidCompletion?(nil, AlxTopOnBaseManager.error(code: -100, msg: "customEvent object is empty"))
+            return
+        }
+        
+        // load ad
+        let splashAd = AlxSplashAd()
+        splashAd.delegate = customEvent
+        
+        // 提取自定义底部视图 (若有)
+        if let customBottom = request.extraInfo[kATSplashExtraNewBottomViewKey] as? UIView {
+            splashAd.customBottomView = customBottom
+        } else if let customBottom = request.extraInfo[kATSplashExtraContainerViewKey] as? UIView {
+            splashAd.customBottomView = customBottom
+        }
+        
+        // 提取 autoCloseOnFinish 配置 (若有)
+        if let v = request.extraInfo["autoCloseOnFinish"] as? Bool {
+            splashAd.autoCloseOnFinish = v
+        } else if let v = request.extraInfo["auto_close"] as? Bool {
+            splashAd.autoCloseOnFinish = v
+        } else if let v = request.extraInfo["is_auto_close"] as? Bool {
+            splashAd.autoCloseOnFinish = v
+        }
+        
+        // 缓存
+        request.customObject = splashAd
+        AlxTopOnTool.shared.saveRequestItem(request, withUnitId: unitID)
+        
+        splashAd.loadAd(adUnitId: unitID)
     }
     
     /**
