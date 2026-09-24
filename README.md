@@ -6,394 +6,311 @@
 
 ## English
 
-RixEngine Mobile Ads SDK helps you integrate multiple mediation platforms and scale demand safely while keeping the integration lightweight.
+RixEngine Mobile Ads SDK helps you monetize mobile applications efficiently while strictly following the **minimal external dependency principle**. The core SDK is distributed with zero third-party dependencies via CocoaPods and Swift Package Manager (SPM). Mediation adapters are decoupled as open-source code in `Sources/custom_adapter/`, allowing developers to integrate only what they need with full control over third-party ad network versions.
 
 ### Requirements
 
 - Xcode 15.4 or later
-- iOS 13.0 or later
+- iOS 13.0 or later (Demo workspace recommends iOS 15.0+ for Xcode 16/27 simulator toolchains)
 - Swift 5.0 or later
-- CocoaPods 1.16 or later is recommended
+- CocoaPods 1.16 or later (if using CocoaPods)
 
-### Supported ad formats
+### Supported Ad Formats
 
 - Banner
 - Interstitial
-- Rewarded video
+- Rewarded Video
 - Native
+- Splash
 
-See the [demo project](./AlxAdsDemo.xcodeproj) for implementation examples.
+---
 
-### CocoaPods integration
+### Integration Guide
 
-CocoaPods is the recommended integration method. Add the CocoaPods source and deployment target to your `Podfile`:
+#### 1. CocoaPods (Recommended for Core SDK)
+
+In your `Podfile`, specify:
 
 ```ruby
 source 'https://cdn.cocoapods.org/'
 
 platform :ios, '13.0'
 use_frameworks!
-```
 
-#### Core SDK only
-
-Installing the root Pod includes only the Core SDK:
-
-```ruby
 target 'YourApp' do
-  pod 'RixEngineAds', '2.1.1'
+  pod 'RixEngineAds', '~> 2.1.1'
 end
 ```
 
-
-#### Swift adapters
-
-Add only the mediation adapters required by your application:
-
-```ruby
-target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.1.1'
-  pod 'RixEngineAds/MaxAdapter', '2.1.1'
-  pod 'RixEngineAds/TopOnAdapter', '2.1.1'
-  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.1.1'
-end
-```
-
-#### Objective-C adapters
-
-Objective-C implementations are available as separate subspecs:
-
-```ruby
-target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapterOC', '2.1.1'
-  pod 'RixEngineAds/MaxAdapterOC', '2.1.1'
-  pod 'RixEngineAds/TopOnAdapterOC', '2.1.1'
-  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.1.1'
-end
-```
-
-Each adapter automatically installs the Core SDK and its required third-party SDK. You do not need to declare those dependencies again unless you need to pin a compatible version explicitly. `TPNDebugUISDK` is optional and can be added separately for TopOn debugging.
-
-> Swift and Objective-C implementations for the same mediation network export identical runtime class names. Never install both variants of the same adapter in one target. For example, do not install both `AdmobAdapter` and `AdmobAdapterOC`.
-
-Multiple different mediation networks can be installed together. For example:
-
-```ruby
-target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.1.1'
-  pod 'RixEngineAds/MaxAdapter', '2.1.1'
-end
-```
-
-Install dependencies and open the generated workspace:
+Then run:
 
 ```shell
 pod install --repo-update
-open YourApp.xcworkspace
 ```
 
-#### Git integration
+#### 2. Swift Package Manager (SPM)
 
-If you need to integrate directly from GitHub instead of CocoaPods Trunk:
-
-```ruby
-pod 'RixEngineAds/AdmobAdapter',
-    :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git',
-    :tag => '2.1.1'
-```
-
-### Swift Package Manager integration
-
-Swift Package Manager requires Xcode 16 or later. In Xcode, choose **File → Add Package Dependencies…** and enter:
+Swift Package Manager requires Xcode 15 or later. In Xcode, choose **File → Add Package Dependencies…** and enter the repository URL:
 
 ```text
 https://github.com/rixenginesdk/RixEngine-iOS-SDK.git
 ```
 
-Select the required products only:
+Select the package product:
+- `RixEngineAds`: Core SDK (zero external dependencies).
 
-- `RixEngineAds`: Core SDK only.
-- `RixAdsAdmobAdapter` / `RixAdsAdmobAdapterOC`
-- `RixAdsMaxAdapter` / `RixAdsMaxAdapterOC`
-- `RixAdsUnityLevelPlayAdapter` / `RixAdsUnityLevelPlayAdapterOC`
+#### 3. Manual Integration
 
-An adapter product automatically links the Core SDK and the matching mediation SDK. Select either the Swift or Objective-C variant for a mediation network, never both. Different mediation networks can be combined.
+If you prefer direct binary integration:
+1. Copy `Sources/AlxAds.xcframework` into your project.
+2. In your application target settings under **General → Frameworks, Libraries, and Embedded Content**, add `AlxAds.xcframework` and select **Embed & Sign**.
 
-The package pins Google Mobile Ads 12.6.0 and AppLovin MAX 13.3.0. LevelPlay uses 9.3.0 because it is the first LevelPlay release with official Swift Package Manager support. Add `-ObjC` to the application target's **Other Linker Flags** when using an adapter.
+---
 
-> TopOn does not provide an official Swift Package Manager package. Therefore, the TopOn adapter remains available through CocoaPods only; publishing an SPM product without a resolvable TopOn dependency would produce an integration that cannot build.
+### Mediation Adapters Integration
 
-### Importing the SDK
+To adhere to the **minimal external dependency principle**, mediation adapters are decoupled from the SDK package distribution. The adapter source code is provided in `Sources/custom_adapter/` in both **Swift** and **Objective-C**:
 
-The Pod name is `RixEngineAds`, while the Core framework module is named `AlxAds`.
+| Mediation Platform | Swift Adapter Directory | Objective-C Adapter Directory |
+| :--- | :--- | :--- |
+| **Google AdMob** | `Sources/custom_adapter/AdmobAdapter/Swift/` | `Sources/custom_adapter/AdmobAdapter/Objc/` |
+| **AppLovin MAX** | `Sources/custom_adapter/MaxAdapter/Swift/` | `Sources/custom_adapter/MaxAdapter/Objc/` |
+| **TopOn (AnyThink)** | `Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/` | `Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/` |
+| **Unity LevelPlay** | `Sources/custom_adapter/UnityLevelPlayAdapter/Swift/` | `Sources/custom_adapter/UnityLevelPlayAdapter/Objc/` |
 
-Swift:
+#### How to Use Adapters:
+1. Add the corresponding mediation platform SDK to your project via CocoaPods or SPM (e.g., `Google-Mobile-Ads-SDK`, `AppLovinSDK`, `TPNiOS`, or `IronSourceSDK`).
+2. Drag and drop the adapter directory corresponding to your preferred language (Swift or Objective-C) into your Xcode project.
+3. Configure your mediation platform waterfall or custom event mapping using the adapter class names.
 
+> **Note**: For any given mediation network, do not include both the Swift and Objective-C adapter implementations in the same target, as they register identical runtime class names.
+
+---
+
+### Importing and Initializing the SDK
+
+The pod / SPM package name is `RixEngineAds`, while the module name is `AlxAds`.
+
+#### Swift:
 ```swift
 import AlxAds
+
+// Initialize the SDK
+AlxSdk.initializeSDK(token: "YOUR_TOKEN", sid: "YOUR_SID", appId: "YOUR_APP_ID")
 ```
 
-Objective-C:
-
+#### Objective-C:
 ```objc
 #import <AlxAds/AlxAds-Swift.h>
+
+// Initialize the SDK
+[AlxSdk initializeSDKWithToken:@"YOUR_TOKEN" sid:@"YOUR_SID" appId:@"YOUR_APP_ID"];
 ```
 
-Mediation adapters are normally discovered by the mediation SDK through their runtime class names and do not need to be imported directly.
+---
 
-### Manual integration
+### Unified Demo Workspace
 
-Use manual integration only when CocoaPods cannot be used:
+All sample projects are consolidated into a single unified entry workspace: **`Examples/RixEngineDemos.xcworkspace`**, following the multi-project workspace pattern.
 
-1. Copy `AlxAds.xcframework` into your project's Frameworks directory.
-2. In the application target, open **General → Frameworks, Libraries, and Embedded Content**.
-3. Add `AlxAds.xcframework` and select **Embed & Sign**.
+```text
+Examples/
+├── Podfile                        # CocoaPods configuration managing all demo targets
+├── RixEngineDemos.xcworkspace     # Unified entry point for all Demos
+├── ObjcDemo/
+│   ├── RixSDKPodDemo/             # Objective-C CocoaPods Demo (with full mediation adapters)
+│   └── RixSDKSPMDemo/             # Objective-C SPM Demo (pure SDK integration via SPM)
+└── SwiftDemo/
+    ├── RixSDKPodDemo/             # Swift CocoaPods Demo (with full mediation adapters)
+    └── RixSDKSPMDemo/             # Swift SPM Demo (pure SDK integration via SPM)
+```
 
-> Do not manually embed `AlxAds.xcframework` when `RixEngineAds` is already installed through CocoaPods. Choose exactly one integration method.
+#### Running the Demos:
+1. Navigate to the `Examples` directory and install CocoaPods dependencies:
+   ```shell
+   cd Examples
+   pod install
+   ```
+2. Open the unified workspace:
+   ```shell
+   open RixEngineDemos.xcworkspace
+   ```
+3. Choose the desired scheme in Xcode:
+   - **`RixEngineObjcDemo`**: Objective-C demo with CocoaPods and adapter testing.
+   - **`AlxAdsDemo`**: Swift demo with CocoaPods and adapter testing.
+   - **`RixEngineSPMDemo`**: Objective-C demo with local Swift Package integration.
+   - **`RixAdsSDKDemo`**: Swift demo with local Swift Package integration.
+
+---
 
 ### Troubleshooting
 
-#### `pod search` raises `undefined method '=~' for an instance of Array`
-
-This is a CocoaPods local search-index issue and does not mean the Pod publication failed. Use simple name search:
-
-```shell
-pod search RixEngineAds --simple
-```
-
-You can also verify the published Pod on the [RixEngineAds CocoaPods page](https://cocoapods.org/pods/RixEngineAds).
+#### Multiple commands produce `AlxAds.framework`
+This indicates the project has both manually embedded `AlxAds.xcframework` and integrated it via CocoaPods/SPM. Ensure only one integration method is used.
 
 #### Git clone fails with `Error in the HTTP2 framing layer`
-
-This is a GitHub connection or HTTP/2 transport issue rather than a Podspec error. Clear the failed cache and force HTTP/1.1 for one installation:
-
+Force HTTP/1.1 for CocoaPods installation:
 ```shell
 pod cache clean RixEngineAds --all
-
-GIT_CONFIG_COUNT=1 \
-GIT_CONFIG_KEY_0=http.version \
-GIT_CONFIG_VALUE_0=HTTP/1.1 \
-pod install --repo-update
+GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.version GIT_CONFIG_VALUE_0=HTTP/1.1 pod install --repo-update
 ```
-
-To test GitHub connectivity:
-
-```shell
-git ls-remote \
-  https://github.com/rixenginesdk/RixEngine-iOS-SDK.git \
-  refs/tags/2.1.1
-```
-
-If this command also fails, check your proxy, VPN, firewall, or network connection.
-
-#### Multiple commands produce `AlxAds.framework`
-
-The project is embedding `AlxAds.framework` manually while CocoaPods is embedding it again. In the application target:
-
-1. Remove the manually added `AlxAds.framework` or `AlxAds.xcframework` from **General → Frameworks, Libraries, and Embedded Content**.
-2. Remove the manual `AlxAds.framework` entry from **Build Phases → Link Binary With Libraries**.
-3. Remove it from the manual **Embed Frameworks** phase.
-4. Keep the CocoaPods-managed **[CP] Embed Pods Frameworks** phase.
-5. Remove the stale framework reference from the Project Navigator, clean the build folder, and rebuild the `.xcworkspace`.
 
 ### Support
 
-For integration questions, contact [rix-sdk@rixengine.com](mailto:rix-sdk@rixengine.com).
+For technical support or inquiries, please contact [rix-sdk@rixengine.com](mailto:rix-sdk@rixengine.com).
 
 ---
 
 ## 简体中文
 
-RixEngine Mobile Ads SDK 可以帮助开发者快速接入多个广告聚合平台，在保持 SDK 轻量的同时安全扩展广告需求并提升变现能力。
+RixEngine Mobile Ads SDK 帮助开发者高效变现移动应用。SDK 严格遵循**最小外部依赖原则**：核心 SDK 通过 CocoaPods 和 Swift Package Manager (SPM) 分发，零引入任何第三方依赖；各平台广告聚合适配器（Mediation Adapters）以源码形式开放于 `Sources/custom_adapter/`，由开发者按需引入，完全掌控第三方广告平台版本。
 
 ### 环境要求
 
 - Xcode 15.4 或更高版本
-- iOS 13.0 或更高版本
+- iOS 13.0 或更高版本（示例工程统一 Workspace 推荐 iOS 15.0+）
 - Swift 5.0 或更高版本
-- 推荐使用 CocoaPods 1.16 或更高版本
+- CocoaPods 1.16 或更高版本（若使用 CocoaPods）
 
 ### 支持的广告类型
 
-- 横幅广告
-- 插屏广告
-- 激励视频广告
-- 原生广告
+- 横幅广告 (Banner)
+- 插屏广告 (Interstitial)
+- 激励视频广告 (Rewarded Video)
+- 原生广告 (Native)
+- 开屏广告 (Splash)
 
-具体实现可以参考 [Demo 工程](./AlxAdsDemo.xcodeproj)。
+---
 
-### CocoaPods 集成
+### 集成指南
 
-推荐使用 CocoaPods 集成。在 `Podfile` 中配置 CocoaPods 源及最低系统版本：
+#### 1. CocoaPods 集成（推荐核心 SDK）
+
+在工程的 `Podfile` 中添加：
 
 ```ruby
 source 'https://cdn.cocoapods.org/'
 
 platform :ios, '13.0'
 use_frameworks!
-```
 
-#### 仅集成核心 SDK
-
-直接安装根 Pod 时，默认只会集成 Core：
-
-```ruby
 target 'YourApp' do
-  pod 'RixEngineAds', '2.1.1'
+  pod 'RixEngineAds', '~> 2.1.1'
 end
 ```
 
-
-#### Swift 适配器
-
-根据应用实际使用的聚合平台按需添加：
-
-```ruby
-target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.1.1'
-  pod 'RixEngineAds/MaxAdapter', '2.1.1'
-  pod 'RixEngineAds/TopOnAdapter', '2.1.1'
-  pod 'RixEngineAds/UnityLevelPlayAdapter', '2.1.1'
-end
-```
-
-#### Objective-C 适配器
-
-Objective-C 实现通过独立 subspec 提供：
-
-```ruby
-target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapterOC', '2.1.1'
-  pod 'RixEngineAds/MaxAdapterOC', '2.1.1'
-  pod 'RixEngineAds/TopOnAdapterOC', '2.1.1'
-  pod 'RixEngineAds/UnityLevelPlayAdapterOC', '2.1.1'
-end
-```
-
-每个适配器都会自动安装 Core 和对应的第三方 SDK。除非需要显式锁定兼容版本，否则不需要在 `Podfile` 中重复声明这些依赖。`TPNDebugUISDK` 是可选的 TopOn 调试工具，可以单独添加。
-
-> 同一聚合平台的 Swift 和 Objective-C 实现会导出相同的运行时类名，因此不能在同一个 Target 中同时安装。例如，不能同时安装 `AdmobAdapter` 和 `AdmobAdapterOC`。
-
-不同聚合平台的适配器可以组合安装。例如，只接入 AdMob 和 MAX：
-
-```ruby
-target 'YourApp' do
-  pod 'RixEngineAds/AdmobAdapter', '2.1.1'
-  pod 'RixEngineAds/MaxAdapter', '2.1.1'
-end
-```
-
-安装依赖并打开生成的 Workspace：
+执行安装：
 
 ```shell
 pod install --repo-update
-open YourApp.xcworkspace
 ```
 
-#### Git 集成
+#### 2. Swift Package Manager (SPM) 集成
 
-如果需要绕过 CocoaPods Trunk，直接从 GitHub 标签集成：
-
-```ruby
-pod 'RixEngineAds/AdmobAdapter',
-    :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git',
-    :tag => '2.1.1'
-```
-
-### Swift Package Manager 集成
-
-Swift Package Manager 集成要求 Xcode 16 或更高版本。在 Xcode 中选择 **File → Add Package Dependencies…**，输入：
+要求 Xcode 15 及以上。在 Xcode 菜单中选择 **File → Add Package Dependencies…**，输入仓库地址：
 
 ```text
 https://github.com/rixenginesdk/RixEngine-iOS-SDK.git
 ```
 
-仅勾选实际需要的 Product：
+勾选 Product：
+- `RixEngineAds`：SDK 核心二进制库（无任何第三方外部依赖）。
 
-- `RixEngineAds`：仅集成核心 SDK。
-- `RixAdsAdmobAdapter` / `RixAdsAdmobAdapterOC`
-- `RixAdsMaxAdapter` / `RixAdsMaxAdapterOC`
-- `RixAdsUnityLevelPlayAdapter` / `RixAdsUnityLevelPlayAdapterOC`
+#### 3. 手动集成
 
-适配器 Product 会自动关联 Core 和对应的聚合 SDK。同一聚合平台只能选择 Swift 或 Objective-C 版本之一，不能同时选择；不同聚合平台可以组合使用。
+1. 将 `Sources/AlxAds.xcframework` 拖入项目工程中。
+2. 在 Target 设置的 **General → Frameworks, Libraries, and Embedded Content** 中，将 `AlxAds.xcframework` 设置为 **Embed & Sign**。
 
-依赖版本固定为 Google Mobile Ads 12.6.0、AppLovin MAX 13.3.0。LevelPlay 使用 9.3.0，因为这是官方支持 Swift Package Manager 的首个版本。使用适配器时，请在应用 Target 的 **Other Linker Flags** 中添加 `-ObjC`。
+---
 
-> TopOn 官方目前没有提供 Swift Package Manager 包，因此 TopOn 适配器仍需通过 CocoaPods 集成。缺少可解析的 TopOn SPM 依赖时直接暴露该 Product，只会得到无法编译的集成配置。
+### 广告聚合适配器（Mediation Adapters）使用指引
 
-### 导入 SDK
+为谨遵最小外部依赖原则，各聚合平台的适配器均已从 Podspec 与 SPM 中解耦，以开源源码形式存放于 `Sources/custom_adapter/`，均提供 **Swift** 与 **Objective-C** 双语言版本：
 
-Pod 名称是 `RixEngineAds`，核心 Framework 的模块名是 `AlxAds`。
+| 聚合平台 | Swift 适配器源码路径 | Objective-C 适配器源码路径 |
+| :--- | :--- | :--- |
+| **Google AdMob** | `Sources/custom_adapter/AdmobAdapter/Swift/` | `Sources/custom_adapter/AdmobAdapter/Objc/` |
+| **AppLovin MAX** | `Sources/custom_adapter/MaxAdapter/Swift/` | `Sources/custom_adapter/MaxAdapter/Objc/` |
+| **TopOn (AnyThink)** | `Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/` | `Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/` |
+| **Unity LevelPlay** | `Sources/custom_adapter/UnityLevelPlayAdapter/Swift/` | `Sources/custom_adapter/UnityLevelPlayAdapter/Objc/` |
 
-Swift：
+#### 使用步骤：
+1. 在宿主工程中正常引入对应聚合平台的 SDK（如通过 Pod 引入 `Google-Mobile-Ads-SDK`、`AppLovinSDK`、`TPNiOS` 或 `IronSourceSDK`）。
+2. 将对应聚合平台、所需语言（Swift 或 ObjC）的适配器源码文件夹直接拖入宿主 Xcode 工程中参与编译。
+3. 在聚合后台或代码中配置自定义事件类名（Custom Event Class Name）即可。
 
+> **注意**：同一聚合平台的 Swift 和 Objective-C 适配器导出的运行时类名完全一致，切勿在同一个 Target 中同时引入双语言版本。
+
+---
+
+### 导入与初始化 SDK
+
+Pod / SPM 包名为 `RixEngineAds`，核心 Framework 的模块名为 `AlxAds`。
+
+#### Swift：
 ```swift
 import AlxAds
+
+// 初始化 SDK
+AlxSdk.initializeSDK(token: "YOUR_TOKEN", sid: "YOUR_SID", appId: "YOUR_APP_ID")
 ```
 
-Objective-C：
-
+#### Objective-C：
 ```objc
 #import <AlxAds/AlxAds-Swift.h>
+
+// 初始化 SDK
+[AlxSdk initializeSDKWithToken:@"YOUR_TOKEN" sid:@"YOUR_SID" appId:@"YOUR_APP_ID"];
 ```
 
-聚合平台通常会通过运行时类名自动发现适配器，因此一般不需要在业务代码中直接导入适配器模块。
+---
 
-### 手动集成
+### 统一示例工程入口（Unified Workspace）
 
-仅在无法使用 CocoaPods 时选择手动集成：
+根据统一多工程管理模式，所有示例工程均已归整到统一入口：**`Examples/RixEngineDemos.xcworkspace`**。
 
-1. 将 `AlxAds.xcframework` 复制到工程的 Frameworks 目录。
-2. 打开应用 Target 的 **General → Frameworks, Libraries, and Embedded Content**。
-3. 添加 `AlxAds.xcframework`，并选择 **Embed & Sign**。
+```text
+Examples/
+├── Podfile                        # 统一管理所有 Demo 的 CocoaPods 依赖
+├── RixEngineDemos.xcworkspace     # 统一启动工程入口
+├── ObjcDemo/
+│   ├── RixSDKPodDemo/             # Objective-C CocoaPods 示例（含全聚合平台适配器测试）
+│   └── RixSDKSPMDemo/             # Objective-C SPM 示例（验证纯 SPM 集成）
+└── SwiftDemo/
+    ├── RixSDKPodDemo/             # Swift CocoaPods 示例（含全聚合平台适配器测试）
+    └── RixSDKSPMDemo/             # Swift SPM 示例（验证纯 SPM 集成）
+```
 
-> 如果已经通过 CocoaPods 安装 `RixEngineAds`，不要再手动嵌入 `AlxAds.xcframework`。两种集成方式只能选择一种。
+#### 运行与测试步骤：
+1. 进入 `Examples` 目录安装 Pod 依赖：
+   ```shell
+   cd Examples
+   pod install
+   ```
+2. 双击打开统一工作区：
+   ```shell
+   open RixEngineDemos.xcworkspace
+   ```
+3. 在 Xcode 顶部的 Scheme 选择器中自由切换调试目标：
+   - **`RixEngineObjcDemo`**：Objective-C + CocoaPods（适配器测试）
+   - **`AlxAdsDemo`**：Swift + CocoaPods（适配器测试）
+   - **`RixEngineSPMDemo`**：Objective-C + SPM（本地 Package 集成测试）
+   - **`RixAdsSDKDemo`**：Swift + SPM（本地 Package 集成测试）
+
+---
 
 ### 常见问题
 
-#### `pod search` 报错 `undefined method '=~' for an instance of Array`
-
-这是 CocoaPods 本地搜索索引异常，不代表 Pod 发布失败。可以使用简单名称搜索：
-
-```shell
-pod search RixEngineAds --simple
-```
-
-也可以前往 [RixEngineAds CocoaPods 页面](https://cocoapods.org/pods/RixEngineAds)确认发布状态。
+#### 编译报错 `Multiple commands produce AlxAds.framework`
+工程中既手动嵌入了 `AlxAds.xcframework`，又通过 CocoaPods/SPM 集成了一份。请确保仅保留一种集成方式。
 
 #### Git 克隆报错 `Error in the HTTP2 framing layer`
-
-这是 GitHub 网络连接或 HTTP/2 传输问题，不是 Podspec 配置错误。清理失败缓存，并让本次安装强制使用 HTTP/1.1：
-
+为本次安装强制使用 HTTP/1.1：
 ```shell
 pod cache clean RixEngineAds --all
-
-GIT_CONFIG_COUNT=1 \
-GIT_CONFIG_KEY_0=http.version \
-GIT_CONFIG_VALUE_0=HTTP/1.1 \
-pod install --repo-update
+GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.version GIT_CONFIG_VALUE_0=HTTP/1.1 pod install --repo-update
 ```
-
-可以先检查 GitHub 连接：
-
-```shell
-git ls-remote \
-  https://github.com/rixenginesdk/RixEngine-iOS-SDK.git \
-  refs/tags/2.1.1
-```
-
-如果这条命令也失败，请检查代理、VPN、防火墙或当前网络。
-
-#### 编译报错 `Multiple commands produce AlxAds.framework`
-
-这说明工程手动嵌入了一份 `AlxAds.framework`，同时 CocoaPods 又嵌入了一份。请在应用 Target 中：
-
-1. 从 **General → Frameworks, Libraries, and Embedded Content** 删除手动添加的 `AlxAds.framework` 或 `AlxAds.xcframework`。
-2. 从 **Build Phases → Link Binary With Libraries** 删除手动添加的 `AlxAds.framework`。
-3. 从手动创建的 **Embed Frameworks** 阶段删除 `AlxAds.framework`。
-4. 保留 CocoaPods 管理的 **[CP] Embed Pods Frameworks**。
-5. 从左侧 Project Navigator 移除旧 Framework 引用，清理构建目录，然后使用 `.xcworkspace` 重新编译。
 
 ### 技术支持
 
-如有集成问题，请联系 [rix-sdk@rixengine.com](mailto:rix-sdk@rixengine.com)。
+如有任何集成与使用疑问，请联系 [rix-sdk@rixengine.com](mailto:rix-sdk@rixengine.com)。
