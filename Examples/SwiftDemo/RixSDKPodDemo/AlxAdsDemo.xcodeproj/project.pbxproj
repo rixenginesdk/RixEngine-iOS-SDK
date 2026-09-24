@@ -7,7 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C647B9BC98E5A937013CE3C /* AlxTopOnBiddingRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4435D9C10B6D4E6FEF154 /* AlxTopOnBiddingRequestManager.swift */; };
+		1640774C19B5B639961F8CCC /* AlxAdmobInterstitialAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26371A366AD4DA9DF9030AA /* AlxAdmobInterstitialAdapter.swift */; };
+		172371EE8067F381E7E5E9AF /* AlxTopOnRewardVideoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A4CDCB50E37F5AAA75AA4A /* AlxTopOnRewardVideoEvent.swift */; };
+		24AC79364F4F6A1693CAEA50 /* AlxAdmobBaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9016F8F59A164C50F98A2 /* AlxAdmobBaseAdapter.swift */; };
+		2840D8D110706D3D774121BA /* AlxAdmobMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4522B1E960D8B2551E826039 /* AlxAdmobMetaInfo.swift */; };
+		2A9E1ED805FDEF4161225AC3 /* AlxTopOnMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6CEAC793418741E114F9B5 /* AlxTopOnMetaInfo.swift */; };
+		2D43D124B32CC34064F2A128 /* AlxTopOnInterstitialEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8FF168B2C2B6F6E1060F93 /* AlxTopOnInterstitialEvent.swift */; };
+		33E0C923A570689ABD54606D /* ISAlxCustomAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13569E868084C642973A8006 /* ISAlxCustomAdapter.swift */; };
+		43596B3D37A37B41BCA76C2C /* AlxTopOnSplashEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C74A3514614A0F15179ADA /* AlxTopOnSplashEvent.swift */; };
+		55E0CB50451B6106320AAEE6 /* AlxTopOnBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C0F90EBC68D21809F6E4E4 /* AlxTopOnBaseManager.swift */; };
+		569C11A933817866A3C42C52 /* ISAlxCustomRewardedVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95E879958AE129DCC66923 /* ISAlxCustomRewardedVideo.swift */; };
+		5A9E897911ED27CFA3985560 /* AlxTopOnRewardVideoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A571F50C516B7CA03521276 /* AlxTopOnRewardVideoDelegate.swift */; };
+		5D7F4CF428187CF4526243BA /* AlxTopOnNativeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3CE71051FC29017003E7D8 /* AlxTopOnNativeEvent.swift */; };
 		6D63FC7D678C761AA52F6F58 /* Pods_AlxAdsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */; };
+		708BDD4DA5CE993937E53724 /* AlxTopOnSplashDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE39BCD7FCC1706341990F6 /* AlxTopOnSplashDelegate.swift */; };
+		7C891864E2C6BBEA2179F1EC /* AlxTopOnNativeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06385640BE3D8FA407E7EF82 /* AlxTopOnNativeAdapter.swift */; };
+		826B3961887217FE72821386 /* AlxTopOnInterstitialAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A95E81DB54C790AA4E97F5 /* AlxTopOnInterstitialAdapter.swift */; };
+		87DFB96FB4480D3E67FADF6D /* AlxTopOnInitAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613D8FC44067DB5C6D75588 /* AlxTopOnInitAdapter.swift */; };
+		9354010525150E303A7D5FE1 /* AlxTopOnRewardVideoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C1E0019FBFAC7072E6D34 /* AlxTopOnRewardVideoAdapter.swift */; };
+		93ABF2D85A5D5D2D106B9EA4 /* AlxLevelPlayMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33BC15F9FC69288BB9F77D /* AlxLevelPlayMetaInfo.swift */; };
+		9561C5B152D37FB0728C3C02 /* AlxTopOnNativeRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5903FE880B558DF88D371 /* AlxTopOnNativeRender.swift */; };
+		96E45997450C0268BE021B48 /* AlxTopOnNativeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D8D270F9C32AA5D800220 /* AlxTopOnNativeDelegate.swift */; };
+		9E5DAFE03FD176AD3B66C317 /* AlxAdmobNativeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281F4B3AEF0768AA0922B88 /* AlxAdmobNativeAdapter.swift */; };
+		9FFF8C143006DFFCC7732C31 /* AlxAdmobSplashAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F03643F1EB0831A51BA638 /* AlxAdmobSplashAdapter.swift */; };
+		A2AFA760CD2057B9AD9ED725 /* AlxTopOnDebugHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFF570211C194CE4CE349C /* AlxTopOnDebugHelper.swift */; };
+		A37756AADA25567D114CF62E /* AlxTopOnBannerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C721860507CCCCD084A64A8 /* AlxTopOnBannerEvent.swift */; };
+		AF557E71C5AEA9AC7AAD8CD0 /* AlxTopOnInterstitialDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D176A165AD19A055F4D54EF /* AlxTopOnInterstitialDelegate.swift */; };
 		BA4EEED72F7CFAA100D20422 /* BaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */; };
 		BA4EEEDA2F7D0BCA00D20422 /* LevelPlayMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEED92F7D0BCA00D20422 /* LevelPlayMainVC.swift */; };
 		BA4EEEDC2F7D0CA700D20422 /* LevelPlayBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EEEDB2F7D0CA700D20422 /* LevelPlayBannerVC.swift */; };
@@ -22,6 +48,14 @@
 		BA7D80252ED6A49000B78B40 /* AlxNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */; };
 		BA7D80262ED6A49000B78B40 /* AlxBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D80182ED6A49000B78B40 /* AlxBannerVC.swift */; };
 		BAFC0A803035646B00C7FF6D /* MenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC0A7F3035646B00C7FF6D /* MenuCardCell.swift */; };
+		C27C95ADC8E960804FF79902 /* AlxTopOnSplashAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4462F4FF7D5636021231D /* AlxTopOnSplashAdapter.swift */; };
+		CCE03DE38BCD66449289C404 /* AlxMaxMediationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A5DF4098E2084BD66D8712 /* AlxMaxMediationAdapter.swift */; };
+		CE52246E32279CF21E5EC745 /* ISAlxCustomBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06A5B1A127C0348B334C9B2 /* ISAlxCustomBanner.swift */; };
+		CF2D54472C55A18B7778B750 /* AlxTopOnBannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50646E017BFDEE013C11D56F /* AlxTopOnBannerDelegate.swift */; };
+		D2FF4D6498D0AE3AD3380367 /* AlxTopOnTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E34F9C42A9CE1CDA78C3 /* AlxTopOnTool.swift */; };
+		D95A5CAEE8CF0B5FA7CE625B /* AlxTopOnBiddingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEC2C95E8BF014AA46FDB82 /* AlxTopOnBiddingRequest.swift */; };
+		DE867F29B9D4AF9CBCA0647A /* AlxAdmobBannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7989B1E4EB45139D3708B9 /* AlxAdmobBannerAdapter.swift */; };
+		DF294028E82912D291CCB8AB /* AlxTopOnNativeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4779881EA40FE02219F34D /* AlxTopOnNativeObject.swift */; };
 		E308168E2E3C7372002E3112 /* AdmobBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30816892E3C7372002E3112 /* AdmobBannerVC.swift */; };
 		E308168F2E3C7372002E3112 /* AdmobMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168B2E3C7372002E3112 /* AdmobMainVC.swift */; };
 		E30816902E3C7372002E3112 /* AdmobInterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */; };
@@ -50,6 +84,11 @@
 		E3EC006A2DD4933B00485DAF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E3EC00692DD4933B00485DAF /* Base */; };
 		E3EC006C2DD4933C00485DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3EC006B2DD4933C00485DAF /* Assets.xcassets */; };
 		E3EC006F2DD4933C00485DAF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E3EC006E2DD4933C00485DAF /* Base */; };
+		E4057504300B01105E530F02 /* AlxAdmobRewardVideoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE62B835689E73703F9CB5 /* AlxAdmobRewardVideoAdapter.swift */; };
+		E5F2166DD02E9EDDCE8E5DD1 /* ISAlxCustomInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDFA58ECD540B442270EEE1 /* ISAlxCustomInterstitial.swift */; };
+		E6180F969D31BE0FBC547A3D /* AlxTopOnBaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB57775DA72ECB9E0CF0F37 /* AlxTopOnBaseAdapter.swift */; };
+		F1973D39E5DF8E151AF80EBD /* AlxTopOnBannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389CBAA0C607CB0CB1C7AC3 /* AlxTopOnBannerAdapter.swift */; };
+		FAFBF11B78A678E81446487B /* AlxAdmobNetworkExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF70375E6E957E5EDB8572C2 /* AlxAdmobNetworkExtras.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +105,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00A9E34F9C42A9CE1CDA78C3 /* AlxTopOnTool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnTool.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/AlxTopOnTool.swift; sourceTree = "<group>"; };
+		06385640BE3D8FA407E7EF82 /* AlxTopOnNativeAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnNativeAdapter.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Native/AlxTopOnNativeAdapter.swift; sourceTree = "<group>"; };
+		13569E868084C642973A8006 /* ISAlxCustomAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISAlxCustomAdapter.swift; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Swift/ISAlxCustomAdapter.swift; sourceTree = "<group>"; };
+		16F03643F1EB0831A51BA638 /* AlxAdmobSplashAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxAdmobSplashAdapter.swift; path = ../../../Sources/custom_adapter/AdmobAdapter/Swift/AlxAdmobSplashAdapter.swift; sourceTree = "<group>"; };
+		1FA4462F4FF7D5636021231D /* AlxTopOnSplashAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnSplashAdapter.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Splash/AlxTopOnSplashAdapter.swift; sourceTree = "<group>"; };
+		2281F4B3AEF0768AA0922B88 /* AlxAdmobNativeAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxAdmobNativeAdapter.swift; path = ../../../Sources/custom_adapter/AdmobAdapter/Swift/AlxAdmobNativeAdapter.swift; sourceTree = "<group>"; };
+		2389CBAA0C607CB0CB1C7AC3 /* AlxTopOnBannerAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnBannerAdapter.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Banner/AlxTopOnBannerAdapter.swift; sourceTree = "<group>"; };
+		2C721860507CCCCD084A64A8 /* AlxTopOnBannerEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnBannerEvent.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Banner/AlxTopOnBannerEvent.swift; sourceTree = "<group>"; };
+		39A95E81DB54C790AA4E97F5 /* AlxTopOnInterstitialAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnInterstitialAdapter.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Interstitial/AlxTopOnInterstitialAdapter.swift; sourceTree = "<group>"; };
+		3A571F50C516B7CA03521276 /* AlxTopOnRewardVideoDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnRewardVideoDelegate.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/RewardVideo/AlxTopOnRewardVideoDelegate.swift; sourceTree = "<group>"; };
+		3AE9016F8F59A164C50F98A2 /* AlxAdmobBaseAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxAdmobBaseAdapter.swift; path = ../../../Sources/custom_adapter/AdmobAdapter/Swift/AlxAdmobBaseAdapter.swift; sourceTree = "<group>"; };
+		4522B1E960D8B2551E826039 /* AlxAdmobMetaInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxAdmobMetaInfo.swift; path = ../../../Sources/custom_adapter/AdmobAdapter/Swift/AlxAdmobMetaInfo.swift; sourceTree = "<group>"; };
+		46AFF570211C194CE4CE349C /* AlxTopOnDebugHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnDebugHelper.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/AlxTopOnDebugHelper.swift; sourceTree = "<group>"; };
+		4F7989B1E4EB45139D3708B9 /* AlxAdmobBannerAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxAdmobBannerAdapter.swift; path = ../../../Sources/custom_adapter/AdmobAdapter/Swift/AlxAdmobBannerAdapter.swift; sourceTree = "<group>"; };
+		50646E017BFDEE013C11D56F /* AlxTopOnBannerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnBannerDelegate.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Banner/AlxTopOnBannerDelegate.swift; sourceTree = "<group>"; };
+		59A4CDCB50E37F5AAA75AA4A /* AlxTopOnRewardVideoEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnRewardVideoEvent.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/RewardVideo/AlxTopOnRewardVideoEvent.swift; sourceTree = "<group>"; };
+		5DA5903FE880B558DF88D371 /* AlxTopOnNativeRender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnNativeRender.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Native/AlxTopOnNativeRender.swift; sourceTree = "<group>"; };
+		6C33BC15F9FC69288BB9F77D /* AlxLevelPlayMetaInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxLevelPlayMetaInfo.swift; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Swift/AlxLevelPlayMetaInfo.swift; sourceTree = "<group>"; };
+		76A4435D9C10B6D4E6FEF154 /* AlxTopOnBiddingRequestManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnBiddingRequestManager.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/AlxTopOnBiddingRequestManager.swift; sourceTree = "<group>"; };
+		77A5DF4098E2084BD66D8712 /* AlxMaxMediationAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxMaxMediationAdapter.swift; path = ../../../Sources/custom_adapter/MaxAdapter/Swift/AlxMaxMediationAdapter.swift; sourceTree = "<group>"; };
+		795D8D270F9C32AA5D800220 /* AlxTopOnNativeDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnNativeDelegate.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Native/AlxTopOnNativeDelegate.swift; sourceTree = "<group>"; };
+		8D176A165AD19A055F4D54EF /* AlxTopOnInterstitialDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnInterstitialDelegate.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Interstitial/AlxTopOnInterstitialDelegate.swift; sourceTree = "<group>"; };
+		9A4779881EA40FE02219F34D /* AlxTopOnNativeObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnNativeObject.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Native/AlxTopOnNativeObject.swift; sourceTree = "<group>"; };
+		A5C74A3514614A0F15179ADA /* AlxTopOnSplashEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnSplashEvent.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Splash/AlxTopOnSplashEvent.swift; sourceTree = "<group>"; };
+		A613D8FC44067DB5C6D75588 /* AlxTopOnInitAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnInitAdapter.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Base/AlxTopOnInitAdapter.swift; sourceTree = "<group>"; };
+		ACB57775DA72ECB9E0CF0F37 /* AlxTopOnBaseAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnBaseAdapter.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Base/AlxTopOnBaseAdapter.swift; sourceTree = "<group>"; };
+		B26371A366AD4DA9DF9030AA /* AlxAdmobInterstitialAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxAdmobInterstitialAdapter.swift; path = ../../../Sources/custom_adapter/AdmobAdapter/Swift/AlxAdmobInterstitialAdapter.swift; sourceTree = "<group>"; };
+		B61C1E0019FBFAC7072E6D34 /* AlxTopOnRewardVideoAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnRewardVideoAdapter.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/RewardVideo/AlxTopOnRewardVideoAdapter.swift; sourceTree = "<group>"; };
 		BA4EEED62F7CFAA100D20422 /* BaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuVC.swift; sourceTree = "<group>"; };
 		BA4EEED92F7D0BCA00D20422 /* LevelPlayMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayMainVC.swift; sourceTree = "<group>"; };
 		BA4EEEDB2F7D0CA700D20422 /* LevelPlayBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPlayBannerVC.swift; sourceTree = "<group>"; };
@@ -80,6 +147,12 @@
 		BA7D801C2ED6A49000B78B40 /* AlxNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxNativeVC.swift; sourceTree = "<group>"; };
 		BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlxRewardVideoVC.swift; sourceTree = "<group>"; };
 		BAFC0A7F3035646B00C7FF6D /* MenuCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardCell.swift; sourceTree = "<group>"; };
+		BC8FF168B2C2B6F6E1060F93 /* AlxTopOnInterstitialEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnInterstitialEvent.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Interstitial/AlxTopOnInterstitialEvent.swift; sourceTree = "<group>"; };
+		CAE39BCD7FCC1706341990F6 /* AlxTopOnSplashDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnSplashDelegate.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Splash/AlxTopOnSplashDelegate.swift; sourceTree = "<group>"; };
+		CF6CEAC793418741E114F9B5 /* AlxTopOnMetaInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnMetaInfo.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/AlxTopOnMetaInfo.swift; sourceTree = "<group>"; };
+		CF70375E6E957E5EDB8572C2 /* AlxAdmobNetworkExtras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxAdmobNetworkExtras.swift; path = ../../../Sources/custom_adapter/AdmobAdapter/Swift/AlxAdmobNetworkExtras.swift; sourceTree = "<group>"; };
+		DDDFA58ECD540B442270EEE1 /* ISAlxCustomInterstitial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISAlxCustomInterstitial.swift; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Swift/ISAlxCustomInterstitial.swift; sourceTree = "<group>"; };
+		E06A5B1A127C0348B334C9B2 /* ISAlxCustomBanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISAlxCustomBanner.swift; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Swift/ISAlxCustomBanner.swift; sourceTree = "<group>"; };
 		E30816892E3C7372002E3112 /* AdmobBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerVC.swift; sourceTree = "<group>"; };
 		E308168A2E3C7372002E3112 /* AdmobInterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialVC.swift; sourceTree = "<group>"; };
 		E308168B2E3C7372002E3112 /* AdmobMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMainVC.swift; sourceTree = "<group>"; };
@@ -113,9 +186,14 @@
 		E3EC006B2DD4933C00485DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3EC006E2DD4933C00485DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3EC00702DD4933C00485DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E88B9962E29132041C782D02 /* Pods-AlxAdsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlxAdsDemo.release.xcconfig"; path = "Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E88B9962E29132041C782D02 /* Pods-AlxAdsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlxAdsDemo.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		ECFE62B835689E73703F9CB5 /* AlxAdmobRewardVideoAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxAdmobRewardVideoAdapter.swift; path = ../../../Sources/custom_adapter/AdmobAdapter/Swift/AlxAdmobRewardVideoAdapter.swift; sourceTree = "<group>"; };
 		EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlxAdsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE396B92C5072417E6A32193 /* Pods-AlxAdsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlxAdsDemo.debug.xcconfig"; path = "Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F4C0F90EBC68D21809F6E4E4 /* AlxTopOnBaseManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnBaseManager.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/AlxTopOnBaseManager.swift; sourceTree = "<group>"; };
+		FB95E879958AE129DCC66923 /* ISAlxCustomRewardedVideo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISAlxCustomRewardedVideo.swift; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Swift/ISAlxCustomRewardedVideo.swift; sourceTree = "<group>"; };
+		FD3CE71051FC29017003E7D8 /* AlxTopOnNativeEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnNativeEvent.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/Native/AlxTopOnNativeEvent.swift; sourceTree = "<group>"; };
+		FDEC2C95E8BF014AA46FDB82 /* AlxTopOnBiddingRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlxTopOnBiddingRequest.swift; path = ../../../Sources/custom_adapter/TopOnAdapter/Swift/6.5.x/AlxTopOnBiddingRequest.swift; sourceTree = "<group>"; };
+		FE396B92C5072417E6A32193 /* Pods-AlxAdsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlxAdsDemo.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-AlxAdsDemo/Pods-AlxAdsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +208,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00BA47571DC579FC7AC429F4 /* AdmobAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				4F7989B1E4EB45139D3708B9 /* AlxAdmobBannerAdapter.swift */,
+				3AE9016F8F59A164C50F98A2 /* AlxAdmobBaseAdapter.swift */,
+				B26371A366AD4DA9DF9030AA /* AlxAdmobInterstitialAdapter.swift */,
+				4522B1E960D8B2551E826039 /* AlxAdmobMetaInfo.swift */,
+				2281F4B3AEF0768AA0922B88 /* AlxAdmobNativeAdapter.swift */,
+				CF70375E6E957E5EDB8572C2 /* AlxAdmobNetworkExtras.swift */,
+				ECFE62B835689E73703F9CB5 /* AlxAdmobRewardVideoAdapter.swift */,
+				16F03643F1EB0831A51BA638 /* AlxAdmobSplashAdapter.swift */,
+			);
+			name = AdmobAdapter;
+			sourceTree = "<group>";
+		};
+		363CC5CE49DBC36F639BFFC8 /* TopOnAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				F4C0F90EBC68D21809F6E4E4 /* AlxTopOnBaseManager.swift */,
+				FDEC2C95E8BF014AA46FDB82 /* AlxTopOnBiddingRequest.swift */,
+				76A4435D9C10B6D4E6FEF154 /* AlxTopOnBiddingRequestManager.swift */,
+				46AFF570211C194CE4CE349C /* AlxTopOnDebugHelper.swift */,
+				CF6CEAC793418741E114F9B5 /* AlxTopOnMetaInfo.swift */,
+				00A9E34F9C42A9CE1CDA78C3 /* AlxTopOnTool.swift */,
+				2389CBAA0C607CB0CB1C7AC3 /* AlxTopOnBannerAdapter.swift */,
+				50646E017BFDEE013C11D56F /* AlxTopOnBannerDelegate.swift */,
+				2C721860507CCCCD084A64A8 /* AlxTopOnBannerEvent.swift */,
+				ACB57775DA72ECB9E0CF0F37 /* AlxTopOnBaseAdapter.swift */,
+				A613D8FC44067DB5C6D75588 /* AlxTopOnInitAdapter.swift */,
+				39A95E81DB54C790AA4E97F5 /* AlxTopOnInterstitialAdapter.swift */,
+				8D176A165AD19A055F4D54EF /* AlxTopOnInterstitialDelegate.swift */,
+				BC8FF168B2C2B6F6E1060F93 /* AlxTopOnInterstitialEvent.swift */,
+				06385640BE3D8FA407E7EF82 /* AlxTopOnNativeAdapter.swift */,
+				795D8D270F9C32AA5D800220 /* AlxTopOnNativeDelegate.swift */,
+				FD3CE71051FC29017003E7D8 /* AlxTopOnNativeEvent.swift */,
+				9A4779881EA40FE02219F34D /* AlxTopOnNativeObject.swift */,
+				5DA5903FE880B558DF88D371 /* AlxTopOnNativeRender.swift */,
+				B61C1E0019FBFAC7072E6D34 /* AlxTopOnRewardVideoAdapter.swift */,
+				3A571F50C516B7CA03521276 /* AlxTopOnRewardVideoDelegate.swift */,
+				59A4CDCB50E37F5AAA75AA4A /* AlxTopOnRewardVideoEvent.swift */,
+				1FA4462F4FF7D5636021231D /* AlxTopOnSplashAdapter.swift */,
+				CAE39BCD7FCC1706341990F6 /* AlxTopOnSplashDelegate.swift */,
+				A5C74A3514614A0F15179ADA /* AlxTopOnSplashEvent.swift */,
+			);
+			name = TopOnAdapter;
+			sourceTree = "<group>";
+		};
+		4ED1480AC2530B7CE78EF3C0 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				00BA47571DC579FC7AC429F4 /* AdmobAdapter */,
+				F42CF382AF88B12C846B8AD9 /* MaxAdapter */,
+				363CC5CE49DBC36F639BFFC8 /* TopOnAdapter */,
+				D3CDD3D77D5B157DB17DEE90 /* UnityLevelPlayAdapter */,
+			);
+			name = Adapters;
+			sourceTree = "<group>";
+		};
 		63DAAC1CA2FA2120E260F575 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +315,18 @@
 				BA7D801D2ED6A49000B78B40 /* AlxRewardVideoVC.swift */,
 			);
 			path = Rixengine;
+			sourceTree = "<group>";
+		};
+		D3CDD3D77D5B157DB17DEE90 /* UnityLevelPlayAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				6C33BC15F9FC69288BB9F77D /* AlxLevelPlayMetaInfo.swift */,
+				13569E868084C642973A8006 /* ISAlxCustomAdapter.swift */,
+				E06A5B1A127C0348B334C9B2 /* ISAlxCustomBanner.swift */,
+				DDDFA58ECD540B442270EEE1 /* ISAlxCustomInterstitial.swift */,
+				FB95E879958AE129DCC66923 /* ISAlxCustomRewardedVideo.swift */,
+			);
+			name = UnityLevelPlayAdapter;
 			sourceTree = "<group>";
 		};
 		E30816622E3719D1002E3112 /* Admob */ = {
@@ -273,6 +421,7 @@
 				E3EC00602DD4933B00485DAF /* Products */,
 				E3EC00792DD4980C00485DAF /* Frameworks */,
 				63DAAC1CA2FA2120E260F575 /* Pods */,
+				4ED1480AC2530B7CE78EF3C0 /* Adapters */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,6 +460,14 @@
 				EF81CDE6E5E47A94D03396C6 /* Pods_AlxAdsDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F42CF382AF88B12C846B8AD9 /* MaxAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				77A5DF4098E2084BD66D8712 /* AlxMaxMediationAdapter.swift */,
+			);
+			name = MaxAdapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +645,45 @@
 				E308169B2E3C738B002E3112 /* MaxRewardVideoVC.swift in Sources */,
 				E308169C2E3C738B002E3112 /* MaxBannerVC.swift in Sources */,
 				E31956542DF7DA940083BC3C /* MainVC.swift in Sources */,
+				DE867F29B9D4AF9CBCA0647A /* AlxAdmobBannerAdapter.swift in Sources */,
+				24AC79364F4F6A1693CAEA50 /* AlxAdmobBaseAdapter.swift in Sources */,
+				1640774C19B5B639961F8CCC /* AlxAdmobInterstitialAdapter.swift in Sources */,
+				2840D8D110706D3D774121BA /* AlxAdmobMetaInfo.swift in Sources */,
+				9E5DAFE03FD176AD3B66C317 /* AlxAdmobNativeAdapter.swift in Sources */,
+				FAFBF11B78A678E81446487B /* AlxAdmobNetworkExtras.swift in Sources */,
+				E4057504300B01105E530F02 /* AlxAdmobRewardVideoAdapter.swift in Sources */,
+				9FFF8C143006DFFCC7732C31 /* AlxAdmobSplashAdapter.swift in Sources */,
+				CCE03DE38BCD66449289C404 /* AlxMaxMediationAdapter.swift in Sources */,
+				55E0CB50451B6106320AAEE6 /* AlxTopOnBaseManager.swift in Sources */,
+				D95A5CAEE8CF0B5FA7CE625B /* AlxTopOnBiddingRequest.swift in Sources */,
+				0C647B9BC98E5A937013CE3C /* AlxTopOnBiddingRequestManager.swift in Sources */,
+				A2AFA760CD2057B9AD9ED725 /* AlxTopOnDebugHelper.swift in Sources */,
+				2A9E1ED805FDEF4161225AC3 /* AlxTopOnMetaInfo.swift in Sources */,
+				D2FF4D6498D0AE3AD3380367 /* AlxTopOnTool.swift in Sources */,
+				F1973D39E5DF8E151AF80EBD /* AlxTopOnBannerAdapter.swift in Sources */,
+				CF2D54472C55A18B7778B750 /* AlxTopOnBannerDelegate.swift in Sources */,
+				A37756AADA25567D114CF62E /* AlxTopOnBannerEvent.swift in Sources */,
+				E6180F969D31BE0FBC547A3D /* AlxTopOnBaseAdapter.swift in Sources */,
+				87DFB96FB4480D3E67FADF6D /* AlxTopOnInitAdapter.swift in Sources */,
+				826B3961887217FE72821386 /* AlxTopOnInterstitialAdapter.swift in Sources */,
+				AF557E71C5AEA9AC7AAD8CD0 /* AlxTopOnInterstitialDelegate.swift in Sources */,
+				2D43D124B32CC34064F2A128 /* AlxTopOnInterstitialEvent.swift in Sources */,
+				7C891864E2C6BBEA2179F1EC /* AlxTopOnNativeAdapter.swift in Sources */,
+				96E45997450C0268BE021B48 /* AlxTopOnNativeDelegate.swift in Sources */,
+				5D7F4CF428187CF4526243BA /* AlxTopOnNativeEvent.swift in Sources */,
+				DF294028E82912D291CCB8AB /* AlxTopOnNativeObject.swift in Sources */,
+				9561C5B152D37FB0728C3C02 /* AlxTopOnNativeRender.swift in Sources */,
+				9354010525150E303A7D5FE1 /* AlxTopOnRewardVideoAdapter.swift in Sources */,
+				5A9E897911ED27CFA3985560 /* AlxTopOnRewardVideoDelegate.swift in Sources */,
+				172371EE8067F381E7E5E9AF /* AlxTopOnRewardVideoEvent.swift in Sources */,
+				C27C95ADC8E960804FF79902 /* AlxTopOnSplashAdapter.swift in Sources */,
+				708BDD4DA5CE993937E53724 /* AlxTopOnSplashDelegate.swift in Sources */,
+				43596B3D37A37B41BCA76C2C /* AlxTopOnSplashEvent.swift in Sources */,
+				93ABF2D85A5D5D2D106B9EA4 /* AlxLevelPlayMetaInfo.swift in Sources */,
+				33E0C923A570689ABD54606D /* ISAlxCustomAdapter.swift in Sources */,
+				CE52246E32279CF21E5EC745 /* ISAlxCustomBanner.swift in Sources */,
+				E5F2166DD02E9EDDCE8E5DD1 /* ISAlxCustomInterstitial.swift in Sources */,
+				569C11A933817866A3C42C52 /* ISAlxCustomRewardedVideo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,7 +770,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -631,7 +827,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -659,7 +855,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,7 +887,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

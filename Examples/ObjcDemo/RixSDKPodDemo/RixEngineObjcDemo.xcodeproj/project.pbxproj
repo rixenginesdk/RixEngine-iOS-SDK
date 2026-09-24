@@ -7,14 +7,129 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07B3B142B4575A2F3BEB469D /* AlxTopOnInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB49CA82110792CD3014D68F /* AlxTopOnInterstitialAdapter.m */; };
+		08457D38E083A25A2A03D439 /* AlxTopOnBiddingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 82723021D2A08367B806EAF5 /* AlxTopOnBiddingRequest.m */; };
+		094EABF8636DE52C5DCDB9ED /* AlxAdmobSplashAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F34FCB1D8385203A0A47C496 /* AlxAdmobSplashAdapter.m */; };
 		0D7469143F8B53DC48B5FC9C /* Pods_RixEngineObjcDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A62FB9C9779F6AADC0E09C9 /* Pods_RixEngineObjcDemo.framework */; };
+		0F0C5F26D908016CD38F27C7 /* AlxTopOnBannerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1734B160732C7A8FC3912087 /* AlxTopOnBannerEvent.m */; };
+		12B4A20A2A65822E56FA855E /* AlxTopOnSplashDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0A66130B09DAF373DEE5A2 /* AlxTopOnSplashDelegate.m */; };
+		12DD3D813F1BECFC57EBA969 /* AlxTopOnSplashEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DC15D6B67C2BE0DF0CDA1142 /* AlxTopOnSplashEvent.m */; };
+		1EDC78F0CB395D1EB7EB1CE3 /* AlxTopOnInterstitialDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F353680EF135426FFA7C7609 /* AlxTopOnInterstitialDelegate.m */; };
+		1F1A3AD2F06A0D84259BEFB9 /* ISAlxCustomAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D45719E6BA2CF2E1C82A5F /* ISAlxCustomAdapter.m */; };
+		2847C0A6E2B623C714CD696C /* AlxAdmobMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 042755409CB709019F3AB9AD /* AlxAdmobMetaInfo.m */; };
+		30576285CE19A00E689C4411 /* AlxTopOnBiddingRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCACC25A98EF5BD9FA9F51C /* AlxTopOnBiddingRequestManager.m */; };
+		31318294DDACD36C680499AA /* AlxAdmobBaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3E79B534214B47FD82BA9 /* AlxAdmobBaseAdapter.m */; };
+		31ABE1F08C277B412D7C5B7D /* ISAlxCustomInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 324EEAB3C7677FF114F36EBF /* ISAlxCustomInterstitial.m */; };
+		32A1BB0B9346EC2A4D3FCD17 /* AlxTopOnNativeEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 77508892C347D6EE7D047399 /* AlxTopOnNativeEvent.m */; };
+		3396EAAA6311768CC0B88F4D /* AlxTopOnRewardVideoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70835BD0C7B06A7B1A989A61 /* AlxTopOnRewardVideoDelegate.m */; };
+		375409B94FB26ED3E8D00AB1 /* AlxTopOnRewardVideoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B285584D1EBA63981EB727 /* AlxTopOnRewardVideoAdapter.m */; };
+		3BBDD2AA531A86805C5A814A /* AlxTopOnSplashAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F15CB38AD25543105EA1AE /* AlxTopOnSplashAdapter.m */; };
+		3EEC7A618C0BD83F5E0A4132 /* AlxAdmobNetworkExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEA2096BD0C76905D0C177F /* AlxAdmobNetworkExtras.m */; };
+		47A019B7482A594FC804B37E /* ISAlxCustomRewardedVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = B893976A2FE686C231D20210 /* ISAlxCustomRewardedVideo.m */; };
+		4B2FD55749E62CF0A21D64AB /* AlxTopOnNativeAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E403401EF57C0F2119FF15F2 /* AlxTopOnNativeAdapter.m */; };
+		4D1FA936A6219E5558FAF6A1 /* AlxLevelPlayMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD0FB52D7C551DF972E5CC5 /* AlxLevelPlayMetaInfo.m */; };
+		53C24FDB7C2A88140BFA866B /* AlxTopOnBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 139A70774A9AE841EBDD2D6C /* AlxTopOnBannerAdapter.m */; };
+		571AC4DC1BEFFDFC604F1EFC /* AlxTopOnNativeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E20277EF82CC272EB1F6CBFB /* AlxTopOnNativeObject.m */; };
+		757A5DAC22D06D3C590115C8 /* AlxMaxMediationAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7BAD029B80BC7DC90ED8D0 /* AlxMaxMediationAdapter.m */; };
+		7E22197BBE3D29A8B8BBE666 /* AlxTopOnBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E6DF05EB2A41EC243B3476 /* AlxTopOnBaseManager.m */; };
+		81C91094A8AC2F7D53DCEFC6 /* AlxAdmobBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A025AD3562B6051205F7C /* AlxAdmobBannerAdapter.m */; };
+		9DE30312400E2BA502801B20 /* AlxTopOnInterstitialEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE97B05A79E25FFC0BA29B /* AlxTopOnInterstitialEvent.m */; };
+		9FD514FCCE4FF3A1AE12DF06 /* AlxTopOnInitAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 648DED081B41583F7674A13D /* AlxTopOnInitAdapter.m */; };
+		A41B4712C36AD85B5B1C9BA6 /* AlxAdmobNativeAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E5B374F12F6F341D4C6D19 /* AlxAdmobNativeAdapter.m */; };
+		A763C25457A0178EEF6D457F /* AlxTopOnNativeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB46ACF87D4F96FE9A700A /* AlxTopOnNativeDelegate.m */; };
+		AA4806331EB7A732F1631866 /* AlxAdmobRewardVideoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A4131BABD4A78830D092F9E4 /* AlxAdmobRewardVideoAdapter.m */; };
+		BA613A80C4F30A3DB555A5CC /* AlxTopOnBaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C5AE41FA38C78DADCE6C73 /* AlxTopOnBaseAdapter.m */; };
+		BE0D17FABB04BA1522853CDF /* ISAlxCustomBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 532AE86AE0769DE0320B80F2 /* ISAlxCustomBanner.m */; };
+		C605EABEEBF4B4D4B9CD085A /* AlxTopOnBannerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC87EE41D04C8457420B0 /* AlxTopOnBannerDelegate.m */; };
+		C8DF9510C6BFEE3326C34676 /* AlxTopOnNativeRender.m in Sources */ = {isa = PBXBuildFile; fileRef = F79E45774A7BD34E13C57C1F /* AlxTopOnNativeRender.m */; };
+		DD4779D16254F8853504603B /* AlxTopOnMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE49823647E095E4D1D9B8B /* AlxTopOnMetaInfo.m */; };
+		E446ED91AE991EE0EE77E24E /* AlxTopOnTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FCDF1970821CE46441D149 /* AlxTopOnTool.m */; };
+		E4BCC673E3EA51F890A0820F /* AlxAdmobInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D85CA6C36DF470491E3341B9 /* AlxAdmobInterstitialAdapter.m */; };
+		E9561BF159B9D0CAE5E00458 /* AlxTopOnRewardVideoEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B684CE7593EFD3E6BDF8F653 /* AlxTopOnRewardVideoEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01C5AE41FA38C78DADCE6C73 /* AlxTopOnBaseAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnBaseAdapter.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Base/AlxTopOnBaseAdapter.m; sourceTree = "<group>"; };
+		042755409CB709019F3AB9AD /* AlxAdmobMetaInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxAdmobMetaInfo.m; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobMetaInfo.m; sourceTree = "<group>"; };
+		05B4035B55367804A7EEC58E /* ISAlxCustomRewardedVideo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISAlxCustomRewardedVideo.h; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/ISAlxCustomRewardedVideo.h; sourceTree = "<group>"; };
 		0A62FB9C9779F6AADC0E09C9 /* Pods_RixEngineObjcDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RixEngineObjcDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EE1A37E0BC5EA3F7629FA9E /* Pods-RixEngineObjcDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RixEngineObjcDemo.debug.xcconfig"; path = "Target Support Files/Pods-RixEngineObjcDemo/Pods-RixEngineObjcDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		0D6DFD033947EA3581D5A0AF /* AlxTopOnBaseManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnBaseManager.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnBaseManager.h; sourceTree = "<group>"; };
+		0EE1A37E0BC5EA3F7629FA9E /* Pods-RixEngineObjcDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RixEngineObjcDemo.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-RixEngineObjcDemo/Pods-RixEngineObjcDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		0F9EE0B694A1D2EF6B063584 /* AlxTopOnBannerEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnBannerEvent.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Banner/AlxTopOnBannerEvent.h; sourceTree = "<group>"; };
+		1342D64AC4A95E915AA2B995 /* ISAlxCustomBanner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISAlxCustomBanner.h; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/ISAlxCustomBanner.h; sourceTree = "<group>"; };
+		139A70774A9AE841EBDD2D6C /* AlxTopOnBannerAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnBannerAdapter.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Banner/AlxTopOnBannerAdapter.m; sourceTree = "<group>"; };
+		1734B160732C7A8FC3912087 /* AlxTopOnBannerEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnBannerEvent.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Banner/AlxTopOnBannerEvent.m; sourceTree = "<group>"; };
+		1AA3E79B534214B47FD82BA9 /* AlxAdmobBaseAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxAdmobBaseAdapter.m; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobBaseAdapter.m; sourceTree = "<group>"; };
+		1BEB46ACF87D4F96FE9A700A /* AlxTopOnNativeDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnNativeDelegate.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeDelegate.m; sourceTree = "<group>"; };
+		1F9E56DC051F154F61C556A8 /* AlxTopOnRewardVideoDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnRewardVideoDelegate.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/RewardVideo/AlxTopOnRewardVideoDelegate.h; sourceTree = "<group>"; };
+		20E5B374F12F6F341D4C6D19 /* AlxAdmobNativeAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxAdmobNativeAdapter.m; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobNativeAdapter.m; sourceTree = "<group>"; };
+		210A93B50A32C3EE5DD89A92 /* ISAlxCustomAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISAlxCustomAdapter.h; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/ISAlxCustomAdapter.h; sourceTree = "<group>"; };
+		25408BA38E817D9743D2C10C /* AlxLevelPlayMetaInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxLevelPlayMetaInfo.h; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/AlxLevelPlayMetaInfo.h; sourceTree = "<group>"; };
+		2A697901698E2D32E7C33C1D /* AlxTopOnTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnTool.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnTool.h; sourceTree = "<group>"; };
+		2B011310958F577344EE323C /* AlxTopOnAdapterCommonHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnAdapterCommonHeader.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Base/AlxTopOnAdapterCommonHeader.h; sourceTree = "<group>"; };
+		2D0B71B59D9B3C9DFEEAE34D /* AlxTopOnRewardVideoAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnRewardVideoAdapter.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/RewardVideo/AlxTopOnRewardVideoAdapter.h; sourceTree = "<group>"; };
+		324EEAB3C7677FF114F36EBF /* ISAlxCustomInterstitial.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ISAlxCustomInterstitial.m; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/ISAlxCustomInterstitial.m; sourceTree = "<group>"; };
+		3356312E701680784AD77904 /* AlxTopOnNativeObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnNativeObject.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeObject.h; sourceTree = "<group>"; };
+		3D0A66130B09DAF373DEE5A2 /* AlxTopOnSplashDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnSplashDelegate.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Splash/AlxTopOnSplashDelegate.m; sourceTree = "<group>"; };
+		3DD0FB52D7C551DF972E5CC5 /* AlxLevelPlayMetaInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxLevelPlayMetaInfo.m; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/AlxLevelPlayMetaInfo.m; sourceTree = "<group>"; };
+		4276453E0D84354F6F996C2B /* AlxTopOnSplashAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnSplashAdapter.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Splash/AlxTopOnSplashAdapter.h; sourceTree = "<group>"; };
+		4BCACC25A98EF5BD9FA9F51C /* AlxTopOnBiddingRequestManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnBiddingRequestManager.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnBiddingRequestManager.m; sourceTree = "<group>"; };
+		4D5E8CC2A4D982721A0511AA /* AlxTopOnBaseAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnBaseAdapter.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Base/AlxTopOnBaseAdapter.h; sourceTree = "<group>"; };
+		4FEE97B05A79E25FFC0BA29B /* AlxTopOnInterstitialEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnInterstitialEvent.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Interstitial/AlxTopOnInterstitialEvent.m; sourceTree = "<group>"; };
+		50FCDF1970821CE46441D149 /* AlxTopOnTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnTool.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnTool.m; sourceTree = "<group>"; };
+		532AE86AE0769DE0320B80F2 /* ISAlxCustomBanner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ISAlxCustomBanner.m; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/ISAlxCustomBanner.m; sourceTree = "<group>"; };
+		5DABF13F4D8ECE29DC462B6C /* AlxTopOnNativeAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnNativeAdapter.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeAdapter.h; sourceTree = "<group>"; };
+		63F15CB38AD25543105EA1AE /* AlxTopOnSplashAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnSplashAdapter.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Splash/AlxTopOnSplashAdapter.m; sourceTree = "<group>"; };
+		648DED081B41583F7674A13D /* AlxTopOnInitAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnInitAdapter.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Base/AlxTopOnInitAdapter.m; sourceTree = "<group>"; };
+		6AA096D17C7B14C346723096 /* AlxTopOnInterstitialDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnInterstitialDelegate.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Interstitial/AlxTopOnInterstitialDelegate.h; sourceTree = "<group>"; };
+		6D9DD0CA791BD3BA78B1B74B /* AlxTopOnInitAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnInitAdapter.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Base/AlxTopOnInitAdapter.h; sourceTree = "<group>"; };
+		6DD2ADE6F998F073FD069CF1 /* AlxAdmobMetaInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxAdmobMetaInfo.h; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobMetaInfo.h; sourceTree = "<group>"; };
+		70835BD0C7B06A7B1A989A61 /* AlxTopOnRewardVideoDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnRewardVideoDelegate.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/RewardVideo/AlxTopOnRewardVideoDelegate.m; sourceTree = "<group>"; };
+		73E4961B794DD55E1BB9F132 /* AlxAdmobBannerAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxAdmobBannerAdapter.h; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobBannerAdapter.h; sourceTree = "<group>"; };
+		765A0C4C39C7D12E38683E75 /* AlxTopOnInterstitialAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnInterstitialAdapter.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Interstitial/AlxTopOnInterstitialAdapter.h; sourceTree = "<group>"; };
+		77508892C347D6EE7D047399 /* AlxTopOnNativeEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnNativeEvent.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeEvent.m; sourceTree = "<group>"; };
+		7848C5444EDB53BBF3712BF0 /* AlxTopOnInterstitialEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnInterstitialEvent.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Interstitial/AlxTopOnInterstitialEvent.h; sourceTree = "<group>"; };
+		7AE49823647E095E4D1D9B8B /* AlxTopOnMetaInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnMetaInfo.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnMetaInfo.m; sourceTree = "<group>"; };
+		7F7AE995B2DEB85220593445 /* AlxAdmobBaseAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxAdmobBaseAdapter.h; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobBaseAdapter.h; sourceTree = "<group>"; };
+		82723021D2A08367B806EAF5 /* AlxTopOnBiddingRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnBiddingRequest.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnBiddingRequest.m; sourceTree = "<group>"; };
+		8B9852124F5CD1BEF540C103 /* ISAlxCustomInterstitial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISAlxCustomInterstitial.h; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/ISAlxCustomInterstitial.h; sourceTree = "<group>"; };
+		A4131BABD4A78830D092F9E4 /* AlxAdmobRewardVideoAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxAdmobRewardVideoAdapter.m; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobRewardVideoAdapter.m; sourceTree = "<group>"; };
+		A43A025AD3562B6051205F7C /* AlxAdmobBannerAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxAdmobBannerAdapter.m; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobBannerAdapter.m; sourceTree = "<group>"; };
+		AD7BAD029B80BC7DC90ED8D0 /* AlxMaxMediationAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxMaxMediationAdapter.m; path = ../../../Sources/custom_adapter/MaxAdapter/Objc/AlxMaxMediationAdapter.m; sourceTree = "<group>"; };
+		ADEA2096BD0C76905D0C177F /* AlxAdmobNetworkExtras.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxAdmobNetworkExtras.m; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobNetworkExtras.m; sourceTree = "<group>"; };
+		B684CE7593EFD3E6BDF8F653 /* AlxTopOnRewardVideoEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnRewardVideoEvent.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/RewardVideo/AlxTopOnRewardVideoEvent.m; sourceTree = "<group>"; };
+		B7E66359665C0B26796725D1 /* AlxAdmobInterstitialAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxAdmobInterstitialAdapter.h; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobInterstitialAdapter.h; sourceTree = "<group>"; };
+		B893976A2FE686C231D20210 /* ISAlxCustomRewardedVideo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ISAlxCustomRewardedVideo.m; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/ISAlxCustomRewardedVideo.m; sourceTree = "<group>"; };
+		B9E6DF05EB2A41EC243B3476 /* AlxTopOnBaseManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnBaseManager.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnBaseManager.m; sourceTree = "<group>"; };
+		BA8DC87EE41D04C8457420B0 /* AlxTopOnBannerDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnBannerDelegate.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Banner/AlxTopOnBannerDelegate.m; sourceTree = "<group>"; };
 		BA9EBED8301752C30021D827 /* RixEngineObjcDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RixEngineObjcDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEB7B43179E7FF26F7DF995C /* Pods-RixEngineObjcDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RixEngineObjcDemo.release.xcconfig"; path = "Target Support Files/Pods-RixEngineObjcDemo/Pods-RixEngineObjcDemo.release.xcconfig"; sourceTree = "<group>"; };
+		BDB1CD2F9AC7918B16981D22 /* AlxTopOnNativeEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnNativeEvent.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeEvent.h; sourceTree = "<group>"; };
+		BFA1D42EE5EF50940F8296D8 /* AlxAdmobNetworkExtras.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxAdmobNetworkExtras.h; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobNetworkExtras.h; sourceTree = "<group>"; };
+		C0F9B1E1E70432EFFAE4BDA7 /* AlxAdmobRewardVideoAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxAdmobRewardVideoAdapter.h; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobRewardVideoAdapter.h; sourceTree = "<group>"; };
+		C3B285584D1EBA63981EB727 /* AlxTopOnRewardVideoAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnRewardVideoAdapter.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/RewardVideo/AlxTopOnRewardVideoAdapter.m; sourceTree = "<group>"; };
+		C5159C99A5EC3DB815F478C6 /* AlxAdmobSplashAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxAdmobSplashAdapter.h; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobSplashAdapter.h; sourceTree = "<group>"; };
+		C51A6B467E6E89FA6C4DADF9 /* AlxAdmobNativeAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxAdmobNativeAdapter.h; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobNativeAdapter.h; sourceTree = "<group>"; };
+		C6814EEB1DC2159D2B061330 /* AlxTopOnBannerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnBannerDelegate.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Banner/AlxTopOnBannerDelegate.h; sourceTree = "<group>"; };
+		CEB7B43179E7FF26F7DF995C /* Pods-RixEngineObjcDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RixEngineObjcDemo.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-RixEngineObjcDemo/Pods-RixEngineObjcDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CFF418AF054025FE5F2E16F5 /* AlxTopOnSplashEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnSplashEvent.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Splash/AlxTopOnSplashEvent.h; sourceTree = "<group>"; };
+		D85CA6C36DF470491E3341B9 /* AlxAdmobInterstitialAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxAdmobInterstitialAdapter.m; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobInterstitialAdapter.m; sourceTree = "<group>"; };
+		DB49CA82110792CD3014D68F /* AlxTopOnInterstitialAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnInterstitialAdapter.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Interstitial/AlxTopOnInterstitialAdapter.m; sourceTree = "<group>"; };
+		DC15D6B67C2BE0DF0CDA1142 /* AlxTopOnSplashEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnSplashEvent.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Splash/AlxTopOnSplashEvent.m; sourceTree = "<group>"; };
+		DC1689AC9E39BDC790465AEC /* AlxTopOnNativeRender.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnNativeRender.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeRender.h; sourceTree = "<group>"; };
+		E20277EF82CC272EB1F6CBFB /* AlxTopOnNativeObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnNativeObject.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeObject.m; sourceTree = "<group>"; };
+		E403401EF57C0F2119FF15F2 /* AlxTopOnNativeAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnNativeAdapter.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeAdapter.m; sourceTree = "<group>"; };
+		E7D45719E6BA2CF2E1C82A5F /* ISAlxCustomAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ISAlxCustomAdapter.m; path = ../../../Sources/custom_adapter/UnityLevelPlayAdapter/Objc/ISAlxCustomAdapter.m; sourceTree = "<group>"; };
+		EAF9EB205BE5F92397C9EE94 /* AlxTopOnBiddingRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnBiddingRequest.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnBiddingRequest.h; sourceTree = "<group>"; };
+		EB3E6B87C78DBB59E5A8EC5F /* AlxTopOnRewardVideoEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnRewardVideoEvent.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/RewardVideo/AlxTopOnRewardVideoEvent.h; sourceTree = "<group>"; };
+		EBBC725EF77D00482E50264A /* AlxTopOnNativeDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnNativeDelegate.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeDelegate.h; sourceTree = "<group>"; };
+		EC5FC2C4FCC67989B58E6687 /* AlxTopOnBiddingRequestManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnBiddingRequestManager.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnBiddingRequestManager.h; sourceTree = "<group>"; };
+		F03B03D07AE17A51B270D673 /* AlxTopOnSplashDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnSplashDelegate.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Splash/AlxTopOnSplashDelegate.h; sourceTree = "<group>"; };
+		F34FCB1D8385203A0A47C496 /* AlxAdmobSplashAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxAdmobSplashAdapter.m; path = ../../../Sources/custom_adapter/AdmobAdapter/Objc/AlxAdmobSplashAdapter.m; sourceTree = "<group>"; };
+		F353680EF135426FFA7C7609 /* AlxTopOnInterstitialDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnInterstitialDelegate.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Interstitial/AlxTopOnInterstitialDelegate.m; sourceTree = "<group>"; };
+		F61ADFFBEB06E6574A666DF0 /* AlxMaxMediationAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxMaxMediationAdapter.h; path = ../../../Sources/custom_adapter/MaxAdapter/Objc/AlxMaxMediationAdapter.h; sourceTree = "<group>"; };
+		F79E45774A7BD34E13C57C1F /* AlxTopOnNativeRender.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AlxTopOnNativeRender.m; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Native/AlxTopOnNativeRender.m; sourceTree = "<group>"; };
+		F8C49FE18E35BA03B2F29929 /* AlxTopOnBannerAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnBannerAdapter.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/Banner/AlxTopOnBannerAdapter.h; sourceTree = "<group>"; };
+		F8FF532B9F0510E6101DCEEC /* AlxTopOnMetaInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlxTopOnMetaInfo.h; path = ../../../Sources/custom_adapter/TopOnAdapter/Objc/6.5.x/AlxTopOnMetaInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,6 +165,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40CCA01108D56A57F8C03B52 /* UnityLevelPlayAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				25408BA38E817D9743D2C10C /* AlxLevelPlayMetaInfo.h */,
+				3DD0FB52D7C551DF972E5CC5 /* AlxLevelPlayMetaInfo.m */,
+				210A93B50A32C3EE5DD89A92 /* ISAlxCustomAdapter.h */,
+				E7D45719E6BA2CF2E1C82A5F /* ISAlxCustomAdapter.m */,
+				1342D64AC4A95E915AA2B995 /* ISAlxCustomBanner.h */,
+				532AE86AE0769DE0320B80F2 /* ISAlxCustomBanner.m */,
+				8B9852124F5CD1BEF540C103 /* ISAlxCustomInterstitial.h */,
+				324EEAB3C7677FF114F36EBF /* ISAlxCustomInterstitial.m */,
+				05B4035B55367804A7EEC58E /* ISAlxCustomRewardedVideo.h */,
+				B893976A2FE686C231D20210 /* ISAlxCustomRewardedVideo.m */,
+			);
+			name = UnityLevelPlayAdapter;
+			sourceTree = "<group>";
+		};
 		6DE2F6C5B90A6A9C1889F6C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +191,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7AF75A0F9135F6735B5F9B4A /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				A3E4B4BBE31EFDBEC7801A02 /* AdmobAdapter */,
+				D3FE726E52C1A46422F4BAB1 /* MaxAdapter */,
+				D0369B5304E8DF2020548F97 /* TopOnAdapter */,
+				40CCA01108D56A57F8C03B52 /* UnityLevelPlayAdapter */,
+			);
+			name = Adapters;
+			sourceTree = "<group>";
+		};
+		A3E4B4BBE31EFDBEC7801A02 /* AdmobAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				73E4961B794DD55E1BB9F132 /* AlxAdmobBannerAdapter.h */,
+				A43A025AD3562B6051205F7C /* AlxAdmobBannerAdapter.m */,
+				7F7AE995B2DEB85220593445 /* AlxAdmobBaseAdapter.h */,
+				1AA3E79B534214B47FD82BA9 /* AlxAdmobBaseAdapter.m */,
+				B7E66359665C0B26796725D1 /* AlxAdmobInterstitialAdapter.h */,
+				D85CA6C36DF470491E3341B9 /* AlxAdmobInterstitialAdapter.m */,
+				6DD2ADE6F998F073FD069CF1 /* AlxAdmobMetaInfo.h */,
+				042755409CB709019F3AB9AD /* AlxAdmobMetaInfo.m */,
+				C51A6B467E6E89FA6C4DADF9 /* AlxAdmobNativeAdapter.h */,
+				20E5B374F12F6F341D4C6D19 /* AlxAdmobNativeAdapter.m */,
+				BFA1D42EE5EF50940F8296D8 /* AlxAdmobNetworkExtras.h */,
+				ADEA2096BD0C76905D0C177F /* AlxAdmobNetworkExtras.m */,
+				C0F9B1E1E70432EFFAE4BDA7 /* AlxAdmobRewardVideoAdapter.h */,
+				A4131BABD4A78830D092F9E4 /* AlxAdmobRewardVideoAdapter.m */,
+				C5159C99A5EC3DB815F478C6 /* AlxAdmobSplashAdapter.h */,
+				F34FCB1D8385203A0A47C496 /* AlxAdmobSplashAdapter.m */,
+			);
+			name = AdmobAdapter;
+			sourceTree = "<group>";
+		};
 		BA9EBECF301752C30021D827 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +232,7 @@
 				BA9EBED9301752C30021D827 /* Products */,
 				6DE2F6C5B90A6A9C1889F6C8 /* Pods */,
 				E279B6210E12CE5710B3E8CE /* Frameworks */,
+				7AF75A0F9135F6735B5F9B4A /* Adapters */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +242,71 @@
 				BA9EBED8301752C30021D827 /* RixEngineObjcDemo.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D0369B5304E8DF2020548F97 /* TopOnAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				0D6DFD033947EA3581D5A0AF /* AlxTopOnBaseManager.h */,
+				B9E6DF05EB2A41EC243B3476 /* AlxTopOnBaseManager.m */,
+				EAF9EB205BE5F92397C9EE94 /* AlxTopOnBiddingRequest.h */,
+				82723021D2A08367B806EAF5 /* AlxTopOnBiddingRequest.m */,
+				EC5FC2C4FCC67989B58E6687 /* AlxTopOnBiddingRequestManager.h */,
+				4BCACC25A98EF5BD9FA9F51C /* AlxTopOnBiddingRequestManager.m */,
+				F8FF532B9F0510E6101DCEEC /* AlxTopOnMetaInfo.h */,
+				7AE49823647E095E4D1D9B8B /* AlxTopOnMetaInfo.m */,
+				2A697901698E2D32E7C33C1D /* AlxTopOnTool.h */,
+				50FCDF1970821CE46441D149 /* AlxTopOnTool.m */,
+				F8C49FE18E35BA03B2F29929 /* AlxTopOnBannerAdapter.h */,
+				139A70774A9AE841EBDD2D6C /* AlxTopOnBannerAdapter.m */,
+				C6814EEB1DC2159D2B061330 /* AlxTopOnBannerDelegate.h */,
+				BA8DC87EE41D04C8457420B0 /* AlxTopOnBannerDelegate.m */,
+				0F9EE0B694A1D2EF6B063584 /* AlxTopOnBannerEvent.h */,
+				1734B160732C7A8FC3912087 /* AlxTopOnBannerEvent.m */,
+				2B011310958F577344EE323C /* AlxTopOnAdapterCommonHeader.h */,
+				4D5E8CC2A4D982721A0511AA /* AlxTopOnBaseAdapter.h */,
+				01C5AE41FA38C78DADCE6C73 /* AlxTopOnBaseAdapter.m */,
+				6D9DD0CA791BD3BA78B1B74B /* AlxTopOnInitAdapter.h */,
+				648DED081B41583F7674A13D /* AlxTopOnInitAdapter.m */,
+				765A0C4C39C7D12E38683E75 /* AlxTopOnInterstitialAdapter.h */,
+				DB49CA82110792CD3014D68F /* AlxTopOnInterstitialAdapter.m */,
+				6AA096D17C7B14C346723096 /* AlxTopOnInterstitialDelegate.h */,
+				F353680EF135426FFA7C7609 /* AlxTopOnInterstitialDelegate.m */,
+				7848C5444EDB53BBF3712BF0 /* AlxTopOnInterstitialEvent.h */,
+				4FEE97B05A79E25FFC0BA29B /* AlxTopOnInterstitialEvent.m */,
+				5DABF13F4D8ECE29DC462B6C /* AlxTopOnNativeAdapter.h */,
+				E403401EF57C0F2119FF15F2 /* AlxTopOnNativeAdapter.m */,
+				EBBC725EF77D00482E50264A /* AlxTopOnNativeDelegate.h */,
+				1BEB46ACF87D4F96FE9A700A /* AlxTopOnNativeDelegate.m */,
+				BDB1CD2F9AC7918B16981D22 /* AlxTopOnNativeEvent.h */,
+				77508892C347D6EE7D047399 /* AlxTopOnNativeEvent.m */,
+				3356312E701680784AD77904 /* AlxTopOnNativeObject.h */,
+				E20277EF82CC272EB1F6CBFB /* AlxTopOnNativeObject.m */,
+				DC1689AC9E39BDC790465AEC /* AlxTopOnNativeRender.h */,
+				F79E45774A7BD34E13C57C1F /* AlxTopOnNativeRender.m */,
+				2D0B71B59D9B3C9DFEEAE34D /* AlxTopOnRewardVideoAdapter.h */,
+				C3B285584D1EBA63981EB727 /* AlxTopOnRewardVideoAdapter.m */,
+				1F9E56DC051F154F61C556A8 /* AlxTopOnRewardVideoDelegate.h */,
+				70835BD0C7B06A7B1A989A61 /* AlxTopOnRewardVideoDelegate.m */,
+				EB3E6B87C78DBB59E5A8EC5F /* AlxTopOnRewardVideoEvent.h */,
+				B684CE7593EFD3E6BDF8F653 /* AlxTopOnRewardVideoEvent.m */,
+				4276453E0D84354F6F996C2B /* AlxTopOnSplashAdapter.h */,
+				63F15CB38AD25543105EA1AE /* AlxTopOnSplashAdapter.m */,
+				F03B03D07AE17A51B270D673 /* AlxTopOnSplashDelegate.h */,
+				3D0A66130B09DAF373DEE5A2 /* AlxTopOnSplashDelegate.m */,
+				CFF418AF054025FE5F2E16F5 /* AlxTopOnSplashEvent.h */,
+				DC15D6B67C2BE0DF0CDA1142 /* AlxTopOnSplashEvent.m */,
+			);
+			name = TopOnAdapter;
+			sourceTree = "<group>";
+		};
+		D3FE726E52C1A46422F4BAB1 /* MaxAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				F61ADFFBEB06E6574A666DF0 /* AlxMaxMediationAdapter.h */,
+				AD7BAD029B80BC7DC90ED8D0 /* AlxMaxMediationAdapter.m */,
+			);
+			name = MaxAdapter;
 			sourceTree = "<group>";
 		};
 		E279B6210E12CE5710B3E8CE /* Frameworks */ = {
@@ -186,13 +418,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RixEngineObjcDemo/Pods-RixEngineObjcDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RixEngineObjcDemo/Pods-RixEngineObjcDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -207,13 +435,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RixEngineObjcDemo/Pods-RixEngineObjcDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RixEngineObjcDemo/Pods-RixEngineObjcDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -227,6 +451,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C91094A8AC2F7D53DCEFC6 /* AlxAdmobBannerAdapter.m in Sources */,
+				31318294DDACD36C680499AA /* AlxAdmobBaseAdapter.m in Sources */,
+				E4BCC673E3EA51F890A0820F /* AlxAdmobInterstitialAdapter.m in Sources */,
+				2847C0A6E2B623C714CD696C /* AlxAdmobMetaInfo.m in Sources */,
+				A41B4712C36AD85B5B1C9BA6 /* AlxAdmobNativeAdapter.m in Sources */,
+				3EEC7A618C0BD83F5E0A4132 /* AlxAdmobNetworkExtras.m in Sources */,
+				AA4806331EB7A732F1631866 /* AlxAdmobRewardVideoAdapter.m in Sources */,
+				094EABF8636DE52C5DCDB9ED /* AlxAdmobSplashAdapter.m in Sources */,
+				757A5DAC22D06D3C590115C8 /* AlxMaxMediationAdapter.m in Sources */,
+				7E22197BBE3D29A8B8BBE666 /* AlxTopOnBaseManager.m in Sources */,
+				08457D38E083A25A2A03D439 /* AlxTopOnBiddingRequest.m in Sources */,
+				30576285CE19A00E689C4411 /* AlxTopOnBiddingRequestManager.m in Sources */,
+				DD4779D16254F8853504603B /* AlxTopOnMetaInfo.m in Sources */,
+				E446ED91AE991EE0EE77E24E /* AlxTopOnTool.m in Sources */,
+				53C24FDB7C2A88140BFA866B /* AlxTopOnBannerAdapter.m in Sources */,
+				C605EABEEBF4B4D4B9CD085A /* AlxTopOnBannerDelegate.m in Sources */,
+				0F0C5F26D908016CD38F27C7 /* AlxTopOnBannerEvent.m in Sources */,
+				BA613A80C4F30A3DB555A5CC /* AlxTopOnBaseAdapter.m in Sources */,
+				9FD514FCCE4FF3A1AE12DF06 /* AlxTopOnInitAdapter.m in Sources */,
+				07B3B142B4575A2F3BEB469D /* AlxTopOnInterstitialAdapter.m in Sources */,
+				1EDC78F0CB395D1EB7EB1CE3 /* AlxTopOnInterstitialDelegate.m in Sources */,
+				9DE30312400E2BA502801B20 /* AlxTopOnInterstitialEvent.m in Sources */,
+				4B2FD55749E62CF0A21D64AB /* AlxTopOnNativeAdapter.m in Sources */,
+				A763C25457A0178EEF6D457F /* AlxTopOnNativeDelegate.m in Sources */,
+				32A1BB0B9346EC2A4D3FCD17 /* AlxTopOnNativeEvent.m in Sources */,
+				571AC4DC1BEFFDFC604F1EFC /* AlxTopOnNativeObject.m in Sources */,
+				C8DF9510C6BFEE3326C34676 /* AlxTopOnNativeRender.m in Sources */,
+				375409B94FB26ED3E8D00AB1 /* AlxTopOnRewardVideoAdapter.m in Sources */,
+				3396EAAA6311768CC0B88F4D /* AlxTopOnRewardVideoDelegate.m in Sources */,
+				E9561BF159B9D0CAE5E00458 /* AlxTopOnRewardVideoEvent.m in Sources */,
+				3BBDD2AA531A86805C5A814A /* AlxTopOnSplashAdapter.m in Sources */,
+				12B4A20A2A65822E56FA855E /* AlxTopOnSplashDelegate.m in Sources */,
+				12DD3D813F1BECFC57EBA969 /* AlxTopOnSplashEvent.m in Sources */,
+				4D1FA936A6219E5558FAF6A1 /* AlxLevelPlayMetaInfo.m in Sources */,
+				1F1A3AD2F06A0D84259BEFB9 /* ISAlxCustomAdapter.m in Sources */,
+				BE0D17FABB04BA1522853CDF /* ISAlxCustomBanner.m in Sources */,
+				31ABE1F08C277B412D7C5B7D /* ISAlxCustomInterstitial.m in Sources */,
+				47A019B7482A594FC804B37E /* ISAlxCustomRewardedVideo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +506,10 @@
 				DEVELOPMENT_TEAM = 23Q35ZFNJZ;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../../../Sources/custom_adapter/**",
+				);
 				INFOPLIST_FILE = RixEngineObjcDemo/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Alxgorix advertising application case";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -275,6 +541,10 @@
 				DEVELOPMENT_TEAM = 23Q35ZFNJZ;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../../../Sources/custom_adapter/**",
+				);
 				INFOPLIST_FILE = RixEngineObjcDemo/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Alxgorix advertising application case";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -1,0 +1,41 @@
+workspace 'RixEngineDemos'
+platform :ios, '15.0'
+use_frameworks!
+
+target 'RixEngineObjcDemo' do
+  project 'ObjcDemo/RixSDKPodDemo/RixEngineObjcDemo.xcodeproj'
+  
+  # 本地 SDK 核心库
+  pod 'RixEngineAds', :path => '../'
+  
+  # 广告聚合平台 SDK（供测试适配器使用）
+  pod 'Google-Mobile-Ads-SDK', '12.6.0'
+  pod 'AppLovinSDK'
+  pod 'TPNiOS', '~> 6.5.34'
+  pod 'TPNMediationAdxSmartdigimktAdapter', '~> 6.5.79'
+  pod 'IronSourceSDK'
+end
+
+target 'AlxAdsDemo' do
+  project 'SwiftDemo/RixSDKPodDemo/AlxAdsDemo.xcodeproj'
+  
+  # 本地 SDK 核心库
+  pod 'RixEngineAds', :path => '../'
+  
+  # 广告聚合平台 SDK（供测试适配器使用）
+  pod 'Google-Mobile-Ads-SDK', '12.6.0'
+  pod 'AppLovinSDK'
+  pod 'TPNiOS', '~> 6.5.34'
+  pod 'TPNMediationAdxSmartdigimktAdapter', '~> 6.5.79'
+  pod 'IronSourceSDK'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 15.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      end
+    end
+  end
+end
