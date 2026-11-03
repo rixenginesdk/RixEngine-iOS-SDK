@@ -115,7 +115,7 @@
 			mainGroup = BA0505703043F0870031167E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				D78AEF41CA998862C77053F8 /* XCLocalSwiftPackageReference ".." */,
+				D78AEF41CA998862C77053F8 /* XCLocalSwiftPackageReference "../../.." */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BA05057A3043F0870031167E /* Products */;
@@ -363,47 +363,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		D78AEF41CA998862C77053F8 /* XCLocalSwiftPackageReference ".." */ = {
+		D78AEF41CA998862C77053F8 /* XCLocalSwiftPackageReference "../../.." */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../..;
 		};
 /* End XCLocalSwiftPackageReference section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		BAAA780D305D2ED8001C1B7D /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rixenginesdk/RixEngine-iOS-SDK.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		08B16BE0D8DFD93D2BEACD92 /* RixEngineAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D78AEF41CA998862C77053F8 /* XCLocalSwiftPackageReference ".." */;
-			productName = RixEngineAds;
-		};
-		BAAA780E305D2ED8001C1B7D /* RixAdsAdmobAdapter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BAAA780D305D2ED8001C1B7D /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
-			productName = RixAdsAdmobAdapter;
-		};
-		BAAA7810305D2ED8001C1B7D /* RixAdsMaxAdapter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BAAA780D305D2ED8001C1B7D /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
-			productName = RixAdsMaxAdapter;
-		};
-		BAAA7812305D2ED8001C1B7D /* RixAdsUnityLevelPlayAdapter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BAAA780D305D2ED8001C1B7D /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
-			productName = RixAdsUnityLevelPlayAdapter;
-		};
-		BAAA7814305D2ED8001C1B7D /* RixEngineAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BAAA780D305D2ED8001C1B7D /* XCRemoteSwiftPackageReference "RixEngine-iOS-SDK" */;
+			package = D78AEF41CA998862C77053F8 /* XCLocalSwiftPackageReference "../../.." */;
 			productName = RixEngineAds;
 		};
 /* End XCSwiftPackageProductDependency section */
