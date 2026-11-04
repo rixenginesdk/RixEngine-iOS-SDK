@@ -10,8 +10,8 @@ RixEngine Mobile Ads SDK helps you monetize mobile applications efficiently whil
 
 ### Requirements
 
-- Xcode 15.4 or later
-- iOS 13.0 or later (Demo workspace recommends iOS 15.0+ for Xcode 16/27 simulator toolchains)
+- Xcode 16.0 or later
+- iOS 15.0 or later
 - Swift 5.0 or later
 - CocoaPods 1.16 or later (if using CocoaPods)
 
@@ -34,11 +34,11 @@ In your `Podfile`, specify:
 ```ruby
 source 'https://cdn.cocoapods.org/'
 
-platform :ios, '13.0'
+platform :ios, '15.0'
 use_frameworks!
 
 target 'YourApp' do
-  pod 'RixEngineAds', '~> 2.1.1'
+  pod 'RixEngineAds', '~> 2.2.0'
 end
 ```
 
@@ -50,7 +50,7 @@ pod install --repo-update
 
 #### 2. Swift Package Manager (SPM)
 
-Swift Package Manager requires Xcode 15 or later. In Xcode, choose **File → Add Package Dependencies…** and enter the repository URL:
+Swift Package Manager requires Xcode 16.0 or later. In Xcode, choose **File → Add Package Dependencies…** and enter the repository URL:
 
 ```text
 https://github.com/rixenginesdk/RixEngine-iOS-SDK.git
@@ -167,8 +167,8 @@ RixEngine Mobile Ads SDK 帮助开发者高效变现移动应用。SDK 严格遵
 
 ### 环境要求
 
-- Xcode 15.4 或更高版本
-- iOS 13.0 或更高版本（示例工程统一 Workspace 推荐 iOS 15.0+）
+- Xcode 16.0 或更高版本
+- iOS 15.0 或更高版本
 - Swift 5.0 或更高版本
 - CocoaPods 1.16 或更高版本（若使用 CocoaPods）
 
@@ -191,11 +191,11 @@ RixEngine Mobile Ads SDK 帮助开发者高效变现移动应用。SDK 严格遵
 ```ruby
 source 'https://cdn.cocoapods.org/'
 
-platform :ios, '13.0'
+platform :ios, '15.0'
 use_frameworks!
 
 target 'YourApp' do
-  pod 'RixEngineAds', '~> 2.1.1'
+  pod 'RixEngineAds', '~> 2.2.0'
 end
 ```
 
@@ -207,7 +207,7 @@ pod install --repo-update
 
 #### 2. Swift Package Manager (SPM) 集成
 
-要求 Xcode 15 及以上。在 Xcode 菜单中选择 **File → Add Package Dependencies…**，输入仓库地址：
+要求 Xcode 16.0 及以上。在 Xcode 菜单中选择 **File → Add Package Dependencies…**，输入仓库地址：
 
 ```text
 https://github.com/rixenginesdk/RixEngine-iOS-SDK.git
