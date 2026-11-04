@@ -14,18 +14,19 @@ static NSString *const TAG = @"AlxTopOnBannerDelegate";
  */
 - (void)bannerViewAdLoad:(AlxBannerAdView *)bannerView {
     NSLog(@"%@: bannerViewAdLoad", TAG);
+    if (self.onAdLoaded && !self.onAdLoaded(bannerView)) {
+        return;
+    }
     
     // 获取价格（用于 C2S Bidding）
-    double price = [bannerView getPrice];
+    double rawPrice = [bannerView getPrice];
+    double price = (isfinite(rawPrice) && rawPrice >= 0) ? rawPrice : 0;
     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
-    
-    // 如果有价格，添加到 extra 中
-    if (price > 0) {
-        NSString *priceStr = [NSString stringWithFormat:@"%.2f", price];
-        adExtra[ATAdSendC2SBidPriceKey] = priceStr;
-        adExtra[ATAdSendC2SCurrencyTypeKey] = @(ATBiddingCurrencyTypeUS); // 根据实际情况选择货币类型
-        NSLog(@"%@: bannerViewAdLoad: price = %@", TAG, priceStr);
-    }
+    NSString *priceStr = [NSString stringWithFormat:@"%@", @(price)];
+    adExtra[ATAdSendC2SBidPriceKey] = priceStr;
+    adExtra[ATAdSendC2SCurrencyTypeKey] = @(ATBiddingCurrencyTypeUS);
+    adExtra[kATAdAssetsCustomObjectKey] = bannerView;
+    NSLog(@"%@: bannerViewAdLoad: price = %@", TAG, priceStr);
     
     // 将我们的广告 AlxSDK 回调中附带的横幅广告对象传递给TopOn SDK
     [self.adStatusBridge atOnBannerAdLoadedWithView:bannerView adExtra:adExtra];

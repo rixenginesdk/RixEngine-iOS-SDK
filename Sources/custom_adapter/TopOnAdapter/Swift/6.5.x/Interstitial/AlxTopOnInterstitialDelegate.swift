@@ -10,6 +10,9 @@ import AlxAds
 @objc(AlxTopOnInterstitialDelegate)
 public class AlxTopOnInterstitialDelegate: NSObject, AlxInterstitialAdDelegate {
     
+    /// 广告就绪时绑定竞价通知对象；返回false时忽略旧请求的加载回调。
+    var onAdLoaded: ((AlxAdDelegate) -> Bool)?
+
     private static let TAG = "AlxTopOnInterstitialDelegate"
     
     @objc public var adStatusBridge: ATInterstitialAdStatusBridge?
@@ -18,21 +21,20 @@ public class AlxTopOnInterstitialDelegate: NSObject, AlxInterstitialAdDelegate {
     // MARK: - AlxInterstitialAdDelegate
     
     public func interstitialAdLoad(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdLoad", AlxTopOnInterstitialDelegate.TAG)
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdLoad")
         
         // 保存广告对象引用
         self.interstitialAd = ad
         
         // 获取价格（用于 C2S Bidding）
-        let price = ad.getPrice()
+        guard onAdLoaded?(ad) ?? true else { return }
+        let rawPrice = ad.getPrice()
+        let price = (rawPrice.isFinite && rawPrice >= 0) ? rawPrice : 0
         var adExtra: [AnyHashable: Any] = [:]
-        
-        if price > 0 {
-            let priceStr = String(format: "%.2f", price)
-            adExtra[ATAdSendC2SBidPriceKey] = priceStr
-            adExtra[ATAdSendC2SCurrencyTypeKey] = NSNumber(value: 1) // US Dollar
-            NSLog("%@: interstitialAdLoad: price = %@", AlxTopOnInterstitialDelegate.TAG, priceStr)
-        }
+        let priceStr = String(price)
+        adExtra[ATAdSendC2SBidPriceKey] = priceStr
+        adExtra[ATAdSendC2SCurrencyTypeKey] = NSNumber(value: 1) // US Dollar
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdLoad: price = \(priceStr)")
         
         // 关键：将广告对象传给 TopOn SDK
         adExtra[kATAdAssetsCustomObjectKey] = ad
@@ -42,118 +44,103 @@ public class AlxTopOnInterstitialDelegate: NSObject, AlxInterstitialAdDelegate {
     }
     
     public func interstitialAdFailToLoad(_ ad: AlxInterstitialAd, didFailWithError error: Error) {
-        NSLog("%@: interstitialAdFailToLoad: %@", AlxTopOnInterstitialDelegate.TAG, error.localizedDescription)
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdFailToLoad: \(error.localizedDescription)")
         self.notifyLoadFailed(error: error)
     }
     
     public func interstitialAdImpression(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdImpression", AlxTopOnInterstitialDelegate.TAG)
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdImpression")
         self.notifyAdShow()
     }
     
     public func interstitialAdClick(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdClick", AlxTopOnInterstitialDelegate.TAG)
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdClick")
         self.notifyAdClick()
     }
     
     public func interstitialAdClose(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdClose", AlxTopOnInterstitialDelegate.TAG)
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdClose")
         self.notifyAdClosed()
     }
     
     public func interstitialAdRenderFail(_ ad: AlxInterstitialAd, didFailWithError error: Error) {
-        NSLog("%@: interstitialAdRenderFail: %@", AlxTopOnInterstitialDelegate.TAG, error.localizedDescription)
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdRenderFail: \(error.localizedDescription)")
         self.notifyAdShowFailed(error: error)
     }
     
     public func interstitialAdVideoStart(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdVideoStart", AlxTopOnInterstitialDelegate.TAG)
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdVideoStart")
         self.notifyVideoStart()
     }
     
     public func interstitialAdVideoEnd(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdVideoEnd", AlxTopOnInterstitialDelegate.TAG)
+        print("\(AlxTopOnInterstitialDelegate.TAG): interstitialAdVideoEnd")
         self.notifyVideoEnd()
     }
     
-    // MARK: - Dynamic Invocation Helper Methods
+    // MARK: - AdStatusBridge Helper Methods
     
     private func notifyInterstitialLoaded(adExtra: [AnyHashable: Any]) {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnInterstitialAdLoadedExtra:")
-            if bridge.responds(to: selector) {
-                bridge.perform(selector, with: adExtra)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnInterstitialAdLoadedExtra:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: adExtra)
         }
     }
     
     private func notifyLoadFailed(error: Error) {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdLoadFailed:adExtra:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: error, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdLoadFailed:adExtra:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: error as NSError, with: [:])
         }
     }
     
     private func notifyAdShow() {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdShow:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdShow:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: [:])
         }
     }
     
     private func notifyAdClick() {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdClick:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdClick:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: [:])
         }
     }
     
     private func notifyAdClosed() {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdClosed:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdClosed:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: [:])
         }
     }
     
     private func notifyAdShowFailed(error: Error) {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdShowFailed:extra:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: error, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdShowFailed:extra:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: error as NSError, with: [:])
         }
     }
     
     private func notifyVideoStart() {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdVideoStart:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdVideoStart:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: [:])
         }
     }
     
     private func notifyVideoEnd() {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdVideoEnd:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdVideoEnd:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: [:])
         }
     }
 }

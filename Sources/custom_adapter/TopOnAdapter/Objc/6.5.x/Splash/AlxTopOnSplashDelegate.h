@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) ATSplashAdStatusBridge *adStatusBridge;
 @property (nonatomic, weak, nullable) AlxSplashAd *splashAd;
+@property (nonatomic, copy, nullable) BOOL (^onAdLoaded)(id<AlxAdDelegate> ad);
 
 @end
 

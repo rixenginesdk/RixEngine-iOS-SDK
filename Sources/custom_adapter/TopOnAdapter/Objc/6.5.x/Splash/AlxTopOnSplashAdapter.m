@@ -44,8 +44,7 @@ static NSString *const TAG = @"AlxTopOnSplashAdapter";
     NSLog(@"%@: loadAD: bidId=%@", TAG, bidId ?: @"空");
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *unitKeyStr = [AlxTopOnBaseManager unitID];
-        NSString *unitId = argument.serverContentDic[unitKeyStr];
+        NSString *unitId = [AlxTopOnBaseManager parseUnitIDFromServerInfo:argument.serverContentDic];
 
         if (!unitId || unitId.length == 0) {
             NSString *errorStr = @"unitid is empty";
@@ -84,6 +83,7 @@ static NSString *const TAG = @"AlxTopOnSplashAdapter";
 
         if (bidId) {
             // Bidding 场景
+            AlxTopOnBindBiddingAdBlock bindBiddingAd = [self beginBiddingRequestWithArgument:argument];
             AlxTopOnBiddingRequest *biddingRequest = (AlxTopOnBiddingRequest *)[[AlxTopOnTool shared] getRequestItemWithUnitID:unitId];
             if (biddingRequest) {
                 self.splashAd = (AlxSplashAd *)biddingRequest.customObject;
@@ -93,6 +93,7 @@ static NSString *const TAG = @"AlxTopOnSplashAdapter";
                 self.splashAd.autoCloseOnFinish = autoClose;
 
                 if (self.splashAd) {
+                    bindBiddingAd(self.splashAd);
                     NSLog(@"%@: loadAD: bid ad loaded, notify success", TAG);
                     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
                     adExtra[kATAdAssetsCustomObjectKey] = self.splashAd;
@@ -111,13 +112,16 @@ static NSString *const TAG = @"AlxTopOnSplashAdapter";
         } else {
             // 普通加载场景
             self.splashAd = [[AlxSplashAd alloc] init];
-            self.splashAd.delegate = [self getSplashDelegate];
+            AlxTopOnSplashDelegate *delegate = [self getSplashDelegate];
+            delegate.adStatusBridge = self.adStatusBridge;
+            delegate.onAdLoaded = [self beginBiddingRequestWithArgument:argument];
+            self.splashAd.delegate = delegate;
             self.splashDelegate.splashAd = self.splashAd;
             self.splashAd.customBottomView = bottomView;
             self.splashAd.autoCloseOnFinish = autoClose;
 
             NSLog(@"%@: start loading splash ad with unitId: %@", TAG, unitId);
-            AlxAdRequest *req = [[[AlxAdRequest alloc] init] withUserExt:@{ @"bid_floor": @"1.68" }];
+            AlxAdRequest *req = [self buildAdRequestWithArgument:argument];
             [self.splashAd loadAdWithAdUnitId:unitId request:req];
         }
     });
@@ -169,7 +173,7 @@ static NSString *const TAG = @"AlxTopOnSplashAdapter";
     AlxTopOnBiddingRequest *request = [[AlxTopOnBiddingRequest alloc]
                                        initWithUnitGroup:unitGroupModel
                                        customEvent:customEvent
-                                       unitID:info[[AlxTopOnBaseManager unitID]]
+                                       unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:info]
                                        placementID:placementModel.placementID
                                        extraInfo:info
                                        adType:ATAdFormatSplash

@@ -15,7 +15,7 @@ static NSString *const TAG = @"AlxTopOnInterstitialEvent";
     NSLog(@"%@: interstitialAdLoad", TAG);
     if (self.isC2SBiding) {
         [AlxTopOnBiddingRequestManager disposeLoadSuccessWithPrice:[ad getPrice]
-                                                            unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                            unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
         self.isC2SBiding = NO;
     } else {
         [self trackInterstitialAdLoaded:ad adExtra:nil];
@@ -26,7 +26,7 @@ static NSString *const TAG = @"AlxTopOnInterstitialEvent";
     NSLog(@"%@: interstitialAdFailToLoad : %@", TAG, error.localizedDescription);
     if (self.isC2SBiding) {
         [AlxTopOnBiddingRequestManager disposeLoadFailWithError:error
-                                                         unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                         unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
     } else {
         [self trackInterstitialAdLoadFailed:error];
     }
@@ -62,7 +62,7 @@ static NSString *const TAG = @"AlxTopOnInterstitialEvent";
 }
 
 - (NSString *)networkUnitId {
-    return self.serverInfo[[AlxTopOnBaseManager unitID]] ?: @"";
+    return [AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo] ?: @"";
 }
 
 - (void)dealloc {

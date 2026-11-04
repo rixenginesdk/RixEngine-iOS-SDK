@@ -51,12 +51,12 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
     
     // 文档要求，通常需要在主线程执行 / Documentation requires execution on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *uuitKeyStr = [AlxTopOnBaseManager unitID];
-        NSString *uuitId = argument.serverContentDic[uuitKeyStr];
+        NSString *uuitId = [AlxTopOnBaseManager parseUnitIDFromServerInfo:argument.serverContentDic];
         if (!uuitId || uuitId.length == 0) {
             NSString *errorStr = @"uuitid is empty";
             NSLog(@"%@: loadAD: error = %@", TAG, errorStr);
-            [AlxTopOnBaseManager errorWithCode:-100 message:errorStr];
+            NSError *error = [AlxTopOnBaseManager errorWithCode:-100 message:errorStr];
+            [self.adStatusBridge atOnAdLoadFailed:error adExtra:nil];
             return;
         }
         NSLog(@"%@: loadAD: uuitid = %@", TAG, uuitId);
@@ -64,11 +64,13 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
         if (bidId) {
             // Bidding 场景：从缓存中取出已加载的广告
             // Bidding scenario: retrieve the pre-loaded ad from cache
+            AlxTopOnBindBiddingAdBlock bindBiddingAd = [self beginBiddingRequestWithArgument:argument];
             AlxTopOnBiddingRequest *biddingRequest = [[AlxTopOnTool shared] getRequestItemWithUnitID:uuitId];
             if (biddingRequest) {
                 self.bannerAd = (AlxBannerAdView *)biddingRequest.customObject;
                 
                 if (self.bannerAd) {
+                    bindBiddingAd(self.bannerAd);
                     NSLog(@"%@: loadAD: bid ad loaded, notify success", TAG);
                     [self.adStatusBridge atOnBannerAdLoadedWithView:self.bannerAd adExtra:nil];
                 } else {
@@ -97,12 +99,15 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
             
             // ⚠️ 注意：delegate 应该设置为 bannerDelegate，而不是 adStatusBridge
             // ⚠️ Note: delegate must be set to bannerDelegate, not adStatusBridge
+            self.bannerDelegate.adStatusBridge = self.adStatusBridge;
+            self.bannerDelegate.onAdLoaded = [self beginBiddingRequestWithArgument:argument];
             self.bannerAd.delegate = self.bannerDelegate;
             self.bannerAd.refreshInterval = 0;
             self.bannerAd.translatesAutoresizingMaskIntoConstraints = NO;
             
             NSLog(@"%@: start loading ad with unitId: %@", TAG, uuitId);
-            [self.bannerAd loadAdWithAdUnitId:uuitId];
+            AlxAdRequest *req = [self buildAdRequestWithArgument:argument];
+            [self.bannerAd loadAdWithAdUnitId:uuitId request:req];
         }
     });
 }
@@ -127,7 +132,7 @@ static NSString *const TAG = @"AlxTopOnBannerAdapter";
     AlxTopOnBiddingRequest *request = [[AlxTopOnBiddingRequest alloc]
                                        initWithUnitGroup:unitGroupModel
                                        customEvent:customEvent
-                                       unitID:info[[AlxTopOnBaseManager unitID]]
+                                       unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:info]
                                        placementID:placementModel.placementID
                                        extraInfo:info
                                        adType:ATAdFormatBanner

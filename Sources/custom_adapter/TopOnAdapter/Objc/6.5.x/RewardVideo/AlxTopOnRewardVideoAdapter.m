@@ -42,8 +42,7 @@ static NSString *const TAG = @"AlxTopOnRewardVideoAdapter";
     NSLog(@"%@: loadAD: bidId=%@", TAG, bidId ?: @"空");
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *unitKeyStr = [AlxTopOnBaseManager unitID];
-        NSString *unitId = argument.serverContentDic[unitKeyStr];
+        NSString *unitId = [AlxTopOnBaseManager parseUnitIDFromServerInfo:argument.serverContentDic];
         
         if (!unitId || unitId.length == 0) {
             NSString *errorStr = @"unitid is empty";
@@ -57,11 +56,13 @@ static NSString *const TAG = @"AlxTopOnRewardVideoAdapter";
         if (bidId) {
             // Bidding 场景：从缓存中取出已加载的广告
             // Bidding scenario: retrieve the pre-loaded ad from cache
+            AlxTopOnBindBiddingAdBlock bindBiddingAd = [self beginBiddingRequestWithArgument:argument];
             AlxTopOnBiddingRequest *biddingRequest = [[AlxTopOnTool shared] getRequestItemWithUnitID:unitId];
             if (biddingRequest) {
                 self.rewardedAd = (AlxRewardVideoAd *)biddingRequest.customObject;
                 
                 if (self.rewardedAd) {
+                    bindBiddingAd(self.rewardedAd);
                     NSLog(@"%@: loadAD: bid ad loaded, notify success", TAG);
                     // ⚠️ 注意：将广告对象传给 TopOn SDK
                     // ⚠️ Note: Pass the ad object to the TopOn SDK
@@ -82,12 +83,15 @@ static NSString *const TAG = @"AlxTopOnRewardVideoAdapter";
         } else {
             // 普通加载场景 / Normal (non-bidding) load scenario
             self.rewardedAd = [[AlxRewardVideoAd alloc] init];
+            self.rewardVideoDelegate.adStatusBridge = self.adStatusBridge;
+            self.rewardVideoDelegate.onAdLoaded = [self beginBiddingRequestWithArgument:argument];
             self.rewardedAd.delegate = self.rewardVideoDelegate;
             // 设置 Delegate 的广告对象引用 / Set the ad object reference on the delegate
             self.rewardVideoDelegate.rewardedAd = self.rewardedAd;
             
             NSLog(@"%@: start loading ad with unitId: %@", TAG, unitId);
-            [self.rewardedAd loadAdWithAdUnitId:unitId];
+            AlxAdRequest *req = [self buildAdRequestWithArgument:argument];
+            [self.rewardedAd loadAdWithAdUnitId:unitId request:req];
         }
     });
 }
@@ -112,7 +116,7 @@ static NSString *const TAG = @"AlxTopOnRewardVideoAdapter";
     AlxTopOnBiddingRequest *request = [[AlxTopOnBiddingRequest alloc]
                                        initWithUnitGroup:unitGroupModel
                                        customEvent:customEvent
-                                       unitID:info[[AlxTopOnBaseManager unitID]]
+                                       unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:info]
                                        placementID:placementModel.placementID
                                        extraInfo:info
                                        adType:ATAdFormatRewardedVideo

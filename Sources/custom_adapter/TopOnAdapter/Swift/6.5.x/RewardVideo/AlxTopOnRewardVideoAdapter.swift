@@ -25,58 +25,29 @@ public class AlxTopOnRewardVideoAdapter: AlxTopOnBaseAdapter, ATBaseRewardedAdap
     // MARK: - 广告加载 / Ad Load
     
     @objc public override func loadAD(with argument: ATAdMediationArgument) {
-        NSLog("%@: loadAD(with:)", AlxTopOnRewardVideoAdapter.TAG)
-        NSLog("%@: loadAD: isMainThread=%@", AlxTopOnRewardVideoAdapter.TAG, Thread.current.isMainThread ? "YES" : "NO")
-        
-        let bidId = argument.serverContentDic[kATAdapterCustomInfoBuyeruIdKey] as? String
-        NSLog("%@: loadAD: bidId=%@", AlxTopOnRewardVideoAdapter.TAG, bidId ?? "空")
+        print("\(AlxTopOnRewardVideoAdapter.TAG): loadAD(with:)")
+        print("\(AlxTopOnRewardVideoAdapter.TAG): loadAD: isMainThread=\(Thread.current.isMainThread ? "YES" : "NO")")
         
         DispatchQueue.main.async {
-            let unitKeyStr = AlxTopOnBaseManager.unitID
-            guard let unitId = argument.serverContentDic[unitKeyStr] as? String, !unitId.isEmpty else {
+            self.rewardVideoDelegate = AlxTopOnRewardVideoDelegate()
+            self.rewardVideoDelegate.adStatusBridge = self.adStatusBridge
+            self.rewardVideoDelegate.onAdLoaded = self.beginBiddingRequest(with: argument)
+            guard let unitId = AlxTopOnBaseManager.parseUnitID(from: argument.serverContentDic), !unitId.isEmpty else {
                 let errorStr = "unitid is empty"
-                NSLog("%@: loadAD: error = %@", AlxTopOnRewardVideoAdapter.TAG, errorStr)
+                print("\(AlxTopOnRewardVideoAdapter.TAG): loadAD: error = \(errorStr)")
                 let error = AlxTopOnBaseManager.error(code: -100, msg: errorStr)
                 self.notifyLoadFailed(error: error)
                 return
             }
-            NSLog("%@: loadAD: unitid = %@", AlxTopOnRewardVideoAdapter.TAG, unitId)
+            print("\(AlxTopOnRewardVideoAdapter.TAG): loadAD: unitid = \(unitId)")
             
-            if bidId != nil {
-                // Bidding 场景：从缓存中取出已加载的广告
-                // Bidding scenario: retrieve the pre-loaded ad from cache
-                if let biddingRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitId) as? AlxTopOnBiddingRequest {
-                    self.rewardedAd = biddingRequest.customObject as? AlxRewardVideoAd
-                    
-                    if let rewardedAd = self.rewardedAd {
-                        NSLog("%@: loadAD: bid ad loaded, notify success", AlxTopOnRewardVideoAdapter.TAG)
-                        var adExtra: [AnyHashable: Any] = [:]
-                        adExtra[kATAdAssetsCustomObjectKey] = rewardedAd
-                        self.notifyRewardedAdLoaded(adExtra: adExtra)
-                    } else {
-                        NSLog("%@: loadAD: bid ad object is empty", AlxTopOnRewardVideoAdapter.TAG)
-                        let error = NSError(domain: "AlxTopOnAdapter", code: -100, userInfo: [NSLocalizedDescriptionKey: "Bid ad object is empty"])
-                        self.notifyLoadFailed(error: error)
-                    }
-                } else {
-                    NSLog("%@: loadAD: bid request not found in cache", AlxTopOnRewardVideoAdapter.TAG)
-                    let error = NSError(domain: "AlxTopOnAdapter", code: -100, userInfo: [NSLocalizedDescriptionKey: "Bid request not found"])
-                    self.notifyLoadFailed(error: error)
-                }
-                AlxTopOnTool.shared.removeRequestItem(withUnitID: unitId)
-            } else {
-                // 普通加载场景 / Normal (non-bidding) load scenario
-                self.rewardedAd = AlxRewardVideoAd()
-                self.rewardedAd?.delegate = self.getRewardVideoDelegate()
-                self.rewardVideoDelegate.rewardedAd = self.rewardedAd
-                
-                NSLog("%@: start loading ad with unitId: %@", AlxTopOnRewardVideoAdapter.TAG, unitId)
-                // 测试新增的扩展字段
-                let req = AlxAdRequest().withUserExt([
-                    "bid_floor": "1.68"
-                ])
-                self.rewardedAd?.loadAd(adUnitId: unitId, request: req)
-            }
+            self.rewardedAd = AlxRewardVideoAd()
+            self.rewardedAd?.delegate = self.getRewardVideoDelegate()
+            self.rewardVideoDelegate.rewardedAd = self.rewardedAd
+
+            print("\(AlxTopOnRewardVideoAdapter.TAG): start loading ad with unitId: \(unitId)")
+            let req = self.buildAdRequest(with: argument)
+            self.rewardedAd?.loadAd(adUnitId: unitId, request: req)
         }
     }
     
@@ -106,47 +77,17 @@ public class AlxTopOnRewardVideoAdapter: AlxTopOnBaseAdapter, ATBaseRewardedAdap
         }
     }
     
-    // MARK: - C2S 竞价 / C2S Bidding
-    
-    @objc public static func bidRequestWithPlacementModel(_ placementModel: ATPlacementModel,
-                                                          unitGroupModel: ATUnitGroupModel,
-                                                          info: [AnyHashable: Any],
-                                                          completion: @escaping (ATBidInfo?, Error?) -> Void) {
-        NSLog("%@: bidRequestWithPlacementModel", AlxTopOnRewardVideoAdapter.TAG)
-        
-        DispatchQueue.main.async {
-            if !AlxTopOnBaseManager.isInitialized {
-                AlxTopOnBaseManager.initSDK(serverInfo: info)
-            }
-        }
-        
-        let customEvent = AlxTopOnRewardVideoEvent(info: info, localInfo: info)
-        customEvent.isC2SBiding = true
-        
-        let request = AlxTopOnBiddingRequest(
-            unitGroup: unitGroupModel,
-            customEvent: customEvent,
-            unitID: info[AlxTopOnBaseManager.unitID] as? String,
-            placementID: placementModel.placementID,
-            extraInfo: info,
-            adType: ATAdFormat.rewardedVideo,
-            bidCompletion: completion
-        )
-        
-        AlxTopOnBiddingRequestManager.shared.start(with: request)
-    }
-    
     // MARK: - 广告就绪检查（实例方法）/ Ad Ready Check (Instance Method)
     
     @objc public func adReadyRewarded(withInfo info: [AnyHashable: Any]) -> Bool {
-        NSLog("%@: adReadyRewardedWithInfo", AlxTopOnRewardVideoAdapter.TAG)
+        print("\(AlxTopOnRewardVideoAdapter.TAG): adReadyRewardedWithInfo")
         
         if self.rewardedAd != nil {
-            NSLog("%@: adReady = YES", AlxTopOnRewardVideoAdapter.TAG)
+            print("\(AlxTopOnRewardVideoAdapter.TAG): adReady = YES")
             return true
         }
         
-        NSLog("%@: adReady = NO", AlxTopOnRewardVideoAdapter.TAG)
+        print("\(AlxTopOnRewardVideoAdapter.TAG): adReady = NO")
         return false
     }
     
@@ -154,14 +95,14 @@ public class AlxTopOnRewardVideoAdapter: AlxTopOnBaseAdapter, ATBaseRewardedAdap
     
     @objc(showRewardedVideoInViewController:)
     public func showRewardedVideo(in viewController: UIViewController) {
-        NSLog("%@: showRewardedVideoInViewController", AlxTopOnRewardVideoAdapter.TAG)
+        print("\(AlxTopOnRewardVideoAdapter.TAG): showRewardedVideoInViewController")
         
         DispatchQueue.main.async {
             if let rewardedAd = self.rewardedAd {
                 rewardedAd.showAd(present: viewController)
-                NSLog("%@: ad shown", AlxTopOnRewardVideoAdapter.TAG)
+                print("\(AlxTopOnRewardVideoAdapter.TAG): ad shown")
             } else {
-                NSLog("%@: rewardedAd is nil", AlxTopOnRewardVideoAdapter.TAG)
+                print("\(AlxTopOnRewardVideoAdapter.TAG): rewardedAd is nil")
             }
         }
     }

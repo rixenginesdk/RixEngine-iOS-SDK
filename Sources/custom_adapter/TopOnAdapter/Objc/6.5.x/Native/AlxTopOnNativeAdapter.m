@@ -59,8 +59,7 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
     NSLog(@"%@: loadAD: bidId=%@", TAG, bidId ?: @"空");
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *unitKeyStr = [AlxTopOnBaseManager unitID];
-        NSString *unitId = argument.serverContentDic[unitKeyStr];
+        NSString *unitId = [AlxTopOnBaseManager parseUnitIDFromServerInfo:argument.serverContentDic];
         
         if (!unitId || unitId.length == 0) {
             NSString *errorStr = @"unitid is empty";
@@ -74,11 +73,13 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
         if (bidId) {
             // Bidding 场景：从缓存中取出已加载的广告
             // Bidding scenario: retrieve the pre-loaded ad from cache
+            AlxTopOnBindBiddingAdBlock bindBiddingAd = [self beginBiddingRequestWithArgument:argument];
             AlxTopOnBiddingRequest *biddingRequest = [[AlxTopOnTool shared] getRequestItemWithUnitID:unitId];
             if (biddingRequest) {
                 self.nativeAd = (AlxNativeAd *)biddingRequest.customObject;
                 
                 if (self.nativeAd) {
+                    bindBiddingAd(self.nativeAd);
                     NSLog(@"%@: loadAD: bid ad loaded, creating native object", TAG);
                     
                     // ⚠️ 正确方式：创建 AlxTopOnNativeObject 对象
@@ -106,11 +107,23 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
             [[AlxTopOnTool shared] removeRequestItemWithUnitID:unitId];
         } else {
             // 普通加载场景 / Normal (non-bidding) load scenario
+            self.nativeAd = nil;
+            AlxTopOnBindBiddingAdBlock bindBiddingAd = [self beginBiddingRequestWithArgument:argument];
+            __weak typeof(self) weakSelf = self;
+            self.nativeDelegate.adStatusBridge = self.adStatusBridge;
+            self.nativeDelegate.onAdLoaded = ^BOOL(id<AlxAdDelegate> ad) {
+                if (!bindBiddingAd(ad)) {
+                    return NO;
+                }
+                weakSelf.nativeAd = (AlxNativeAd *)ad;
+                return YES;
+            };
             self.nativeAdLoader = [[AlxNativeAdLoader alloc] initWithAdUnitID:unitId];
             self.nativeAdLoader.delegate = self.nativeDelegate;
             
             NSLog(@"%@: start loading ad with unitId: %@", TAG, unitId);
-            [self.nativeAdLoader loadAd];
+            AlxAdRequest *req = [self buildAdRequestWithArgument:argument];
+            [self.nativeAdLoader loadAdWithRequest:req];
         }
     });
 }
@@ -136,7 +149,7 @@ static NSString *const TAG = @"AlxTopOnNativeAdapter";
     AlxTopOnBiddingRequest *request = [[AlxTopOnBiddingRequest alloc]
                                        initWithUnitGroup:unitGroupModel
                                        customEvent:customEvent
-                                       unitID:info[[AlxTopOnBaseManager unitID]]
+                                       unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:info]
                                        placementID:placementModel.placementID
                                        extraInfo:info
                                        adType:ATAdFormatNative

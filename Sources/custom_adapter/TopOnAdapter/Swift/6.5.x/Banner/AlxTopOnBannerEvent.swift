@@ -17,9 +17,9 @@ public class AlxTopOnBannerEvent: ATBannerCustomEvent,AlxBannerViewAdDelegate {
     }
     
     public func bannerViewAdLoad(_ bannerView: AlxBannerAdView) {
-        NSLog("%@: bannerViewAdLoad",AlxTopOnBannerEvent.TAG)
+        print("\(AlxTopOnBannerEvent.TAG): bannerViewAdLoad")
         if self.isC2SBiding {
-            AlxTopOnBiddingRequestManager.disposeLoadSuccess(price: bannerView.getPrice(), unitID: self.serverInfo[AlxTopOnBaseManager.unitID] as? String)
+            AlxTopOnBiddingRequestManager.disposeLoadSuccess(price: bannerView.getPrice(), unitID: AlxTopOnBaseManager.parseUnitID(from: self.serverInfo))
             self.isC2SBiding = false
         }else{
             self.trackBannerAdLoaded(bannerView, adExtra: nil)
@@ -27,9 +27,9 @@ public class AlxTopOnBannerEvent: ATBannerCustomEvent,AlxBannerViewAdDelegate {
     }
     
     public func bannerViewAdFailToLoad(_ bannerView: AlxBannerAdView, didFailWithError error: Error){
-        NSLog("%@: bannerViewAdFailToLoad: %@",AlxTopOnBannerEvent.TAG,error.localizedDescription)
+        print("\(AlxTopOnBannerEvent.TAG): bannerViewAdFailToLoad: \(error.localizedDescription)")
         if self.isC2SBiding {
-            AlxTopOnBiddingRequestManager.disposeLoadFail(error: error, unitID: self.serverInfo[AlxTopOnBaseManager.unitID] as? String)
+            AlxTopOnBiddingRequestManager.disposeLoadFail(error: error, unitID: AlxTopOnBaseManager.parseUnitID(from: self.serverInfo))
         }else{
             self.trackBannerAdLoadFailed(error)
         }
@@ -37,23 +37,23 @@ public class AlxTopOnBannerEvent: ATBannerCustomEvent,AlxBannerViewAdDelegate {
     
     /// callback to developer when ad is Impression
     public func bannerViewAdImpression(_ bannerView: AlxBannerAdView) {
-        NSLog("%@: bannerViewAdImpression",AlxTopOnBannerEvent.TAG)
+        print("\(AlxTopOnBannerEvent.TAG): bannerViewAdImpression")
         self.trackBannerAdImpression()
     }
     
     public func bannerViewAdClick(_ bannerView: AlxBannerAdView) {
-        NSLog("%@: bannerViewAdClick",AlxTopOnBannerEvent.TAG)
+        print("\(AlxTopOnBannerEvent.TAG): bannerViewAdClick")
         self.trackBannerAdClick()
     }
     
     public func bannerViewAdClose(_ bannerView: AlxBannerAdView) {
-        NSLog("%@: bannerViewAdClose",AlxTopOnBannerEvent.TAG)
+        print("\(AlxTopOnBannerEvent.TAG): bannerViewAdClose")
         self.trackBannerAdClosed()
     }
     
     public override var networkUnitId: String {
         get {
-            return self.serverInfo[AlxTopOnBaseManager.unitID] as? String ?? ""
+            return AlxTopOnBaseManager.parseUnitID(from: self.serverInfo) ?? ""
         }
         set {
         }

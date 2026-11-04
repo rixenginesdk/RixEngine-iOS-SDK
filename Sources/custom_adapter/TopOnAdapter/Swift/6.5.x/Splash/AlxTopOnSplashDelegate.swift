@@ -11,6 +11,9 @@ import AlxAds
 @objc(AlxTopOnSplashDelegate)
 public class AlxTopOnSplashDelegate: NSObject, AlxSplashAdDelegate {
     
+    /// 广告就绪时绑定竞价通知对象；返回false时忽略旧请求的加载回调。
+    var onAdLoaded: ((AlxAdDelegate) -> Bool)?
+
     private static let TAG = "AlxTopOnSplashDelegate"
     
     @objc public var adStatusBridge: ATSplashAdStatusBridge?
@@ -19,114 +22,105 @@ public class AlxTopOnSplashDelegate: NSObject, AlxSplashAdDelegate {
     // MARK: - AlxSplashAdDelegate
     
     public func splashAdDidLoad(_ ad: AlxSplashAd) {
-        NSLog("%@: splashAdDidLoad", AlxTopOnSplashDelegate.TAG)
+        print("\(AlxTopOnSplashDelegate.TAG): splashAdDidLoad")
         self.splashAd = ad
         
-        let price = ad.getPrice()
+        guard onAdLoaded?(ad) ?? true else { return }
+        let rawPrice = ad.getPrice()
+        let price = (rawPrice.isFinite && rawPrice >= 0) ? rawPrice : 0
         var adExtra: [AnyHashable: Any] = [:]
-        
-        if price > 0 {
-            let priceStr = String(format: "%.2f", price)
-            adExtra[ATAdSendC2SBidPriceKey] = priceStr
-            adExtra[ATAdSendC2SCurrencyTypeKey] = NSNumber(value: 1)
-            NSLog("%@: splashAdDidLoad: price = %@", AlxTopOnSplashDelegate.TAG, priceStr)
-        }
+        let priceStr = String(price)
+        adExtra[ATAdSendC2SBidPriceKey] = priceStr
+        adExtra[ATAdSendC2SCurrencyTypeKey] = NSNumber(value: 1)
+        print("\(AlxTopOnSplashDelegate.TAG): splashAdDidLoad: price = \(priceStr)")
         
         adExtra[kATAdAssetsCustomObjectKey] = ad
+        
         self.notifySplashLoaded(adExtra: adExtra)
     }
     
     public func splashAdDidFailToLoad(_ ad: AlxSplashAd, didFailWithError error: Error) {
-        NSLog("%@: splashAdDidFailToLoad: %@", AlxTopOnSplashDelegate.TAG, error.localizedDescription)
+        print("\(AlxTopOnSplashDelegate.TAG): splashAdDidFailToLoad: \(error.localizedDescription)")
         self.notifyLoadFailed(error: error)
     }
     
     public func splashAdDidShow(_ ad: AlxSplashAd) {
-        NSLog("%@: splashAdDidShow", AlxTopOnSplashDelegate.TAG)
+        print("\(AlxTopOnSplashDelegate.TAG): splashAdDidShow")
         self.notifyAdShow()
     }
     
     public func splashAdDidClick(_ ad: AlxSplashAd) {
-        NSLog("%@: splashAdDidClick", AlxTopOnSplashDelegate.TAG)
+        print("\(AlxTopOnSplashDelegate.TAG): splashAdDidClick")
         self.notifyAdClick()
     }
     
     public func splashAdDidClose(_ ad: AlxSplashAd) {
-        NSLog("%@: splashAdDidClose", AlxTopOnSplashDelegate.TAG)
+        print("\(AlxTopOnSplashDelegate.TAG): splashAdDidClose")
         self.notifyAdClosed()
     }
     
     public func splashAdRenderDidFail(_ ad: AlxSplashAd, didFailWithError error: Error) {
-        NSLog("%@: splashAdRenderDidFail: %@", AlxTopOnSplashDelegate.TAG, error.localizedDescription)
+        print("\(AlxTopOnSplashDelegate.TAG): splashAdRenderDidFail: \(error.localizedDescription)")
         self.notifyAdShowFailed(error: error)
     }
     
     public func splashAdCountdown(_ ad: AlxSplashAd, countdown: Int) {
-        NSLog("%@: splashAdCountdown: %d", AlxTopOnSplashDelegate.TAG, countdown)
+        print("\(AlxTopOnSplashDelegate.TAG): splashAdCountdown: \(countdown)")
         if let bridge = self.adStatusBridge {
             let selector = NSSelectorFromString("atOnSplashAdCountdownTime:")
             if bridge.responds(to: selector) {
-                bridge.perform(selector, with: countdown as NSNumber)
+                bridge.perform(selector, with: countdown)
             }
         }
     }
     
-    // MARK: - Dynamic Invocation Helper Methods
+    // MARK: - AdStatusBridge Helper Methods
     
     private func notifySplashLoaded(adExtra: [AnyHashable: Any]) {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnSplashAdLoadedExtra:")
-            if bridge.responds(to: selector) {
-                bridge.perform(selector, with: adExtra)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnSplashAdLoadedExtra:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: adExtra)
         }
     }
     
     private func notifyLoadFailed(error: Error) {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdLoadFailed:adExtra:")
-            if bridge.responds(to: selector) {
-                bridge.perform(selector, with: error, with: nil)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdLoadFailed:adExtra:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: error as NSError, with: nil)
         }
     }
     
     private func notifyAdShow() {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdShow:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdShow:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: [:])
         }
     }
     
     private func notifyAdClick() {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdClick:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdClick:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: [:])
         }
     }
     
     private func notifyAdClosed() {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdClosed:")
-            if bridge.responds(to: selector) {
-                let emptyDict: [AnyHashable: Any] = [:]
-                bridge.perform(selector, with: emptyDict)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdClosed:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: [:])
         }
     }
     
     private func notifyAdShowFailed(error: Error) {
-        if let bridge = self.adStatusBridge {
-            let selector = NSSelectorFromString("atOnAdShowFailed:extra:")
-            if bridge.responds(to: selector) {
-                bridge.perform(selector, with: error, with: nil)
-            }
+        guard let bridge = self.adStatusBridge else { return }
+        let selector = NSSelectorFromString("atOnAdShowFailed:extra:")
+        if bridge.responds(to: selector) {
+            bridge.perform(selector, with: error as NSError, with: nil)
         }
     }
 }

@@ -14,16 +14,17 @@ static NSString *const TAG = @"AlxTopOnSplashDelegate";
 - (void)splashAdDidLoad:(AlxSplashAd *)ad {
     NSLog(@"%@: splashAdDidLoad", TAG);
     self.splashAd = ad;
-
-    double price = [ad getPrice];
-    NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
-
-    if (price > 0) {
-        NSString *priceStr = [NSString stringWithFormat:@"%.2f", price];
-        adExtra[ATAdSendC2SBidPriceKey] = priceStr;
-        adExtra[ATAdSendC2SCurrencyTypeKey] = @(ATBiddingCurrencyTypeUS);
-        NSLog(@"%@: splashAdDidLoad: price = %@", TAG, priceStr);
+    if (self.onAdLoaded && !self.onAdLoaded(ad)) {
+        return;
     }
+
+    double rawPrice = [ad getPrice];
+    double price = (isfinite(rawPrice) && rawPrice >= 0) ? rawPrice : 0;
+    NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
+    NSString *priceStr = [NSString stringWithFormat:@"%@", @(price)];
+    adExtra[ATAdSendC2SBidPriceKey] = priceStr;
+    adExtra[ATAdSendC2SCurrencyTypeKey] = @(ATBiddingCurrencyTypeUS);
+    NSLog(@"%@: splashAdDidLoad: price = %@", TAG, priceStr);
 
     adExtra[kATAdAssetsCustomObjectKey] = ad;
     [self notifySplashLoaded:adExtra];

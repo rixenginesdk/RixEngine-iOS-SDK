@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (class, nonatomic, assign) BOOL isInitialized;
 + (NSString *)unitID;
++ (nullable NSString *)parseUnitIDFromServerInfo:(nullable NSDictionary *)serverInfo;
 
 + (nullable NSString *)initSDKWithServerInfo:(NSDictionary *)serverInfo;
 + (void)sdkInfo;

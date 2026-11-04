@@ -7,35 +7,54 @@ import AnyThinkSDK
 import AlxAds
 
 @objc(AlxTopOnBaseManager)
-public class AlxTopOnBaseManager:NSObject {
+public class AlxTopOnBaseManager: NSObject {
     
     private static let TAG = "AlxTopOnBaseManager"
     
     public static var isInitialized:Bool = false
     
-    public static let unitID = "slot_id"
+    public static let unitID = "unitid"
+    public static let slotID = "slot_id"
+
+    /// 解析广告位 ID：优先读取 `unitid`，若为空则回退读取 `slot_id`。
+    @objc public static func parseUnitID(from serverInfo: [AnyHashable: Any]?) -> String? {
+        guard let serverInfo = serverInfo else { return nil }
+        if let rawUnitId = serverInfo["unitid"] {
+            let str = "\(rawUnitId)".trimmingCharacters(in: .whitespacesAndNewlines)
+            if !str.isEmpty {
+                return str
+            }
+        }
+        if let rawSlotId = serverInfo["slot_id"] {
+            let str = "\(rawSlotId)".trimmingCharacters(in: .whitespacesAndNewlines)
+            if !str.isEmpty {
+                return str
+            }
+        }
+        return nil
+    }
     
     @discardableResult
     public static func initSDK(serverInfo: [AnyHashable: Any]) -> String?{
-        NSLog("%@: alx-sdk-version:%@",AlxTopOnBaseManager.TAG,AlxSdk.getSDKVersion())
-        NSLog("%@: topon-sdk-version:%@",AlxTopOnBaseManager.TAG,ATAPI.sharedInstance().version())
-        NSLog("%@: topon-adapter-version:%@",AlxTopOnBaseManager.TAG,AlxTopOnMetaInf.ADAPTER_VERSION)
+        print("\(AlxTopOnBaseManager.TAG): alx-sdk-version:\(AlxSdk.getSDKVersion())")
+        print("\(AlxTopOnBaseManager.TAG): topon-sdk-version:\(ATAPI.sharedInstance().version())")
+        print("\(AlxTopOnBaseManager.TAG): topon-adapter-version:\(AlxTopOnMetaInf.ADAPTER_VERSION)")
         
         let appid:String? = serverInfo["appid"] as? String
         let sid:String? = serverInfo["sid"] as? String
         let token:String? = serverInfo["token"] as? String
         let debug:String? = serverInfo["isdebug"] as? String
         
-        NSLog("%@: token=%@; appid=%@; sid=%@",AlxTopOnBaseManager.TAG,token ?? "",appid ?? "",sid ?? "")
+        print("\(AlxTopOnBaseManager.TAG): token=\(token ?? ""); appid=\(appid ?? ""); sid=\(sid ?? "")")
         guard let appid = appid,let sid=sid,let token=token else{
             let errorStr="initialize alx params: appid or sid or token is empty"
-            NSLog("%@: error: %@",AlxTopOnBaseManager.TAG,errorStr)
+            print("\(AlxTopOnBaseManager.TAG): error: \(errorStr)")
             return errorStr
         }
         
+        self.sdkInfo()
         AlxSdk.initializeSDK(token: token, sid: sid, appId: appid)
         AlxTopOnBaseManager.isInitialized = true
-        self.sdkInfo()
         
         if let debug,!debug.isEmpty {
             if debug.lowercased() == "true" {

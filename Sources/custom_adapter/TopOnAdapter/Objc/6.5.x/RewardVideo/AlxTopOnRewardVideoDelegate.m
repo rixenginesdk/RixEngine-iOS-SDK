@@ -14,17 +14,18 @@ static NSString *const TAG = @"AlxTopOnRewardVideoDelegate";
     
     // 保存广告对象引用
     self.rewardedAd = ad;
+    if (self.onAdLoaded && !self.onAdLoaded(ad)) {
+        return;
+    }
     
     // 获取价格（用于 C2S Bidding）
-    double price = [ad getPrice];
+    double rawPrice = [ad getPrice];
+    double price = (isfinite(rawPrice) && rawPrice >= 0) ? rawPrice : 0;
     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
-    
-    if (price > 0) {
-        NSString *priceStr = [NSString stringWithFormat:@"%.2f", price];
-        adExtra[ATAdSendC2SBidPriceKey] = priceStr;
-        adExtra[ATAdSendC2SCurrencyTypeKey] = @(ATBiddingCurrencyTypeUS);
-        NSLog(@"%@: rewardVideoAdLoad: price = %@", TAG, priceStr);
-    }
+    NSString *priceStr = [NSString stringWithFormat:@"%@", @(price)];
+    adExtra[ATAdSendC2SBidPriceKey] = priceStr;
+    adExtra[ATAdSendC2SCurrencyTypeKey] = @(ATBiddingCurrencyTypeUS);
+    NSLog(@"%@: rewardVideoAdLoad: price = %@", TAG, priceStr);
     
     // ⚠️ 注意：将广告对象传给 TopOn SDK
     adExtra[kATAdAssetsCustomObjectKey] = ad;

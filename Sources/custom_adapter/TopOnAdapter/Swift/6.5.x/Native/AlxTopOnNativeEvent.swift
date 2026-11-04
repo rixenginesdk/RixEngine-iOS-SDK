@@ -19,14 +19,14 @@ public class AlxTopOnNativeEvent: ATNativeADCustomEvent,AlxNativeAdLoaderDelegat
     }
     
     public func nativeAdLoaded(didReceive ads: [AlxNativeAd]) {
-        NSLog("%@: nativeAdLoaded",AlxTopOnNativeEvent.TAG)
+        print("\(AlxTopOnNativeEvent.TAG): nativeAdLoaded")
         
         guard let nativeAd = ads.first else{
             let errorStr = "native ad data is empty"
-            NSLog("%@: native ad data is empty",AlxTopOnNativeEvent.TAG)
+            print("\(AlxTopOnNativeEvent.TAG): native ad data is empty")
             let error = AlxTopOnBaseManager.error(code: -100, msg: errorStr)
             if self.isC2SBiding {
-                AlxTopOnBiddingRequestManager.disposeLoadFail(error: error, unitID: self.serverInfo[AlxTopOnBaseManager.unitID] as? String)
+                AlxTopOnBiddingRequestManager.disposeLoadFail(error: error, unitID: AlxTopOnBaseManager.parseUnitID(from: self.serverInfo))
             }else{
                 self.trackNativeAdLoadFailed(error)
             }
@@ -36,7 +36,7 @@ public class AlxTopOnNativeEvent: ATNativeADCustomEvent,AlxNativeAdLoaderDelegat
         let assetData = self.createAsset(nativeAd: nativeAd)
         if self.isC2SBiding {
             self.assetDict = assetData
-            AlxTopOnBiddingRequestManager.disposeLoadSuccess(price: nativeAd.getPrice(), unitID: self.serverInfo[AlxTopOnBaseManager.unitID] as? String)
+            AlxTopOnBiddingRequestManager.disposeLoadSuccess(price: nativeAd.getPrice(), unitID: AlxTopOnBaseManager.parseUnitID(from: self.serverInfo))
             self.isC2SBiding = false
         }else{
             self.trackNativeAdLoaded([assetData])
@@ -44,26 +44,26 @@ public class AlxTopOnNativeEvent: ATNativeADCustomEvent,AlxNativeAdLoaderDelegat
     }
     
     public func nativeAdFailToLoad(didFailWithError error: Error) {
-        NSLog("%@: nativeAdFailToLoad",AlxTopOnNativeEvent.TAG)
+        print("\(AlxTopOnNativeEvent.TAG): nativeAdFailToLoad")
         if self.isC2SBiding {
-            AlxTopOnBiddingRequestManager.disposeLoadFail(error: error, unitID: self.serverInfo[AlxTopOnBaseManager.unitID] as? String)
+            AlxTopOnBiddingRequestManager.disposeLoadFail(error: error, unitID: AlxTopOnBaseManager.parseUnitID(from: self.serverInfo))
         }else{
             self.trackNativeAdLoadFailed(error)
         }
     }
     
     public func nativeAdImpression(_ nativeAd:AlxNativeAd){
-        NSLog("%@: nativeAdImpression",AlxTopOnNativeEvent.TAG)
+        print("\(AlxTopOnNativeEvent.TAG): nativeAdImpression")
         self.trackNativeAdImpression()
     }
     
     public func nativeAdClick(_ nativeAd:AlxNativeAd){
-        NSLog("%@: nativeAdClick",AlxTopOnNativeEvent.TAG)
+        print("\(AlxTopOnNativeEvent.TAG): nativeAdClick")
         self.trackNativeAdClick()
     }
     
     public func nativeAdClose(_ nativeAd:AlxNativeAd){
-        NSLog("%@: nativeAdClose",AlxTopOnNativeEvent.TAG)
+        print("\(AlxTopOnNativeEvent.TAG): nativeAdClose")
         self.trackNativeAdClosed()
     }
     
@@ -93,7 +93,7 @@ public class AlxTopOnNativeEvent: ATNativeADCustomEvent,AlxNativeAdLoaderDelegat
     
     public override var networkUnitId: String {
         get {
-            return self.serverInfo[AlxTopOnBaseManager.unitID] as? String ?? ""
+            return AlxTopOnBaseManager.parseUnitID(from: self.serverInfo) ?? ""
         }
         set {
         }

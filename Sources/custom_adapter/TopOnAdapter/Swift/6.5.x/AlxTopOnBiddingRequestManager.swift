@@ -41,14 +41,14 @@ public class AlxTopOnBiddingRequestManager: NSObject {
     private func startLoadInterstitialAd(with request: AlxTopOnBiddingRequest) {
         guard let unitID = request.unitID, !unitID.isEmpty else {
             let errorStr = "unitid is empty"
-            NSLog("%@: startLoadInterstitialAd: error = %@", AlxTopOnBiddingRequestManager.TAG, errorStr)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadInterstitialAd: error = \(errorStr)")
             request.bidCompletion?(nil, AlxTopOnBaseManager.error(code: -100, msg: "unitId is empty"))
             return
         }
-        NSLog("%@: startLoadInterstitialAd: unitid = %@", AlxTopOnBiddingRequestManager.TAG, unitID)
+        print("\(AlxTopOnBiddingRequestManager.TAG): startLoadInterstitialAd: unitid = \(unitID)")
         
         guard let customEvent = request.customEvent as? AlxTopOnInterstitialEvent else {
-            NSLog("%@: startLoadInterstitialAd: customEvent is empty", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadInterstitialAd: customEvent is empty")
             request.bidCompletion?(nil,AlxTopOnBaseManager.error(code: -100, msg: "customEvent object is empty"))
             return
         }
@@ -67,14 +67,14 @@ public class AlxTopOnBiddingRequestManager: NSObject {
     private func startLoadRewardedVideoAd(with request: AlxTopOnBiddingRequest) {
         guard let unitID = request.unitID, !unitID.isEmpty else {
             let errorStr="unitid is empty"
-            NSLog("%@: startLoadRewardedVideoAd: error= %@",AlxTopOnBiddingRequestManager.TAG,errorStr)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadRewardedVideoAd: error= \(errorStr)")
             request.bidCompletion?(nil,AlxTopOnBaseManager.error(code: -100, msg: "unitId is empty"))
             return
         }
-        NSLog("%@: startLoadRewardedVideoAd: unitid=%@",AlxTopOnBiddingRequestManager.TAG,unitID)
+        print("\(AlxTopOnBiddingRequestManager.TAG): startLoadRewardedVideoAd: unitid=\(unitID)")
         
         guard let customEvent = request.customEvent as? AlxTopOnRewardVideoEvent else {
-            NSLog("%@: startLoadRewardedVideoAd: customEvent is empty",AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadRewardedVideoAd: customEvent is empty")
             request.bidCompletion?(nil,AlxTopOnBaseManager.error(code: -100, msg: "customEvent object is empty"))
             return
         }
@@ -93,14 +93,14 @@ public class AlxTopOnBiddingRequestManager: NSObject {
     private func startLoadNativeAd(with request: AlxTopOnBiddingRequest) {
         guard let unitID = request.unitID, !unitID.isEmpty else {
             let errorStr = "unitid is empty"
-            NSLog("%@: startLoadNativeAd: error = %@", AlxTopOnBiddingRequestManager.TAG,errorStr)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadNativeAd: error = \(errorStr)")
             request.bidCompletion?(nil, AlxTopOnBaseManager.error(code: -100, msg: "unitId is empty"))
             return
         }
-        NSLog("%@: startLoadNativeAd: unitid=%@",AlxTopOnBiddingRequestManager.TAG,unitID)
+        print("\(AlxTopOnBiddingRequestManager.TAG): startLoadNativeAd: unitid=\(unitID)")
         
         guard let customEvent = request.customEvent as? AlxTopOnNativeEvent else {
-            NSLog("%@: startLoadNativeAd: customEvent is empty", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadNativeAd: customEvent is empty")
             request.bidCompletion?(nil, AlxTopOnBaseManager.error(code: -100, msg: "customEvent object is empty"))
             return
         }
@@ -119,14 +119,14 @@ public class AlxTopOnBiddingRequestManager: NSObject {
     private func startLoadBannerAd(with request: AlxTopOnBiddingRequest) {
         guard let unitID = request.unitID, !unitID.isEmpty else {
             let errorStr = "unitid is empty"
-            NSLog("%@: startLoadBannerAd: error= %@",AlxTopOnBiddingRequestManager.TAG,errorStr)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadBannerAd: error= \(errorStr)")
             request.bidCompletion?(nil,AlxTopOnBaseManager.error(code: -100, msg: "unitId is empty"))
             return
         }
-        NSLog("%@: startLoadBannerAd: unitid = %@", AlxTopOnBiddingRequestManager.TAG, unitID)
+        print("\(AlxTopOnBiddingRequestManager.TAG): startLoadBannerAd: unitid = \(unitID)")
         
         guard let customEvent = request.customEvent as? AlxTopOnBannerEvent else {
-            NSLog("%@: startLoadBannerAd: customEvent is empty", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadBannerAd: customEvent is empty")
             request.bidCompletion?(nil, AlxTopOnBaseManager.error(code: -100, msg: "customEvent object is empty"))
             return
         }
@@ -136,7 +136,7 @@ public class AlxTopOnBiddingRequestManager: NSObject {
         let unitGroupModel:ATUnitGroupModel? = request.extraInfo[kATAdapterCustomInfoUnitGroupModelKey] as? ATUnitGroupModel
         if let unitGroupModel = unitGroupModel {
             adSize = unitGroupModel.adSize
-            NSLog("%@: loadAD: width=%.2f , height=%.2f",AlxTopOnBiddingRequestManager.TAG,adSize.width,adSize.height)
+            print(String(format: "%@: loadAD: width=%.2f , height=%.2f", AlxTopOnBiddingRequestManager.TAG, adSize.width, adSize.height))
         }
         
         // load ad
@@ -155,30 +155,30 @@ public class AlxTopOnBiddingRequestManager: NSObject {
     private func startLoadSplashAd(with request: AlxTopOnBiddingRequest) {
         guard let unitID = request.unitID, !unitID.isEmpty else {
             let errorStr = "unitid is empty"
-            NSLog("%@: startLoadSplashAd: error = %@", AlxTopOnBiddingRequestManager.TAG, errorStr)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadSplashAd: error = \(errorStr)")
             request.bidCompletion?(nil, AlxTopOnBaseManager.error(code: -100, msg: "unitId is empty"))
             return
         }
-        NSLog("%@: startLoadSplashAd: unitid=%@", AlxTopOnBiddingRequestManager.TAG, unitID)
+        print("\(AlxTopOnBiddingRequestManager.TAG): startLoadSplashAd: unitid=\(unitID)")
         
         guard let customEvent = request.customEvent as? AlxTopOnSplashEvent else {
-            NSLog("%@: startLoadSplashAd: customEvent is empty", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): startLoadSplashAd: customEvent is empty")
             request.bidCompletion?(nil, AlxTopOnBaseManager.error(code: -100, msg: "customEvent object is empty"))
             return
         }
         
-        // load ad
+        /// load ad
         let splashAd = AlxSplashAd()
         splashAd.delegate = customEvent
         
-        // 提取自定义底部视图 (若有)
+        /// 提取自定义底部视图 (若有)
         if let customBottom = request.extraInfo[kATSplashExtraNewBottomViewKey] as? UIView {
             splashAd.customBottomView = customBottom
         } else if let customBottom = request.extraInfo[kATSplashExtraContainerViewKey] as? UIView {
             splashAd.customBottomView = customBottom
         }
         
-        // 缓存
+        /// 缓存
         request.customObject = splashAd
         AlxTopOnTool.shared.saveRequestItem(request, withUnitId: unitID)
         
@@ -187,16 +187,16 @@ public class AlxTopOnBiddingRequestManager: NSObject {
 
     /// 竞价成功回调
     public static func disposeLoadSuccess(price: Double, unitID: String?) {
-        NSLog("%@: disposeLoadSuccess",AlxTopOnBiddingRequestManager.TAG)
+        print("\(AlxTopOnBiddingRequestManager.TAG): disposeLoadSuccess")
         let priceStr = String(price)
         
         guard let unitID = unitID else {
-            NSLog("%@: disposeLoadSuccess: unitID is empty", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): disposeLoadSuccess: unitID is empty")
             return
         }
 
-        guard let bidRequest=AlxTopOnTool.shared.getRequestItem(withUnitID: unitID) as? AlxTopOnBiddingRequest else {
-            NSLog("%@: disposeLoadSuccess: bidRequest cache no found", AlxTopOnBiddingRequestManager.TAG)
+        guard let bidRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitID) as? AlxTopOnBiddingRequest else {
+            print("\(AlxTopOnBiddingRequestManager.TAG): disposeLoadSuccess: bidRequest cache no found")
            return
         }
         
@@ -227,26 +227,28 @@ public class AlxTopOnBiddingRequestManager: NSObject {
         
         if bidRequest.bidCompletion != nil {
             bidRequest.bidCompletion?(bidInfo, nil)
-            NSLog("%@: disposeLoadSuccess: bidCompletion is called successfully", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): disposeLoadSuccess: bidCompletion is called successfully")
         } else {
-            NSLog("%@: disposeLoadSuccess: bidCompletion is empty", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): disposeLoadSuccess: bidCompletion is empty")
         }
 //        bidRequest.bidCompletion?(bidInfo, nil)
     }
 
     /// 竞价失败回调
     public static func disposeLoadFail(error: Error, unitID: String?) {
-        NSLog("%@: disposeLoadFail", AlxTopOnBiddingRequestManager.TAG)
+        print("\(AlxTopOnBiddingRequestManager.TAG): disposeLoadFail")
         guard let unitID = unitID else {
-            NSLog("%@: disposeLoadFail: unitID is empty", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): disposeLoadFail: unitID is empty")
             return
         }
 
         guard let bidRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitID) as? AlxTopOnBiddingRequest else {
-            NSLog("%@: disposeLoadFail: bidRequest cache no found", AlxTopOnBiddingRequestManager.TAG)
+            print("\(AlxTopOnBiddingRequestManager.TAG): disposeLoadFail: bidRequest cache no found")
            return
         }
         bidRequest.bidCompletion?(nil, error)
         AlxTopOnTool.shared.removeRequestItem(withUnitID: unitID)
     }
+    
+    
 }

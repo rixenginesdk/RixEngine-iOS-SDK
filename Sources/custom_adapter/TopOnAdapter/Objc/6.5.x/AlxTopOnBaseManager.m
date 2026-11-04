@@ -22,7 +22,30 @@ static BOOL _isInitialized = NO;
 }
 
 + (NSString *)unitID {
-    return @"slot_id";
+    return @"unitid";
+}
+
++ (nullable NSString *)parseUnitIDFromServerInfo:(nullable NSDictionary *)serverInfo {
+    if (![serverInfo isKindOfClass:[NSDictionary class]]) {
+        return nil;
+    }
+    id rawUnitId = serverInfo[@"unitid"];
+    if (rawUnitId && rawUnitId != [NSNull null]) {
+        NSString *unitId = [[NSString stringWithFormat:@"%@", rawUnitId]
+                            stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (unitId.length > 0) {
+            return unitId;
+        }
+    }
+    id rawSlotId = serverInfo[@"slot_id"];
+    if (rawSlotId && rawSlotId != [NSNull null]) {
+        NSString *slotId = [[NSString stringWithFormat:@"%@", rawSlotId]
+                            stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (slotId.length > 0) {
+            return slotId;
+        }
+    }
+    return nil;
 }
 
 + (NSString *)initSDKWithServerInfo:(NSDictionary *)serverInfo {

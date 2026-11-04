@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) ATRewardedAdStatusBridge *adStatusBridge;
 @property (nonatomic, weak) AlxRewardVideoAd *rewardedAd;  // 保存广告对象引用
+@property (nonatomic, copy, nullable) BOOL (^onAdLoaded)(id<AlxAdDelegate> ad);
 
 @end
 

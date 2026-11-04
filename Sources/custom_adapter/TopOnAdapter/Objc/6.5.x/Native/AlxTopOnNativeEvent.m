@@ -52,7 +52,7 @@ static NSString *const TAG = @"AlxTopOnNativeEvent";
 }
 
 - (NSString *)networkUnitId {
-    return self.serverInfo[[AlxTopOnBaseManager unitID]] ?: @"";
+    return [AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo] ?: @"";
 }
 
 - (NSMutableArray *)assets {
@@ -63,7 +63,7 @@ static NSString *const TAG = @"AlxTopOnNativeEvent";
     NSLog(@"%@: nativeAdFailToLoad", TAG);
     if (self.isC2SBiding) {
         [AlxTopOnBiddingRequestManager disposeLoadFailWithError:error
-                                                         unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                         unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
     } else {
         [self trackNativeAdLoadFailed:error];
     }
@@ -80,7 +80,7 @@ static NSString *const TAG = @"AlxTopOnNativeEvent";
         
         if (self.isC2SBiding) {
             [AlxTopOnBiddingRequestManager disposeLoadFailWithError:error
-                                                             unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                             unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
         } else {
             [self trackNativeAdLoadFailed:error];
         }
@@ -92,7 +92,7 @@ static NSString *const TAG = @"AlxTopOnNativeEvent";
     if (self.isC2SBiding) {
         self.assetDict = assetData;
         [AlxTopOnBiddingRequestManager disposeLoadSuccessWithPrice:[nativeAd getPrice]
-                                                            unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                            unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
         self.isC2SBiding = NO;
     } else {
         [self trackNativeAdLoaded:@[assetData]];

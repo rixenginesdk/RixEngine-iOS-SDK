@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) ATNativeAdStatusBridge *adStatusBridge;
 @property (nonatomic, weak) AlxTopOnNativeEvent *nativeEvent;  // 用于传递给 TopOn SDK
+@property (nonatomic, copy, nullable) BOOL (^onAdLoaded)(id<AlxAdDelegate> ad);
 
 @end
 

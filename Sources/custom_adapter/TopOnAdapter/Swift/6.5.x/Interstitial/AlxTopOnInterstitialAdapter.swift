@@ -25,58 +25,29 @@ public class AlxTopOnInterstitialAdapter: AlxTopOnBaseAdapter, ATBaseInterstitia
     // MARK: - 广告加载 / Ad Load
     
     @objc public override func loadAD(with argument: ATAdMediationArgument) {
-        NSLog("%@: loadAD(with:)", AlxTopOnInterstitialAdapter.TAG)
-        NSLog("%@: loadAD: isMainThread=%@", AlxTopOnInterstitialAdapter.TAG, Thread.current.isMainThread ? "YES" : "NO")
-        
-        let bidId = argument.serverContentDic[kATAdapterCustomInfoBuyeruIdKey] as? String
-        NSLog("%@: loadAD: bidId=%@", AlxTopOnInterstitialAdapter.TAG, bidId ?? "空")
+        print("\(AlxTopOnInterstitialAdapter.TAG): loadAD(with:)")
+        print("\(AlxTopOnInterstitialAdapter.TAG): loadAD: isMainThread=\(Thread.current.isMainThread ? "YES" : "NO")")
         
         DispatchQueue.main.async {
-            let unitKeyStr = AlxTopOnBaseManager.unitID
-            guard let unitId = argument.serverContentDic[unitKeyStr] as? String, !unitId.isEmpty else {
+            self.interstitialDelegate = AlxTopOnInterstitialDelegate()
+            self.interstitialDelegate.adStatusBridge = self.adStatusBridge
+            self.interstitialDelegate.onAdLoaded = self.beginBiddingRequest(with: argument)
+            guard let unitId = AlxTopOnBaseManager.parseUnitID(from: argument.serverContentDic), !unitId.isEmpty else {
                 let errorStr = "unitid is empty"
-                NSLog("%@: loadAD: error = %@", AlxTopOnInterstitialAdapter.TAG, errorStr)
+                print("\(AlxTopOnInterstitialAdapter.TAG): loadAD: error = \(errorStr)")
                 let error = AlxTopOnBaseManager.error(code: -100, msg: errorStr)
                 self.notifyLoadFailed(error: error)
                 return
             }
-            NSLog("%@: loadAD: unitid = %@", AlxTopOnInterstitialAdapter.TAG, unitId)
+            print("\(AlxTopOnInterstitialAdapter.TAG): loadAD: unitid = \(unitId)")
             
-            if bidId != nil {
-                // Bidding 场景：从缓存中取出已加载的广告
-                // Bidding scenario: retrieve the pre-loaded ad from cache
-                if let biddingRequest = AlxTopOnTool.shared.getRequestItem(withUnitID: unitId) as? AlxTopOnBiddingRequest {
-                    self.interstitialAd = biddingRequest.customObject as? AlxInterstitialAd
-                    
-                    if let interstitialAd = self.interstitialAd {
-                        NSLog("%@: loadAD: bid ad loaded, notify success", AlxTopOnInterstitialAdapter.TAG)
-                        var adExtra: [AnyHashable: Any] = [:]
-                        adExtra[kATAdAssetsCustomObjectKey] = interstitialAd
-                        self.notifyInterstitialLoaded(adExtra: adExtra)
-                    } else {
-                        NSLog("%@: loadAD: bid ad object is empty", AlxTopOnInterstitialAdapter.TAG)
-                        let error = NSError(domain: "AlxTopOnAdapter", code: -100, userInfo: [NSLocalizedDescriptionKey: "Bid ad object is empty"])
-                        self.notifyLoadFailed(error: error)
-                    }
-                } else {
-                    NSLog("%@: loadAD: bid request not found in cache", AlxTopOnInterstitialAdapter.TAG)
-                    let error = NSError(domain: "AlxTopOnAdapter", code: -100, userInfo: [NSLocalizedDescriptionKey: "Bid request not found"])
-                    self.notifyLoadFailed(error: error)
-                }
-                AlxTopOnTool.shared.removeRequestItem(withUnitID: unitId)
-            } else {
-                // 普通加载场景 / Normal (non-bidding) load scenario
-                self.interstitialAd = AlxInterstitialAd()
-                self.interstitialAd?.delegate = self.getInterstitialDelegate()
-                self.interstitialDelegate.interstitialAd = self.interstitialAd
-                
-                NSLog("%@: start loading ad with unitId: %@", AlxTopOnInterstitialAdapter.TAG, unitId)
-                // 测试新增的扩展字段
-                let req = AlxAdRequest().withUserExt([
-                    "bid_floor": "1.68"
-                ])
-                self.interstitialAd?.loadAd(adUnitId: unitId, request: req)
-            }
+            self.interstitialAd = AlxInterstitialAd()
+            self.interstitialAd?.delegate = self.getInterstitialDelegate()
+            self.interstitialDelegate.interstitialAd = self.interstitialAd
+
+            print("\(AlxTopOnInterstitialAdapter.TAG): start loading ad with unitId: \(unitId)")
+            let req = self.buildAdRequest(with: argument)
+            self.interstitialAd?.loadAd(adUnitId: unitId, request: req)
         }
     }
     
@@ -106,47 +77,17 @@ public class AlxTopOnInterstitialAdapter: AlxTopOnBaseAdapter, ATBaseInterstitia
         }
     }
     
-    // MARK: - C2S 竞价 / C2S Bidding
-    
-    @objc public static func bidRequestWithPlacementModel(_ placementModel: ATPlacementModel,
-                                                          unitGroupModel: ATUnitGroupModel,
-                                                          info: [AnyHashable: Any],
-                                                          completion: @escaping (ATBidInfo?, Error?) -> Void) {
-        NSLog("%@: bidRequestWithPlacementModel", AlxTopOnInterstitialAdapter.TAG)
-        
-        DispatchQueue.main.async {
-            if !AlxTopOnBaseManager.isInitialized {
-                AlxTopOnBaseManager.initSDK(serverInfo: info)
-            }
-        }
-        
-        let customEvent = AlxTopOnInterstitialEvent(info: info, localInfo: info)
-        customEvent.isC2SBiding = true
-        
-        let request = AlxTopOnBiddingRequest(
-            unitGroup: unitGroupModel,
-            customEvent: customEvent,
-            unitID: info[AlxTopOnBaseManager.unitID] as? String,
-            placementID: placementModel.placementID,
-            extraInfo: info,
-            adType: ATAdFormat.interstitial,
-            bidCompletion: completion
-        )
-        
-        AlxTopOnBiddingRequestManager.shared.start(with: request)
-    }
-    
     // MARK: - 广告就绪检查（实例方法）/ Ad Ready Check (Instance Method)
     
     @objc public func adReadyInterstitial(withInfo info: [AnyHashable: Any]) -> Bool {
-        NSLog("%@: adReadyInterstitialWithInfo", AlxTopOnInterstitialAdapter.TAG)
+        print("\(AlxTopOnInterstitialAdapter.TAG): adReadyInterstitialWithInfo")
         
         if self.interstitialAd != nil {
-            NSLog("%@: adReady = YES", AlxTopOnInterstitialAdapter.TAG)
+            print("\(AlxTopOnInterstitialAdapter.TAG): adReady = YES")
             return true
         }
         
-        NSLog("%@: adReady = NO", AlxTopOnInterstitialAdapter.TAG)
+        print("\(AlxTopOnInterstitialAdapter.TAG): adReady = NO")
         return false
     }
     
@@ -154,14 +95,14 @@ public class AlxTopOnInterstitialAdapter: AlxTopOnBaseAdapter, ATBaseInterstitia
     
     @objc(showInterstitialInViewController:)
     public func showInterstitial(in viewController: UIViewController) {
-        NSLog("%@: showInterstitialInViewController", AlxTopOnInterstitialAdapter.TAG)
+        print("\(AlxTopOnInterstitialAdapter.TAG): showInterstitialInViewController")
         
         DispatchQueue.main.async {
             if let interstitialAd = self.interstitialAd {
                 interstitialAd.showAd(present: viewController)
-                NSLog("%@: ad shown", AlxTopOnInterstitialAdapter.TAG)
+                print("\(AlxTopOnInterstitialAdapter.TAG): ad shown")
             } else {
-                NSLog("%@: interstitialAd is nil", AlxTopOnInterstitialAdapter.TAG)
+                print("\(AlxTopOnInterstitialAdapter.TAG): interstitialAd is nil")
             }
         }
     }

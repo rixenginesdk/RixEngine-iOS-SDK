@@ -34,17 +34,18 @@ static NSString *const TAG = @"AlxTopOnNativeDelegate";
     
     // ✅ 关键：设置 nativeAd 的 delegate，以便接收展示、点击、关闭回调
     nativeAd.delegate = self;
+    if (self.onAdLoaded && !self.onAdLoaded(nativeAd)) {
+        return;
+    }
     
     // 获取价格（用于 C2S Bidding）
-    double price = [nativeAd getPrice];
+    double rawPrice = [nativeAd getPrice];
+    double price = (isfinite(rawPrice) && rawPrice >= 0) ? rawPrice : 0;
     NSMutableDictionary *adExtra = [NSMutableDictionary dictionary];
-    
-    if (price > 0) {
-        NSString *priceStr = [NSString stringWithFormat:@"%.2f", price];
-        adExtra[ATAdSendC2SBidPriceKey] = priceStr;
-        adExtra[ATAdSendC2SCurrencyTypeKey] = @(ATBiddingCurrencyTypeUS);
-        NSLog(@"%@: nativeAdLoaded: price = %@", TAG, priceStr);
-    }
+    NSString *priceStr = [NSString stringWithFormat:@"%@", @(price)];
+    adExtra[ATAdSendC2SBidPriceKey] = priceStr;
+    adExtra[ATAdSendC2SCurrencyTypeKey] = @(ATBiddingCurrencyTypeUS);
+    NSLog(@"%@: nativeAdLoaded: price = %@", TAG, priceStr);
     
     // ⚠️ 传递对象数组（TopOn SDK 会调用对象的方法获取数据）
     [self.adStatusBridge atOnNativeAdLoadedArray:@[nativeObject] adExtra:adExtra];

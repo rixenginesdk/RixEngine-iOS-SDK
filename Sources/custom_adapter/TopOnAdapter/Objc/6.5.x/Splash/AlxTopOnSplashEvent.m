@@ -19,7 +19,7 @@ static NSString *const TAG = @"AlxTopOnSplashEvent";
 - (void)splashAdDidLoad:(AlxSplashAd *)ad {
     NSLog(@"%@: splashAdDidLoad", TAG);
     if (self.isC2SBiding) {
-        NSString *unitId = self.serverInfo[[AlxTopOnBaseManager unitID]];
+        NSString *unitId = [AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo];
         [AlxTopOnBiddingRequestManager disposeLoadSuccessWithPrice:[ad getPrice] unitID:unitId];
         self.isC2SBiding = NO;
     } else {
@@ -32,7 +32,7 @@ static NSString *const TAG = @"AlxTopOnSplashEvent";
 - (void)splashAdDidFailToLoad:(AlxSplashAd *)ad didFailWithError:(NSError *)error {
     NSLog(@"%@: splashAdDidFailToLoad: %@", TAG, error.localizedDescription);
     if (self.isC2SBiding) {
-        NSString *unitId = self.serverInfo[[AlxTopOnBaseManager unitID]];
+        NSString *unitId = [AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo];
         [AlxTopOnBiddingRequestManager disposeLoadFailWithError:error unitID:unitId];
     } else {
         [self trackSplashAdLoadFailed:error];
@@ -65,7 +65,7 @@ static NSString *const TAG = @"AlxTopOnSplashEvent";
 }
 
 - (NSString *)networkUnitId {
-    return self.serverInfo[[AlxTopOnBaseManager unitID]] ?: @"";
+    return [AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo] ?: @"";
 }
 
 - (void)dealloc {

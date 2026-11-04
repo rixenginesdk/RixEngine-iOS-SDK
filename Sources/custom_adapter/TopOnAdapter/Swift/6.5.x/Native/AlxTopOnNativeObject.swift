@@ -33,7 +33,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public override var title: String? {
         get {
             let result = nativeAd?.title ?? ""
-            NSLog("AlxTopOnNativeObject: title = \(result)")
+            print("AlxTopOnNativeObject: title = \(result)")
             return result
         }
         set {
@@ -44,7 +44,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public override var mainText: String? {
         get {
             let result = nativeAd?.desc ?? ""
-            NSLog("AlxTopOnNativeObject: mainText = \(result)")
+            print("AlxTopOnNativeObject: mainText = \(result)")
             return result
         }
         set {
@@ -55,7 +55,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public override var iconUrl: String? {
         get {
             let result = nativeAd?.icon?.url ?? ""
-            NSLog("AlxTopOnNativeObject: iconUrl = \(result)")
+            print("AlxTopOnNativeObject: iconUrl = \(result)")
             return result
         }
         set {
@@ -69,7 +69,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             if let images = nativeAd?.images, images.count > 0 {
                 result = images.first?.url ?? ""
             }
-            NSLog("AlxTopOnNativeObject: mainImageUrl = \(result)")
+            print("AlxTopOnNativeObject: mainImageUrl = \(result)")
             return result
         }
     }
@@ -77,7 +77,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public override var ctaText: String? {
         get {
             let result = nativeAd?.callToAction ?? ""
-            NSLog("AlxTopOnNativeObject: ctaText = \(result)")
+            print("AlxTopOnNativeObject: ctaText = \(result)")
             return result
         }
         set {
@@ -88,7 +88,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public override var advertiser: String? {
         get {
             let result = nativeAd?.adSource ?? ""
-            NSLog("AlxTopOnNativeObject: advertiser = \(result)")
+            print("AlxTopOnNativeObject: advertiser = \(result)")
             return result
         }
         set {
@@ -99,7 +99,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public var logoImage: UIImage? {
         get {
             let result = nativeAd?.adLogo
-            NSLog("AlxTopOnNativeObject: logoImage = \(result != nil ? "exists" : "nil")")
+            print("AlxTopOnNativeObject: logoImage = \(result != nil ? "exists" : "nil")")
             return result
         }
     }
@@ -107,7 +107,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public override var isVideoContents: Bool {
         get {
             let result = nativeAd?.createType == 1
-            NSLog("AlxTopOnNativeObject: isVideoContents = \(result)")
+            print("AlxTopOnNativeObject: isVideoContents = \(result)")
             return result
         }
         set {
@@ -117,24 +117,24 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     
     @objc public override var mediaView: UIView? {
         get {
-            NSLog("AlxTopOnNativeObject: mediaView requested")
+            print("AlxTopOnNativeObject: mediaView requested")
             
             // 如果已经创建过，直接返回缓存的实例
             if let cachedView = _cachedMediaView {
-                NSLog("AlxTopOnNativeObject: returning cached mediaView")
+                print("AlxTopOnNativeObject: returning cached mediaView")
                 return cachedView
             }
             
             // 否则创建新的 mediaView
             if let mediaContent = nativeAd?.mediaContent {
-                NSLog("AlxTopOnNativeObject: creating new mediaView")
+                print("AlxTopOnNativeObject: creating new mediaView")
                 let mediaView = AlxMediaView()
                 mediaView.setMediaContent(mediaContent)
                 _cachedMediaView = mediaView
                 return mediaView
             }
             
-            NSLog("AlxTopOnNativeObject: no mediaContent")
+            print("AlxTopOnNativeObject: no mediaContent")
             return nil
         }
         set {
@@ -148,7 +148,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             if let images = nativeAd?.images, images.count > 0 {
                 result = CGFloat(images.first?.width ?? 0)
             }
-            NSLog("AlxTopOnNativeObject: mainImageWidth = \(result)")
+            print("AlxTopOnNativeObject: mainImageWidth = \(result)")
             return result
         }
         set {
@@ -162,7 +162,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
             if let images = nativeAd?.images, images.count > 0 {
                 result = CGFloat(images.first?.height ?? 0)
             }
-            NSLog("AlxTopOnNativeObject: mainImageHeight = \(result)")
+            print("AlxTopOnNativeObject: mainImageHeight = \(result)")
             return result
         }
         set {
@@ -175,10 +175,10 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     @objc public override func registerClickableViews(_ clickableViews: [UIView], 
                                                      withContainer container: UIView, 
                                                      registerArgument: ATNativeRegisterArgument?) {
-        NSLog("AlxTopOnNativeObject: registerClickableViews")
+        print("AlxTopOnNativeObject: registerClickableViews")
         
         guard let nativeAd = self.nativeAd else {
-            NSLog("AlxTopOnNativeObject: nativeAd is nil, cannot register")
+            print("AlxTopOnNativeObject: nativeAd is nil, cannot register")
             return
         }
         
@@ -191,7 +191,7 @@ public class AlxTopOnNativeObject: ATCustomNetworkNativeAd {
     }
     
     deinit {
-        NSLog("AlxTopOnNativeObject: dealloc")
+        print("AlxTopOnNativeObject: dealloc")
         nativeAd?.unregisterView()
         _cachedMediaView = nil
     }

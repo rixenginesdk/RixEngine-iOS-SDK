@@ -17,9 +17,9 @@ public class AlxTopOnInterstitialEvent: ATInterstitialCustomEvent,AlxInterstitia
     }
     
     public func interstitialAdLoad(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdLoad",AlxTopOnInterstitialEvent.TAG)
+        print("\(AlxTopOnInterstitialEvent.TAG): interstitialAdLoad")
         if self.isC2SBiding {
-            AlxTopOnBiddingRequestManager.disposeLoadSuccess(price: ad.getPrice(), unitID: self.serverInfo[AlxTopOnBaseManager.unitID] as? String)
+            AlxTopOnBiddingRequestManager.disposeLoadSuccess(price: ad.getPrice(), unitID: AlxTopOnBaseManager.parseUnitID(from: self.serverInfo))
             self.isC2SBiding = false
         }else{
             self.trackInterstitialAdLoaded(ad, adExtra: nil)
@@ -27,53 +27,53 @@ public class AlxTopOnInterstitialEvent: ATInterstitialCustomEvent,AlxInterstitia
     }
     
     public func interstitialAdFailToLoad(_ ad: AlxInterstitialAd, didFailWithError error: Error) {
-        NSLog("%@: interstitialAdFailToLoad : %@",AlxTopOnInterstitialEvent.TAG,error.localizedDescription)
+        print("\(AlxTopOnInterstitialEvent.TAG): interstitialAdFailToLoad : \(error.localizedDescription)")
         if self.isC2SBiding {
-            AlxTopOnBiddingRequestManager.disposeLoadFail(error: error, unitID: self.serverInfo[AlxTopOnBaseManager.unitID] as? String)
+            AlxTopOnBiddingRequestManager.disposeLoadFail(error: error, unitID: AlxTopOnBaseManager.parseUnitID(from: self.serverInfo))
         }else{
             self.trackInterstitialAdLoadFailed(error)
         }
     }
     
     public func interstitialAdImpression(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdImpression",AlxTopOnInterstitialEvent.TAG)
+        print("\(AlxTopOnInterstitialEvent.TAG): interstitialAdImpression")
         self.trackInterstitialAdShow()
     }
     
     public func interstitialAdClick(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdClick",AlxTopOnInterstitialEvent.TAG)
+        print("\(AlxTopOnInterstitialEvent.TAG): interstitialAdClick")
         self.trackInterstitialAdClick()
     }
     
     public func interstitialAdClose(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdClose",AlxTopOnInterstitialEvent.TAG)
+        print("\(AlxTopOnInterstitialEvent.TAG): interstitialAdClose")
         self.trackInterstitialAdClose(nil)
     }
     
     public func interstitialAdRenderFail(_ ad: AlxInterstitialAd, didFailWithError error: Error) {
-        NSLog("%@: interstitialAdRenderFail",AlxTopOnInterstitialEvent.TAG)
+        print("\(AlxTopOnInterstitialEvent.TAG): interstitialAdRenderFail")
     }
     
     public func interstitialAdVideoStart(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdVideoStart",AlxTopOnInterstitialEvent.TAG)
+        print("\(AlxTopOnInterstitialEvent.TAG): interstitialAdVideoStart")
         self.trackInterstitialAdVideoStart()
     }
     
     public func interstitialAdVideoEnd(_ ad: AlxInterstitialAd) {
-        NSLog("%@: interstitialAdVideoEnd",AlxTopOnInterstitialEvent.TAG)
+        print("\(AlxTopOnInterstitialEvent.TAG): interstitialAdVideoEnd")
         self.trackInterstitialAdVideoEnd()
     }
     
     public override var networkUnitId: String {
         get {
-            return self.serverInfo[AlxTopOnBaseManager.unitID] as? String ?? ""
+            return AlxTopOnBaseManager.parseUnitID(from: self.serverInfo) ?? ""
         }
         set {
         }
     }
     
     deinit {
-        NSLog("%@: deinit",AlxTopOnInterstitialEvent.TAG)
+        print("\(AlxTopOnInterstitialEvent.TAG): deinit")
     }
     
 }

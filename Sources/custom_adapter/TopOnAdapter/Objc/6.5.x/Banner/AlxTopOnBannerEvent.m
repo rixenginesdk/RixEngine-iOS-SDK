@@ -15,7 +15,7 @@ static NSString *const TAG = @"AlxTopOnBannerEvent";
     NSLog(@"%@ bannerViewAdLoad", TAG);
     if (self.isC2SBiding) {
         [AlxTopOnBiddingRequestManager disposeLoadSuccessWithPrice:[bannerView getPrice]
-                                                            unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                            unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
         self.isC2SBiding = NO;
     } else {
         [self trackBannerAdLoaded:bannerView adExtra:nil];
@@ -26,7 +26,7 @@ static NSString *const TAG = @"AlxTopOnBannerEvent";
     NSLog(@"%@ bannerViewAdFailToLoad: %@", TAG, error.localizedDescription);
     if (self.isC2SBiding) {
         [AlxTopOnBiddingRequestManager disposeLoadFailWithError:error
-                                                         unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                         unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
     } else {
         [self trackBannerAdLoadFailed:error];
     }
@@ -48,7 +48,7 @@ static NSString *const TAG = @"AlxTopOnBannerEvent";
 }
 
 - (NSString *)networkUnitId {
-    return self.serverInfo[[AlxTopOnBaseManager unitID]] ?: @"";
+    return [AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo] ?: @"";
 }
 
 @end

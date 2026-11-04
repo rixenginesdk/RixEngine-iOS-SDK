@@ -15,7 +15,7 @@ static NSString *const TAG = @"AlxTopOnRewardVideoEvent";
     NSLog(@"%@: rewardVideoAdLoad", TAG);
     if (self.isC2SBiding) {
         [AlxTopOnBiddingRequestManager disposeLoadSuccessWithPrice:[ad getPrice]
-                                                            unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                            unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
         self.isC2SBiding = NO;
     } else {
         [self trackRewardedVideoAdLoaded:ad adExtra:nil];
@@ -26,7 +26,7 @@ static NSString *const TAG = @"AlxTopOnRewardVideoEvent";
     NSLog(@"%@: rewardVideoAdFailToLoad: %@", TAG, error.localizedDescription);
     if (self.isC2SBiding) {
         [AlxTopOnBiddingRequestManager disposeLoadFailWithError:error
-                                                         unitID:self.serverInfo[[AlxTopOnBaseManager unitID]]];
+                                                         unitID:[AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo]];
     } else {
         [self trackRewardedVideoAdLoadFailed:error];
     }
@@ -69,7 +69,7 @@ static NSString *const TAG = @"AlxTopOnRewardVideoEvent";
 }
 
 - (NSString *)networkUnitId {
-    return self.serverInfo[[AlxTopOnBaseManager unitID]] ?: @"";
+    return [AlxTopOnBaseManager parseUnitIDFromServerInfo:self.serverInfo] ?: @"";
 }
 
 - (void)dealloc {
