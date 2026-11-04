@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # ――― 1. Spec Metadata ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RixEngineAds"
-  s.version      = "2.1.1"
+  s.version      = "2.2.0"
   s.summary      = "RixEngineAds Mobile Ad Aggregation SDK."
 
   s.description  = <<-DESC
