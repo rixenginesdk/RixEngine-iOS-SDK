@@ -48,7 +48,7 @@ NS_SWIFT_NAME(addOmJSIntoHtml(html:));
  @return 注入脚本后的 HTML
  */
 + (NSString *)injectDisplayHtmlScriptWithHtml:(NSString *)html
-                                                 omid:(nullable AlxOmidBean *)omid
+                                         omid:(nullable AlxOmidBean *)omid
 NS_SWIFT_NAME(injectDisplayHtmlScript(html:omid:));
 
 @end
