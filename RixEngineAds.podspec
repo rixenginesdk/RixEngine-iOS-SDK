@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author       = { "RixEngine" => "rix-sdk@rixengine.com" }
 
   # ――― 2. Platform & Settings ―――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.ios.deployment_target = "13.0"
+  s.ios.deployment_target = "15.0"
   s.swift_version         = '5.0'
 
   # GitHub release tags use the v-prefixed semantic version.
