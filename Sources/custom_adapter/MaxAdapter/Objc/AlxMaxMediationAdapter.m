@@ -7,7 +7,7 @@
 #import <AlxAds/AlxAds.h>
 
 static NSString *const TAG = @"AlxMaxMediationAdapter";
-static NSString *const ADAPTER_VERSION = @"2.1.1";
+static NSString *const ADAPTER_VERSION = @"2.2.0";
 
 #pragma mark - MaxAlxNativeAd
 

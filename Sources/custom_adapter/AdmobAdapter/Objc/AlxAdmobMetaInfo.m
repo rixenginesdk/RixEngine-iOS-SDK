@@ -8,7 +8,7 @@
 @implementation AlxAdmobMetaInfo
 
 + (NSString *)ADAPTER_VERSION {
-    return @"2.1.1";
+    return @"2.2.0";
 }
 
 @end

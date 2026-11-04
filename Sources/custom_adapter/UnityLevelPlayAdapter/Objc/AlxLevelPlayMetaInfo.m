@@ -8,7 +8,7 @@
 @implementation AlxLevelPlayMetaInfo
 
 + (NSString *)ADAPTER_VERSION {
-    return @"2.1.1";
+    return @"2.2.0";
 }
 
 + (NSString *)NETWORK_NAME {
