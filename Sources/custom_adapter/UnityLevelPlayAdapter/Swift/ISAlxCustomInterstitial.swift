@@ -107,8 +107,8 @@ extension ISAlxCustomInterstitial: AlxInterstitialAdDelegate {
         interstitialAd = nil
     }
 
-    public func interstitialAdFailToShow(_ ad: AlxInterstitialAd, didFailWithError error: Error) {
-        NSLog("%@: interstitialAdFailToShow: %@", Self.TAG, error.localizedDescription)
+    public func interstitialAdRenderFail(_ ad: AlxInterstitialAd, didFailWithError error: Error) {
+        NSLog("%@: interstitialAdRenderFail: %@", Self.TAG, error.localizedDescription)
         (adDelegate as? ISAlxAdapterFailureReporter)?.adDidFailToShow(
             withErrorCode: 1000,
             errorMessage: error.localizedDescription)

@@ -99,8 +99,8 @@ static NSString *const TAG = @"ISAlxCustomInterstitial";
     self.interstitialAd = nil;
 }
 
-- (void)interstitialAdFailToShow:(AlxInterstitialAd *)ad didFailWithError:(NSError *)error {
-    NSLog(@"%@: interstitialAdFailToShow: %@", TAG, error.localizedDescription);
+- (void)interstitialAdRenderFail:(AlxInterstitialAd *)ad didFailWithError:(NSError *)error {
+    NSLog(@"%@: interstitialAdRenderFail: %@", TAG, error.localizedDescription);
     [self.adDelegate adDidFailToShowWithErrorCode:ISAdapterErrorInternal
                                      errorMessage:error.localizedDescription];
 }
