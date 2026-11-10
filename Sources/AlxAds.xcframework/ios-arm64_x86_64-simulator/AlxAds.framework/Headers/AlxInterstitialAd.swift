@@ -30,6 +30,11 @@ import UIKit
         model?.loadAd(adUnitId: adUnitId, request: request)
     }
     
+    /// 加载本地广告响应数据（用于调试/本地素材验证，支持 SDK 标准 JSON 与 OpenRTB seatbid/bid JSON）
+    @objc public func loadLocalAd(data: Data, adUnitId: String = "local_test") {
+        model?.loadLocalAd(data: data, adUnitId: adUnitId)
+    }
+    
     @objc public func showAd(present: UIViewController) {
         DispatchQueue.main.async { [weak self] in
             guard let this = self else { return }

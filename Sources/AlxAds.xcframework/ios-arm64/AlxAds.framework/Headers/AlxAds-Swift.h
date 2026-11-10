@@ -602,12 +602,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger OTHER;)
 @end
 
 @protocol AlxInterstitialAdDelegate;
+@class NSData;
 SWIFT_CLASS("_TtC6AlxAds17AlxInterstitialAd")
 @interface AlxInterstitialAd : NSObject <AlxAdDelegate>
 @property (nonatomic, weak) id <AlxInterstitialAdDelegate> _Nullable delegate;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId;
 - (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId request:(AlxAdRequest * _Nullable)request;
+/// 加载本地广告响应数据（用于调试/本地素材验证，支持 SDK 标准 JSON 与 OpenRTB seatbid/bid JSON）
+- (void)loadLocalAdWithData:(NSData * _Nonnull)data adUnitId:(NSString * _Nonnull)adUnitId;
 - (void)showAdWithPresent:(UIViewController * _Nonnull)present;
 - (BOOL)isReady SWIFT_WARN_UNUSED_RESULT;
 - (void)destroy;
@@ -894,6 +897,8 @@ SWIFT_CLASS("_TtC6AlxAds11AlxSplashAd")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId;
 - (void)loadAdWithAdUnitId:(NSString * _Nonnull)adUnitId request:(AlxAdRequest * _Nullable)request;
+/// 加载本地广告响应数据（用于调试/本地素材验证，支持 SDK 标准 JSON 与 OpenRTB seatbid/bid JSON）
+- (void)loadLocalAdWithData:(NSData * _Nonnull)data adUnitId:(NSString * _Nonnull)adUnitId;
 - (void)showAdWithPresent:(UIViewController * _Nonnull)present;
 - (void)showAdInWindow:(UIWindow * _Nonnull)inWindow;
 - (BOOL)isReady SWIFT_WARN_UNUSED_RESULT;

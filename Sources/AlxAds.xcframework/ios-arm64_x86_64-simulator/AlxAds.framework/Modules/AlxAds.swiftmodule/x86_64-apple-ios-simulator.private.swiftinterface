@@ -9,6 +9,7 @@ import AlxAds.AlxFix
 import AppTrackingTransparency
 import CommonCrypto
 import CoreFoundation
+import CoreGraphics
 import CoreLocation
 import CoreTelephony
 import CryptoKit
@@ -227,6 +228,7 @@ public enum AlxAdConstant {
   @objc override dynamic public init()
   @objc public func loadAd(adUnitId: Swift::String)
   @objc public func loadAd(adUnitId: Swift::String, request: AlxAds::AlxAdRequest? = nil)
+  @objc public func loadLocalAd(data: Foundation::Data, adUnitId: Swift::String = "local_test")
   @objc public func showAd(present: UIKit::UIViewController)
   @objc public func isReady() -> Swift::Bool
   @objc public func destroy()
@@ -256,6 +258,7 @@ public enum AlxAdConstant {
   @objc override dynamic public init()
   @objc public func loadAd(adUnitId: Swift::String)
   @objc public func loadAd(adUnitId: Swift::String, request: AlxAds::AlxAdRequest? = nil)
+  @objc public func loadLocalAd(data: Foundation::Data, adUnitId: Swift::String = "local_test")
   @objc public func showAd(present: UIKit::UIViewController)
   @objc public func showAd(inWindow: UIKit::UIWindow)
   @objc public func isReady() -> Swift::Bool
@@ -472,6 +475,152 @@ public enum AlxAdConstant {
   @objc public func loadAd(request: AlxAds::AlxAdRequest? = nil)
   @objc deinit
 }
+public enum AlxMraidState : Swift::String {
+  case loading
+  case `default`
+  case expanded
+  case resized
+  case hidden
+  public init?(rawValue: Swift::String)
+  public typealias RawValue = Swift::String
+  public var rawValue: Swift::String {
+    get
+  }
+}
+public enum AlxMraidPlacementType : Swift::String {
+  case unknown
+  case inline
+  case interstitial
+  public init?(rawValue: Swift::String)
+  public typealias RawValue = Swift::String
+  public var rawValue: Swift::String {
+    get
+  }
+}
+public enum AlxMraidForceOrientation : Swift::String {
+  case portrait
+  case landscape
+  case none
+  public init?(rawValue: Swift::String)
+  public typealias RawValue = Swift::String
+  public var rawValue: Swift::String {
+    get
+  }
+}
+public enum AlxMraidCustomClosePosition : Swift::String {
+  case topLeft
+  case topRight
+  case topCenter
+  case center
+  case bottomLeft
+  case bottomRight
+  case bottomCenter
+  public init?(rawValue: Swift::String)
+  public typealias RawValue = Swift::String
+  public var rawValue: Swift::String {
+    get
+  }
+}
+public struct AlxMraidOrientationProperties : Swift::Equatable {
+  public var allowOrientationChange: Swift::Bool
+  public var forceOrientation: AlxAds::AlxMraidForceOrientation
+  public init(allowOrientationChange: Swift::Bool = true, forceOrientation: AlxAds::AlxMraidForceOrientation = .none)
+  public static func == (a: AlxAds::AlxMraidOrientationProperties, b: AlxAds::AlxMraidOrientationProperties) -> Swift::Bool
+}
+public struct AlxMraidResizeProperties : Swift::Equatable {
+  public var width: CoreFoundation::CGFloat
+  public var height: CoreFoundation::CGFloat
+  public var offsetX: CoreFoundation::CGFloat
+  public var offsetY: CoreFoundation::CGFloat
+  public var customClosePosition: AlxAds::AlxMraidCustomClosePosition
+  public var allowOffscreen: Swift::Bool
+  public init(width: CoreFoundation::CGFloat = 0, height: CoreFoundation::CGFloat = 0, offsetX: CoreFoundation::CGFloat = 0, offsetY: CoreFoundation::CGFloat = 0, customClosePosition: AlxAds::AlxMraidCustomClosePosition = .topRight, allowOffscreen: Swift::Bool = true)
+  public static func == (a: AlxAds::AlxMraidResizeProperties, b: AlxAds::AlxMraidResizeProperties) -> Swift::Bool
+}
+public struct AlxMraidConfiguration {
+  public var sdkName: Swift::String
+  public var sdkVersion: Swift::String
+  public var appId: Swift::String
+  public var ifa: Swift::String
+  public var limitAdTracking: Swift::Bool
+  public var coppa: Swift::Bool
+  public var placementType: AlxAds::AlxMraidPlacementType
+  public var supportsSMS: Swift::Bool
+  public var supportsTel: Swift::Bool
+  public var supportsCalendar: Swift::Bool
+  public var supportsStorePicture: Swift::Bool
+  public var supportsInlineVideo: Swift::Bool
+  public var supportsVPAID: Swift::Bool
+  public var supportsLocation: Swift::Bool
+  public init(sdkName: Swift::String = "AlxMraid", sdkVersion: Swift::String = "1.0.0", appId: Swift::String = Bundle.main.bundleIdentifier ?? "", ifa: Swift::String = "", limitAdTracking: Swift::Bool = true, coppa: Swift::Bool = false, placementType: AlxAds::AlxMraidPlacementType = .inline, supportsSMS: Swift::Bool = false, supportsTel: Swift::Bool = false, supportsCalendar: Swift::Bool = false, supportsStorePicture: Swift::Bool = false, supportsInlineVideo: Swift::Bool = true, supportsVPAID: Swift::Bool = false, supportsLocation: Swift::Bool = false)
+}
+final public class AlxMraidManager {
+  public static let mraidResourceName: Swift::String
+  weak final public var delegate: (any AlxAds::AlxMraidWebViewDelegate)? {
+    get
+    set
+  }
+  final public var configuration: AlxAds::AlxMraidConfiguration {
+    get
+  }
+  final public var state: AlxAds::AlxMraidState {
+    get
+  }
+  final public var isViewable: Swift::Bool {
+    get
+  }
+  public init(configuration: AlxAds::AlxMraidConfiguration = AlxMraidConfiguration())
+  @objc deinit
+  final public func updatePlacementType(_ placementType: AlxAds::AlxMraidPlacementType)
+  final public func attach(to webView: WebKit::WKWebView)
+  final public func detach()
+  final public func resetToLoadingState()
+  final public func pageDidFinishLoading()
+  final public func setViewable(_ isViewable: Swift::Bool)
+  final public func setState(_ state: AlxAds::AlxMraidState)
+  final public func updateScreenMetrics(captureDefault: Swift::Bool = false)
+  final public func notifyAudioVolumeChange(percentage: Swift::Double?)
+  final public func notifyExposureChange(exposedPercentage: Swift::Double, visibleRect: CoreFoundation::CGRect)
+  public static func containsMraidScript(inHTML html: Swift::String) -> Swift::Bool
+  public static func injectScriptContent(intoHTML html: Swift::String, configuration: AlxAds::AlxMraidConfiguration = AlxMraidConfiguration(), bundle: Foundation::Bundle? = nil) -> Swift::String
+  public static func bundledJavaScript(from bundle: Foundation::Bundle? = nil) -> Swift::String?
+}
+public protocol AlxMraidWebViewDelegate : AnyObject {
+  func mraidManager(_ manager: AlxAds::AlxMraidManager, openURL url: Foundation::URL)
+  func mraidManagerDidRequestClose(_ manager: AlxAds::AlxMraidManager)
+  func mraidManagerDidUnload(_ manager: AlxAds::AlxMraidManager)
+  func mraidManager(_ manager: AlxAds::AlxMraidManager, expandURL url: Foundation::URL?)
+  func mraidManagerDidCloseExpand(_ manager: AlxAds::AlxMraidManager)
+  func mraidManager(_ manager: AlxAds::AlxMraidManager, useCustomClose: Swift::Bool)
+  func mraidManager(_ manager: AlxAds::AlxMraidManager, didUpdateOrientationProperties properties: AlxAds::AlxMraidOrientationProperties)
+  func mraidManager(_ manager: AlxAds::AlxMraidManager, resizeWith properties: AlxAds::AlxMraidResizeProperties) -> Swift::Bool
+  func mraidManager(_ manager: AlxAds::AlxMraidManager, playVideoAtURL url: Foundation::URL)
+  func mraidManager(_ manager: AlxAds::AlxMraidManager, storePictureAtURL url: Foundation::URL)
+  func mraidManager(_ manager: AlxAds::AlxMraidManager, createCalendarEventWithParameters parameters: [Swift::String : Any])
+}
+extension AlxAds::AlxMraidWebViewDelegate {
+  public func mraidManagerDidUnload(_ manager: AlxAds::AlxMraidManager)
+  public func mraidManager(_ manager: AlxAds::AlxMraidManager, expandURL url: Foundation::URL?)
+  public func mraidManagerDidCloseExpand(_ manager: AlxAds::AlxMraidManager)
+  public func mraidManager(_ manager: AlxAds::AlxMraidManager, useCustomClose: Swift::Bool)
+  public func mraidManager(_ manager: AlxAds::AlxMraidManager, didUpdateOrientationProperties properties: AlxAds::AlxMraidOrientationProperties)
+  public func mraidManager(_ manager: AlxAds::AlxMraidManager, resizeWith properties: AlxAds::AlxMraidResizeProperties) -> Swift::Bool
+  public func mraidManager(_ manager: AlxAds::AlxMraidManager, playVideoAtURL url: Foundation::URL)
+  public func mraidManager(_ manager: AlxAds::AlxMraidManager, storePictureAtURL url: Foundation::URL)
+  public func mraidManager(_ manager: AlxAds::AlxMraidManager, createCalendarEventWithParameters parameters: [Swift::String : Any])
+}
 extension AlxAds::AlxLogLevel : Swift::Equatable {}
 extension AlxAds::AlxLogLevel : Swift::Hashable {}
 extension AlxAds::AlxLogLevel : Swift::RawRepresentable {}
+extension AlxAds::AlxMraidState : Swift::Equatable {}
+extension AlxAds::AlxMraidState : Swift::Hashable {}
+extension AlxAds::AlxMraidState : Swift::RawRepresentable {}
+extension AlxAds::AlxMraidPlacementType : Swift::Equatable {}
+extension AlxAds::AlxMraidPlacementType : Swift::Hashable {}
+extension AlxAds::AlxMraidPlacementType : Swift::RawRepresentable {}
+extension AlxAds::AlxMraidForceOrientation : Swift::Equatable {}
+extension AlxAds::AlxMraidForceOrientation : Swift::Hashable {}
+extension AlxAds::AlxMraidForceOrientation : Swift::RawRepresentable {}
+extension AlxAds::AlxMraidCustomClosePosition : Swift::Equatable {}
+extension AlxAds::AlxMraidCustomClosePosition : Swift::Hashable {}
+extension AlxAds::AlxMraidCustomClosePosition : Swift::RawRepresentable {}

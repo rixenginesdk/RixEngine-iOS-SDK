@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/AlxAds-Swift.h</key>
 		<data>
-		wHkSvtGzbl+dpnIkrtKD4vJIt08=
+		ZwVTvIYVCqV4MLpfUYVHFuWOoOI=
 		</data>
 		<key>Headers/AlxAds.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/AlxInterstitialAd.swift</key>
 		<data>
-		24OJiZFRXHThu07rYCM0EriL1PA=
+		B3jqhDBPpjnQE4MRufrWTiqeUFw=
 		</data>
 		<key>Headers/AlxInterstitialAdDelegate.swift</key>
 		<data>
@@ -90,27 +90,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		oz3O3y4tcHhlJEtsz4gAWX03Jzc=
+		bXvVHaNruMuKX2DwkXR8aGmAK0Q=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		LM6Z+asxV+hGD/XExH6DJAOOwh0=
+		IfZuZmC2VqVOOozJSUuTHBAhivg=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		sNMUEXtmwz1hD+XgiQVABfquSJw=
+		Fo0gv+8bfGTbzw50ePlcAQ/TRgA=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		10nzG3b+gtMTCQw8l/5Vyb4KY8Q=
+		8dzaHfgG2+2AqnX/mSKx9b444JA=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		sNMUEXtmwz1hD+XgiQVABfquSJw=
+		Fo0gv+8bfGTbzw50ePlcAQ/TRgA=
 		</data>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		NVxn/8ECBlG9wpGW7sMtTuWPemg=
+		8TksBPKCXCQGOfmX5RMrZOkLc/E=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -143,6 +143,10 @@
 		<key>alx-omsdk-v1.js</key>
 		<data>
 		8XcdWfgP7zU+iPoukkrQSBtOVRc=
+		</data>
+		<key>alx_mraid.js</key>
+		<data>
+		bfydHpJlWhwTpyjRCdZ7kmoUsCk=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
@@ -190,7 +194,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			e1+72wQY6rwHq7w+6QlHcARD5ifpbtOOZQdPT/pgnW4=
+			Ywp/wbunPSMTxjn165zIdRfqf5mTQB6tYXr2qPj1kkU=
 			</data>
 		</dict>
 		<key>Headers/AlxAds.h</key>
@@ -218,7 +222,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JURNUqDXtkkglmTmmlvG21wR9GAeM03stZPBJqBR2q8=
+			1IFNUqMZBVZoMmO21+vT1LEuvkkcCK4ACv/pQ9b6BfI=
 			</data>
 		</dict>
 		<key>Headers/AlxInterstitialAdDelegate.swift</key>
@@ -316,35 +320,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fvDNNid87jcTGFLLuz3Q/pkRhmDJ4JNoINnYIBbVLHk=
+			uuLUyLAheHgDellnCGmQhXcgX13n+hW/6sdmF5llHe8=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4exyYt8QCcBHTBPxQ8X2S6v1Dh6rfpQ38LYjwN2JOPs=
+			nvUe7PvMC0L8EumN0A+arbhhI6tB9f6EFzBJmX0l52M=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DYmId7is9M0xDv0wnuPGBbDZIvs6oHBZzGDNz5nd5WA=
+			QIRsXf0ipjKRXPd7pmrFYsm810thXby3C21yFpkI8JA=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4exyYt8QCcBHTBPxQ8X2S6v1Dh6rfpQ38LYjwN2JOPs=
+			nvUe7PvMC0L8EumN0A+arbhhI6tB9f6EFzBJmX0l52M=
 			</data>
 		</dict>
 		<key>Modules/AlxAds.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Vra757SZSYgD5zqPE5WUDp0VgJyJbM319q0weT3O1E8=
+			TG0Eh0LWUeBHUXbXSWhrqKrLdwpblESPQo1iwrJp8w0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -401,6 +405,13 @@
 			<key>hash2</key>
 			<data>
 			LPbR4qFgB+P8puxuU2XKhuzVhuxm5Nk/zLtWnZUGKLM=
+			</data>
+		</dict>
+		<key>alx_mraid.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Y9DwxU0dt8k1ZlnD2h20UJlrCP5judCX1zRJtQQwpiA=
 			</data>
 		</dict>
 		<key>en.lproj/Localizable.strings</key>
