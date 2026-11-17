@@ -51,11 +51,8 @@ public class AlxAdmobBannerAdapter: AlxAdmobBaseAdapter, MediationBannerAd {
         self.bannerAd?.delegate = self
         self.bannerAd?.refreshInterval = 0
         self.bannerAd?.rootViewController=adConfiguration.topViewController
-        // 测试新增的扩展字段
-        let req = AlxAdRequest().withUserExt([
-            "bid_floor": "1.68"
-        ])
-        self.bannerAd?.loadAd(adUnitId: adId, request: req)
+        
+        self.bannerAd?.loadAd(adUnitId: adId)
     }
     
     

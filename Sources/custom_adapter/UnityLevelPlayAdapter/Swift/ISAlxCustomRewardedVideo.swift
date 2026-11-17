@@ -40,11 +40,8 @@ public class ISAlxCustomRewardedVideo: ISBaseRewardedVideo {
         let ad = AlxRewardVideoAd()
         ad.delegate = self
         self.rewardedAd = ad
-        // 测试新增的扩展字段
-        let req = AlxAdRequest().withUserExt([
-            "bid_floor": "1.68"
-        ])
-        ad.loadAd(adUnitId: unitId, request: req)
+        
+        ad.loadAd(adUnitId: unitId)
     }
 
     public override func isAdAvailable(with adData: ISAdData) -> Bool {

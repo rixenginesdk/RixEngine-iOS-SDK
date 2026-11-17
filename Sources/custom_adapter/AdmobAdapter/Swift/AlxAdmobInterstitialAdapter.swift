@@ -42,11 +42,8 @@ public class AlxAdmobInterstitialAdapter: AlxAdmobBaseAdapter, MediationIntersti
         // Load ad
         self.interstitialAd = AlxInterstitialAd()
         self.interstitialAd?.delegate = self
-        // 测试新增的扩展字段
-        let req = AlxAdRequest().withUserExt([
-            "bid_floor": "1.68"
-        ])
-        self.interstitialAd?.loadAd(adUnitId: adId, request: req)
+        
+        self.interstitialAd?.loadAd(adUnitId: adId)
     }
     
     public func present(from viewController: UIViewController) {

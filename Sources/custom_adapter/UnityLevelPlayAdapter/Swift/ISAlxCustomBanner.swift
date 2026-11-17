@@ -53,11 +53,8 @@ public class ISAlxCustomBanner: ISBaseBanner {
             banner.refreshInterval = 0
             banner.rootViewController = viewController
             self.bannerAdView = banner
-            // 测试新增的扩展字段
-            let req = AlxAdRequest().withUserExt([
-                "bid_floor": "1.68"
-            ])
-            banner.loadAd(adUnitId: unitId, request: req)
+            
+            banner.loadAd(adUnitId: unitId)
         }
     }
 

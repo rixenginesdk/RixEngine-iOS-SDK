@@ -80,11 +80,8 @@ public class AlxAdmobNativeAdapter: AlxAdmobBaseAdapter, MediationNativeAd {
         // Load ad
         let loader = AlxNativeAdLoader(adUnitID: adId)
         loader.delegate = self
-        // 测试新增的扩展字段
-        let req = AlxAdRequest().withUserExt([
-            "bid_floor": "1.68"
-        ])
-        loader.loadAd(request: req)
+        
+        loader.loadAd()
     }
     
     public func didRender(in view: UIView, clickableAssetViews: [GADNativeAssetIdentifier : UIView], nonclickableAssetViews: [GADNativeAssetIdentifier : UIView], viewController: UIViewController) {

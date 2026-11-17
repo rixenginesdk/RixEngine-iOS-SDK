@@ -57,11 +57,8 @@ public class AlxAdmobSplashAdapter: AlxAdmobBaseAdapter, MediationAppOpenAd {
         self.splashAd?.delegate = self
         self.splashAd?.autoCloseOnFinish = autoClose
         
-        // 扩展字段
-        let req = AlxAdRequest().withUserExt([
-            "bid_floor": "1.68"
-        ])
-        self.splashAd?.loadAd(adUnitId: adId, request: req)
+        
+        self.splashAd?.loadAd(adUnitId: adId)
     }
     
     public func present(from viewController: UIViewController) {

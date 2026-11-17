@@ -43,11 +43,8 @@ public class AlxAdmobRewardVideoAdapter: AlxAdmobBaseAdapter, MediationRewardedA
         // Load ad
         self.rewardedAd = AlxRewardVideoAd()
         self.rewardedAd?.delegate = self
-        // 测试新增的扩展字段
-        let req = AlxAdRequest().withUserExt([
-            "bid_floor": "1.68"
-        ])
-        self.rewardedAd?.loadAd(adUnitId: adId, request: req)
+        
+        self.rewardedAd?.loadAd(adUnitId: adId)
     }
     
     public func present(from viewController: UIViewController) {

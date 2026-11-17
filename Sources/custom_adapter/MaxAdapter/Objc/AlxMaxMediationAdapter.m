@@ -224,8 +224,7 @@ static BOOL isInitialized = NO;
     self.appOpenAd.delegate = self;
     self.appOpenAd.autoCloseOnFinish = autoClose;
 
-    AlxAdRequest *req = [[[AlxAdRequest alloc] init] withUserExt:@{ @"bid_floor": @"1.68" }];
-    [self.appOpenAd loadAdWithAdUnitId:adId request:req];
+    [self.appOpenAd loadAdWithAdUnitId:adId];
 }
 
 - (void)showAppOpenAdForParameters:(id<MAAdapterResponseParameters>)parameters andNotify:(id<MAAppOpenAdapterDelegate>)delegate {

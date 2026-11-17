@@ -58,8 +58,7 @@ static NSString *const TAG = @"AlxAdmobSplashAdapter";
     self.splashAd.delegate = self;
     self.splashAd.autoCloseOnFinish = autoClose;
 
-    AlxAdRequest *req = [[[AlxAdRequest alloc] init] withUserExt:@{ @"bid_floor": @"1.68" }];
-    [self.splashAd loadAdWithAdUnitId:adId request:req];
+    [self.splashAd loadAdWithAdUnitId:adId];
 }
 
 - (void)presentFromViewController:(UIViewController *)viewController {

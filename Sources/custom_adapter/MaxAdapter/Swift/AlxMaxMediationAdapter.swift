@@ -59,11 +59,8 @@ public class AlxMaxMediationAdapter: ALMediationAdapter, MAAdViewAdapter, MARewa
         self.bannerAd?.delegate = self
         self.bannerAd?.refreshInterval = 0
         self.bannerAd?.rootViewController=viewController
-        // 测试新增的扩展字段
-        let req = AlxAdRequest().withUserExt([
-            "bid_floor": "1.68"
-        ])
-        self.bannerAd?.loadAd(adUnitId: adId, request: req)
+        
+        self.bannerAd?.loadAd(adUnitId: adId)
     }
     
     public func loadRewardedAd(for parameters: any MAAdapterResponseParameters, andNotify delegate: any MARewardedAdapterDelegate) {
@@ -156,10 +153,7 @@ public class AlxMaxMediationAdapter: ALMediationAdapter, MAAdViewAdapter, MARewa
         self.appOpenAd?.delegate = self
         self.appOpenAd?.autoCloseOnFinish = autoClose
         
-        let req = AlxAdRequest().withUserExt([
-            "bid_floor": "1.68"
-        ])
-        self.appOpenAd?.loadAd(adUnitId: adId, request: req)
+        self.appOpenAd?.loadAd(adUnitId: adId)
     }
     
     public func showAppOpenAd(for parameters: any MAAdapterResponseParameters, andNotify delegate: any MAAppOpenAdapterDelegate) {
