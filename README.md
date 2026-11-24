@@ -30,8 +30,8 @@ RixEngine Mobile Ads SDK helps you monetize mobile applications efficiently whil
 #### 1. CocoaPods (Recommended for Core SDK)
 
 > **Important Notice on CocoaPods Trunk Availability**:
-> - **Current Availability (`v2.2.1`)**: Standard CocoaPods Trunk installation (`pod 'RixEngineAds', '~> 2.2.1'`) is currently supported and available.
-> - **Long-Term Usage (Post Dec 2, 2026)**: As the official [CocoaPods Specs Repo (Trunk)](https://blog.cocoapods.org/CocoaPods-Specs-Repo/) is scheduled to become permanently read-only on **December 2, 2026**, you can also integrate `2.2.1` (and all future releases) either by specifying the **Git repository and tag** directly in your `Podfile` (Method B below) or by migrating to **Swift Package Manager (SPM)**.
+> - **Current Availability (`v2.3.0`)**: Standard CocoaPods Trunk installation (`pod 'RixEngineAds', '~> 2.3.0'`) is supported.
+> - **Long-Term Usage (Post Dec 2, 2026)**: As the official [CocoaPods Specs Repo (Trunk)](https://blog.cocoapods.org/CocoaPods-Specs-Repo/) is scheduled to become permanently read-only on **December 2, 2026**, you can also integrate `2.3.0` (and all future releases) either by specifying the **Git repository and tag** directly in your `Podfile` (Method B below) or by migrating to **Swift Package Manager (SPM)**.
 
 **Method A: Via CocoaPods Trunk**
 
@@ -42,7 +42,7 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'YourApp' do
-  pod 'RixEngineAds', '~> 2.2.1'
+  pod 'RixEngineAds', '~> 2.3.0'
 end
 ```
 
@@ -53,7 +53,7 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'YourApp' do
-  pod 'RixEngineAds', :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git', :tag => '2.2.1'
+  pod 'RixEngineAds', :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git', :tag => '2.3.0'
 end
 ```
 
@@ -202,7 +202,7 @@ RixEngine Mobile Ads SDK 帮助开发者高效变现移动应用。SDK 严格遵
 #### 1. CocoaPods 集成（推荐核心 SDK）
 
 > **关于 CocoaPods 官方源（Trunk）可用性说明**：
-> - **当前版本（`v2.2.1`）**：支持直接通过 CocoaPods 官方中心源拉取（下方方式 A：`pod 'RixEngineAds', '~> 2.2.1'`）。
+> - **当前版本（`v2.3.0`）**：支持直接通过 CocoaPods 官方中心源拉取（下方方式 A：`pod 'RixEngineAds', '~> 2.3.0'`）。
 > - **后续长期方案（2026 年 12 月 2 日后）**：鉴于 [CocoaPods 官方将于 2026 年 12 月 2 日将 Trunk 永久设为只读](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)，开发者也可在 `Podfile` 中通过 **Git 仓库 + Tag 方式**（下方方式 B）集成，或直接使用 **Swift Package Manager (SPM)** 集成，均不受官方 Trunk 状态影响。
 
 **方式 A：通过 CocoaPods 官方源集成**
@@ -214,7 +214,7 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'YourApp' do
-  pod 'RixEngineAds', '~> 2.2.1'
+  pod 'RixEngineAds', '~> 2.3.0'
 end
 ```
 
@@ -225,7 +225,7 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'YourApp' do
-  pod 'RixEngineAds', :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git', :tag => '2.2.1'
+  pod 'RixEngineAds', :git => 'https://github.com/rixenginesdk/RixEngine-iOS-SDK.git', :tag => '2.3.0'
 end
 ```
 
