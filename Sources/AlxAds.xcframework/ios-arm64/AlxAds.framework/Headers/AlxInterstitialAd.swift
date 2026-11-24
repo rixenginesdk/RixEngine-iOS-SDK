@@ -30,10 +30,14 @@ import UIKit
         model?.loadAd(adUnitId: adUnitId, request: request)
     }
     
+    //MARK: Test mode enabled
+    // 仅在 Debug 构建生效：本地素材/本地 JSON 注入入口，Release 不暴露该接口
+    #if DEBUG
     /// 加载本地广告响应数据（用于调试/本地素材验证，支持 SDK 标准 JSON 与 OpenRTB seatbid/bid JSON）
     @objc public func loadLocalAd(data: Data, adUnitId: String = "local_test") {
         model?.loadLocalAd(data: data, adUnitId: adUnitId)
     }
+    #endif
     
     @objc public func showAd(present: UIViewController) {
         DispatchQueue.main.async { [weak self] in

@@ -228,7 +228,6 @@ public enum AlxAdConstant {
   @objc override dynamic public init()
   @objc public func loadAd(adUnitId: Swift::String)
   @objc public func loadAd(adUnitId: Swift::String, request: AlxAds::AlxAdRequest? = nil)
-  @objc public func loadLocalAd(data: Foundation::Data, adUnitId: Swift::String = "local_test")
   @objc public func showAd(present: UIKit::UIViewController)
   @objc public func isReady() -> Swift::Bool
   @objc public func destroy()
@@ -258,7 +257,6 @@ public enum AlxAdConstant {
   @objc override dynamic public init()
   @objc public func loadAd(adUnitId: Swift::String)
   @objc public func loadAd(adUnitId: Swift::String, request: AlxAds::AlxAdRequest? = nil)
-  @objc public func loadLocalAd(data: Foundation::Data, adUnitId: Swift::String = "local_test")
   @objc public func showAd(present: UIKit::UIViewController)
   @objc public func showAd(inWindow: UIKit::UIWindow)
   @objc public func isReady() -> Swift::Bool
@@ -416,11 +414,6 @@ public enum AlxAdConstant {
   @objc optional func videoPause()
   @objc optional func videoPlayError(error: any Swift::Error)
   @objc optional func videoMute(isMute: Swift::Bool)
-}
-@objc @_inheritsConvenienceInitializers public class AlxRangeHit : ObjectiveC::NSObject {
-  public static func isHitWithRate(rate: Swift::Double, source: Swift::String = "unknown") -> Swift::Bool
-  @objc override dynamic public init()
-  @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AlxSdk : ObjectiveC::NSObject {
   @objc public static func initializeSDK(token: Swift::String, sid: Swift::String, appId: Swift::String)

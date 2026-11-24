@@ -30,6 +30,29 @@ import UIKit
         model?.loadAd(adUnitId: adUnitId, request: request)
     }
     
+    //MARK: Test mode enabled
+    // 仅在 Debug 构建生效：本地素材注入与 viewable 列表验证接口，Release 不暴露
+    #if DEBUG
+    @objc public func loadLocalAd(data: Data, adUnitId: String = "local_test") {
+        model?.loadLocalAd(data: data, adUnitId: adUnitId)
+    }
+
+    /// 测试/验证：获取当前广告解析出的 viewableList
+    @objc public func getViewableList() -> [String]? {
+        return model?.response?.video?.viewableList
+    }
+
+    /// 测试/验证：获取当前广告解析出的 notViewableList
+    @objc public func getNotViewableList() -> [String]? {
+        return model?.response?.video?.notViewableList
+    }
+
+    /// 测试/验证：获取当前广告解析出的 viewUndeterminedList
+    @objc public func getViewUndeterminedList() -> [String]? {
+        return model?.response?.video?.viewUndeterminedList
+    }
+    #endif
+    
     @objc public func showAd(present: UIViewController) {
         DispatchQueue.main.async { [weak self] in
             guard let this = self else { return }
